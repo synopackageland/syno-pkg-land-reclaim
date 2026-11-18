@@ -59,6 +59,11 @@
   "review.refusal.keeperRemoved": "Insieme, i duplicati selezionati non lascerebbero alcuna copia di alcuni file, quindi nulla è stato spostato. Rimuovi un gruppo dall'elenco o conserva una copia in più",
   "review.refusal.keeperConflict": "Un gruppo selezionato rimuoverebbe una copia che hai scelto di conservare in un altro gruppo, quindi nulla è stato spostato. Rimuovi uno dei gruppi dall'elenco o conserva un'altra copia",
   "review.refusal.keeperConflictNamed": "{copy} è conservata in «{kept}», ma rimuovere «{removing}» la eliminerebbe, quindi nulla è stato spostato. Rimuovi uno dei due gruppi dall'elenco o conserva un'altra copia",
+  "review.refusal.keeperConflicts": {
+    "one": "{groups} gruppo selezionato eliminerebbe una copia che hai scelto di conservare, quindi nulla è stato spostato",
+    "other": "{groups} gruppi selezionati eliminerebbero copie che hai scelto di conservare, quindi nulla è stato spostato"
+  },
+  "review.refusal.keeperConflictLine": "Rimuovere «{removing}» eliminerebbe {copy}, conservata in «{kept}»",
   "review.refusal.duplicatesNothing": "I duplicati selezionati non spostano più nulla. Rimuovili dall'elenco",
   "review.refusal.other": "La pulizia è stata rifiutata. Ricontrolla la selezione",
   "review.refusal.selectedItem": "Un elemento selezionato",
@@ -145,6 +150,20 @@
   },
   "review.duplicates.freesLater": "Liberato più tardi: gli snapshot trattengono ancora {size} di queste copie",
   "review.duplicates.clear": "Rimuovi i duplicati dalla lista",
+  "review.duplicates.dropConflict": "Rimuovi {group} dalla lista",
+  "review.duplicates.dropConflicts": {
+    "one": "Rimuovi {group} e 1 altro gruppo dalla lista",
+    "other": "Rimuovi {group} e altri {more} gruppi dalla lista"
+  },
+  "review.duplicates.dropPicked": {
+    "one": "Rimuovi {groups} gruppo dalla lista",
+    "other": "Rimuovi {groups} gruppi dalla lista"
+  },
+  "review.duplicates.conflictChoice": "«{first}» e «{second}» rimuovono ciascuno la copia conservata nell'altro. Scegli quale rimuovere dalla lista",
+  "review.duplicates.droppedConflicts": {
+    "one": "{groups} gruppo rimosso dalla lista: avrebbe eliminato una copia che hai scelto di conservare",
+    "other": "{groups} gruppi rimossi dalla lista: avrebbero eliminato copie che hai scelto di conservare"
+  },
   "review.jobState.queued": "In coda",
   "review.jobState.running": "In esecuzione",
   "review.jobState.pausing": "Sospensione",

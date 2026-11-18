@@ -55,6 +55,10 @@
   "review.refusal.keeperRemoved": "選択した重複をまとめると一部のファイルのコピーが残らないため、何も移動していません。グループを 1 つリストから外すか、コピーをもう 1 つ残してください",
   "review.refusal.keeperConflict": "選択したグループが、別のグループで残すように指定したコピーを削除するため、何も移動していません。どちらかのグループをリストから外すか、別のコピーを残してください",
   "review.refusal.keeperConflictNamed": "{copy} は「{kept}」で残すように指定したコピーですが、「{removing}」を削除するとこのコピーも削除されるため、何も移動していません。どちらかのグループをリストから外すか、別のコピーを残してください",
+  "review.refusal.keeperConflicts": {
+    "other": "選択した {groups} グループが残すように指定したコピーを削除するため、何も移動していません"
+  },
+  "review.refusal.keeperConflictLine": "「{removing}」を削除すると、「{kept}」で残すように指定した {copy} も削除されます",
   "review.refusal.duplicatesNothing": "選択した重複ではもう何も移動しません。リストから削除してください",
   "review.refusal.other": "クリーンアップが拒否されました。選択した項目を再確認してください",
   "review.refusal.selectedItem": "選択した項目",
@@ -127,6 +131,17 @@
   },
   "review.duplicates.freesLater": "後で解放：これらのコピーのうち {size} はスナップショットが保持しています",
   "review.duplicates.clear": "重複をリストから外す",
+  "review.duplicates.dropConflict": "{group} をリストから外す",
+  "review.duplicates.dropConflicts": {
+    "other": "{group} とほか {more} グループをリストから外す"
+  },
+  "review.duplicates.dropPicked": {
+    "other": "{groups} グループをリストから外す"
+  },
+  "review.duplicates.conflictChoice": "「{first}」と「{second}」は、互いに相手で残すように指定したコピーを削除します。リストから外すグループを選んでください",
+  "review.duplicates.droppedConflicts": {
+    "other": "残すように指定したコピーを削除してしまうため、{groups} グループをリストから外しました"
+  },
   "review.jobState.queued": "キュー待ち",
   "review.jobState.running": "実行中",
   "review.jobState.pausing": "一時停止中",

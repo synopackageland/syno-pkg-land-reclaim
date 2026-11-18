@@ -55,6 +55,10 @@
   "review.refusal.keeperRemoved": "선택한 중복을 함께 처리하면 일부 파일의 사본이 남지 않아 아무것도 이동하지 않았습니다. 그룹 하나를 목록에서 빼거나 사본을 하나 더 유지하세요",
   "review.refusal.keeperConflict": "선택한 그룹이 다른 그룹에서 유지하도록 지정한 사본을 삭제하므로 아무것도 이동하지 않았습니다. 그룹 하나를 목록에서 빼거나 다른 사본을 유지하세요",
   "review.refusal.keeperConflictNamed": "{copy}은(는) “{kept}”에서 유지하도록 지정한 사본이지만 “{removing}”을(를) 제거하면 함께 삭제되므로 아무것도 이동하지 않았습니다. 두 그룹 중 하나를 목록에서 빼거나 다른 사본을 유지하세요",
+  "review.refusal.keeperConflicts": {
+    "other": "선택한 그룹 {groups}개가 유지하도록 지정한 사본을 삭제하므로 아무것도 이동하지 않았습니다"
+  },
+  "review.refusal.keeperConflictLine": "“{removing}”을(를) 제거하면 “{kept}”에서 유지하도록 지정한 {copy}도 삭제됩니다",
   "review.refusal.duplicatesNothing": "선택한 중복은 더 이상 아무것도 이동하지 않습니다. 목록에서 제거하세요",
   "review.refusal.other": "정리가 거부되었습니다. 선택한 항목을 다시 확인하세요",
   "review.refusal.selectedItem": "선택한 항목",
@@ -127,6 +131,17 @@
   },
   "review.duplicates.freesLater": "나중에 확보: 스냅샷이 이 사본 중 {size}를 아직 보유합니다",
   "review.duplicates.clear": "목록에서 중복 항목 제거",
+  "review.duplicates.dropConflict": "목록에서 {group} 제거",
+  "review.duplicates.dropConflicts": {
+    "other": "목록에서 {group} 외 {more}개 그룹 제거"
+  },
+  "review.duplicates.dropPicked": {
+    "other": "목록에서 그룹 {groups}개 제거"
+  },
+  "review.duplicates.conflictChoice": "“{first}”과(와) “{second}”이(가) 서로 상대 그룹에서 유지하도록 지정한 사본을 삭제합니다. 목록에서 제거할 그룹을 선택하세요",
+  "review.duplicates.droppedConflicts": {
+    "other": "유지하도록 지정한 사본을 삭제하므로 그룹 {groups}개를 목록에서 제거했습니다"
+  },
   "review.jobState.queued": "대기 중",
   "review.jobState.running": "실행 중",
   "review.jobState.pausing": "일시 중지 중",

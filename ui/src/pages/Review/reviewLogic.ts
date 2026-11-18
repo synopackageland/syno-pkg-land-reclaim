@@ -107,3 +107,38 @@ export async function planParams(items: readonly BasketItem[], volume: string, d
   if (inline.duplicates) plan.duplicates = { ...inline.duplicates, groups: [] }
   return plan
 }
+
+/** A duplicate group a keeper conflict names. */
+export type ConflictGroup = { id: string; name: string }
+/** The copy at `path` is kept in `kept_in`; removing `removed_by` would remove it. */
+export type KeeperConflict = { path?: string; conflict?: { kept_in: { id: string; name: { path: string } }; removed_by: { id: string; name: { path: string } } } }
+
+/**
+ * How to settle a plan's keeper conflicts by taking groups out of the list.
+ * The copy the user chose to keep wins: the group that would remove it goes
+ * (`drop`). Two listed groups that each remove the other's kept copy are a
+ * choice for the user (`choices`), unless one of them goes anyway. Groups
+ * not in the list cannot be taken out: nothing here settles their conflict.
+ */
+export function conflictResolution(errors: readonly KeeperConflict[], listed: ReadonlySet<string>) {
+  const named = errors.flatMap(error => error.conflict ? [error.conflict] : [])
+  const group = (g: { id: string; name: { path: string } }): ConflictGroup => ({ id: g.id, name: g.name.path })
+  const mutual = (a: string, b: string) => named.some(c => c.removed_by.id === a && c.kept_in.id === b)
+    && named.some(c => c.removed_by.id === b && c.kept_in.id === a)
+  const drop = new Map<string, ConflictGroup>()
+  const pairs: [ConflictGroup, ConflictGroup][] = []
+  for (const c of named) {
+    const removing = c.removed_by.id
+    const kept = c.kept_in.id
+    if (!listed.has(removing)) continue
+    if (listed.has(kept) && mutual(removing, kept)) {
+      if (!pairs.some(([a, b]) => (a.id === removing && b.id === kept) || (a.id === kept && b.id === removing))) {
+        pairs.push([group(c.kept_in), group(c.removed_by)])
+      }
+    } else if (!drop.has(removing)) {
+      drop.set(removing, group(c.removed_by))
+    }
+  }
+  const choices = pairs.filter(([a, b]) => !drop.has(a.id) && !drop.has(b.id))
+  return { drop: [...drop.values()], choices }
+}

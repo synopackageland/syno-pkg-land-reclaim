@@ -25,7 +25,7 @@ import { useBasketEstimate } from '@/composables/useBasketEstimate'
 import ShareSettingsButton from '@/components/ShareSettingsButton.vue'
 import type { DuplicatePlanSummary } from '@/types/duplicates'
 import type { TargetError } from '@/types/schema/cleanup-plan'
-import { DUPLICATE_REFUSALS, cleanupApplyParams, duplicateReview, planParams, type DuplicateReviewLine } from './reviewLogic'
+import { DUPLICATE_REFUSALS, cleanupApplyParams, conflictResolution, duplicateReview, planParams, type ConflictGroup, type DuplicateReviewLine } from './reviewLogic'
 
 type Completion = 'complete' | 'partial' | 'failed' | 'busy' | 'paused' | 'cancelled' | string
 type CleanupPath = { path: string; path_hex?: string }
@@ -157,7 +157,58 @@ const RESCAN_REFUSALS = ['target_changed', 'keeper_changed']
 /** Duplicates refusals the selection itself causes: taking the groups out lets the rest go ahead. */
 const CLEAR_DUPLICATES_REFUSALS = ['keeper_removed', 'keeper_conflict', 'duplicates_nothing', 'duplicates_unknown_group', 'duplicates_stale']
 const canClearDuplicates = computed(() => phase.value === 'refused' && !!duplicateSelection.value?.groups.length
-  && refusalCodes.value.some(code => CLEAR_DUPLICATES_REFUSALS.includes(code)))
+  && !canResolveConflicts.value && refusalCodes.value.some(code => CLEAR_DUPLICATES_REFUSALS.includes(code)))
+
+/** The keeper conflicts the plan named, each with both of its groups. */
+const keeperConflicts = computed(() => (plan.value?.errors ?? []).filter(error => error.code === 'keeper_conflict' && error.conflict))
+const listedGroups = computed(() => new Set(duplicateSelection.value?.groups.map(group => group.id) ?? []))
+/** Which groups to take out of the list to settle every keeper conflict, and which the user picks. */
+const resolution = computed(() => conflictResolution(keeperConflicts.value, listedGroups.value))
+const canResolveConflicts = computed(() => phase.value === 'refused' && (resolution.value.drop.length > 0 || resolution.value.choices.length > 0))
+const pairKey = (pair: readonly ConflictGroup[]) => pair.map(group => group.id).sort().join(':')
+/** The group the user picked to take out, for each pair that removes each other's kept copy. */
+const picked = ref<Record<string, string>>({})
+const allPicked = computed(() => resolution.value.choices.every(pair => !!picked.value[pairKey(pair)]))
+/** Every group the fix takes out: the ones that would remove a kept copy, and the user's picks. */
+const groupsToDrop = computed(() => [
+  ...resolution.value.drop,
+  ...resolution.value.choices.flatMap(pair => pair.filter(group => group.id === picked.value[pairKey(pair)])),
+])
+const resolveLabel = computed(() => {
+  const groups = groupsToDrop.value
+  const total = resolution.value.drop.length + resolution.value.choices.length
+  if (total === 1 && groups.length === 1) return t('review.duplicates.dropConflict', { group: groups[0].name })
+  if (groups.length && allPicked.value) return t('review.duplicates.dropConflicts', { count: groups.length - 1, group: groups[0].name, more: formatCount(groups.length - 1) })
+  return t('review.duplicates.dropPicked', { count: total, groups: formatCount(total) })
+})
+/** What the fix took out of the list, said once the plan is ready; cleared when the dialog closes. */
+const droppedGroups = ref<ConflictGroup[]>([])
+/** The fix is settling conflicts: a plan that names more takes those groups out too, then checks again. */
+const resolving = ref(false)
+let resolveRounds = 0
+/** A fix never plans more often than this: each round takes at least one group out. */
+const MAX_RESOLVE_ROUNDS = 20
+
+function dropConflictGroups(groups: ConflictGroup[]) {
+  droppedGroups.value = [...droppedGroups.value, ...groups.filter(group => !droppedGroups.value.some(dropped => dropped.id === group.id))]
+  picked.value = {}
+  // The list changes, so the dialog plans again at once (the watch below).
+  basket.value?.removeDuplicates(groups.map(group => group.id))
+}
+
+/** Takes the groups that would remove a kept copy out of the list, then checks again and stays open. */
+function resolveConflicts() {
+  const groups = groupsToDrop.value
+  if (!groups.length || !allPicked.value) return
+  resolving.value = true
+  resolveRounds = 0
+  dropConflictGroups(groups)
+}
+
+/** The user's pick in a pair of groups that each remove the other's kept copy. */
+function pickConflictGroup(pair: readonly ConflictGroup[], group: ConflictGroup) {
+  picked.value = { ...picked.value, [pairKey(pair)]: group.id }
+}
 
 /**
  * A duplicates cleanup moves copies as the scan saw them, and the copies
@@ -403,7 +454,10 @@ function planRefusalMessage(code: string, error?: Partial<Pick<CleanupError, 'pa
 
 function showPlanRefusal(response: PlanResponse) {
   const refusal = response.errors?.[0]?.code ?? response.completion ?? 'unknown'
-  planErrorMessage.value = planRefusalMessage(refusal, response.errors?.[0])
+  const conflicts = (response.errors ?? []).filter(error => error.code === 'keeper_conflict' && error.conflict).length
+  planErrorMessage.value = refusal === 'keeper_conflict' && conflicts > 1
+    ? t('review.refusal.keeperConflicts', { count: conflicts, groups: formatCount(conflicts) })
+    : planRefusalMessage(refusal, response.errors?.[0])
   if (refusal === 'cleanup_disabled') phase.value = 'disabled'
   else if (refusal === 'cancelled') phase.value = 'stopped'
   else if (refusal === 'busy') phase.value = 'busy'
@@ -463,6 +517,16 @@ async function loadPlan() {
     }) as PlanResponse
     if (requestId !== planRequest.value || !open.value) return
     plan.value = response
+    if (resolving.value) {
+      // More conflicts than the last plan named (an older CLI names only the
+      // first): take those groups out too, unless the user must pick.
+      const next = conflictResolution((response.errors ?? []).filter(error => error.code === 'keeper_conflict'), listedGroups.value)
+      if (next.drop.length && !next.choices.length && ++resolveRounds < MAX_RESOLVE_ROUNDS) {
+        dropConflictGroups(next.drop)
+        return
+      }
+      resolving.value = false
+    }
     if (response.shares?.length && response.plan_id) {
       phase.value = 'ready'
       return
@@ -748,6 +812,9 @@ watch([open, volumePath, selectedSignature, () => props.jobId], ([isOpen]) => {
   } else if (wasOpen) {
     planningController.abort()
     wasOpen = false
+    resolving.value = false
+    droppedGroups.value = []
+    picked.value = {}
     // A finished cleanup is done with once closed: the next open plans the
     // list as it is then. A running move keeps its job (the job strip shows it).
     if (phase.value === 'result' || phase.value === 'apply_error') {
@@ -810,11 +877,37 @@ onBeforeUnmount(() => {
           </li>
         </ul>
         <p v-if="itemErrors.length > shownErrors.length" class="review-dialog__note" data-test="review-more-refused">{{ t('review.more', { count: formatCount(itemErrors.length - shownErrors.length) }) }}</p>
+        <ul v-if="keeperConflicts.length > 1" class="review-dialog__refused" data-test="review-conflicts">
+          <li v-for="error in keeperConflicts.slice(0, SHOWN)" :key="error.conflict!.kept_in.id + error.conflict!.removed_by.id">
+            <span class="review-dialog__refused-text" data-test="review-conflict">{{ t('review.refusal.keeperConflictLine', { removing: error.conflict!.removed_by.name.path, copy: error.path, kept: error.conflict!.kept_in.name.path }) }}</span>
+          </li>
+        </ul>
+        <section v-for="pair in resolution.choices" :key="pairKey(pair)" class="review-dialog__share" data-test="review-conflict-choice">
+          <p>{{ t('review.duplicates.conflictChoice', { first: pair[0].name, second: pair[1].name }) }}</p>
+          <div class="review-dialog__choice">
+            <Button
+              v-for="group in pair"
+              :key="group.id"
+              size="sm"
+              :variant="picked[pairKey(pair)] === group.id ? 'primary' : 'secondary'"
+              :aria-pressed="picked[pairKey(pair)] === group.id"
+              data-test="review-conflict-pick"
+              @click="pickConflictGroup(pair, group)"
+            >
+              {{ t('review.duplicates.dropConflict', { group: group.name }) }}
+            </Button>
+          </div>
+        </section>
       </template>
 
       <Callout v-else-if="phase === 'error'" :dismissible="false" tone="danger" :title="planErrorMessage" />
 
       <template v-else-if="phase === 'ready'">
+        <Callout v-if="droppedGroups.length" :dismissible="false" tone="info" :title="t('review.duplicates.droppedConflicts', { count: droppedGroups.length, groups: formatCount(droppedGroups.length) })" data-test="review-dropped-conflicts">
+          <ul class="review-dialog__dropped">
+            <li v-for="group in droppedGroups" :key="group.id">{{ group.name }}</li>
+          </ul>
+        </Callout>
         <Callout v-if="planId && deleteCount" :dismissible="false" tone="danger" :title="t('review.delete.title', { count: deleteCount, deletes: formatCount(deleteCount) })" data-test="review-delete">
           <p>{{ t('review.delete.body') }}</p>
         </Callout>
@@ -953,6 +1046,7 @@ onBeforeUnmount(() => {
         <Button v-else-if="phase === 'no_report'" variant="primary" @click="startRescan">{{ t('state.noReport.scan') }}</Button>
         <Button v-else-if="phase === 'result'" variant="primary" @click="startRescan">{{ t('review.rescan.open') }}</Button>
         <Button v-if="phase === 'refused' && refusalCodes.some(code => RESCAN_REFUSALS.includes(code))" data-test="review-rescan" variant="primary" @click="startRescan">{{ t('review.rescan.open') }}</Button>
+        <Button v-if="canResolveConflicts" data-test="review-resolve-conflicts" variant="primary" :disabled="!allPicked" @click="resolveConflicts">{{ resolveLabel }}</Button>
         <Button v-if="canClearDuplicates" data-test="review-clear-duplicates" variant="secondary" @click="basket?.clearDuplicates()">{{ t('review.duplicates.clear') }}</Button>
         <Button v-if="phase === 'apply_error' && submittedPlanId" @click="recoverApply">{{ t('newScan.busy.view') }}</Button>
         <Button v-else-if="!props.jobId && (phase === 'refused' || phase === 'stopped' || phase === 'busy' || (phase === 'result' && !applyResult))" variant="secondary" data-test="review-recheck" @click="loadPlan">{{ t('review.recheck') }}</Button>
@@ -1015,6 +1109,8 @@ onBeforeUnmount(() => {
 .review-dialog__refused-text { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
 .review-dialog__refused-drop { flex: 0 0 auto; }
 .review-dialog__refused small { color: var(--ui-text-secondary); }
+.review-dialog__choice { display: flex; flex-wrap: wrap; gap: 8px; }
+.review-dialog__dropped { margin: 0; padding-left: 16px; overflow-wrap: anywhere; }
 
 .review-dialog__paths {
   display: grid;

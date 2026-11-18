@@ -59,6 +59,11 @@
   "review.refusal.keeperRemoved": "Ensemble, les doublons sélectionnés ne laisseraient aucune copie de certains fichiers, rien n'a été déplacé. Retirez un groupe de la liste ou conservez une copie de plus",
   "review.refusal.keeperConflict": "Un groupe sélectionné supprimerait une copie que vous avez choisi de conserver dans un autre groupe, rien n'a été déplacé. Retirez l'un des groupes de la liste ou conservez une autre copie",
   "review.refusal.keeperConflictNamed": "{copy} est conservée dans « {kept} », mais supprimer « {removing} » la supprimerait, rien n'a été déplacé. Retirez l'un des deux groupes de la liste ou conservez une autre copie",
+  "review.refusal.keeperConflicts": {
+    "one": "{groups} groupe sélectionné supprimerait une copie que vous avez choisi de conserver, rien n'a été déplacé",
+    "other": "{groups} groupes sélectionnés supprimeraient des copies que vous avez choisi de conserver, rien n'a été déplacé"
+  },
+  "review.refusal.keeperConflictLine": "Supprimer « {removing} » supprimerait {copy}, conservée dans « {kept} »",
   "review.refusal.duplicatesNothing": "Les doublons sélectionnés ne déplacent plus rien. Retirez-les de la liste",
   "review.refusal.other": "Le nettoyage a été refusé. Revérifiez la sélection",
   "review.refusal.selectedItem": "Un élément sélectionné",
@@ -145,6 +150,20 @@
   },
   "review.duplicates.freesLater": "Libéré plus tard : des instantanés retiennent encore {size} de ces copies",
   "review.duplicates.clear": "Retirer les doublons de la liste",
+  "review.duplicates.dropConflict": "Retirer {group} de la liste",
+  "review.duplicates.dropConflicts": {
+    "one": "Retirer {group} et 1 autre groupe de la liste",
+    "other": "Retirer {group} et {more} autres groupes de la liste"
+  },
+  "review.duplicates.dropPicked": {
+    "one": "Retirer {groups} groupe de la liste",
+    "other": "Retirer {groups} groupes de la liste"
+  },
+  "review.duplicates.conflictChoice": "« {first} » et « {second} » suppriment chacun la copie conservée dans l'autre. Choisissez lequel retirer de la liste",
+  "review.duplicates.droppedConflicts": {
+    "one": "{groups} groupe retiré de la liste : il aurait supprimé une copie que vous avez choisi de conserver",
+    "other": "{groups} groupes retirés de la liste : ils auraient supprimé des copies que vous avez choisi de conserver"
+  },
   "review.jobState.queued": "En file d'attente",
   "review.jobState.running": "En cours",
   "review.jobState.pausing": "Mise en pause",

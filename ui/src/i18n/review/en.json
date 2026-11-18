@@ -59,6 +59,11 @@
   "review.refusal.keeperRemoved": "Together, the selected duplicates would leave no copy of some file, so nothing moved. Remove a group from the list, or keep one more copy",
   "review.refusal.keeperConflict": "A selected group would remove a copy you chose to keep in another group, so nothing moved. Remove one of the groups from the list, or keep another copy",
   "review.refusal.keeperConflictNamed": "{copy} is kept in “{kept}”, but removing “{removing}” would remove it, so nothing moved. Remove one of the two groups from the list, or keep another copy",
+  "review.refusal.keeperConflicts": {
+    "one": "{groups} selected group would remove a copy you chose to keep, so nothing moved",
+    "other": "{groups} selected groups would remove copies you chose to keep, so nothing moved"
+  },
+  "review.refusal.keeperConflictLine": "Removing “{removing}” would remove {copy}, kept in “{kept}”",
   "review.refusal.duplicatesNothing": "The selected duplicates no longer move anything. Remove them from the list",
   "review.refusal.other": "Cleanup was refused. Recheck the selected items",
   "review.refusal.selectedItem": "A selected item",
@@ -151,6 +156,20 @@
   },
   "review.duplicates.freesLater": "Frees later: snapshots still hold {size} of these copies",
   "review.duplicates.clear": "Remove duplicates from the list",
+  "review.duplicates.dropConflict": "Remove {group} from the list",
+  "review.duplicates.dropConflicts": {
+    "one": "Remove {group} and 1 more group from the list",
+    "other": "Remove {group} and {more} more groups from the list"
+  },
+  "review.duplicates.dropPicked": {
+    "one": "Remove {groups} group from the list",
+    "other": "Remove {groups} groups from the list"
+  },
+  "review.duplicates.conflictChoice": "“{first}” and “{second}” each remove the copy kept in the other. Pick which one to remove from the list",
+  "review.duplicates.droppedConflicts": {
+    "one": "Removed {groups} group from the list: it would have removed a copy you chose to keep",
+    "other": "Removed {groups} groups from the list: they would have removed copies you chose to keep"
+  },
   "review.jobState.queued": "Queued",
   "review.jobState.running": "Running",
   "review.jobState.pausing": "Pausing",

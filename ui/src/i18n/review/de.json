@@ -59,6 +59,11 @@
   "review.refusal.keeperRemoved": "Zusammen würden die ausgewählten Duplikate von einer Datei keine Kopie übrig lassen, daher wurde nichts verschoben. Entfernen Sie eine Gruppe aus der Liste oder behalten Sie eine weitere Kopie",
   "review.refusal.keeperConflict": "Eine ausgewählte Gruppe würde eine Kopie entfernen, die Sie in einer anderen Gruppe behalten wollten, daher wurde nichts verschoben. Entfernen Sie eine der Gruppen aus der Liste oder behalten Sie eine andere Kopie",
   "review.refusal.keeperConflictNamed": "{copy} soll in „{kept}“ behalten werden, aber das Entfernen von „{removing}“ würde sie entfernen, daher wurde nichts verschoben. Entfernen Sie eine der beiden Gruppen aus der Liste oder behalten Sie eine andere Kopie",
+  "review.refusal.keeperConflicts": {
+    "one": "{groups} ausgewählte Gruppe würde eine Kopie entfernen, die Sie behalten wollten, daher wurde nichts verschoben",
+    "other": "{groups} ausgewählte Gruppen würden Kopien entfernen, die Sie behalten wollten, daher wurde nichts verschoben"
+  },
+  "review.refusal.keeperConflictLine": "„{removing}“ zu entfernen würde {copy} entfernen, die in „{kept}“ behalten wird",
   "review.refusal.duplicatesNothing": "Die ausgewählten Duplikate verschieben nichts mehr. Entfernen Sie sie aus der Liste",
   "review.refusal.other": "Die Bereinigung wurde abgelehnt. Prüfen Sie die Auswahl erneut",
   "review.refusal.selectedItem": "Ein ausgewähltes Element",
@@ -145,6 +150,20 @@
   },
   "review.duplicates.freesLater": "Wird später frei: Snapshots halten noch {size} dieser Kopien",
   "review.duplicates.clear": "Duplikate aus der Liste entfernen",
+  "review.duplicates.dropConflict": "{group} aus der Liste entfernen",
+  "review.duplicates.dropConflicts": {
+    "one": "{group} und 1 weitere Gruppe aus der Liste entfernen",
+    "other": "{group} und {more} weitere Gruppen aus der Liste entfernen"
+  },
+  "review.duplicates.dropPicked": {
+    "one": "{groups} Gruppe aus der Liste entfernen",
+    "other": "{groups} Gruppen aus der Liste entfernen"
+  },
+  "review.duplicates.conflictChoice": "„{first}“ und „{second}“ entfernen jeweils die Kopie, die in der anderen Gruppe behalten wird. Wählen Sie, welche aus der Liste entfernt wird",
+  "review.duplicates.droppedConflicts": {
+    "one": "{groups} Gruppe aus der Liste entfernt: Sie hätte eine Kopie entfernt, die Sie behalten wollten",
+    "other": "{groups} Gruppen aus der Liste entfernt: Sie hätten Kopien entfernt, die Sie behalten wollten"
+  },
   "review.jobState.queued": "In Warteschlange",
   "review.jobState.running": "Wird ausgeführt",
   "review.jobState.pausing": "Wird angehalten",

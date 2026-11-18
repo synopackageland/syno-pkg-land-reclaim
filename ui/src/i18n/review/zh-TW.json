@@ -55,6 +55,10 @@
   "review.refusal.keeperRemoved": "所選的重複項目合起來會讓部分檔案沒有任何副本，沒有移動任何項目。請從清單移除一組，或多保留一份副本",
   "review.refusal.keeperConflict": "所選的一組會刪掉你在另一組指定保留的副本，沒有移動任何項目。請從清單移除其中一組，或改保留別的副本",
   "review.refusal.keeperConflictNamed": "{copy} 是你在「{kept}」指定保留的副本，但移除「{removing}」會刪掉它，沒有移動任何項目。請從清單移除這兩組其中一組，或改保留別的副本",
+  "review.refusal.keeperConflicts": {
+    "other": "所選的 {groups} 組會刪掉你指定保留的副本，沒有移動任何項目"
+  },
+  "review.refusal.keeperConflictLine": "移除「{removing}」會刪掉你在「{kept}」指定保留的 {copy}",
   "review.refusal.duplicatesNothing": "所選的重複項目已不會移動任何檔案。請從清單移除",
   "review.refusal.other": "清理遭拒，請重新檢查所選項目",
   "review.refusal.selectedItem": "某個所選項目",
@@ -127,6 +131,17 @@
   },
   "review.duplicates.freesLater": "稍後才釋放：快照仍保留這些副本中的 {size}",
   "review.duplicates.clear": "從清單移除重複項目",
+  "review.duplicates.dropConflict": "從清單移除 {group}",
+  "review.duplicates.dropConflicts": {
+    "other": "從清單移除 {group} 和另外 {more} 組"
+  },
+  "review.duplicates.dropPicked": {
+    "other": "從清單移除 {groups} 組"
+  },
+  "review.duplicates.conflictChoice": "「{first}」和「{second}」都會刪掉對方指定保留的副本，請選擇要從清單移除哪一組",
+  "review.duplicates.droppedConflicts": {
+    "other": "已從清單移除 {groups} 組會刪掉你指定保留副本的項目"
+  },
   "review.jobState.queued": "排入佇列",
   "review.jobState.running": "執行中",
   "review.jobState.pausing": "正在暫停",

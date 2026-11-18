@@ -59,6 +59,11 @@
   "review.refusal.keeperRemoved": "Juntos, los duplicados seleccionados no dejarían ninguna copia de algunos archivos, así que no se movió nada. Quite un grupo de la lista o conserve una copia más",
   "review.refusal.keeperConflict": "Un grupo seleccionado eliminaría una copia que eligió conservar en otro grupo, así que no se movió nada. Quite uno de los grupos de la lista o conserve otra copia",
   "review.refusal.keeperConflictNamed": "{copy} se conserva en «{kept}», pero quitar «{removing}» la eliminaría, así que no se movió nada. Quite uno de los dos grupos de la lista o conserve otra copia",
+  "review.refusal.keeperConflicts": {
+    "one": "{groups} grupo seleccionado quitaría una copia que elegiste conservar, así que no se movió nada",
+    "other": "{groups} grupos seleccionados quitarían copias que elegiste conservar, así que no se movió nada"
+  },
+  "review.refusal.keeperConflictLine": "Quitar «{removing}» quitaría {copy}, que se conserva en «{kept}»",
   "review.refusal.duplicatesNothing": "Los duplicados seleccionados ya no mueven nada. Quítelos de la lista",
   "review.refusal.other": "La limpieza fue rechazada. Vuelva a comprobar la selección",
   "review.refusal.selectedItem": "Un elemento seleccionado",
@@ -145,6 +150,20 @@
   },
   "review.duplicates.freesLater": "Se libera más tarde: las instantáneas aún retienen {size} de estas copias",
   "review.duplicates.clear": "Quitar los duplicados de la lista",
+  "review.duplicates.dropConflict": "Quitar {group} de la lista",
+  "review.duplicates.dropConflicts": {
+    "one": "Quitar {group} y 1 grupo más de la lista",
+    "other": "Quitar {group} y {more} grupos más de la lista"
+  },
+  "review.duplicates.dropPicked": {
+    "one": "Quitar {groups} grupo de la lista",
+    "other": "Quitar {groups} grupos de la lista"
+  },
+  "review.duplicates.conflictChoice": "«{first}» y «{second}» quitan cada uno la copia que se conserva en el otro. Elige cuál quitar de la lista",
+  "review.duplicates.droppedConflicts": {
+    "one": "Se quitó {groups} grupo de la lista: habría quitado una copia que elegiste conservar",
+    "other": "Se quitaron {groups} grupos de la lista: habrían quitado copias que elegiste conservar"
+  },
   "review.jobState.queued": "En cola",
   "review.jobState.running": "En ejecución",
   "review.jobState.pausing": "Pausando",
