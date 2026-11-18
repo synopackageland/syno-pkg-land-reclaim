@@ -1,0 +1,9 @@
+{
+  "usageChange.close": "닫기",
+  "usageChange.decrease": "마지막 스캔 이후 사용량이 {size} 감소했습니다. 결과가 변경되었을 수 있습니다",
+  "usageChange.increase": "마지막 스캔 이후 사용량이 {size} 증가했습니다. 결과가 변경되었을 수 있습니다",
+  "usageChange.noBaseline": "다음 전체 스캔이 끝나면 Syno Reclaim이 사용량 변화를 알려 드릴 수 있습니다",
+  "usageChange.rescan": "다시 스캔",
+  "usageChange.snooze": "나중에 알림",
+  "usageChange.volume": "{volume}: {message}"
+}

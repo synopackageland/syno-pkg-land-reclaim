@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/watch-free.schema.json",
+  "title": "synoreclaim watch-free result v1",
+  "description": "Read-only, bounded observations of Btrfs data space and cleaner backlog (SPEC 5.19). One sample per interval; deltas are null with fewer than two samples and may be affected by concurrent writers.",
+  "type": "object",
+  "$defs": {
+    "sample": {
+      "type": "object",
+      "properties": {
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "data_used_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Btrfs data block group used bytes."
+        },
+        "data_used_error": {
+          "type": "string",
+          "description": "Why data_used_bytes is unknown; absent when it is known."
+        },
+        "free_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "statfs free bytes."
+        },
+        "free_error": {
+          "type": "string",
+          "description": "Why free_bytes is unknown; absent when it is known."
+        },
+        "pending_deletion_roots": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Subvolumes awaiting the Btrfs cleaner."
+        },
+        "pending_deletion_error": {
+          "type": "string",
+          "description": "Why pending_deletion_roots is unknown; absent when it is known."
+        }
+      },
+      "required": [
+        "elapsed_ms",
+        "data_used_bytes",
+        "free_bytes",
+        "pending_deletion_roots"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "watch-free"
+        },
+        "volume": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "duration_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observed_duration_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "interrupted": {
+          "type": "boolean",
+          "description": "A stop request ended the observation before its duration."
+        },
+        "interval_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "samples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sample"
+          }
+        },
+        "data_used_delta_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Last minus first data_used_bytes; null with fewer than two known samples."
+        },
+        "free_delta_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Last minus first free_bytes; null with fewer than two known samples."
+        },
+        "pending_deletion_roots_delta": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Last minus first pending_deletion_roots; null with fewer than two known samples."
+        },
+        "concurrent_writers_may_affect_delta": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "command",
+        "volume",
+        "duration_seconds",
+        "observed_duration_ms",
+        "interrupted",
+        "interval_seconds",
+        "samples",
+        "data_used_delta_bytes",
+        "free_delta_bytes",
+        "pending_deletion_roots_delta",
+        "concurrent_writers_may_affect_delta"
+      ]
+    }
+  ]
+}

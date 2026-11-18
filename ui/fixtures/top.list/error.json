@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1",
+      "code": "io_error",
+      "message": "Fixture failure"
+    }
+  ],
+  "warnings": [],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 200,
+  "include_system": false,
+  "results": [],
+  "scans": []
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "file": "ext4.json",
+    "scenario": "ext4"
+  },
+  {
+    "file": "volume1.json",
+    "params": {
+      "volume": "/volume1"
+    }
+  },
+  {
+    "file": "changed-system.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "changed_system"
+  },
+  {
+    "file": "changed-share.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "changed_share"
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "no_report"
+  },
+  {
+    "file": "volume1-partial.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "partial",
+    "exit": 3
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "share_scan"
+  },
+  {
+    "file": "interaction.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "interaction"
+  },
+  {
+    "scenario": "busy",
+    "document": {
+      "completion": "busy",
+      "exit": 4
+    }
+  },
+  {
+    "scenario": "error",
+    "error": {
+      "code": "cli_error"
+    }
+  },
+  {
+    "file": "many-volumes.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "many_volumes"
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "first_scan"
+  },
+  {
+    "file": "volume1-abb-share.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "abb_share"
+  }
+]

@@ -1,0 +1,579 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/overview.schema.json",
+  "title": "synoreclaim overview result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "overview"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "filesystem": {
+                "type": "object",
+                "properties": {
+                  "uuid": {
+                    "$ref": "common.schema.json#/$defs/fsid"
+                  },
+                  "mount": {
+                    "$ref": "common.schema.json#/$defs/path"
+                  },
+                  "kind": {
+                    "$ref": "common.schema.json#/$defs/filesystem_kind"
+                  },
+                  "capabilities": {
+                    "$ref": "common.schema.json#/$defs/capabilities"
+                  }
+                },
+                "required": [
+                  "uuid",
+                  "mount",
+                  "kind",
+                  "capabilities"
+                ]
+              },
+              "space": {
+                "type": "object",
+                "properties": {
+                  "df": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "total_bytes": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "used_bytes": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "free_bytes": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "available_bytes": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    },
+                    "required": [
+                      "total_bytes",
+                      "used_bytes",
+                      "free_bytes",
+                      "available_bytes"
+                    ]
+                  },
+                  "space_info": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "enum": [
+                            "data",
+                            "metadata",
+                            "system",
+                            "unknown"
+                          ]
+                        },
+                        "profile": {
+                          "type": "string"
+                        },
+                        "copies": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "total_bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "used_bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "captured": {
+                          "const": "scan_end"
+                        },
+                        "used_bytes_at_scan_start": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "profile",
+                        "copies",
+                        "total_bytes",
+                        "used_bytes",
+                        "captured"
+                      ]
+                    }
+                  },
+                  "space_info_error": {
+                    "type": "string"
+                  },
+                  "inode_allocated_bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "unattributed_df_bytes": {
+                    "type": "integer",
+                    "description": "statvfs used minus observed inode allocations; includes metadata, journals, unlinked files and coverage gaps. Never a reclaim estimate."
+                  }
+                },
+                "required": [
+                  "df",
+                  "space_info"
+                ]
+              },
+              "parts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "pending_cleanup",
+                        "snapshot_only",
+                        "recycle_bin",
+                        "dsm_service",
+                        "system_other",
+                        "share_live",
+                        "shared_between_folders",
+                        "pinned_unreferenced",
+                        "unknown"
+                      ]
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "reclaimable_bytes": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "held_bytes": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "label": {
+                            "type": "string"
+                          },
+                          "share": {
+                            "type": "string"
+                          },
+                          "share_hex": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]+$"
+                          },
+                          "service": {
+                            "type": "string"
+                          },
+                          "managed_by": {
+                            "type": "string"
+                          },
+                          "manage_in": {
+                            "type": "string"
+                          },
+                          "manage_in_id": {
+                            "type": "string",
+                            "description": "Stable snake_case id of the DSM place (SPEC 4.6)."
+                          },
+                          "bytes": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "reclaimable_bytes": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0
+                          }
+                        },
+                        "required": [
+                          "bytes",
+                          "reclaimable_bytes"
+                        ]
+                      }
+                    },
+                    "reasons": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "enum": [
+                              "missing_owner",
+                              "incomplete_references",
+                              "direct_owner_unresolved",
+                              "shared_tree_owner_unresolved",
+                              "relocation_tree",
+                              "coverage_gap",
+                              "owner_budget_exhausted",
+                              "pinned_ranges_unknown"
+                            ]
+                          },
+                          "bytes": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "subcases": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "code": {
+                                  "enum": [
+                                    "root_not_discovered",
+                                    "readonly_root_parent_uuid_unmapped",
+                                    "writable_root_inode_unindexed",
+                                    "indexed_path_unmapped",
+                                    "indexed_owner_conflict",
+                                    "no_scanned_use",
+                                    "shared_reference",
+                                    "range_unmappable",
+                                    "read_budget_exhausted",
+                                    "leaf_unverified",
+                                    "extent_changed",
+                                    "root_unsearchable"
+                                  ]
+                                },
+                                "bytes": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                },
+                                "roots": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "root_id": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                      },
+                                      "kind": {
+                                        "enum": [
+                                          "not_discovered",
+                                          "read_only",
+                                          "writable"
+                                        ]
+                                      },
+                                      "class": {
+                                        "enum": [
+                                          "not_discovered",
+                                          "snapshot",
+                                          "active_backup",
+                                          "iscsi",
+                                          "shared_folder",
+                                          "at_directory",
+                                          "hash_directory",
+                                          "other_service",
+                                          "other"
+                                        ]
+                                      },
+                                      "at_directory": {
+                                        "type": "boolean"
+                                      },
+                                      "bytes": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                      }
+                                    },
+                                    "required": [
+                                      "root_id",
+                                      "kind",
+                                      "class",
+                                      "at_directory",
+                                      "bytes"
+                                    ]
+                                  }
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "bytes"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "bytes"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "bytes",
+                    "reclaimable_bytes",
+                    "held_bytes",
+                    "items"
+                  ]
+                }
+              },
+              "reconciliation": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "parts_sum_bytes": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "space_info_used_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "minimum": 0
+                      },
+                      "residual_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "tolerance_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "minimum": 0
+                      },
+                      "status": {
+                        "enum": [
+                          "reconciled",
+                          "not_reconciled",
+                          "unknown",
+                          "inode_allocations"
+                        ]
+                      },
+                      "coverage_gaps": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "parts_sum_bytes",
+                      "space_info_used_bytes",
+                      "residual_bytes",
+                      "tolerance_bytes",
+                      "status",
+                      "coverage_gaps"
+                    ]
+                  },
+                  "df": {
+                    "type": "object",
+                    "properties": {
+                      "used_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "minimum": 0
+                      },
+                      "metadata_system_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "minimum": 0
+                      },
+                      "data_metadata_system_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "minimum": 0
+                      },
+                      "residual_bytes": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "status": {
+                        "enum": [
+                          "display_only",
+                          "unknown"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "used_bytes",
+                      "metadata_system_bytes",
+                      "data_metadata_system_bytes",
+                      "residual_bytes",
+                      "status"
+                    ]
+                  }
+                },
+                "required": [
+                  "data",
+                  "df"
+                ]
+              },
+              "actions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "rank": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "cleanup",
+                        "recycle",
+                        "snapshot",
+                        "package",
+                        "wait"
+                      ]
+                    },
+                    "share": {
+                      "type": "string"
+                    },
+                    "share_hex": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]+$"
+                    },
+                    "service": {
+                      "type": "string"
+                    },
+                    "reclaimable_bytes": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "held_bytes": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "manage_in": {
+                      "type": "string"
+                    },
+                    "manage_in_id": {
+                      "type": "string",
+                      "description": "Stable snake_case id of the DSM place (SPEC 4.6)."
+                    },
+                    "path": {
+                      "$ref": "common.schema.json#/$defs/path"
+                    },
+                    "path_kind": {
+                      "type": "string",
+                      "description": "What path is, as top.list names entry kinds (file, dir); cleanup actions only."
+                    },
+                    "command": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "rank",
+                    "kind",
+                    "reclaimable_bytes",
+                    "held_bytes"
+                  ]
+                }
+              },
+              "attribution": {
+                "type": "object",
+                "properties": {
+                  "read_budget": {
+                    "anyOf": [
+                      {
+                        "$ref": "common.schema.json#/$defs/read_budget"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "deferred_bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "analysis": {
+                    "anyOf": [
+                      {
+                        "$ref": "common.schema.json#/$defs/attribution_measurement"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "read_budget",
+                  "deferred_bytes",
+                  "analysis"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "report",
+              "filesystem",
+              "space",
+              "parts",
+              "reconciliation",
+              "actions"
+            ]
+          }
+        },
+        "scans": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/filesystem_scan"
+          }
+        }
+      },
+      "required": [
+        "command",
+        "results",
+        "scans"
+      ]
+    }
+  ]
+}

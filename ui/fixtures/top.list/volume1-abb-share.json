@@ -1,0 +1,1151 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:35:38Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 200,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 332,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1",
+        "kind": "dir",
+        "flags": [],
+        "metrics": {
+          "logical": 2963961432703,
+          "physical": 1642303442944,
+          "shared": 508087175168,
+          "reclaimable": null,
+          "reclaimable_resolved": 1136790505472,
+          "unknown": 625762304,
+          "pinned_unreferenced": 243245056,
+          "extents": 370944,
+          "inline": 151105345,
+          "entries": 5514529,
+          "files": 4555534
+        },
+        "blockers": [
+          "snapshot",
+          "shared_tree",
+          "orphan_inode",
+          "unknown"
+        ],
+        "nlink": 1,
+        "tree": 256,
+        "objectid": 256,
+        "without_package_data": {
+          "logical": 1260502026769,
+          "physical": 38930444288,
+          "shared": 3879133184,
+          "reclaimable": null,
+          "reclaimable_resolved": 34425548800,
+          "unknown": 625762304,
+          "pinned_unreferenced": 243245056,
+          "extents": 364576,
+          "inline": 151040789,
+          "entries": 5510492,
+          "files": 4551800
+        }
+      },
+      "entries": [
+        {
+          "path": "/volume1/abb-backup",
+          "kind": "service",
+          "flags": [
+            "subvolume_root"
+          ],
+          "metrics": {
+            "logical": 1700000000000,
+            "physical": 1600000000000,
+            "shared": 503200000000,
+            "reclaimable": 1100000000000,
+            "reclaimable_resolved": 1100000000000,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 2400000,
+            "inline": 0,
+            "entries": 48000,
+            "files": 46500
+          },
+          "blockers": [
+            "snapshot",
+            "shared_tree"
+          ],
+          "nlink": 1,
+          "tree": 300,
+          "objectid": 256,
+          "service": {
+            "id": "active_backup_data",
+            "names": "@ActiveBackup",
+            "managed_by": "Active Backup for Business (backup data)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/abb-backup"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 494500000000
+            },
+            {
+              "class": "reflink",
+              "bytes": 8700000000
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share30",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 5075570685,
+            "physical": 5189390336,
+            "shared": 13787136,
+            "reclaimable": null,
+            "reclaimable_resolved": 5175353344,
+            "unknown": 249856,
+            "pinned_unreferenced": 860160,
+            "extents": 53298,
+            "inline": 3964487,
+            "entries": 87783,
+            "files": 76572
+          },
+          "blockers": [
+            "shared_tree",
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 6777,
+          "service": {
+            "id": "packages",
+            "names": "@appstore",
+            "managed_by": "installed packages",
+            "manage_in": "Package Center (the package's own settings)",
+            "manage_in_id": "package_center",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share30"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 13787136
+            },
+            {
+              "class": "unknown",
+              "bytes": 249856
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Package Center (the package's own settings)",
+            "manage_in_id": "package_center",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share34",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 96089138843,
+            "physical": 7583592448,
+            "shared": 2746343424,
+            "reclaimable": 4837249024,
+            "reclaimable_resolved": 4837249024,
+            "unknown": 0,
+            "pinned_unreferenced": 207933440,
+            "extents": 244983,
+            "inline": 145385803,
+            "entries": 5323720,
+            "files": 4388669
+          },
+          "blockers": [
+            "shared_tree"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 18928,
+          "service": {
+            "id": "container_manager",
+            "names": "@docker",
+            "managed_by": "Container Manager",
+            "manage_in": "Container Manager (remove unused folder0284 and containers)",
+            "manage_in_id": "container_manager",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share34"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 2746343424
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Container Manager (remove unused folder0284 and containers)",
+            "manage_in_id": "container_manager",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share36",
+          "kind": "service",
+          "flags": [
+            "system",
+            "subvolume_root"
+          ],
+          "metrics": {
+            "logical": 1101659112943,
+            "physical": 1073745920,
+            "shared": 0,
+            "reclaimable": 1073745920,
+            "reclaimable_resolved": 1073745920,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5,
+            "inline": 382,
+            "entries": 13,
+            "files": 6
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 513,
+          "objectid": 256,
+          "service": {
+            "id": "iscsi_luns",
+            "names": "@iSCSI",
+            "managed_by": "SAN Manager (iSCSI LUNs)",
+            "manage_in": "SAN Manager",
+            "manage_in_id": "san_manager",
+            "confirmed": true,
+            "explanation": "Thin-provisioned LUNs return deleted space to the volume only when space reclamation is enabled and the initiator sends UNMAP; thick-provisioned LUNs have their configured capacity allocated up front. VMM virtual disks are stored under @iSCSI/fixtureLUN/fixtureVDISK_*; use Virtual Machine Manager > Virtual Machine to identify their storage. VMM images are managed in Virtual Machine Manager > Image, where their selected storage is shown.",
+            "paths": [
+              {
+                "path": "/volume1/share36"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "SAN Manager",
+            "manage_in_id": "san_manager",
+            "explanation": "Thin-provisioned LUNs return deleted space to the volume only when space reclamation is enabled and the initiator sends UNMAP; thick-provisioned LUNs have their configured capacity allocated up front. VMM virtual disks are stored under @iSCSI/fixtureLUN/fixtureVDISK_*; use Virtual Machine Manager > Virtual Machine to identify their storage. VMM images are managed in Virtual Machine Manager > Image, where their selected storage is shown.",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share41",
+          "kind": "service",
+          "flags": [
+            "system",
+            "subvolume_root"
+          ],
+          "metrics": {
+            "logical": 995242314,
+            "physical": 1002573824,
+            "shared": 599638016,
+            "reclaimable": 402935808,
+            "reclaimable_resolved": 402935808,
+            "unknown": 0,
+            "pinned_unreferenced": 4096,
+            "extents": 3881,
+            "inline": 340583,
+            "entries": 5444,
+            "files": 5290
+          },
+          "blockers": [
+            "live_reflink"
+          ],
+          "nlink": 1,
+          "tree": 262,
+          "objectid": 256,
+          "service": {
+            "id": "synology_drive",
+            "names": "@synologydrive",
+            "managed_by": "Synology Drive Server",
+            "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle folder0369",
+            "manage_in_id": "drive_admin_console",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share41"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "reflink",
+              "bytes": 599638016
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle folder0369",
+            "manage_in_id": "drive_admin_console",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0125",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 483961592,
+            "physical": 396263424,
+            "shared": 0,
+            "reclaimable": 396263424,
+            "reclaimable_resolved": 396263424,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5731,
+            "inline": 36117,
+            "entries": 3064,
+            "files": 2928
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "hyper_backup",
+            "names": "*.hbk",
+            "managed_by": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share50/folder0125"
+              },
+              {
+                "path": "/volume1/share50/folder0126"
+              },
+              {
+                "path": "/volume1/share50/folder0127"
+              },
+              {
+                "path": "/volume1/share50/folder0128"
+              },
+              {
+                "path": "/volume1/share50/folder0129"
+              },
+              {
+                "path": "/volume1/share50/folder0130"
+              },
+              {
+                "path": "/volume1/share50/folder0131"
+              },
+              {
+                "path": "/volume1/share50/folder0132"
+              },
+              {
+                "path": "/volume1/share50/folder0133"
+              },
+              {
+                "path": "/volume1/share50/folder0134"
+              },
+              {
+                "path": "/volume1/share50/folder0135"
+              },
+              {
+                "path": "/volume1/share50/folder0136"
+              },
+              {
+                "path": "/volume1/share50/folder0137"
+              },
+              {
+                "path": "/volume1/share50/folder0138"
+              },
+              {
+                "path": "/volume1/share50/folder0139"
+              },
+              {
+                "path": "/volume1/share50/folder0140"
+              },
+              {
+                "path": "/volume1/share50/folder0143"
+              }
+            ],
+            "path_count": 17
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share03",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 32335543031,
+            "physical": 268013568,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 268009472,
+            "unknown": 4096,
+            "pinned_unreferenced": 3219456,
+            "extents": 17564,
+            "inline": 133112,
+            "entries": 2673,
+            "files": 1490
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "other_dsm_service_data",
+            "names": "@*",
+            "managed_by": "DSM or a package",
+            "manage_in": "the package that created it",
+            "manage_in_id": "owning_package",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share03"
+              },
+              {
+                "path": "/volume1/share04"
+              },
+              {
+                "path": "/volume1/share05"
+              },
+              {
+                "path": "/volume1/share06"
+              },
+              {
+                "path": "/volume1/share07"
+              },
+              {
+                "path": "/volume1/share08"
+              },
+              {
+                "path": "/volume1/share09"
+              },
+              {
+                "path": "/volume1/share10"
+              },
+              {
+                "path": "/volume1/share11"
+              },
+              {
+                "path": "/volume1/share12"
+              },
+              {
+                "path": "/volume1/share13"
+              },
+              {
+                "path": "/volume1/share14"
+              },
+              {
+                "path": "/volume1/share15"
+              },
+              {
+                "path": "/volume1/share16"
+              },
+              {
+                "path": "/volume1/share17"
+              },
+              {
+                "path": "/volume1/share18"
+              },
+              {
+                "path": "/volume1/share20"
+              },
+              {
+                "path": "/volume1/share21"
+              },
+              {
+                "path": "/volume1/share22"
+              },
+              {
+                "path": "/volume1/share23"
+              }
+            ],
+            "path_count": 42
+          },
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the package that created it",
+            "manage_in_id": "owning_package",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share33",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 185687905,
+            "physical": 199798784,
+            "shared": 8159232,
+            "reclaimable": null,
+            "reclaimable_resolved": 191586304,
+            "unknown": 53248,
+            "pinned_unreferenced": 13807616,
+            "extents": 7878,
+            "inline": 9415,
+            "entries": 7116,
+            "files": 7068
+          },
+          "blockers": [
+            "shared_tree",
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 260,
+          "service": {
+            "id": "databases",
+            "names": "@database",
+            "managed_by": "DSM and package databases",
+            "manage_in": "the package that owns each folder0252",
+            "manage_in_id": "owning_package",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share33"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 8159232
+            },
+            {
+              "class": "unknown",
+              "bytes": 53248
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the package that owns each folder0252",
+            "manage_in_id": "owning_package",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share39",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 167326483,
+            "physical": 167337984,
+            "shared": 0,
+            "reclaimable": 167337984,
+            "reclaimable_resolved": 167337984,
+            "unknown": 0,
+            "pinned_unreferenced": 8192,
+            "extents": 97,
+            "inline": 49,
+            "entries": 87,
+            "files": 80
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 7309734,
+          "service": {
+            "id": "surveillance_data",
+            "names": "@surveillance",
+            "managed_by": "Surveillance Station (package data)",
+            "manage_in": "Surveillance Station",
+            "manage_in_id": "surveillance_station",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share39"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Surveillance Station",
+            "manage_in_id": "surveillance_station",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share32",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 21264538,
+            "physical": 21270528,
+            "shared": 0,
+            "reclaimable": 21270528,
+            "reclaimable_resolved": 21270528,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 348,
+            "inline": 380,
+            "entries": 28,
+            "files": 20
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 283133,
+          "service": {
+            "id": "cloud_sync",
+            "names": "@cloudsync",
+            "managed_by": "Cloud Sync",
+            "manage_in": "Cloud Sync",
+            "manage_in_id": "cloud_sync",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share32"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Cloud Sync",
+            "manage_in_id": "cloud_sync",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share01",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 588525,
+            "physical": 806912,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 196608,
+            "extents": 66,
+            "inline": 41,
+            "entries": 46,
+            "files": 33
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 7328987,
+          "service": {
+            "id": "active_backup",
+            "names": "@ActiveBackup",
+            "managed_by": "Active Backup for Business (database and settings)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share01"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share38",
+          "kind": "service",
+          "flags": [
+            "system",
+            "subvolume_root"
+          ],
+          "metrics": {
+            "logical": 1839,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 1262,
+            "entries": 22,
+            "files": 11
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 505,
+          "objectid": 256,
+          "service": {
+            "id": "share_snapshots",
+            "names": "@sharesnap",
+            "managed_by": "Snapshot Replication (shared folder snapshots)",
+            "manage_in": "Snapshot Replication > Snapshots (delete snapshots or change the retention policy)",
+            "manage_in_id": "snapshot_replication",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share38"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Snapshot Replication > Snapshots (delete snapshots or change the retention policy)",
+            "manage_in_id": "snapshot_replication",
+            "command": null
+          }
+        }
+      ],
+      "hidden_system": 0,
+      "services": {
+        "lines": [
+          {
+            "service": "active_backup_data",
+            "names": "@ActiveBackup",
+            "package": "Active Backup for Business (backup data)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "path": "/volume1/abb-backup",
+            "paths": 1,
+            "metrics": {
+              "logical": 1700000000000,
+              "physical": 1600000000000,
+              "shared": 503200000000,
+              "reclaimable": 1100000000000,
+              "reclaimable_resolved": 1100000000000,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 2400000,
+              "inline": 0,
+              "entries": 48000,
+              "files": 46500
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "container_manager",
+            "names": "@docker",
+            "package": "Container Manager",
+            "manage_in": "Container Manager (remove unused folder0284 and containers)",
+            "manage_in_id": "container_manager",
+            "confirmed": true,
+            "path": "/volume1/share34",
+            "paths": 1,
+            "metrics": {
+              "logical": 96089138843,
+              "physical": 7583592448,
+              "shared": 2746343424,
+              "reclaimable": 4837249024,
+              "reclaimable_resolved": 4837249024,
+              "unknown": 0,
+              "pinned_unreferenced": 207933440,
+              "extents": 244983,
+              "inline": 145385803,
+              "entries": 5323720,
+              "files": 4388669
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "packages",
+            "names": "@appstore",
+            "package": "installed packages",
+            "manage_in": "Package Center (the package's own settings)",
+            "manage_in_id": "package_center",
+            "confirmed": true,
+            "path": "/volume1/share30",
+            "paths": 1,
+            "metrics": {
+              "logical": 5075570685,
+              "physical": 5189390336,
+              "shared": 13787136,
+              "reclaimable": null,
+              "reclaimable_resolved": 5175353344,
+              "unknown": 249856,
+              "pinned_unreferenced": 860160,
+              "extents": 53298,
+              "inline": 3964487,
+              "entries": 87783,
+              "files": 76572
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "iscsi_luns",
+            "names": "@iSCSI",
+            "package": "SAN Manager (iSCSI LUNs)",
+            "manage_in": "SAN Manager",
+            "manage_in_id": "san_manager",
+            "explanation": "Thin-provisioned LUNs return deleted space to the volume only when space reclamation is enabled and the initiator sends UNMAP; thick-provisioned LUNs have their configured capacity allocated up front. VMM virtual disks are stored under @iSCSI/fixtureLUN/fixtureVDISK_*; use Virtual Machine Manager > Virtual Machine to identify their storage. VMM images are managed in Virtual Machine Manager > Image, where their selected storage is shown.",
+            "confirmed": true,
+            "path": "/volume1/share36",
+            "paths": 1,
+            "metrics": {
+              "logical": 1101659112943,
+              "physical": 1073745920,
+              "shared": 0,
+              "reclaimable": 1073745920,
+              "reclaimable_resolved": 1073745920,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 5,
+              "inline": 382,
+              "entries": 13,
+              "files": 6
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "synology_drive",
+            "names": "@synologydrive",
+            "package": "Synology Drive Server",
+            "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle folder0369",
+            "manage_in_id": "drive_admin_console",
+            "confirmed": true,
+            "path": "/volume1/share41",
+            "paths": 1,
+            "metrics": {
+              "logical": 995242314,
+              "physical": 1002573824,
+              "shared": 599638016,
+              "reclaimable": 402935808,
+              "reclaimable_resolved": 402935808,
+              "unknown": 0,
+              "pinned_unreferenced": 4096,
+              "extents": 3881,
+              "inline": 340583,
+              "entries": 5444,
+              "files": 5290
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "hyper_backup",
+            "names": "*.hbk",
+            "package": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": 17,
+            "metrics": {
+              "logical": 483961592,
+              "physical": 396263424,
+              "shared": 0,
+              "reclaimable": 396263424,
+              "reclaimable_resolved": 396263424,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 5731,
+              "inline": 36117,
+              "entries": 3064,
+              "files": 2928
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "other_dsm_service_data",
+            "names": "@*",
+            "package": "DSM or a package",
+            "manage_in": "the package that created it",
+            "manage_in_id": "owning_package",
+            "confirmed": false,
+            "paths": 42,
+            "metrics": {
+              "logical": 32335543031,
+              "physical": 268013568,
+              "shared": 0,
+              "reclaimable": null,
+              "reclaimable_resolved": 268009472,
+              "unknown": 4096,
+              "pinned_unreferenced": 3219456,
+              "extents": 17564,
+              "inline": 133112,
+              "entries": 2673,
+              "files": 1490
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "databases",
+            "names": "@database",
+            "package": "DSM and package databases",
+            "manage_in": "the package that owns each folder0252",
+            "manage_in_id": "owning_package",
+            "confirmed": false,
+            "path": "/volume1/share33",
+            "paths": 1,
+            "metrics": {
+              "logical": 185687905,
+              "physical": 199798784,
+              "shared": 8159232,
+              "reclaimable": null,
+              "reclaimable_resolved": 191586304,
+              "unknown": 53248,
+              "pinned_unreferenced": 13807616,
+              "extents": 7878,
+              "inline": 9415,
+              "entries": 7116,
+              "files": 7068
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "surveillance_data",
+            "names": "@surveillance",
+            "package": "Surveillance Station (package data)",
+            "manage_in": "Surveillance Station",
+            "manage_in_id": "surveillance_station",
+            "confirmed": true,
+            "path": "/volume1/share39",
+            "paths": 1,
+            "metrics": {
+              "logical": 167326483,
+              "physical": 167337984,
+              "shared": 0,
+              "reclaimable": 167337984,
+              "reclaimable_resolved": 167337984,
+              "unknown": 0,
+              "pinned_unreferenced": 8192,
+              "extents": 97,
+              "inline": 49,
+              "entries": 87,
+              "files": 80
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "cloud_sync",
+            "names": "@cloudsync",
+            "package": "Cloud Sync",
+            "manage_in": "Cloud Sync",
+            "manage_in_id": "cloud_sync",
+            "confirmed": true,
+            "path": "/volume1/share32",
+            "paths": 1,
+            "metrics": {
+              "logical": 21264538,
+              "physical": 21270528,
+              "shared": 0,
+              "reclaimable": 21270528,
+              "reclaimable_resolved": 21270528,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 348,
+              "inline": 380,
+              "entries": 28,
+              "files": 20
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "active_backup",
+            "names": "@ActiveBackup",
+            "package": "Active Backup for Business (database and settings)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "path": "/volume1/share01",
+            "paths": 1,
+            "metrics": {
+              "logical": 588525,
+              "physical": 806912,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 196608,
+              "extents": 66,
+              "inline": 41,
+              "entries": 46,
+              "files": 33
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "share_snapshots",
+            "names": "@sharesnap",
+            "package": "Snapshot Replication (shared folder snapshots)",
+            "manage_in": "Snapshot Replication > Snapshots (delete snapshots or change the retention policy)",
+            "manage_in_id": "snapshot_replication",
+            "confirmed": true,
+            "path": "/volume1/share38",
+            "paths": 1,
+            "metrics": {
+              "logical": 1839,
+              "physical": 4096,
+              "shared": 0,
+              "reclaimable": 4096,
+              "reclaimable_resolved": 4096,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 1262,
+              "entries": 22,
+              "files": 11
+            },
+            "snapshots_not_read": 5
+          },
+          {
+            "service": "snapshot_replication",
+            "names": "@SnapshotReplication",
+            "package": "Snapshot Replication (package data)",
+            "manage_in": "Snapshot Replication > Snapshots (delete snapshots or change the retention policy)",
+            "manage_in_id": "snapshot_replication",
+            "confirmed": true,
+            "path": "/volume1/share19",
+            "paths": 1,
+            "metrics": {
+              "logical": 0,
+              "physical": 0,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 0,
+              "inline": 0,
+              "entries": 2,
+              "files": 0
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 1
+      }
+    }
+  ],
+  "scans": []
+}

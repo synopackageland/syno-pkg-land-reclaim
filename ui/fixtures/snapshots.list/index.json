@@ -1,0 +1,127 @@
+[
+  {
+    "file": "volume1-sim-1.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      },
+      "simulate": "id:542"
+    }
+  },
+  {
+    "file": "volume1-sim-2.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      },
+      "simulate": "id:542,id:509"
+    }
+  },
+  {
+    "file": "volume1-real.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      }
+    }
+  },
+  {
+    "file": "volume1-changed-system.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      }
+    },
+    "scenario": "changed_system"
+  },
+  {
+    "file": "volume1-changed-share.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      }
+    },
+    "scenario": "changed_share"
+  },
+  {
+    "file": "volume1-many-simulated.json",
+    "params": {
+      "simulate": "id:2566,id:2569"
+    },
+    "scenario": "many_snapshots"
+  },
+  {
+    "file": "volume1-many-simulated-exact.json",
+    "params": {
+      "simulate": "id:2561"
+    },
+    "scenario": "many_snapshots"
+  },
+  {
+    "file": "share.json"
+  },
+  {
+    "file": "volume1-many.json",
+    "scenario": "many_snapshots"
+  },
+  {
+    "file": "no-snapshots.json",
+    "scenario": "no_snapshots"
+  },
+  {
+    "file": "no-snapshots.json",
+    "scenario": "no_report"
+  },
+  {
+    "scenario": "error",
+    "error": {
+      "code": "cli_error"
+    }
+  },
+  {
+    "file": "no-snapshots.json",
+    "scenario": "share_scan"
+  },
+  {
+    "file": "interaction.json",
+    "scenario": "interaction"
+  },
+  {
+    "file": "no-snapshots.json",
+    "scenario": "first_scan"
+  },
+  {
+    "file": "no-snapshots.json",
+    "scenario": "abb_share"
+  },
+  {
+    "file": "volume1-unknown-owners-sim.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      },
+      "simulate": "id:2246"
+    },
+    "scenario": "snapshot_unknown"
+  },
+  {
+    "file": "volume1-unknown-owners.json",
+    "params": {
+      "target": {
+        "path": "/volume1"
+      }
+    },
+    "scenario": "snapshot_unknown"
+  },
+  {
+    "file": "volume1-targets-simulated.json",
+    "params": {
+      "simulate": "id:3101,id:3102,id:3103"
+    },
+    "scenario": "snapshot_targets"
+  },
+  {
+    "file": "volume1-targets.json",
+    "scenario": "snapshot_targets"
+  }
+]

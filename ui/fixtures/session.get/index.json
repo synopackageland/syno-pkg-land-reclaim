@@ -1,0 +1,18 @@
+[
+  {
+    "file": "admin.json",
+    "params": {}
+  },
+  {
+    "scenario": "not_admin",
+    "error": {
+      "code": "admin_required"
+    }
+  },
+  {
+    "scenario": "error",
+    "error": {
+      "code": "ROOT_FAILED"
+    }
+  }
+]

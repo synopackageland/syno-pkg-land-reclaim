@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "Informe",
+  "report.choice.newest": "Análisis más reciente",
+  "report.choice.newestEach": "Análisis más reciente de cada carpeta",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "Volumen completo",
+  "report.scope.share": "Carpeta compartida {name}",
+  "report.scope.paths": {
+    "one": "{count} carpeta",
+    "other": "{count} carpetas"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "Volumen completo + {count} carpeta compartida más reciente",
+    "other": "Volumen completo + {count} carpetas compartidas más recientes"
+  },
+  "report.row.shareScan": "Análisis de la carpeta compartida {time}"
+}

@@ -1,0 +1,10 @@
+{
+  "systemScan.title": "系统分区扫描",
+  "systemScan.status": "状态",
+  "systemScan.phase": "阶段",
+  "systemScan.waiting": "等待开始",
+  "systemScan.reading": "读取系统文件并检查使用量",
+  "systemScan.countsUnavailable": "此扫描不提供已读取条目数",
+  "systemScan.viewResult": "查看结果",
+  "systemScan.cancelBody": "停止检查系统分区？先前的结果会保留"
+}

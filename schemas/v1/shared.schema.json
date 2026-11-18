@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/shared.schema.json",
+  "title": "synoreclaim shared result v1",
+  "description": "Entries below each target whose footprint is proven shared (SPEC 5.8). Shared data is not waste.",
+  "type": "object",
+  "$defs": {
+    "shared_entry": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/entry"
+        },
+        {
+          "properties": {
+            "sharing": {
+              "enum": [
+                "none",
+                "snapshot",
+                "live",
+                "hard_link",
+                "mixed",
+                "unknown"
+              ],
+              "description": "What shares the footprint: snapshot (read-only snapshots, snapshot-shared tree blocks, subvolumes awaiting deletion), live (other live files or subvolumes), hard_link, mixed (several), unknown (unresolved only)."
+            },
+            "shared_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "description": "metrics.shared / metrics.physical; 0 without a footprint."
+            }
+          },
+          "required": [
+            "sharing",
+            "shared_ratio"
+          ]
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "shared"
+        },
+        "ranked_by": {
+          "enum": [
+            "shared",
+            "ratio",
+            "logical"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "all",
+            "files",
+            "dirs"
+          ]
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "include_system": {
+          "type": "boolean"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "target": {
+                "$ref": "#/$defs/shared_entry"
+              },
+              "entries": {
+                "type": "array",
+                "description": "Only entries with shared bytes, best first.",
+                "items": {
+                  "$ref": "#/$defs/shared_entry"
+                }
+              },
+              "hidden_system": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "report",
+              "target",
+              "entries",
+              "hidden_system"
+            ]
+          }
+        },
+        "scans": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/filesystem_scan"
+          }
+        }
+      },
+      "required": [
+        "command",
+        "ranked_by",
+        "kind",
+        "limit",
+        "include_system",
+        "results",
+        "scans"
+      ]
+    }
+  ]
+}

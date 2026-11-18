@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "Prüfen und bereinigen",
+  "rootfs.card.cleanNow": "Jetzt bereinigen",
+  "rootfs.card.free": "Frei",
+  "rootfs.level.full": "Voll",
+  "rootfs.level.full.body": "DSM-Updates können fehlschlagen, und DSM kann Einstellungen oder Protokolle möglicherweise nicht speichern. Jetzt bereinigen",
+  "rootfs.level.getting_full": "Wird voll",
+  "rootfs.level.getting_full.body": "Bereinigen Sie vor dem nächsten DSM-Update",
+  "rootfs.name": "Systempartition"
+}

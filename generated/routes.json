@@ -1,0 +1,342 @@
+{
+  "app.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "authorization.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "cache.clear": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "cache.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "cleanup.apply": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "cleanup.plan": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "cleanup.select": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.authorization.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.cache.clear": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "ctl.cache.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.cleanup.apply": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "ctl.cleanup.plan": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.doctor.run": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.history.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.inspect.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.job.cancel": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.job.mode": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.job.pause": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.job.result": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.job.resume": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.job.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.jobs.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.overview.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.recycle.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.rootfs.apply": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "ctl.rootfs.history": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.rootfs.plan": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.rootfs.report": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.session.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.setup.cleanup": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "ctl.simulate.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.snapshots.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.support_bundle.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.top.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.volumes.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.watch_free.sample": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "ctl.why_not_freed.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "doctor.run": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "duplicates.analyze": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "duplicates.copies": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "duplicates.keep": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "duplicates.preferred_shares": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "duplicates.scope": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "executor.control": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "executor.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "history.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "inspect.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "job.cancel": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "job.mode": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "job.pause": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "job.result": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "job.resume": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "jobs.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "overview.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "portal.register": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "portal.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "portal.unregister": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "preview.cache_clear": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.cleanup_apply": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.cleanup_plan": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.job_cancel": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.job_mode": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.job_pause": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.job_resume": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.rootfs_apply": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.rootfs_plan": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.scans_start": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "preview.setup_cleanup": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "recycle.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "rootfs.apply": {
+    "permission": "administrators",
+    "effect": "destructive"
+  },
+  "rootfs.history": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "rootfs.plan": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "rootfs.report": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "scan.start": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "scans.start": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "scans.status": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "session.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "setup.cleanup": {
+    "permission": "administrators",
+    "effect": "write"
+  },
+  "simulate.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "snapshots.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "support_bundle.get": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "top.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "volumes.list": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "watch_free.sample": {
+    "permission": "administrators",
+    "effect": "read"
+  },
+  "why_not_freed.get": {
+    "permission": "administrators",
+    "effect": "read"
+  }
+}

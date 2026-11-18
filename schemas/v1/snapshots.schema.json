@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/snapshots.schema.json",
+  "title": "synoreclaim snapshots result v1",
+  "description": "Which snapshot holds the space and what deleting a set of snapshots frees (SPEC 5.14), from a scan with --snapshots. Nothing is deleted.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "snapshots"
+        },
+        "results": {
+          "type": "array",
+          "description": "One result per target.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "path_hex": {
+                "type": "string",
+                "pattern": "^[0-9a-f]+$"
+              },
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "shares": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "share": {
+                      "$ref": "common.schema.json#/$defs/path",
+                      "description": "The live subvolume's name."
+                    },
+                    "live_subvolume_id": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "held_only_by_snapshots_bytes": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Bytes whose references are all snapshots of this share."
+                    },
+                    "unknown_bytes": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Bytes snapshots of this share may hold alone that could not be proven."
+                    },
+                    "snapshots_not_materialized": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Snapshots not read (older than the --snapshots count)."
+                    },
+                    "snapshots": {
+                      "type": "array",
+                      "description": "Newest first.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "subvolume_id": {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          "name": {
+                            "$ref": "common.schema.json#/$defs/path",
+                            "description": "The snapshot's name in its parent directory."
+                          },
+                          "otime": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "Creation time (ROOT_ITEM otime), RFC 3339 UTC."
+                          },
+                          "read_only": {
+                            "type": "boolean"
+                          },
+                          "pending_deletion": {
+                            "type": "boolean"
+                          },
+                          "materialized": {
+                            "type": "boolean",
+                            "description": "Its file extents were read; the byte values are null otherwise."
+                          },
+                          "exclusive_bytes": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0,
+                            "description": "Bytes only this snapshot references: what deleting it alone frees."
+                          },
+                          "pinned_unreferenced_bytes": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0,
+                            "description": "Bytes allocated in extents freed by this snapshot that no file range references; null when ownership or range mapping is unknown."
+                          },
+                          "shared_with_live_bytes": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0,
+                            "description": "Bytes this snapshot and the live share both reference; deleting snapshots never frees them."
+                          },
+                          "unknown_bytes": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0,
+                            "description": "Bytes only this snapshot references among the roots read, whose other owners could not be ruled out."
+                          },
+                          "qgroup_exclusive_bytes": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0,
+                            "description": "The kernel's level-0 qgroup excl; null unless quotas are on, consistent and not rescanning."
+                          }
+                        },
+                        "required": [
+                          "subvolume_id",
+                          "name",
+                          "otime",
+                          "read_only",
+                          "pending_deletion",
+                          "materialized",
+                          "exclusive_bytes",
+                          "pinned_unreferenced_bytes",
+                          "shared_with_live_bytes",
+                          "unknown_bytes",
+                          "qgroup_exclusive_bytes"
+                        ]
+                      }
+                    },
+                    "pending_deletion_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "description": "Deleted snapshots awaiting the Btrfs cleaner."
+                    },
+                    "held_files": {
+                      "description": "The largest files whose extents only this share's snapshots reference; null for a report written before the list existed.",
+                      "$ref": "common.schema.json#/$defs/held_files"
+                    },
+                    "simulation": {
+                      "$ref": "common.schema.json#/$defs/snapshot_simulation"
+                    },
+                    "manage_in": {
+                      "type": "string",
+                      "description": "Where DSM deletes the snapshots."
+                    },
+                    "manage_in_id": {
+                      "type": "string",
+                      "description": "Stable snake_case id of that DSM place (SPEC 4.6)."
+                    }
+                  },
+                  "required": [
+                    "share",
+                    "live_subvolume_id",
+                    "held_only_by_snapshots_bytes",
+                    "unknown_bytes",
+                    "snapshots_not_materialized",
+                    "snapshots",
+                    "pending_deletion_ids",
+                    "held_files",
+                    "manage_in",
+                    "manage_in_id"
+                  ]
+                }
+              },
+              "snapshot_analysis": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "started",
+                  "finished",
+                  "elapsed_ms",
+                  "peak_rss_bytes"
+                ],
+                "properties": {
+                  "started": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "finished": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "elapsed_ms": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "peak_rss_bytes": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "changed_live_subvolumes": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "path",
+              "report",
+              "shares"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "results"
+      ]
+    }
+  ]
+}

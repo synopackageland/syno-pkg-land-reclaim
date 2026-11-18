@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "fixture-job0003",
+      "kind": "scan",
+      "state": "partial",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/fixture"
+        },
+        {
+          "path": "/volume1/share04"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-000000000007",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:26Z",
+      "updated": "2026-09-29T02:29:26Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "partial",
+        "exit_code": 3,
+        "reports": [
+          {
+            "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+          }
+        ],
+        "error_codes": [
+          "not_btrfs"
+        ],
+        "document": {
+          "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+        }
+      },
+      "requested_by": null
+    },
+    {
+      "job_id": "fixture-job0002",
+      "kind": "scan",
+      "state": "completed",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/volume1"
+        }
+      ],
+      "scope": "volume",
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-000000000007",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:25Z",
+      "updated": "2026-09-29T02:29:26Z",
+      "resumes": 0,
+      "units": 3,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "complete",
+        "exit_code": 0,
+        "reports": [
+          {
+            "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+        }
+      },
+      "requested_by": null
+    },
+    {
+      "job_id": "fixture-job0001",
+      "kind": "scan",
+      "state": "completed",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/volume1/share04"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-000000000007",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:25Z",
+      "updated": "2026-09-29T02:29:25Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "complete",
+        "exit_code": 0,
+        "reports": [
+          {
+            "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+        }
+      },
+      "requested_by": null
+    }
+  ]
+}

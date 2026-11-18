@@ -1,0 +1,9 @@
+{
+  "usageChange.close": "關閉",
+  "usageChange.decrease": "使用量較上次掃描減少 {size}，結果可能已變動",
+  "usageChange.increase": "使用量較上次掃描增加 {size}，結果可能已變動",
+  "usageChange.noBaseline": "下次完整掃描後，Syno Reclaim 才能提醒你空間用量的變化",
+  "usageChange.rescan": "重新掃描",
+  "usageChange.snooze": "稍後提醒",
+  "usageChange.volume": "{volume}：{message}"
+}

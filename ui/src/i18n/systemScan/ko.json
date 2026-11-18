@@ -1,0 +1,10 @@
+{
+  "systemScan.title": "시스템 파티션 스캔",
+  "systemScan.status": "상태",
+  "systemScan.phase": "단계",
+  "systemScan.waiting": "시작 대기 중",
+  "systemScan.reading": "시스템 파일 읽기 및 사용량 확인",
+  "systemScan.countsUnavailable": "이 스캔에서는 읽은 항목 수를 제공하지 않음",
+  "systemScan.viewResult": "결과 보기",
+  "systemScan.cancelBody": "시스템 파티션 확인을 중지할까요? 이전 결과는 유지됨"
+}

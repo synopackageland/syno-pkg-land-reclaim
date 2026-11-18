@@ -1,0 +1,4 @@
+github.com/synopackageland/syno-pkg-land-sdk v0.53.37 h1:hVxG84bo6rGAlDImsGthBJ4wOiXNzMyA9dy7XFG1ub0=
+github.com/synopackageland/syno-pkg-land-sdk v0.53.37/go.mod h1:mmtgnyafLwci1588LJFpRIsWflHwjaHJoDm7grXFh8A=
+golang.org/x/sys v0.44.0 h1:ildZl3J4uzeKP07r2F++Op7E9B29JRUy+a27EibtBTQ=
+golang.org/x/sys v0.44.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=

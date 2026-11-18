@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/inspect.schema.json",
+  "title": "synoreclaim inspect result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "inspect"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "entry": {
+                "$ref": "common.schema.json#/$defs/entry"
+              },
+              "explain": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/notice"
+                }
+              }
+            },
+            "required": [
+              "report",
+              "entry"
+            ]
+          }
+        },
+        "scans": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/filesystem_scan"
+          }
+        }
+      },
+      "required": [
+        "command",
+        "results",
+        "scans"
+      ]
+    }
+  ]
+}

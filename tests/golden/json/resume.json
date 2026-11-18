@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "command": "resume",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:47:07Z",
+  "completion": "failed",
+  "job_id": "20260929T114707Z-2cf1a0",
+  "errors": [],
+  "warnings": [],
+  "outcome": "finished",
+  "message": "job 20260929T114707Z-2cf1a0 has finished",
+  "state": "cancelled"
+}

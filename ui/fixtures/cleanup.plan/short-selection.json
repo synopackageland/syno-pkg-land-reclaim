@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-plan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:03:02Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "plan_id": "cleanup-fixture-plan0001",
+  "plan_file": {
+    "path": "/fixture/state/cleanup/plans/cleanup-fixture-plan0001.json"
+  },
+  "expires_at": "2026-10-01T01:00:00Z",
+  "items": 6,
+  "deletes": 0,
+  "paths": [
+    {
+      "path": "/volume1/share73/folder0373/folder0374"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0589.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0590.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0591.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0592.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/folder0375"
+    }
+  ],
+  "size": {
+    "entries": 12,
+    "files": 6,
+    "allocated_bytes": 24576
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "share73"
+      },
+      "path": {
+        "path": "/volume1/share73"
+      },
+      "recycle_bin": {
+        "enabled": true,
+        "admin_only": false
+      },
+      "item_count": 6,
+      "drive_items": 0,
+      "items": [
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/folder0374"
+          },
+          "kind": "directory",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 4096,
+          "drive": false
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0589.bin"
+          },
+          "kind": "file",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 4096,
+          "drive": false
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0590.bin"
+          },
+          "kind": "file",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 4096,
+          "drive": false
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0591.bin"
+          },
+          "kind": "file",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 4096,
+          "drive": false
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0592.bin"
+          },
+          "kind": "file",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 4096,
+          "drive": false
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/folder0375"
+          },
+          "kind": "directory",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 4096,
+          "drive": false
+        }
+      ],
+      "entries": 12,
+      "files": 6,
+      "allocated_bytes": 24576
+    }
+  ]
+}

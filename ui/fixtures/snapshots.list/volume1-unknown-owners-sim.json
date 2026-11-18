@@ -1,0 +1,335 @@
+{
+  "command": "snapshots",
+  "completion": "partial",
+  "errors": [],
+  "exit": 3,
+  "generated_at": "2026-10-20T12:35:22Z",
+  "job_id": null,
+  "results": [
+    {
+      "path": "/volume1",
+      "report": {
+        "age_seconds": 1884,
+        "attribution": {
+          "coverage_gaps": true,
+          "unknown_bytes": 47220191232,
+          "used_bytes": 1800501501952
+        },
+        "capabilities": {
+          "cleanup": true,
+          "cleanup_unavailable_reason": null,
+          "reflinks": true,
+          "scan": true,
+          "snapshots": true
+        },
+        "change_reasons": [
+          {
+            "generation_after": 5635867,
+            "generation_before": 5635589,
+            "kind": "subvolume-generation-changed",
+            "selected": true,
+            "subvolume_id": 257
+          }
+        ],
+        "cleanup_since_report": null,
+        "consistency": "partial",
+        "coverage": {
+          "cycles": 0,
+          "dangling_entries": 0,
+          "encrypted_directories": 2,
+          "missing_subvolume_roots": 0,
+          "namespace_uncertain_subvolumes": [
+            1799,
+            2509
+          ],
+          "reference_accounting": "partial",
+          "snapshots_materialized": 17,
+          "snapshots_not_materialized": 17,
+          "unlinked_subvolume_entries": 0,
+          "unreadable_roots": 0,
+          "unresolved_extents": 159114,
+          "unsupported_locations": 0
+        },
+        "filesystem": "btrfs",
+        "fsid": "34dfa538-8007-4c61-9a74-bd8fd9276a24",
+        "job_id": "j-20261020-0061",
+        "path": "/volume1/@synopkgland/SynoReclaim/reports/34dfa538-8007-4c61-9a74-bd8fd9276a24/77ef978e69b0c248.srrep",
+        "scan_finished": "2026-10-20T12:03:58Z",
+        "scan_started": "2026-10-20T11:57:49Z",
+        "stale": false
+      },
+      "shares": [
+        {
+          "held_files": {
+            "complete": true,
+            "count": 0,
+            "files": []
+          },
+          "held_only_by_snapshots_bytes": 0,
+          "live_subvolume_id": 2515,
+          "manage_in": "Snapshot Replication > Snapshots",
+          "manage_in_id": "snapshot_replication",
+          "pending_deletion_ids": [],
+          "share": {
+            "path": "Media"
+          },
+          "simulation": {
+            "exact": true,
+            "exact_command": null,
+            "freed_bytes": 0,
+            "inexact_reasons": [],
+            "not_materialized_ids": [],
+            "selected_ids": [],
+            "selector": "id:2246",
+            "unknown_bytes": 0,
+            "upper_bound_bytes": 0
+          },
+          "snapshots": [
+            {
+              "exclusive_bytes": 0,
+              "materialized": true,
+              "name": {
+                "path": "GMT+08-2025.12.16-11.17.27"
+              },
+              "otime": "2025-12-16T03:17:29Z",
+              "pending_deletion": false,
+              "pinned_unreferenced_bytes": 0,
+              "qgroup_exclusive_bytes": null,
+              "read_only": true,
+              "shared_with_live_bytes": 0,
+              "subvolume_id": 2517,
+              "unknown_bytes": 0
+            }
+          ],
+          "snapshots_not_materialized": 0,
+          "unknown_bytes": 0
+        },
+        {
+          "held_files": {
+            "complete": true,
+            "count": 42,
+            "files": [
+              {
+                "bytes": 0,
+                "in_live": false,
+                "ino": 2654,
+                "live_path": {
+                  "path": "/volume1/@syno/Projects/@data/pool/0.bin"
+                },
+                "path": {
+                  "path": "@data/pool/0.bin"
+                },
+                "snapshot": {
+                  "path": "GMT+08-2024.06.20-16.46.01"
+                },
+                "snapshot_id": 1888,
+                "unknown_bytes": 4673536
+              },
+              {
+                "bytes": 0,
+                "in_live": false,
+                "ino": 625,
+                "live_path": {
+                  "path": "/volume1/@syno/Projects/@data/pool/1.bin"
+                },
+                "path": {
+                  "path": "@data/pool/1.bin"
+                },
+                "snapshot": {
+                  "path": "GMT+08-2024.06.20-16.46.01"
+                },
+                "snapshot_id": 1888,
+                "unknown_bytes": 143360
+              },
+              {
+                "bytes": 0,
+                "in_live": false,
+                "ino": 668,
+                "live_path": {
+                  "path": "/volume1/@syno/Projects/@data/pool/2.bin"
+                },
+                "path": {
+                  "path": "@data/pool/2.bin"
+                },
+                "snapshot": {
+                  "path": "GMT+08-2024.06.20-16.46.01"
+                },
+                "snapshot_id": 1888,
+                "unknown_bytes": 77824
+              }
+            ]
+          },
+          "held_only_by_snapshots_bytes": 0,
+          "live_subvolume_id": 1801,
+          "manage_in": "Snapshot Replication > Snapshots",
+          "manage_in_id": "snapshot_replication",
+          "pending_deletion_ids": [],
+          "share": {
+            "path": "Projects"
+          },
+          "simulation": {
+            "exact": true,
+            "exact_command": null,
+            "freed_bytes": 0,
+            "inexact_reasons": [],
+            "not_materialized_ids": [],
+            "selected_ids": [],
+            "selector": "id:2246",
+            "unknown_bytes": 0,
+            "upper_bound_bytes": 0
+          },
+          "snapshots": [
+            {
+              "exclusive_bytes": 0,
+              "materialized": true,
+              "name": {
+                "path": "GMT+08-2026.07.24-15.14.31"
+              },
+              "otime": "2026-07-24T07:14:33Z",
+              "pending_deletion": false,
+              "pinned_unreferenced_bytes": null,
+              "qgroup_exclusive_bytes": null,
+              "read_only": true,
+              "shared_with_live_bytes": 11171033088,
+              "subvolume_id": 2562,
+              "unknown_bytes": 131072
+            },
+            {
+              "exclusive_bytes": 0,
+              "materialized": true,
+              "name": {
+                "path": "GMT+08-2025.08.14-15.51.43"
+              },
+              "otime": "2025-08-14T07:51:46Z",
+              "pending_deletion": false,
+              "pinned_unreferenced_bytes": null,
+              "qgroup_exclusive_bytes": null,
+              "read_only": true,
+              "shared_with_live_bytes": 11170934784,
+              "subvolume_id": 2337,
+              "unknown_bytes": 208896
+            },
+            {
+              "exclusive_bytes": 0,
+              "materialized": true,
+              "name": {
+                "path": "GMT+08-2024.06.20-16.46.01"
+              },
+              "otime": "2024-06-20T08:46:03Z",
+              "pending_deletion": false,
+              "pinned_unreferenced_bytes": null,
+              "qgroup_exclusive_bytes": null,
+              "read_only": true,
+              "shared_with_live_bytes": 11165597696,
+              "subvolume_id": 1888,
+              "unknown_bytes": 5615616
+            }
+          ],
+          "snapshots_not_materialized": 0,
+          "unknown_bytes": 5967872
+        },
+        {
+          "held_files": {
+            "complete": true,
+            "count": 2507,
+            "files": [
+              {
+                "bytes": 0,
+                "in_live": false,
+                "ino": 2382,
+                "live_path": {
+                  "path": "/volume1/@syno/Backup/@data/pool/0.bin"
+                },
+                "path": {
+                  "path": "@data/pool/0.bin"
+                },
+                "snapshot": {
+                  "path": "GMT+08-2025.07.17-10.02.23"
+                },
+                "snapshot_id": 2246,
+                "unknown_bytes": 236486656
+              },
+              {
+                "bytes": 0,
+                "in_live": false,
+                "ino": 292,
+                "live_path": {
+                  "path": "/volume1/@syno/Backup/@data/pool/1.bin"
+                },
+                "path": {
+                  "path": "@data/pool/1.bin"
+                },
+                "snapshot": {
+                  "path": "GMT+08-2025.07.17-10.02.23"
+                },
+                "snapshot_id": 2246,
+                "unknown_bytes": 195252224
+              },
+              {
+                "bytes": 0,
+                "in_live": false,
+                "ino": 1475,
+                "live_path": {
+                  "path": "/volume1/@syno/Backup/@data/pool/2.bin"
+                },
+                "path": {
+                  "path": "@data/pool/2.bin"
+                },
+                "snapshot": {
+                  "path": "GMT+08-2025.07.17-10.02.23"
+                },
+                "snapshot_id": 2246,
+                "unknown_bytes": 121118720
+              }
+            ]
+          },
+          "held_only_by_snapshots_bytes": 0,
+          "live_subvolume_id": 2152,
+          "manage_in": "Snapshot Replication > Snapshots",
+          "manage_in_id": "snapshot_replication",
+          "pending_deletion_ids": [],
+          "share": {
+            "path": "Backup"
+          },
+          "simulation": {
+            "exact": false,
+            "exact_command": null,
+            "freed_bytes": 0,
+            "inexact_reasons": [
+              "unknown_owners"
+            ],
+            "not_materialized_ids": [],
+            "selected_ids": [
+              2246
+            ],
+            "selector": "id:2246",
+            "unknown_bytes": 49841528832,
+            "upper_bound_bytes": 49841528832
+          },
+          "snapshots": [
+            {
+              "exclusive_bytes": 0,
+              "materialized": true,
+              "name": {
+                "path": "GMT+08-2025.07.17-10.02.23"
+              },
+              "otime": "2025-07-17T02:02:26Z",
+              "pending_deletion": false,
+              "pinned_unreferenced_bytes": null,
+              "qgroup_exclusive_bytes": null,
+              "read_only": true,
+              "shared_with_live_bytes": 986624000,
+              "subvolume_id": 2246,
+              "unknown_bytes": 49841528832
+            }
+          ],
+          "snapshots_not_materialized": 0,
+          "unknown_bytes": 49841528832
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "tool_version": "0.1.1",
+  "warnings": []
+}

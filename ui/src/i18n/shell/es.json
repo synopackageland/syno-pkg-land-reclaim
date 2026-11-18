@@ -1,0 +1,7 @@
+{
+  "shell.navigation": "Navegación",
+  "shell.newScan": "Nuevo escaneo",
+  "shell.scenario": "Escenario de prueba",
+  "shell.purpose": "Necesita privilegios del sistema para medir el espacio que usa cada carpeta compartida, instantánea y paquete, y para mover solo lo que usted confirme a la papelera de su carpeta compartida, o eliminarlo para siempre si esa papelera está desactivada o no está en ninguna carpeta compartida",
+  "shell.status": "Estado"
+}

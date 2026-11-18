@@ -1,0 +1,6 @@
+{
+  "approvalWait.title": "Toujours en attente de DSM",
+  "approvalWait.queued": "La tâche d'autorisation attend que DSM la démarre. Sur un NAS chargé, cela peut prendre plusieurs minutes ; laissez cette fenêtre ouverte",
+  "approvalWait.running": "La tâche d'autorisation est en cours. Sur un NAS chargé, cela peut prendre plusieurs minutes ; laissez cette fenêtre ouverte",
+  "approvalWait.elapsed": "Attente : {duration}"
+}

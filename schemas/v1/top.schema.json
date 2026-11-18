@@ -1,0 +1,339 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/top.schema.json",
+  "title": "synoreclaim top result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "top"
+        },
+        "requested_by": {
+          "enum": [
+            "logical",
+            "physical",
+            "shared",
+            "reclaimable",
+            "held"
+          ]
+        },
+        "ranked_by": {
+          "enum": [
+            "logical",
+            "physical",
+            "shared",
+            "reclaimable",
+            "held"
+          ],
+          "description": "The metric entries are ordered by; reclaimable ranks by reclaimable_resolved. Same as requested_by since reference accounting."
+        },
+        "kind": {
+          "enum": [
+            "all",
+            "files",
+            "dirs"
+          ]
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "include_system": {
+          "type": "boolean"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "target": {
+                "$ref": "common.schema.json#/$defs/entry"
+              },
+              "entries": {
+                "type": "array",
+                "description": "The best rows by ranked_by: entries and DSM service rows (SPEC 5.4). Volume full-metric service rows may be partitioned by containing folder; the service summary stays aggregated.",
+                "items": {
+                  "type": "object",
+                  "allOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/entry"
+                    },
+                    {
+                      "properties": {
+                        "service": {
+                          "anyOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "description": "Stable code of a known DSM service, or other_dsm_service_data."
+                                },
+                                "names": {
+                                  "type": "string"
+                                },
+                                "managed_by": {
+                                  "type": "string"
+                                },
+                                "manage_in": {
+                                  "type": "string"
+                                },
+                                "manage_in_id": {
+                                  "type": "string",
+                                  "description": "Stable snake_case id of the DSM place (SPEC 4.6)."
+                                },
+                                "confirmed": {
+                                  "type": "boolean"
+                                },
+                                "paths": {
+                                  "type": "array",
+                                  "description": "The first paths added up (at most 20).",
+                                  "items": {
+                                    "$ref": "common.schema.json#/$defs/path"
+                                  }
+                                },
+                                "path_count": {
+                                  "type": "integer",
+                                  "minimum": 1
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "names",
+                                "managed_by",
+                                "manage_in",
+                                "manage_in_id",
+                                "confirmed",
+                                "paths",
+                                "path_count"
+                              ]
+                            }
+                          ],
+                          "description": "The service a service row adds up; null for entries. A service row's metrics are sums of each path deleted alone."
+                        },
+                        "cleanup_eligible": {
+                          "type": "boolean",
+                          "description": "Whether cleanup may delete the row's paths; false for service rows and package data."
+                        },
+                        "held_by": {
+                          "type": "array",
+                          "description": "Who holds the bytes deleting the row would not free, largest first; unknown bytes are never merged into a class.",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "class": {
+                                "enum": [
+                                  "snapshot",
+                                  "recycle_bin",
+                                  "hard_link",
+                                  "reflink",
+                                  "pending_cleaner",
+                                  "open_file",
+                                  "unknown"
+                                ]
+                              },
+                              "bytes": {
+                                "type": "integer",
+                                "minimum": 0
+                              }
+                            },
+                            "required": [
+                              "class",
+                              "bytes"
+                            ]
+                          }
+                        },
+                        "where_to_fix": {
+                          "type": "object",
+                          "properties": {
+                            "token": {
+                              "enum": [
+                                "cleanup",
+                                "snapshot_replication",
+                                "recycle_bin",
+                                "shared",
+                                "inspect_explain",
+                                "wait",
+                                "why_not_freed",
+                                "doctor",
+                                "package"
+                              ]
+                            },
+                            "manage_in": {
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "description": "The DSM place to act in, when the fix is in DSM."
+                            },
+                            "manage_in_id": {
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "description": "Stable snake_case id of that place (SPEC 4.6); null with manage_in."
+                            },
+                            "command": {
+                              "anyOf": [
+                                {
+                                  "type": "null"
+                                },
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              ],
+                              "description": "The synoreclaim command that acts or tells more; null when none does or the path is not text."
+                            }
+                          },
+                          "required": [
+                            "token",
+                            "manage_in",
+                            "manage_in_id",
+                            "command"
+                          ]
+                        },
+                        "within": {
+                          "$ref": "common.schema.json#/$defs/path",
+                          "description": "The row whose full displayed footprint includes this row in the same volume JSON answer. Exclude this row from treemap areas and sums; keep its full metrics and list row. Absent when no covering row survives the limit, for disjoint service partitions, CLI subset metrics, and older answers."
+                        }
+                      },
+                      "required": [
+                        "service",
+                        "cleanup_eligible",
+                        "held_by",
+                        "where_to_fix"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "hidden_system": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Detail rows below DSM service rows not listed; --include-system lists them."
+              },
+              "services": {
+                "type": "object",
+                "description": "DSM service and hidden data below the target (SPEC 4.6). Values of a line are sums of each path deleted alone; syno_reclaim on a volume uses the measured once-only Overview service bucket and has no generic reclaimable estimate. Metadata already included in folder rows is informational; only uncovered metadata paths rank separately.",
+                "properties": {
+                  "lines": {
+                    "type": "array",
+                    "description": "Largest physical footprint first.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "service": {
+                          "type": "string",
+                          "description": "Stable code of a known DSM service path, or other_dsm_service_data for other @ entries at the volume root."
+                        },
+                        "names": {
+                          "type": "string",
+                          "description": "The entry names the line covers, such as @eaDir or *.hbk."
+                        },
+                        "package": {
+                          "type": "string"
+                        },
+                        "manage_in": {
+                          "type": "string",
+                          "description": "Where in DSM to manage or free the data."
+                        },
+                        "manage_in_id": {
+                          "type": "string",
+                          "description": "Stable snake_case id of that DSM place (SPEC 4.6)."
+                        },
+                        "confirmed": {
+                          "type": "boolean",
+                          "description": "False when the layout is an assumption not confirmed on DSM or in Synology documentation."
+                        },
+                        "path": {
+                          "type": "string",
+                          "description": "Present when the line is one path."
+                        },
+                        "path_hex": {
+                          "type": "string",
+                          "pattern": "^[0-9a-f]+$"
+                        },
+                        "paths": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "metrics": {
+                          "$ref": "common.schema.json#/$defs/metrics"
+                        },
+                        "snapshots_not_read": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "included_in_rows": {
+                          "type": "boolean",
+                          "description": "Some or all @eaDir metadata is already included in folder ranking rows. The full summary must not be added to entries; any uncovered paths have their own ranking row. Absent in older answers."
+                        }
+                      },
+                      "required": [
+                        "service",
+                        "names",
+                        "package",
+                        "manage_in",
+                        "manage_in_id",
+                        "confirmed",
+                        "paths",
+                        "metrics",
+                        "snapshots_not_read"
+                      ]
+                    }
+                  },
+                  "other_snapshots_not_read": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Snapshots below the target that are in no line."
+                  }
+                },
+                "required": [
+                  "lines",
+                  "other_snapshots_not_read"
+                ]
+              }
+            },
+            "required": [
+              "report",
+              "target",
+              "entries",
+              "hidden_system",
+              "services"
+            ]
+          }
+        },
+        "scans": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/filesystem_scan",
+            "description": "Implicit scans run for this answer."
+          }
+        }
+      },
+      "required": [
+        "command",
+        "requested_by",
+        "ranked_by",
+        "kind",
+        "limit",
+        "include_system",
+        "results",
+        "scans"
+      ]
+    }
+  ]
+}

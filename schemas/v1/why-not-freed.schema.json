@@ -1,0 +1,531 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/why-not-freed.schema.json",
+  "title": "synoreclaim why-not-freed result v1",
+  "description": "Why deleted data still takes space (SPEC 5.15): rows from the newest volume report with overview data plus live probes. Unknown values are null; lower_bound marks rows the report's unresolved bytes may add to.",
+  "type": "object",
+  "$defs": {
+    "action": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "wait",
+            "snapshot",
+            "recycle",
+            "processes",
+            "restart",
+            "inspect",
+            "doctor"
+          ]
+        },
+        "manage_in": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "manage_in_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Stable snake_case id of that place (SPEC 4.6); null with manage_in."
+        },
+        "command": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "kind",
+        "manage_in",
+        "manage_in_id",
+        "command"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "why-not-freed"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "filesystem": {
+                "type": "object",
+                "properties": {
+                  "uuid": {
+                    "$ref": "common.schema.json#/$defs/fsid"
+                  },
+                  "mount": {
+                    "$ref": "common.schema.json#/$defs/path"
+                  },
+                  "kind": {
+                    "$ref": "common.schema.json#/$defs/filesystem_kind"
+                  },
+                  "capabilities": {
+                    "$ref": "common.schema.json#/$defs/capabilities"
+                  }
+                },
+                "required": [
+                  "uuid",
+                  "mount",
+                  "kind",
+                  "capabilities"
+                ]
+              },
+              "free_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "reasons": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "pending_subvolume_cleanup"
+                        },
+                        "count": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "bytes": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "appeared_after_report": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "cleaned_since_report": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "lower_bound": {
+                          "type": "boolean"
+                        },
+                        "since_not_measured": {
+                          "type": "boolean"
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "count",
+                        "bytes",
+                        "appeared_after_report",
+                        "cleaned_since_report",
+                        "lower_bound",
+                        "unknown",
+                        "action"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "held_by_snapshots"
+                        },
+                        "bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "multi_share_bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "subvolume_id": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "share": {
+                                "type": "string"
+                              },
+                              "share_hex": {
+                                "type": "string",
+                                "pattern": "^[0-9a-f]+$"
+                              },
+                              "bytes": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "snapshots": {
+                                "type": [
+                                  "integer",
+                                  "null"
+                                ],
+                                "minimum": 0
+                              },
+                              "newest_snapshot_otime": {
+                                "type": [
+                                  "integer",
+                                  "null"
+                                ],
+                                "minimum": 0
+                              },
+                              "manage_in": {
+                                "type": "string"
+                              },
+                              "manage_in_id": {
+                                "type": "string",
+                                "description": "Stable snake_case id of that DSM place (SPEC 4.6)."
+                              },
+                              "files": {
+                                "description": "The share's largest files only snapshots hold (--limit); null without a --snapshots analysis of the share.",
+                                "$ref": "common.schema.json#/$defs/held_files"
+                              }
+                            },
+                            "required": [
+                              "subvolume_id",
+                              "bytes",
+                              "snapshots",
+                              "newest_snapshot_otime",
+                              "manage_in",
+                              "manage_in_id",
+                              "files"
+                            ]
+                          }
+                        },
+                        "lower_bound": {
+                          "type": "boolean"
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "bytes",
+                        "multi_share_bytes",
+                        "items",
+                        "lower_bound",
+                        "unknown",
+                        "action"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "recycle_bin"
+                        },
+                        "bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "reclaimable_bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "since_seconds": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "since_bytes": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "subvolume_id": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "share": {
+                                "type": "string"
+                              },
+                              "share_hex": {
+                                "type": "string",
+                                "pattern": "^[0-9a-f]+$"
+                              },
+                              "bytes": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "reclaimable_bytes": {
+                                "type": "integer",
+                                "minimum": 0
+                              }
+                            },
+                            "required": [
+                              "subvolume_id",
+                              "bytes",
+                              "reclaimable_bytes"
+                            ]
+                          }
+                        },
+                        "lower_bound": {
+                          "type": "boolean"
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "bytes",
+                        "reclaimable_bytes",
+                        "since_seconds",
+                        "since_bytes",
+                        "items",
+                        "lower_bound",
+                        "unknown",
+                        "action"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "open_unlinked"
+                        },
+                        "report_orphan_bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "processes": {
+                          "type": [
+                            "object",
+                            "null"
+                          ],
+                          "description": "The /proc scan of --processes; null without it.",
+                          "properties": {
+                            "bytes_estimate": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "holders": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "pid": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                  },
+                                  "comm": {
+                                    "type": "string"
+                                  },
+                                  "inodes": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                  },
+                                  "bytes_estimate": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                  }
+                                },
+                                "required": [
+                                  "pid",
+                                  "comm",
+                                  "inodes",
+                                  "bytes_estimate"
+                                ]
+                              }
+                            },
+                            "unreadable_processes": {
+                              "type": "integer",
+                              "minimum": 0
+                            }
+                          },
+                          "required": [
+                            "bytes_estimate",
+                            "holders",
+                            "unreadable_processes"
+                          ]
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "report_orphan_bytes",
+                        "processes",
+                        "unknown",
+                        "action"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "hard_link"
+                        },
+                        "bytes": {
+                          "type": "null",
+                          "description": "Never derivable for names that no longer exist."
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "bytes",
+                        "unknown",
+                        "action"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "commit_pending"
+                        },
+                        "interval_s": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "interval_s",
+                        "unknown",
+                        "action"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "const": "unresolved_references"
+                        },
+                        "bytes": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "reasons": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "enum": [
+                                  "missing_owner",
+                                  "incomplete_references",
+                                  "direct_owner_unresolved",
+                                  "shared_tree_owner_unresolved",
+                                  "relocation_tree",
+                                  "coverage_gap",
+                                  "owner_budget_exhausted",
+                                  "pinned_ranges_unknown"
+                                ]
+                              },
+                              "bytes": {
+                                "type": "integer",
+                                "minimum": 0
+                              }
+                            },
+                            "required": [
+                              "code",
+                              "bytes"
+                            ]
+                          }
+                        },
+                        "unknown": {
+                          "type": "boolean"
+                        },
+                        "action": {
+                          "$ref": "#/$defs/action"
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "bytes",
+                        "reasons",
+                        "unknown",
+                        "action"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "report",
+              "filesystem",
+              "free_bytes",
+              "reasons"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "results"
+      ]
+    }
+  ]
+}

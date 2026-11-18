@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "Comprobar y limpiar",
+  "rootfs.card.cleanNow": "Limpiar ahora",
+  "rootfs.card.free": "Libre",
+  "rootfs.level.full": "Lleno",
+  "rootfs.level.full.body": "Las actualizaciones de DSM pueden fallar y es posible que DSM no guarde la configuración ni los registros. Limpie ahora",
+  "rootfs.level.getting_full": "Casi lleno",
+  "rootfs.level.getting_full.body": "Limpie antes de la próxima actualización de DSM",
+  "rootfs.name": "Partición del sistema"
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- Syno Reclaim: a volume's usage ring with one quarter pulled out, the space a cleanup frees.
+       Source of the package icons, the PNGs in package/ui/images. -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3B9CFF"/>
+      <stop offset="1" stop-color="#0A66D8"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="52" fill="url(#tile)"/>
+  <g fill="none" stroke-width="30">
+    <path d="M190 138 A62 62 0 1 1 128 76" stroke="#FFFFFF"/>
+    <path d="M144 60 A62 62 0 0 1 206 122" stroke="#A8D8FF"/>
+  </g>
+</svg>

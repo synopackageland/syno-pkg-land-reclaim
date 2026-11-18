@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:19:35Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "cleanup-18d9cccbc2d8b089-12701",
+      "kind": "cleanup-apply",
+      "state": "running",
+      "phase": "execute",
+      "targets": [
+        {
+          "path": "/volume1/share01/cleanup-golden/apply"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-30T01:00:00Z",
+      "updated": "2026-09-30T01:05:41Z",
+      "resumes": 0,
+      "units": 0,
+      "cleanup": {
+        "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5",
+        "items_total": 1,
+        "items_done": 1,
+        "moved": 1,
+        "already_absent": 0,
+        "partial": 0,
+        "changed": 0,
+        "failed": 0,
+        "bytes_total": 1048576,
+        "bytes_moved": 1048576,
+        "elapsed_s": 3,
+        "updated": "2026-09-30T01:05:41Z",
+        "calls_done": 1
+      },
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": null,
+      "requested_by": "fixture-admin",
+      "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "duplicates.title": "重复内容",
+  "duplicates.breadcrumb.label": "位置",
+  "duplicates.info.what": "内容相同、10 MB 以上的文件，以及全部内容都相同的文件夹",
+  "duplicates.info.keep": "每组在整个存储空间保留一份：先选首选的共享文件夹，其次是无法移动的副本，否则保留最旧的。共享文件夹页面只是筛选列表",
+  "duplicates.info.excluded": "Reclaim 识别出的应用、系统与备份数据一律不计：以 @ 开头的文件夹、Hyper Backup 与 Active Backup 数据、Surveillance",
+  "duplicates.shares.title": "有重复内容的共享文件夹",
+  "duplicates.shares.name": "共享文件夹",
+  "duplicates.shares.folders": "相同的文件夹",
+  "duplicates.shares.files": "重复的大文件",
+  "duplicates.shares.copies": {
+    "one": "{count} 份",
+    "other": "{count} 份"
+  },
+  "duplicates.table.name": "名称",
+  "duplicates.table.kept": "保留的副本",
+  "duplicates.table.canFree": "可释放",
+  "duplicates.table.selectRow": "将 {name} 要移除的副本加入清理列表",
+  "duplicates.folders.title": "相同的文件夹",
+  "duplicates.files.title": "重复的大文件",
+  "duplicates.files.threshold": "10 MB 以上",
+  "duplicates.files.empty": "这里没有重复的大文件",
+  "duplicates.filter.label": "类型",
+  "duplicates.filter.all": "全部",
+  "duplicates.filter.photo": "照片",
+  "duplicates.filter.video": "视频",
+  "duplicates.filter.music": "音乐",
+  "duplicates.selectAll.volume": "选择 {scope} 上所有重复内容",
+  "duplicates.selectAll.all": "选择 {scope} 中所有重复内容",
+  "duplicates.selectAll.photo": "选择 {scope} 中所有重复照片",
+  "duplicates.selectAll.video": "选择 {scope} 中所有重复视频",
+  "duplicates.selectAll.music": "选择 {scope} 中所有重复音乐",
+  "duplicates.scope.title": "{scope} · 可释放 {size}",
+  "duplicates.scope.copies": {
+    "one": "要移除 {count} 份",
+    "other": "要移除 {count} 份"
+  },
+  "duplicates.scope.groups": {
+    "one": "共 {count} 组",
+    "other": "共 {count} 组"
+  },
+  "duplicates.scope.overlap": "副本分布在多个共享文件夹的组会在每个文件夹都计入，所以各行合计会更多",
+  "duplicates.state.recalculating": "偏好保留的共享文件夹已更改，正在重新计算",
+  "duplicates.state.failed": "无法加载重复内容",
+  "duplicates.state.keepFailed": "无法更改要保留的副本",
+  "duplicates.state.empty": "{scope} 中没有重复内容",
+  "duplicates.row.copiesIn": {
+    "one": "{scope} 中 {count} 份",
+    "other": "{scope} 中 {count} 份"
+  },
+  "duplicates.row.files": {
+    "one": "{files} 个文件",
+    "other": "{files} 个文件"
+  },
+  "duplicates.row.copies": {
+    "one": "{count} 份",
+    "other": "{count} 份"
+  },
+  "duplicates.row.allIn": "全部在 {scope}",
+  "duplicates.row.hereElsewhere": "这里 {here} · 其他位置 {elsewhere}",
+  "duplicates.row.each": "每份 {size}",
+  "duplicates.reason.user": "你指定的",
+  "duplicates.reason.preferred_share": "偏好保留的共享文件夹",
+  "duplicates.reason.oldest": "最旧的副本",
+  "duplicates.reason.shortest": "路径最短",
+  "duplicates.action.keep": "保留",
+  "duplicates.action.remove": "移除",
+  "duplicates.sheet.folderDescription": {
+    "other": "{files} 个文件 · 每个位置 {size}"
+  },
+  "duplicates.basket.count": {
+    "one": "清理列表中有 {count} 份",
+    "other": "清理列表中有 {count} 份"
+  },
+  "duplicates.basket.lead": {
+    "one": "清理列表：{groups}中的 {count} 份，至少释放",
+    "other": "清理列表：{groups}中的 {count} 份，至少释放"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count} 组",
+    "other": "{count} 组"
+  },
+  "duplicates.basket.keepsOne": "每组都保留一份",
+  "duplicates.info.junk": "比对文件夹时会忽略系统会重新生成的文件：.DS_Store、Thumbs.db、desktop.ini、._ 文件、@eaDir。移除文件夹时这些文件也会一并移除",
+  "duplicates.scope.later": "快照轮替后再释放 {size}",
+  "duplicates.scope.unchecked": {
+    "one": "{count} 份无法以校验码比对，未列出",
+    "other": "{count} 份无法以校验码比对，未列出"
+  },
+  "duplicates.analysis.running": "正在查找重复项。大型存储空间可能需要几分钟",
+  "duplicates.analysis.stale": "这些结果早于最近一次扫描。请重新分析以更新",
+  "duplicates.analysis.again": "重新分析",
+  "duplicates.analysis.failed": "无法开始查找重复项",
+  "duplicates.analysis.noneTitle": "尚未在此存储空间 查找重复项",
+  "duplicates.analysis.noneBody": "查找时使用最近一次扫描，不读取文件内容。大型存储空间可能需要几分钟",
+  "duplicates.analysis.find": "查找重复项",
+  "duplicates.unavailable.title": "此存储空间 没有重复项数据",
+  "duplicates.unavailable.body": "重复项需要由此版本的 Syno Reclaim 扫描整个 Btrfs 存储空间才能找出，较早的扫描没有所需的数据。请先扫描此存储空间，再回到这里",
+  "duplicates.unavailable.scan": "扫描",
+  "duplicates.more": {
+    "one": "再显示 {count} 个",
+    "other": "再显示 {count} 个"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count} 份在相同文件夹中",
+    "other": "{count} 份在相同文件夹中"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "另有 {count} 份在相同文件夹中，随这些文件夹一起移除",
+    "other": "另有 {count} 份在相同文件夹中，随这些文件夹一起移除"
+  },
+  "duplicates.info.partial": "内部相同位置的项目按大小有 80% 以上相同的文件夹会合为一行：只删除相同的项目",
+  "duplicates.row.partial": {
+    "one": "{total} 个项目中有 {same} 个与 {counterpart} 相同",
+    "other": "{total} 个项目中有 {same} 个与 {counterpart} 相同"
+  },
+  "duplicates.row.folders": {
+    "one": "{count} 个文件夹",
+    "other": "{count} 个文件夹"
+  },
+  "duplicates.row.sameEach": "每处相同部分 {size}",
+  "duplicates.partial.title": {
+    "one": "从 {name} 删除 {items} 个相同项目",
+    "other": "从 {name} 删除 {items} 个相同项目"
+  },
+  "duplicates.partial.stays": "{name} 本身和不同的项目（例如 .git）都会保留",
+  "duplicates.partial.folderItem": {
+    "one": "{files} 个文件 · {size}",
+    "other": "{files} 个文件 · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "还有 {count} 个相同项目",
+    "other": "还有 {count} 个相同项目"
+  },
+  "duplicates.partial.label": "{name} 的相同项目",
+  "duplicates.partial.failed": "无法加载相同的项目",
+  "duplicates.partial.retry": "重试",
+  "duplicates.folders.empty": "这里没有相同的文件夹",
+  "duplicates.shares.recycleBin": "回收站",
+  "duplicates.shares.binOn": "已启用",
+  "duplicates.shares.binOffDeletes": "未启用 · 将永久删除",
+  "duplicates.table.moves": "移除方式",
+  "duplicates.row.moves": {
+    "one": "{count} 份",
+    "other": "{count} 份"
+  },
+  "duplicates.row.noMove": "不移动",
+  "duplicates.row.deletes": "将永久删除",
+  "duplicates.row.keptMany": {
+    "one": "保留 {count} 份",
+    "other": "保留 {count} 份"
+  },
+  "duplicates.keep.kept": "保留",
+  "duplicates.keep.add": "加入清理列表",
+  "duplicates.keep.drop": "从清理列表移除",
+  "duplicates.list.label": "列表",
+  "duplicates.reason.unmovable": "无法移动",
+  "duplicates.reason.in_kept_folder": "随所在文件夹保留",
+  "duplicates.stays.shareRoot": "本身就是共享文件夹，会保留",
+  "duplicates.stays.notShared": "不在 DSM 共享文件夹内，会保留",
+  "duplicates.stays.belowVolume": "位于存储空间最上层，会保留",
+  "duplicates.merged.match": {
+    "one": "{count} 个文件夹与它相同：{names}",
+    "other": "{count} 个文件夹与它相同：{names}"
+  },
+  "duplicates.merged.ratio": "{percent} 相同 · {total} 项中的 {same} 项",
+  "duplicates.merged.groups": {
+    "one": "含 {count} 组",
+    "other": "含 {count} 组"
+  },
+  "duplicates.merged.identical": "完全相同",
+  "duplicates.merged.lead": "勾选的文件夹会移到回收站，保留的文件夹不变",
+  "duplicates.merged.kept": "保留的文件夹",
+  "duplicates.sheet.lead": "勾选的副本会移到回收站，取消勾选即可多保留一份",
+  "duplicates.sheet.sort": "日期",
+  "duplicates.sheet.oldest": "由旧到新",
+  "duplicates.sheet.newest": "由新到旧",
+  "duplicates.sheet.summary": "移动 {total} 份中的 {moves} 份 · 保留 {kept} 份",
+  "duplicates.sheet.atLeastOne": "请至少保留一份不勾选",
+  "duplicates.sheet.apply": "加入清理列表",
+  "duplicates.sheet.update": "更新清理列表",
+  "duplicates.sheet.size": "每份 {size}",
+  "duplicates.block.inFolder": "会随相同的文件夹一起移动",
+  "duplicates.selectAll.title": "全选",
+  "duplicates.selectAll.checking": "正在检查各组",
+  "duplicates.selectAll.progress": "已检查 {done} / {total} 组",
+  "duplicates.selectAll.selected": {
+    "one": "已选择 {count} 组",
+    "other": "已选择 {count} 组"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "{count} 组无法选择",
+    "other": "{count} 组无法选择"
+  },
+  "duplicates.selectAll.stays": "以下副本会保留",
+  "duplicates.selectAll.stopped": "已停止：已检查的组都已选择",
+  "duplicates.why.nothing": "没有可移动的副本：其他副本都已保留或无法移动",
+  "duplicates.sheet.deletes": "这里没有回收站：移除会永久删除",
+  "duplicates.row.toBin": "移到回收站",
+  "duplicates.block.inFolderDelete": "会随相同的文件夹一起永久删除",
+  "duplicates.sheet.leadDelete": "勾选的副本会永久删除（这个共享文件夹没有回收站），取消勾选即可多保留一份",
+  "duplicates.sheet.leadMixed": "勾选的副本会移到回收站；所在共享文件夹没有回收站的会永久删除。取消勾选即可多保留一份",
+  "duplicates.sheet.summaryDelete": "永久删除 {total} 份中的 {moves} 份 · 保留 {kept} 份",
+  "duplicates.sheet.summaryMixed": "移除 {total} 份中的 {moves} 份 · 保留 {kept} 份",
+  "duplicates.merged.leadDelete": "勾选的文件夹会永久删除（所在共享文件夹没有回收站），保留的文件夹不变",
+  "duplicates.merged.leadMixed": "勾选的文件夹会移到回收站；所在共享文件夹没有回收站的会永久删除。保留的文件夹不变"
+}

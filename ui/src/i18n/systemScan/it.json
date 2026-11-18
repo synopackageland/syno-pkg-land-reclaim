@@ -1,0 +1,10 @@
+{
+  "systemScan.title": "Scansione della partizione di sistema",
+  "systemScan.status": "Stato",
+  "systemScan.phase": "Fase",
+  "systemScan.waiting": "In attesa di iniziare",
+  "systemScan.reading": "Leggi i file di sistema e verifica lo spazio usato",
+  "systemScan.countsUnavailable": "Il numero di elementi letti non è disponibile per questa scansione",
+  "systemScan.viewResult": "Visualizza risultato",
+  "systemScan.cancelBody": "Interrompere il controllo della partizione di sistema? Il risultato precedente verrà conservato"
+}

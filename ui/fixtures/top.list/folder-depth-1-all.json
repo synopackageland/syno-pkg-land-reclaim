@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:41:59Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 200,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 713,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1/share62/folder0176",
+        "kind": "dir",
+        "flags": [],
+        "metrics": {
+          "logical": 13714984516,
+          "physical": 13717508096,
+          "shared": 0,
+          "reclaimable": 13717508096,
+          "reclaimable_resolved": 13717508096,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 16643,
+          "inline": 12388,
+          "entries": 1327,
+          "files": 1290
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 260,
+        "objectid": 4080
+      },
+      "entries": [
+        {
+          "path": "/volume1/share62/folder0176/folder0177",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 9452558795,
+            "physical": 9453031424,
+            "shared": 0,
+            "reclaimable": 9453031424,
+            "reclaimable_resolved": 9453031424,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 8540,
+            "inline": 12388,
+            "entries": 312,
+            "files": 309
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 6107,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 4262425721,
+            "physical": 4264476672,
+            "shared": 0,
+            "reclaimable": 4264476672,
+            "reclaimable_resolved": 4264476672,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 8103,
+            "inline": 0,
+            "entries": 1014,
+            "files": 981
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4082,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/folder0178/folder0179",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 12388,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 0,
+            "inline": 12388,
+            "entries": 77,
+            "files": 76
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "folder_metadata",
+            "names": "@eaDir",
+            "managed_by": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share62/folder0176/folder0177/folder0178/folder0179"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "command": null
+          }
+        }
+      ],
+      "hidden_system": 0,
+      "services": {
+        "lines": [
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 12388,
+              "physical": 0,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 0,
+              "inline": 12388,
+              "entries": 77,
+              "files": 76
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 0
+      }
+    }
+  ],
+  "scans": []
+}

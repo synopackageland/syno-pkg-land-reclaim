@@ -1,0 +1,236 @@
+{
+  "schema": 2,
+  "package": "SynoReclaim",
+  "version": "0.1.1",
+  "build": 1675,
+  "displayname": "Syno Reclaim",
+  "maintainer": "Syno Package Land",
+  "os_min_ver": "7.1-42661",
+  "icon": "package/ui/images",
+  "arches": [
+    "x86_64",
+    "aarch64",
+    "armv7"
+  ],
+  "reproducible": {
+    "clean": [
+      "app/target"
+    ]
+  },
+  "entry": "admin-only",
+  "portal": {
+    "alias": "synoreclaim"
+  },
+  "backend": {
+    "runtime": "rust",
+    "dir": "app",
+    "entry": "synoreclaim-app",
+    "methods": [
+      "app.status",
+      "authorization.status",
+      "cache.clear",
+      "cache.status",
+      "cleanup.apply",
+      "cleanup.plan",
+      "cleanup.select",
+      "ctl.authorization.status",
+      "ctl.cache.clear",
+      "ctl.cache.status",
+      "ctl.cleanup.apply",
+      "ctl.cleanup.plan",
+      "ctl.doctor.run",
+      "ctl.history.list",
+      "ctl.inspect.get",
+      "ctl.job.cancel",
+      "ctl.job.mode",
+      "ctl.job.pause",
+      "ctl.job.result",
+      "ctl.job.resume",
+      "ctl.job.status",
+      "ctl.jobs.list",
+      "ctl.overview.get",
+      "ctl.recycle.list",
+      "ctl.rootfs.apply",
+      "ctl.rootfs.history",
+      "ctl.rootfs.plan",
+      "ctl.rootfs.report",
+      "ctl.session.get",
+      "ctl.setup.cleanup",
+      "ctl.simulate.get",
+      "ctl.snapshots.list",
+      "ctl.support_bundle.get",
+      "ctl.top.list",
+      "ctl.volumes.list",
+      "ctl.watch_free.sample",
+      "ctl.why_not_freed.get",
+      "doctor.run",
+      "duplicates.analyze",
+      "duplicates.copies",
+      "duplicates.keep",
+      "duplicates.preferred_shares",
+      "duplicates.scope",
+      "history.list",
+      "inspect.get",
+      "job.cancel",
+      "job.mode",
+      "job.pause",
+      "job.result",
+      "job.resume",
+      "jobs.list",
+      "overview.get",
+      "preview.cache_clear",
+      "preview.cleanup_apply",
+      "preview.cleanup_plan",
+      "preview.job_cancel",
+      "preview.job_mode",
+      "preview.job_pause",
+      "preview.job_resume",
+      "preview.rootfs_apply",
+      "preview.rootfs_plan",
+      "preview.scans_start",
+      "preview.setup_cleanup",
+      "recycle.list",
+      "rootfs.apply",
+      "rootfs.history",
+      "rootfs.plan",
+      "rootfs.report",
+      "scan.start",
+      "scans.start",
+      "scans.status",
+      "session.get",
+      "setup.cleanup",
+      "simulate.get",
+      "snapshots.list",
+      "support_bundle.get",
+      "top.list",
+      "volumes.list",
+      "watch_free.sample",
+      "why_not_freed.get"
+    ]
+  },
+  "ui": {
+    "dir": "ui/dist-dsm",
+    "window": {
+      "width": 1100,
+      "height": 720
+    },
+    "build": {
+      "cwd": "ui",
+      "command": [
+        "pnpm",
+        "build:dsm"
+      ]
+    }
+  },
+  "capabilities": {
+    "rootOps": true
+  },
+  "root": {
+    "state": true,
+    "stop": "lifecycle",
+    "programs": {
+      "cli": {
+        "kind": "binary",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "method": {
+              "type": "string",
+              "enum": [
+                "cache.clear",
+                "cache.status",
+                "cleanup.apply",
+                "cleanup.plan",
+                "cleanup.recover",
+                "doctor.run",
+                "duplicates.analyze",
+                "duplicates.copies",
+                "duplicates.keep",
+                "duplicates.preferred_shares",
+                "duplicates.scope",
+                "history.list",
+                "inspect.get",
+                "job.cancel",
+                "job.mode",
+                "job.pause",
+                "job.result",
+                "job.resume",
+                "jobs.list",
+                "overview.get",
+                "recycle.list",
+                "rootfs.apply",
+                "rootfs.history",
+                "rootfs.plan",
+                "rootfs.report",
+                "scan.start",
+                "session.get",
+                "setup.cleanup",
+                "simulate.get",
+                "snapshots.list",
+                "support_bundle.get",
+                "top.list",
+                "volumes.list",
+                "watch_free.sample",
+                "why_not_freed.get"
+              ]
+            },
+            "params": {
+              "type": "string",
+              "maxLength": 65536
+            },
+            "job_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,63}$"
+            }
+          }
+        },
+        "run": {
+          "max_output": 67108864
+        },
+        "job": {
+          "max_concurrent": 4,
+          "timeout_s": 604800
+        }
+      },
+      "lifecycle": {
+        "kind": "binary"
+      }
+    }
+  },
+  "i18n": {
+    "messages": "package/i18n"
+  },
+  "uninstall": {
+    "purge": {
+      "exec": "app/bin/synoreclaim-app",
+      "args": [
+        "uninstall"
+      ],
+      "root": "lifecycle"
+    },
+    "state": {
+      "items": [
+        {
+          "key": "rootfs_plans"
+        }
+      ]
+    }
+  },
+  "ctl": {
+    "enabled": true,
+    "aliases": [
+      "reclaim"
+    ],
+    "developedBy": "synopkgland",
+    "registry": "operations.json"
+  },
+  "metadata": {
+    "maintainer_url": "https://synopkgland.com/"
+  },
+  "mobile": {
+    "entry": "app",
+    "start": "/",
+    "min_shell": 1
+  }
+}

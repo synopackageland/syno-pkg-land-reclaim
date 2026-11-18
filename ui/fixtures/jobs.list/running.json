@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:19:35Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "fixture-job0001",
+      "state": "running",
+      "phase": "scan",
+      "targets": [
+        {
+          "path": "/volume1"
+        }
+      ],
+      "scope": "volume",
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-00000000009a",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T23:55:19Z",
+      "updated": "2026-09-29T23:55:20Z",
+      "resumes": 0,
+      "units": 0,
+      "progress": {
+        "phase": "scan",
+        "units_done": 147,
+        "units_total": 198,
+        "entries": 5371562,
+        "items": 46247666,
+        "bytes_read": 3061958107,
+        "elapsed_s": 1451,
+        "rss_bytes": 2347008,
+        "subvolume_id": 459,
+        "current_subvolume": {
+          "path": "name0008"
+        },
+        "basis": null,
+        "updated": "2026-09-30T00:19:32Z"
+      },
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": null,
+      "requested_by": null,
+      "kind": "scan"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+[
+  {
+    "file": "share-live-oldest200.json",
+    "params": {
+      "target": "/volume1/share73",
+      "oldest": 200
+    }
+  },
+  {
+    "file": "share-live-oldest1000.json",
+    "params": {
+      "target": "/volume1/share73",
+      "oldest": 1000
+    }
+  },
+  {
+    "file": "share01-age-warning.json",
+    "params": {
+      "target": "/volume1/share01",
+      "oldest": 200
+    },
+    "scenario": "age_warning"
+  },
+  {
+    "file": "share01-refused.json",
+    "params": {
+      "target": "/volume1/share01",
+      "oldest": 200
+    },
+    "scenario": "detail_refusal",
+    "exit": 4
+  },
+  {
+    "file": "share01-oldest200.json",
+    "params": {
+      "target": "/volume1/share01",
+      "oldest": 200
+    }
+  },
+  {
+    "file": "share01-oldest1000.json",
+    "params": {
+      "target": "/volume1/share01",
+      "oldest": 1000
+    }
+  },
+  {
+    "file": "share02-oldest200.json",
+    "params": {
+      "target": "/volume1/share02",
+      "oldest": 200
+    }
+  },
+  {
+    "file": "share03-empty-oldest200.json",
+    "params": {
+      "target": "/volume1/share03",
+      "oldest": 200
+    }
+  },
+  {
+    "file": "share04-oldest200.json",
+    "params": {
+      "target": "/volume1/share04",
+      "oldest": 200
+    },
+    "scenario": "share_scan"
+  },
+  {
+    "file": "share01-oldest200.json",
+    "params": {
+      "target": "/volume1/share01",
+      "oldest": 200
+    },
+    "scenario": "interaction"
+  },
+  {
+    "file": "share01-oldest1000.json",
+    "params": {
+      "target": "/volume1/share01",
+      "oldest": 1000
+    },
+    "scenario": "interaction"
+  },
+  {
+    "file": "volume1.json",
+    "params": {
+      "target": "/volume1"
+    }
+  },
+  {
+    "file": "volume1-changed-system.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "changed_system"
+  },
+  {
+    "file": "volume1-changed-share.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "changed_share"
+  },
+  {
+    "file": "stale.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "stale"
+  },
+  {
+    "file": "empty.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "empty"
+  },
+  {
+    "file": "changed.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "changed"
+  },
+  {
+    "file": "volume1-partial.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "partial",
+    "exit": 3
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "no_report",
+    "exit": 1
+  },
+  {
+    "scenario": "busy",
+    "params": {
+      "target": "/volume1"
+    },
+    "document": {
+      "completion": "busy",
+      "exit": 4
+    }
+  },
+  {
+    "file": "share.json",
+    "params": {
+      "target": "/volume1/share06"
+    }
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "share_scan",
+    "exit": 1
+  },
+  {
+    "file": "share04.json",
+    "params": {
+      "target": "/volume1/share04"
+    },
+    "scenario": "share_scan"
+  },
+  {
+    "file": "interaction-volume1.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "interaction"
+  },
+  {
+    "file": "interaction-volume1.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "age_warning"
+  },
+  {
+    "file": "interaction-volume1.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "detail_refusal"
+  },
+  {
+    "file": "share.json"
+  },
+  {
+    "scenario": "error",
+    "error": {
+      "code": "cli_error"
+    }
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "first_scan",
+    "exit": 1
+  }
+]

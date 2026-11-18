@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "files",
+  "limit": 4,
+  "include_system": true,
+  "results": [
+    {
+      "report": {
+        "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+        "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/8adc2669478811d6.srrep",
+        "job_id": "20260929T022925Z-ec33b",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/fixture/mnt/data",
+        "kind": "dir",
+        "flags": [
+          "subvolume_root"
+        ],
+        "metrics": {
+          "logical": 4232391,
+          "physical": 2715648,
+          "shared": 2715648,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 14,
+          "inline": 2361,
+          "entries": 647,
+          "files": 621
+        },
+        "blockers": [
+          "snapshot"
+        ],
+        "nlink": 1,
+        "tree": 256,
+        "objectid": 256,
+        "without_package_data": {
+          "logical": 3970247,
+          "physical": 2453504,
+          "shared": 2453504,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 12,
+          "inline": 2361,
+          "entries": 638,
+          "files": 618
+        }
+      },
+      "entries": [
+        {
+          "path": "/fixture/mnt/data/#recycle/old.bin",
+          "kind": "file",
+          "flags": [
+            "recycle"
+          ],
+          "metrics": {
+            "logical": 196608,
+            "physical": 196608,
+            "shared": 196608,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 884,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 196608
+            }
+          ],
+          "where_to_fix": {
+            "token": "recycle_bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "command": [
+              "synoreclaim",
+              "recycle",
+              "/fixture/mnt/data"
+            ]
+          }
+        },
+        {
+          "path": "/fixture/mnt/data/abb/@ActiveBackup/task-1/data.img",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 131072,
+            "physical": 131072,
+            "shared": 131072,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 898,
+          "package_data": {
+            "service": "active_backup_data",
+            "package": "Active Backup for Business (backup data)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "holds": false,
+            "message": "package-managed data (@ActiveBackup): managed by Active Backup for Business (backup data); manage it in Active Backup for Business (delete versions or tasks there; never delete its files directly)"
+          },
+          "service": null,
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 131072
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "command": null
+          }
+        },
+        {
+          "path": "/fixture/mnt/data/album/@eaDir/IMG_1.JPG/SYNOPHOTO_THUMB_M.jpg",
+          "kind": "file",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 65536,
+            "physical": 65536,
+            "shared": 65536,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 888,
+          "service": null,
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 65536
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "command": null
+          }
+        },
+        {
+          "path": "/fixture/mnt/data/backup/task.hbk/Pool/0/1.bucket",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 131072,
+            "physical": 131072,
+            "shared": 131072,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 893,
+          "package_data": {
+            "service": "hyper_backup",
+            "package": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "holds": false,
+            "message": "package-managed data (*.hbk): managed by Hyper Backup (backup data); manage it in Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)"
+          },
+          "service": null,
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 131072
+            }
+          ],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "command": null
+          }
+        }
+      ],
+      "hidden_system": 0,
+      "services": {
+        "lines": [
+          {
+            "service": "recycle_bin",
+            "names": "#recycle",
+            "package": "shared folder Recycle Bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "confirmed": true,
+            "path": "/fixture/mnt/data/#recycle",
+            "paths": 1,
+            "metrics": {
+              "logical": 196608,
+              "physical": 196608,
+              "shared": 196608,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 2,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "active_backup_data",
+            "names": "@ActiveBackup",
+            "package": "Active Backup for Business (backup data)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "paths": 1,
+            "metrics": {
+              "logical": 131072,
+              "physical": 131072,
+              "shared": 131072,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 4,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "hyper_backup",
+            "names": "*.hbk",
+            "package": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": 1,
+            "metrics": {
+              "logical": 131072,
+              "physical": 131072,
+              "shared": 131072,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 5,
+              "files": 2
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 65536,
+              "physical": 65536,
+              "shared": 65536,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 3,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 0
+      }
+    }
+  ],
+  "scans": []
+}

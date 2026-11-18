@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "command": "overview",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T16:34:41Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1",
+      "code": "report_incompatible",
+      "message": "no readable report covers this target: --no-scan given; 1 reports of its filesystem are unreadable or from an older synoreclaim, scan again"
+    }
+  ],
+  "warnings": [],
+  "scan_hints": [
+    {
+      "path": "/volume1",
+      "command": "synoreclaim scan /fixture --state-dir /fixture/entry9999/entry9999/entry9999",
+      "last_scan": null
+    }
+  ],
+  "results": [],
+  "scans": []
+}

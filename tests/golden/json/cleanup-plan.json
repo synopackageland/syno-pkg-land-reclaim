@@ -1,0 +1,107 @@
+{
+  "command": "cleanup-plan",
+  "completion": "complete",
+  "errors": [],
+  "expires_at": "2026-11-14T00:00:00Z",
+  "generated_at": "2026-11-13T00:00:00Z",
+  "items": 3,
+  "deletes": 1,
+  "job_id": null,
+  "paths": [
+    {
+      "path": "/volume1/photos/2019"
+    },
+    {
+      "path": "/volume1/photos/old.iso"
+    }
+  ],
+  "plan_file": {
+    "path": "/var/packages/SynoReclaim/var/state/cleanup/plans/cleanup-1-2.json"
+  },
+  "plan_id": "cleanup-1-2",
+  "schema_version": 1,
+  "shares": [
+    {
+      "allocated_bytes": 6291456,
+      "drive_items": 0,
+      "entries": 4,
+      "files": 3,
+      "item_count": 2,
+      "items": [
+        {
+          "allocated_bytes": 2097152,
+          "drive": false,
+          "entries": 3,
+          "files": 2,
+          "kind": "directory",
+          "path": {
+            "path": "/volume1/photos/2019"
+          }
+        },
+        {
+          "allocated_bytes": 4194304,
+          "drive": false,
+          "entries": 1,
+          "files": 1,
+          "kind": "file",
+          "path": {
+            "path": "/volume1/photos/old.iso"
+          }
+        }
+      ],
+      "path": {
+        "path": "/volume1/photos"
+      },
+      "recycle_bin": {
+        "admin_only": true,
+        "enabled": true
+      },
+      "share": {
+        "path": "photos"
+      }
+    },
+    {
+      "allocated_bytes": 1048576,
+      "delete": true,
+      "delete_reason": "recycle_bin_off",
+      "drive_items": 0,
+      "entries": 1,
+      "files": 1,
+      "item_count": 1,
+      "items": [
+        {
+          "allocated_bytes": 1048576,
+          "drive": false,
+          "entries": 1,
+          "files": 1,
+          "kind": "file",
+          "path": {
+            "path": "/volume1/video/a.mkv"
+          }
+        }
+      ],
+      "path": {
+        "path": "/volume1/video"
+      },
+      "recycle_bin": {
+        "admin_only": false,
+        "enabled": false
+      },
+      "share": {
+        "path": "video"
+      }
+    }
+  ],
+  "size": {
+    "allocated_bytes": 7340032,
+    "entries": 5,
+    "files": 4
+  },
+  "tool_version": "0.1.0",
+  "warnings": [
+    {
+      "code": "deletes_for_good",
+      "message": "1 item(s) have no Recycle Bin (in no shared folder, or in a shared folder whose Recycle Bin is off): apply removes them for good, only with --confirm-delete; to move them to a Recycle Bin instead, turn it on (Control Panel > Shared Folder > Edit > Enable Recycle Bin) and make a new plan"
+    }
+  ]
+}

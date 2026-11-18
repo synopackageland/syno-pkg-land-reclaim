@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "command": "why-not-freed",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T05:04:46Z",
+  "completion": "partial",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "since_not_measured",
+      "message": "--since filtered no row: reports keep no Recycle Bin entry times, and root items record no deletion time"
+    }
+  ],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-000000000002",
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999",
+        "job_id": "fixture-job0007",
+        "scan_started": "2026-09-29T05:04:46Z",
+        "scan_finished": "2026-09-29T05:04:46Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "filesystem": {
+        "uuid": "f0000000-0000-4000-8000-000000000002",
+        "mount": {
+          "path": "/volume1"
+        },
+        "kind": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "free_bytes": 526815232,
+      "reasons": [
+        {
+          "code": "pending_subvolume_cleanup",
+          "count": 0,
+          "bytes": 0,
+          "appeared_after_report": 0,
+          "cleaned_since_report": 0,
+          "lower_bound": false,
+          "unknown": false,
+          "action": {
+            "kind": "wait",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": null
+          }
+        },
+        {
+          "code": "held_by_snapshots",
+          "bytes": 0,
+          "multi_share_bytes": 0,
+          "items": [],
+          "lower_bound": false,
+          "unknown": false,
+          "action": {
+            "kind": "snapshot",
+            "manage_in": "Snapshot Replication > Snapshots",
+            "manage_in_id": "snapshot_replication",
+            "command": [
+              "synoreclaim",
+              "snapshots",
+              "/fixture"
+            ]
+          }
+        },
+        {
+          "code": "recycle_bin",
+          "bytes": 196608,
+          "reclaimable_bytes": 0,
+          "since_seconds": 86400,
+          "since_bytes": null,
+          "items": [
+            {
+              "subvolume_id": 256,
+              "share": "share04",
+              "bytes": 196608,
+              "reclaimable_bytes": 0
+            }
+          ],
+          "lower_bound": false,
+          "unknown": true,
+          "action": {
+            "kind": "recycle",
+            "manage_in": "Control Panel > Shared Folder > Edit > Recycle Bin",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "command": [
+              "synoreclaim",
+              "recycle",
+              "/fixture"
+            ]
+          }
+        },
+        {
+          "code": "open_unlinked",
+          "report_orphan_bytes": 0,
+          "processes": null,
+          "unknown": false,
+          "action": {
+            "kind": "processes",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "why-not-freed",
+              "/fixture",
+              "--processes"
+            ]
+          }
+        },
+        {
+          "code": "hard_link",
+          "bytes": null,
+          "unknown": false,
+          "action": {
+            "kind": "inspect",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": null
+          }
+        },
+        {
+          "code": "commit_pending",
+          "interval_s": 30,
+          "unknown": false,
+          "action": {
+            "kind": "wait",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": null
+          }
+        },
+        {
+          "code": "unresolved_references",
+          "bytes": 0,
+          "reasons": [],
+          "unknown": false,
+          "action": {
+            "kind": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

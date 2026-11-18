@@ -1,0 +1,6 @@
+[
+  { "file": "recorded.json" },
+  { "file": "empty.json", "scenario": "no_report" },
+  { "file": "empty.json", "scenario": "empty" },
+  { "file": "empty.json", "scenario": "rootfs_history_empty" }
+]

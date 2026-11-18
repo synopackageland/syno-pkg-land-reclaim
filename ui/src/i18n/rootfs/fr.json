@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "Vérifier et nettoyer",
+  "rootfs.card.cleanNow": "Nettoyer maintenant",
+  "rootfs.card.free": "Libre",
+  "rootfs.level.full": "Plein",
+  "rootfs.level.full.body": "Les mises à jour de DSM peuvent échouer et DSM risque de ne pas enregistrer les paramètres ou les journaux. Nettoyez maintenant",
+  "rootfs.level.getting_full": "Presque plein",
+  "rootfs.level.getting_full.body": "Nettoyez avant la prochaine mise à jour DSM",
+  "rootfs.name": "Partition système"
+}

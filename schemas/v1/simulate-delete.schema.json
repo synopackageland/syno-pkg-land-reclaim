@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/simulate-delete.schema.json",
+  "title": "synoreclaim simulate-delete result v1",
+  "description": "What deleting all selected paths of one filesystem together would free (SPEC 5.6). Nothing is deleted.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "simulate-delete"
+        },
+        "results": {
+          "type": "array",
+          "description": "One result per filesystem of the selection.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "selection": {
+                "type": "array",
+                "description": "Each selected path, with its values when deleted alone.",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/entry"
+                }
+              },
+              "combined": {
+                "$ref": "common.schema.json#/$defs/metrics",
+                "description": "The whole selection deleted together; not a sum of per-path values."
+              },
+              "retained": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Footprint bytes kept by references outside the selection (combined.shared)."
+              },
+              "together_bonus": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Resolved bytes freed only because the paths are deleted together: combined reclaimable_resolved minus the sum over selected paths."
+              },
+              "blockers": {
+                "type": "array",
+                "description": "Retained bytes per blocker class; an extent counts in each of its classes. unknown adds unresolved bytes.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "blocker": {
+                      "$ref": "common.schema.json#/$defs/blocker"
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "blocker",
+                    "bytes"
+                  ]
+                }
+              },
+              "explain": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/notice"
+                }
+              },
+              "after_delete": {
+                "type": "array",
+                "description": "What still holds the data after the delete (codes snapshot, hard_link, reflink, pending_cleaner, orphan_inode), then recycle_bin and delayed_release: when DSM shows the freed space.",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/notice"
+                }
+              },
+              "with_snapshots": {
+                "type": "object",
+                "description": "Snapshot roots deleted together with the paths (SPEC 5.14 mixed sets): one combined result from a census of the live trees and the snapshots of their shares, never a sum. Absent without snapshot roots.",
+                "properties": {
+                  "snapshots": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "common.schema.json#/$defs/path"
+                    }
+                  },
+                  "snapshot_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "freed_bytes": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Bytes of extents every reference to which is deleted: by a selected path or a selected snapshot."
+                  },
+                  "unknown_bytes": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Bytes that may be freed too but could not be proven."
+                  },
+                  "unknown_extents": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Extents whose references could not be resolved; a missing or malformed one adds no bytes."
+                  },
+                  "snapshots_not_materialized": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Other snapshots of these shares that were not read; extents they may reference are unknown."
+                  },
+                  "manage_in": {
+                    "type": "string",
+                    "description": "Where DSM deletes the snapshots."
+                  },
+                  "manage_in_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Stable snake_case ids of the DSM places manage_in names (SPEC 4.6); several when the snapshots live in more than one place."
+                  }
+                },
+                "required": [
+                  "snapshots",
+                  "snapshot_ids",
+                  "freed_bytes",
+                  "unknown_bytes",
+                  "unknown_extents",
+                  "snapshots_not_materialized",
+                  "manage_in",
+                  "manage_in_ids"
+                ]
+              }
+            },
+            "required": [
+              "report",
+              "selection",
+              "combined",
+              "retained",
+              "together_bonus",
+              "blockers",
+              "after_delete"
+            ]
+          }
+        },
+        "snapshot_sets": {
+          "type": "array",
+          "description": "Snapshot roots deleted together, one set per filesystem, answered from a report of a scan with --snapshots (SPEC 5.14). Absent without snapshot roots.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "report": {
+                "$ref": "common.schema.json#/$defs/report_info"
+              },
+              "snapshots": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/path"
+                }
+              },
+              "simulation": {
+                "$ref": "common.schema.json#/$defs/snapshot_simulation"
+              },
+              "manage_in": {
+                "type": "string",
+                "description": "Where DSM deletes the snapshots."
+              },
+              "manage_in_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Stable snake_case ids of the DSM places manage_in names (SPEC 4.6)."
+              }
+            },
+            "required": [
+              "report",
+              "snapshots",
+              "simulation",
+              "manage_in",
+              "manage_in_ids"
+            ]
+          }
+        },
+        "scans": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/filesystem_scan"
+          }
+        }
+      },
+      "required": [
+        "command",
+        "results",
+        "scans"
+      ]
+    }
+  ]
+}

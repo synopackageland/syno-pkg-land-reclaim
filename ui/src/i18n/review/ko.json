@@ -1,0 +1,221 @@
+{
+  "review.title": "정리 확인",
+  "review.planning": "선택한 항목 확인 중",
+  "review.empty": "먼저 탐색에서 항목을 선택하세요",
+  "review.empty.title": "선택한 항목 없음",
+  "review.disabled.cleanup": "이 NAS에서 정리가 꺼져 있습니다",
+  "review.disabled.allow": "정리 허용",
+  "review.disabled.allowFailed": "정리를 허용하지 못했습니다. 다시 시도하세요",
+  "review.recycle.title": "항목은 공유 폴더의 휴지통으로 이동합니다",
+  "review.recycle.body": "영구 삭제되지 않습니다. DSM에서 항목을 복원하거나 휴지통을 비우세요. 비운 뒤에야 공간이 확보됩니다",
+  "review.recycle.restore": "되돌리려면 File Station에서 공유 폴더의 #recycle을 열고 항목을 선택한 뒤 복원을 선택하세요",
+  "review.recycle.olderDsm": "DSM 7.2.1 이전에는 복원 버튼이 없습니다. File Station에서 #recycle의 항목을 원래 위치로 옮기세요",
+  "review.recycle.sync": "Synology Drive, ShareSync 또는 Cloud Sync로 동기화하는 폴더에서는 이동하면 동기화된 사본에서도 항목이 제거됩니다",
+  "review.numbers.title": "정리 요약",
+  "review.numbers.moves": "휴지통으로 이동",
+  "review.numbers.items": "선택한 항목",
+  "review.numbers.freeLater": "비운 뒤 확보되는 공간",
+  "review.numbers.about": "이 수치에 대해",
+  "review.numbers.allocated": "크기는 항목이 현재 사용하는 공간입니다. 휴지통을 비운 뒤에야 볼륨으로 돌아오며, 스냅샷이나 공유 데이터가 일부를 유지할 수 있습니다",
+  "review.willMove": {
+    "other": "휴지통으로 이동: 항목 {count}개, {bytes}. 공유 폴더의 휴지통을 비우면 약 {free} 확보"
+  },
+  "review.willMoveOnly": {
+    "other": "휴지통으로 이동: 항목 {count}개, {bytes}"
+  },
+  "review.confirmCheck": "항목이 휴지통으로 이동하며 비운 뒤에야 공간이 확보된다는 것을 이해했습니다",
+  "review.confirmMove": {
+    "other": "항목 {count}개를 휴지통으로 이동"
+  },
+  "review.share.title": "공유 폴더 {share}",
+  "review.share.size": {
+    "other": "항목 {count}개, {bytes}"
+  },
+  "review.share.adminOnly": "휴지통에서 이 항목들을 보고 복원할 수 있는 사용자는 관리자뿐입니다",
+  "review.share.everyone": "{share}을(를) 열 수 있는 모든 사용자가 휴지통에서 이 항목들을 보고 복원할 수 있습니다",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "일부 항목이 Synology Drive 폴더에 있습니다. 해당 폴더를 동기화하는 컴퓨터에서도 사라집니다",
+  "review.recheck": "다시 확인",
+  "review.rescan.open": "다시 스캔",
+  "review.dropChanged": "목록에서 제거",
+  "review.refusal.cleanupDisabled": "이 NAS에서 정리가 꺼져 있습니다",
+  "review.refusal.busy": "다른 스캔 또는 정리가 이 볼륨을 사용 중입니다. 끝나면 다시 확인하세요",
+  "review.refusal.noReport": "먼저 이 볼륨을 스캔하세요",
+  "review.refusal.targetChanged": "마지막 스캔 후 변경되었습니다. 다시 스캔하거나 목록에서 제거하세요",
+  "review.refusal.changed": "계획이 만료되었거나 더 이상 일치하지 않습니다. 계속하기 전에 다시 확인하세요",
+  "review.refusal.inRecycleBin": "이미 휴지통에 있습니다. Syno Reclaim은 휴지통에서 아무것도 제거하지 않습니다. DSM에서 비우세요",
+  "review.refusal.boundary": "Btrfs 하위 볼륨이거나 다른 볼륨에 있습니다. 제거하고 안의 항목을 선택하세요",
+  "review.refusal.outsideRoots": "정리가 변경할 수 있는 폴더 밖에 있습니다. 목록에서 제거하세요",
+  "review.refusal.recycleBinUnavailable": "지금은 DSM 휴지통 서비스를 사용할 수 없어 아무것도 이동하지 않았습니다. 나중에 다시 시도하세요",
+  "review.refusal.untrustedState": "정리 기록이 안전 검사를 통과하지 못해 아무것도 이동하지 않았습니다. 설정 > 진단에서 지원 번들을 내려받아 지원팀에 문의하세요",
+  "review.refusal.ioError": "읽기 또는 쓰기 오류로 정리가 중지되었습니다. 저장소 관리자에서 드라이브를 확인하세요",
+  "review.refusal.duplicatesStale": "중복 결과가 최신 스캔보다 오래되었습니다. 중복 항목을 열어 다시 분석한 후 다시 선택하세요",
+  "review.refusal.duplicatesUnknownGroup": "선택한 중복 그룹이 더 이상 없습니다. 중복 항목을 열어 다시 선택하세요",
+  "review.refusal.keeperChanged": "유지할 사본이 변경되었거나 없어져 아무것도 이동하지 않았습니다. 다시 스캔하고 중복을 다시 찾은 뒤 다시 선택하세요",
+  "review.refusal.keeperRemoved": "선택한 중복을 함께 처리하면 일부 파일의 사본이 남지 않아 아무것도 이동하지 않았습니다. 그룹 하나를 목록에서 빼거나 사본을 하나 더 유지하세요",
+  "review.refusal.keeperConflict": "선택한 그룹이 다른 그룹에서 유지하도록 지정한 사본을 삭제하므로 아무것도 이동하지 않았습니다. 그룹 하나를 목록에서 빼거나 다른 사본을 유지하세요",
+  "review.refusal.keeperConflictNamed": "{copy}은(는) “{kept}”에서 유지하도록 지정한 사본이지만 “{removing}”을(를) 제거하면 함께 삭제되므로 아무것도 이동하지 않았습니다. 두 그룹 중 하나를 목록에서 빼거나 다른 사본을 유지하세요",
+  "review.refusal.duplicatesNothing": "선택한 중복은 더 이상 아무것도 이동하지 않습니다. 목록에서 제거하세요",
+  "review.refusal.other": "정리가 거부되었습니다. 선택한 항목을 다시 확인하세요",
+  "review.refusal.selectedItem": "선택한 항목",
+  "review.applying.title": "휴지통으로 이동 중",
+  "review.applying.count": "{done} / {total}개 항목",
+  "review.applying.indeterminate": "진행 상황 대기 중",
+  "review.applying.pollError": "지금은 진행 상황을 읽을 수 없습니다. 계속 확인하며 정리는 다시 보내지 않습니다",
+  "review.applying.cancel": "정리 취소",
+  "review.applying.cancelling": "취소 중",
+  "review.applying.cancelError": "취소하지 못했습니다. 정리가 계속 진행 중일 수 있습니다",
+  "review.result.title": "정리 결과",
+  "review.result.completeTitle": "휴지통으로 이동함",
+  "review.result.cancelledTitle": "정리 취소됨",
+  "review.result.unableToStartTitle": "시작할 수 없음",
+  "review.result.partialTitle": "일부 항목은 원래 위치에 남았습니다",
+  "review.result.moved": "휴지통으로 이동: {bytes}. 비운 뒤에야 공간이 확보됩니다",
+  "review.result.empty": "제어판 > 공유 폴더 > 작업 > 휴지통 비우기에서 비우거나 작업 스케줄러에서 휴지통 작업을 설정하세요",
+  "review.result.bin": {
+    "other": "{share}의 휴지통: 항목 {count}개"
+  },
+  "review.result.leftTitle": "원래 위치에 남은 항목",
+  "review.result.detailsUnavailable": "정리가 끝났지만 세부 결과를 볼 수 없습니다",
+  "review.result.lastKnown": "마지막 기록: {counts}",
+  "review.outcome.partial": "일부 이동",
+  "review.outcome.changed": "변경되어 그대로 둠",
+  "review.outcome.failed": "이동 안 됨",
+  "review.applyError.noRetry": "다른 정리를 시작하기 전에 작업 상태를 확인하세요. 이 화면은 다시 보내지 않습니다",
+  "review.count.moved": {
+    "other": "{count}개 이동"
+  },
+  "review.count.absent": "이미 없음 {count}",
+  "review.count.partial": {
+    "other": "{count}개 일부 이동"
+  },
+  "review.count.failed": {
+    "other": "{count}개 이동 안 됨"
+  },
+  "review.count.changed": "변경됨 {count}",
+  "review.duplicates.title": "중복 항목",
+  "review.duplicates.line": {
+    "other": "{count}개를 휴지통으로 이동 · {keeps} 유지"
+  },
+  "review.duplicates.linePreferred": {
+    "other": "{count}개를 휴지통으로 이동 · {keeps} 유지(선호 공유 폴더)"
+  },
+  "review.duplicates.partialLine": {
+    "other": "폴더 {count}개에서 각각 동일한 항목 {items}개를 휴지통으로 이동 · {keeps} 유지"
+  },
+  "review.duplicates.lineDelete": {
+    "other": "{count}개를 영구 삭제 · {keeps} 유지"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "other": "{count}개를 영구 삭제 · {keeps} 유지(선호 공유 폴더)"
+  },
+  "review.duplicates.partialLineDelete": {
+    "other": "폴더 {count}개에서 각각 동일한 항목 {items}개를 영구 삭제 · {keeps} 유지"
+  },
+  "review.duplicates.lineMixed": {
+    "other": "{count}개를 제거: 휴지통이 있으면 휴지통으로, 없으면 영구 삭제 · {keeps} 유지"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "other": "{count}개를 제거: 휴지통이 있으면 휴지통으로, 없으면 영구 삭제 · {keeps} 유지(선호 공유 폴더)"
+  },
+  "review.duplicates.partialLineMixed": {
+    "other": "폴더 {count}개에서 각각 동일한 항목 {items}개를 제거: 휴지통이 있으면 휴지통으로, 없으면 영구 삭제 · {keeps} 유지"
+  },
+  "review.duplicates.partialNote": "일부가 같은 폴더에서는 같은 항목만 제거됩니다. 폴더 자체와 다른 항목(예: .git)은 그대로 남습니다",
+  "review.duplicates.keptChecked": {
+    "other": "제거 직전에 유지할 사본 {count}개를 다시 확인합니다"
+  },
+  "review.duplicates.freesLater": "나중에 확보: 스냅샷이 이 사본 중 {size}를 아직 보유합니다",
+  "review.duplicates.clear": "목록에서 중복 항목 제거",
+  "review.jobState.queued": "대기 중",
+  "review.jobState.running": "실행 중",
+  "review.jobState.pausing": "일시 중지 중",
+  "review.jobState.cancelling": "취소 중",
+  "review.jobState.paused": "일시 중지됨",
+  "review.jobState.completed": "완료",
+  "review.jobState.partial": "일부 완료",
+  "review.jobState.failed": "실패",
+  "review.jobState.cancelled": "취소됨",
+  "review.jobState.interrupted": "중단됨",
+  "review.apiError.no_permission": "DSM 계정에 정리를 계획할 권한이 없습니다",
+  "review.apiError.session_timeout": "DSM 세션이 만료되었습니다. 다시 로그인하고 이 확인을 다시 여세요",
+  "review.apiError.reload": "Syno Reclaim 서비스가 변경되었습니다. DSM 창을 다시 로드하고 이 확인을 다시 여세요",
+  "review.apiError.backend_unavailable": "Syno Reclaim을 사용할 수 없습니다. 패키지 센터를 확인하고 나중에 다시 시도하세요",
+  "review.apiError.auth_unavailable": "DSM이 로그인 상태를 확인하지 못했습니다. 잠시 후 다시 시도하세요",
+  "review.apiError.invalid_param": "정리 요청이 수락되지 않았습니다. 확인을 다시 열고 선택을 확인하세요",
+  "review.apiError.busy": "다른 작업이 이 볼륨을 사용 중입니다. 끝나면 다시 시도하세요",
+  "review.apiError.backend_busy": "Syno Reclaim이 다른 요청을 처리 중입니다. 잠시 후 다시 시도하세요",
+  "review.apiError.cli_error": "Syno Reclaim이 정리 요청을 완료할 수 없습니다",
+  "review.apiError.timeout": "요청 시간이 초과되었습니다. 다른 정리를 시작하기 전에 작업 상태를 확인하세요",
+  "review.apiError.exec_failed": "Syno Reclaim이 정리 요청을 시작할 수 없습니다",
+  "review.apiError.fixture_missing": "이 미리 보기에는 요청한 정리 응답이 포함되어 있지 않습니다",
+  "review.apiError.unknown": "정리를 확인하는 중 예기치 않은 오류가 발생했습니다",
+  "review.recycle.time": "대량 이동에는 시간이 걸립니다. DSM은 초당 수천 개 정도의 파일을 옮기며, 공간은 휴지통을 비운 뒤에야 확보됩니다",
+  "review.applying.calls": {
+    "other": "DSM 이동 {count}회 완료"
+  },
+  "review.duplicates.scanAge": "이 결과는 {time} 스캔에서 나온 것입니다. 그 뒤 이동할 사본에 추가되거나 변경된 파일도 함께 휴지통으로 이동하며 거기서 복원할 수 있습니다. 해당 폴더가 변경되었을 수 있으면 먼저 다시 스캔하세요",
+  "review.duplicates.scanAgeDelete": "이 결과는 {time} 스캔에서 나온 것입니다. 그 뒤 제거할 사본에 추가되거나 변경된 파일도 함께 제거됩니다: 휴지통이 있으면 휴지통으로, 없으면 영구 삭제됩니다. 해당 폴더가 변경되었을 수 있으면 먼저 다시 스캔하세요",
+  "review.planning.count": "선택한 항목 확인 중: {done} / {total}",
+  "review.more": "외 {count}개",
+  "review.protected.volume": "볼륨 자체입니다",
+  "review.protected.system": "DSM 시스템 파일입니다",
+  "review.protected.recycle_bin": "이미 휴지통에 있습니다. DSM에서 비우세요",
+  "review.protected.package": "DSM 패키지의 데이터입니다. 해당 패키지에서 공간을 확보하세요",
+  "review.protected.packageNamed": "{package}의 데이터입니다. {package}에서 공간을 확보하세요",
+  "review.protected.dsm_folder": "DSM 시스템 폴더입니다",
+  "review.protected.share_root": "공유 폴더 자체입니다. 그 안의 항목을 선택하세요",
+  "review.protected.home": "사용자 홈입니다. 그 안의 항목을 선택하세요",
+  "review.protected.outside_share": "DSM 공유 폴더 안에 있지 않습니다. 정리는 공유 폴더의 휴지통으로만 항목을 옮깁니다",
+  "review.protected.other": "보호된 항목입니다",
+  "review.refusal.cancelled": "확인을 중지했습니다",
+  "review.planning.stop": "확인 중지",
+  "review.planning.kept": "남길 사본 확인 중: {done} / {total}",
+  "review.confirmDelete": {
+    "other": "항목 {count}개 영구 삭제"
+  },
+  "review.confirmMoveDelete": {
+    "other": "{moves}개 이동, {deletes}개 영구 삭제"
+  },
+  "review.confirmCheckDelete": {
+    "other": "항목 {deletes}개가 영구 삭제되어 복원할 수 없고 나머지는 휴지통으로 이동함을 이해했습니다"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "other": "항목 {deletes}개가 영구 삭제되어 복원할 수 없음을 이해했습니다"
+  },
+  "review.delete.title": {
+    "other": "항목 {deletes}개가 영구 삭제됩니다"
+  },
+  "review.delete.body": "옮길 휴지통이 없습니다: DSM 공유 폴더 밖에 있거나 휴지통이 꺼진 공유 폴더에 있습니다. Reclaim이 삭제하며 복원할 수 없습니다",
+  "review.delete.folder": "폴더 {share} (공유 폴더 아님)",
+  "review.delete.share": "DSM 공유 폴더 밖: {share}의 항목은 영구 삭제됩니다",
+  "review.delete.binOff": "{share}에 휴지통이 켜져 있지 않음: 이곳의 항목은 영구 삭제됩니다",
+  "review.delete.binOffEnable": "복원할 수 있게 하려면 먼저 휴지통을 켠 다음 다시 확인을 선택하세요. 그러면 항목이 휴지통으로 이동합니다",
+  "review.numbers.removes": "제거",
+  "review.count.deleted": {
+    "other": "영구 삭제 {count}"
+  },
+  "review.result.deleted": {
+    "other": "영구 삭제됨: 항목 {deleted}개, {bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "이 계획은 휴지통이 없는 항목을 영구 삭제합니다. 확인한 후 계속하세요",
+  "review.applying.titleDelete": "영구 삭제 중",
+  "review.applying.titleMixed": "휴지통으로 이동 및 영구 삭제 중",
+  "review.result.deletedTitle": "영구 삭제함",
+  "review.result.cleanedTitle": "정리 완료",
+  "review.result.cancelledCounts": {
+    "other": "취소됨: {done}개 처리, {left}개는 처리하지 않고 그대로 남김"
+  },
+  "review.result.cancelTooLate": "취소할 때 마지막 항목을 처리 중이어서 그 항목은 완료되었습니다",
+  "review.numbers.frees": "확보되는 공간",
+  "review.numbers.allocatedDelete": "크기는 항목이 현재 사용하는 공간입니다. 삭제하면 볼륨으로 돌아오지만 스냅샷이나 공유 데이터가 일부를 유지할 수 있습니다",
+  "review.recycle.syncDelete": "Synology Drive, ShareSync 또는 Cloud Sync로 동기화하는 폴더에서는 삭제하면 동기화된 사본에서도 항목이 제거됩니다",
+  "review.refusal.notFound": "이 항목은 더 이상 없습니다. 정리 목록에서 제거하세요",
+  "review.recycle.symlinks": {
+    "other": "그중 바로 가기(심볼릭 링크) {symlinks}개는 DSM 휴지통에 남지 않으며 복원해도 돌아오지 않습니다"
+  },
+  "review.applying.checkingKept": {
+    "other": "보존할 사본 {kept}개 확인 중"
+  },
+  "review.applying.finishingCurrent": "현재 항목을 마친 뒤 중지합니다. 나머지 항목은 그대로 유지됩니다"
+}

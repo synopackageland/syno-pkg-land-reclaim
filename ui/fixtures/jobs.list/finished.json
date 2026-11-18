@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:36:11Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "fixture-job0001",
+      "state": "partial",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/volume1"
+        }
+      ],
+      "scope": "volume",
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-00000000009a",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T23:55:19Z",
+      "updated": "2026-09-30T00:30:19Z",
+      "resumes": 0,
+      "units": 197,
+      "progress": {
+        "phase": "publish",
+        "units_done": 197,
+        "units_total": 198,
+        "entries": 5514531,
+        "items": 48131818,
+        "bytes_read": 3183629311,
+        "elapsed_s": 2083,
+        "rss_bytes": 2789376,
+        "subvolume_id": null,
+        "current_subvolume": null,
+        "basis": null,
+        "updated": "2026-09-30T00:30:05Z"
+      },
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "partial",
+        "exit_code": 3,
+        "reports": [
+          {
+            "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/volume1/share64/entry0075/entry0076/entry0077/entry0078"
+        }
+      },
+      "requested_by": null,
+      "kind": "scan"
+    }
+  ]
+}

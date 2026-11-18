@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "レポート",
+  "report.choice.newest": "最新のスキャン",
+  "report.choice.newestEach": "各フォルダーの最新のスキャン",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "ボリューム全体",
+  "report.scope.share": "共有フォルダー {name}",
+  "report.scope.paths": {
+    "one": "{count} 個のフォルダー",
+    "other": "{count} 個のフォルダー"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "ボリューム全体 + 新しい共有フォルダー {count} 個",
+    "other": "ボリューム全体 + 新しい共有フォルダー {count} 個"
+  },
+  "report.row.shareScan": "共有フォルダーのスキャン {time}"
+}

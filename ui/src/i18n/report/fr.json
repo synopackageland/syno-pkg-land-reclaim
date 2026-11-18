@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "Rapport",
+  "report.choice.newest": "Analyse la plus récente",
+  "report.choice.newestEach": "Analyse la plus récente de chaque dossier",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "Volume entier",
+  "report.scope.share": "Dossier partagé {name}",
+  "report.scope.paths": {
+    "one": "{count} dossier",
+    "other": "{count} dossiers"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "Volume entier + {count} dossier partagé plus récent",
+    "other": "Volume entier + {count} dossiers partagés plus récents"
+  },
+  "report.row.shareScan": "Analyse du dossier partagé {time}"
+}

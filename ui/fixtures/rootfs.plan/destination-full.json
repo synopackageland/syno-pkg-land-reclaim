@@ -1,0 +1,16 @@
+{
+  "command": "rootfs-plan",
+  "completion": "failed",
+  "errors": [
+    {
+      "code": "destination_full",
+      "path": "/volume1/backup",
+      "message": "The destination does not have enough free space."
+    }
+  ],
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:00Z",
+  "job_id": null,
+  "warnings": []
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/detach.schema.json",
+  "title": "synoreclaim scan --detach result v1",
+  "description": "The one JSON line scan --detach prints and flushes before it returns (SPEC 5.3). completion complete: job_id names a queued job; failed (exit 1): a target did not resolve, see errors; busy (exit 4): every filesystem is locked by another writer, see errors[].holder. No job is kept unless job_id is set. resume --detach and cleanup apply --detach print the same line (SPEC 5.11, 5.7); a refused cleanup apply prints the cleanup-apply failure document instead. NAS-wide admission refuses a second queued/running scan with exit 4, completion busy, outcome scan_in_progress and running_job_id; job_id remains null and run is empty.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "detach"
+        },
+        "launcher": {
+          "enum": [
+            "self",
+            "none"
+          ],
+          "description": "self: synoreclaim started the job in a new session; none: the caller runs it, e.g. under a service manager."
+        },
+        "run": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The argv that runs the queued job in the foreground (scan --job-id ID --state-dir DIR; cleanup apply --yes --json ... --job-id ID ... -- PLAN); empty when no job was queued."
+        },
+        "result": {
+          "description": "jobs/<job_id>/result.json, where the run leaves its whole document (scan, or cleanup-apply); null when no job was queued.",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "common.schema.json#/$defs/path"
+            }
+          ]
+        },
+        "log": {
+          "description": "jobs/<job_id>/output.log, the stdout and stderr of the job's own process with launcher self; null otherwise.",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "common.schema.json#/$defs/path"
+            }
+          ]
+        },
+        "outcome": {
+          "enum": [
+            "scan_in_progress",
+            "joined"
+          ],
+          "description": "scan_in_progress: a scan already occupies NAS-wide admission; no new job is queued. joined (exit 0, rootfs.report only): a walk of / is already queued or running; job_id and running_job_id name it, run is empty and nothing new starts."
+        },
+        "running_job_id": {
+          "type": "string",
+          "description": "The existing queued/running job to follow when outcome is set."
+        }
+      },
+      "required": [
+        "command",
+        "launcher",
+        "run",
+        "result",
+        "log"
+      ]
+    }
+  ]
+}

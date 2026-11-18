@@ -1,0 +1,221 @@
+{
+  "review.title": "確認清理",
+  "review.planning": "正在檢查選取項目",
+  "review.empty": "請先在「探索」選取項目",
+  "review.empty.title": "尚未選取項目",
+  "review.disabled.cleanup": "此 NAS 已關閉清理功能",
+  "review.disabled.allow": "允許清理",
+  "review.disabled.allowFailed": "無法允許清理，請再試一次",
+  "review.recycle.title": "項目會移到所屬共用資料夾的資源回收筒",
+  "review.recycle.body": "不會永久刪除。請在 DSM 還原項目或清空資源回收筒；清空後才會釋放空間",
+  "review.recycle.restore": "若要復原，請在 File Station 開啟該共用資料夾的 #recycle，選取項目後選擇「還原」",
+  "review.recycle.olderDsm": "DSM 7.2.1 之前沒有「還原」按鈕：請在 File Station 把項目從 #recycle 移回原處",
+  "review.recycle.sync": "若資料夾由 Synology Drive、ShareSync 或 Cloud Sync 同步，移動後同步端的項目也會被移除",
+  "review.numbers.title": "清理摘要",
+  "review.numbers.moves": "移到資源回收筒",
+  "review.numbers.items": "選取項目",
+  "review.numbers.freeLater": "清空後約可釋放",
+  "review.numbers.about": "關於這些數字",
+  "review.numbers.allocated": "大小為項目目前占用的空間。要等資源回收筒清空後儲存空間才會取回，快照或共用資料仍可能保留部分空間",
+  "review.willMove": {
+    "other": "將移到資源回收筒：{count} 個項目，{bytes}；清空該共用資料夾的資源回收筒後約可釋放 {free}"
+  },
+  "review.willMoveOnly": {
+    "other": "將移到資源回收筒：{count} 個項目，{bytes}"
+  },
+  "review.confirmCheck": "我了解項目會移到資源回收筒，清空後才會釋放空間",
+  "review.confirmMove": {
+    "other": "將 {count} 個項目移到資源回收筒"
+  },
+  "review.share.title": "共用資料夾 {share}",
+  "review.share.size": {
+    "other": "{count} 個項目，{bytes}"
+  },
+  "review.share.adminOnly": "只有管理員能在資源回收筒看到並還原這些項目",
+  "review.share.everyone": "所有能開啟 {share} 的使用者都能在其資源回收筒看到並還原這些項目",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "部分項目位於 Synology Drive 資料夾：同步這些資料夾的電腦也會失去它們",
+  "review.recheck": "重新檢查",
+  "review.rescan.open": "重新掃描",
+  "review.dropChanged": "從清單移除",
+  "review.refusal.cleanupDisabled": "此 NAS 已關閉清理功能",
+  "review.refusal.busy": "另一個掃描或清理正在使用此儲存空間，完成後再重新檢查",
+  "review.refusal.noReport": "請先掃描此儲存空間",
+  "review.refusal.targetChanged": "上次掃描後已變更。請重新掃描，或從清單移除",
+  "review.refusal.changed": "清理計畫已過期或不再相符，請先重新檢查",
+  "review.refusal.inRecycleBin": "已在資源回收筒中。Syno Reclaim 不會從資源回收筒移除任何項目，請在 DSM 清空",
+  "review.refusal.boundary": "這是 Btrfs 子磁碟區或位於其他儲存空間。請移除後改選其中的項目",
+  "review.refusal.outsideRoots": "不在清理可變更的資料夾內，請從清單移除",
+  "review.refusal.recycleBinUnavailable": "DSM 的資源回收筒服務目前無法使用，沒有移動任何項目。請稍後再試",
+  "review.refusal.untrustedState": "清理紀錄未通過安全檢查，沒有移動任何項目。請在「設定 > 診斷」下載支援套件並聯絡支援",
+  "review.refusal.ioError": "讀寫錯誤使清理停止。請在儲存空間管理員檢查硬碟",
+  "review.refusal.duplicatesStale": "重複項目的結果早於最近一次掃描。請開啟「重複內容」重新分析，再重新選取",
+  "review.refusal.duplicatesUnknownGroup": "選取的重複項目群組已不存在。請開啟「重複內容」重新選取",
+  "review.refusal.keeperChanged": "要保留的副本已變更或不見了，沒有移動任何項目。請重新掃描並再次尋找重複檔後重選",
+  "review.refusal.keeperRemoved": "所選的重複項目合起來會讓部分檔案沒有任何副本，沒有移動任何項目。請從清單移除一組，或多保留一份副本",
+  "review.refusal.keeperConflict": "所選的一組會刪掉你在另一組指定保留的副本，沒有移動任何項目。請從清單移除其中一組，或改保留別的副本",
+  "review.refusal.keeperConflictNamed": "{copy} 是你在「{kept}」指定保留的副本，但移除「{removing}」會刪掉它，沒有移動任何項目。請從清單移除這兩組其中一組，或改保留別的副本",
+  "review.refusal.duplicatesNothing": "所選的重複項目已不會移動任何檔案。請從清單移除",
+  "review.refusal.other": "清理遭拒，請重新檢查所選項目",
+  "review.refusal.selectedItem": "某個所選項目",
+  "review.applying.title": "正在移到資源回收筒",
+  "review.applying.count": "{done} / {total} 個項目",
+  "review.applying.indeterminate": "等待進度",
+  "review.applying.pollError": "暫時無法讀取進度，仍會持續檢查；不會重複送出清理",
+  "review.applying.cancel": "取消清理",
+  "review.applying.cancelling": "正在取消",
+  "review.applying.cancelError": "無法取消，清理可能仍在進行",
+  "review.result.title": "清理結果",
+  "review.result.completeTitle": "已移到資源回收筒",
+  "review.result.cancelledTitle": "已取消清理",
+  "review.result.unableToStartTitle": "無法開始",
+  "review.result.partialTitle": "部分項目留在原處",
+  "review.result.moved": "已移到資源回收筒：{bytes}；清空後才會釋放空間",
+  "review.result.empty": "請在「控制台 > 共用資料夾 > 動作 > 清空資源回收筒」清空，或在「任務排程表」設定資源回收筒任務",
+  "review.result.bin": {
+    "other": "{share} 的資源回收筒：{count} 個項目"
+  },
+  "review.result.leftTitle": "仍在原處",
+  "review.result.detailsUnavailable": "清理已結束，無法取得詳細結果",
+  "review.result.lastKnown": "最後紀錄：{counts}",
+  "review.outcome.partial": "部分移動",
+  "review.outcome.changed": "已變更，未處理",
+  "review.outcome.failed": "未移動",
+  "review.applyError.noRetry": "開始另一次清理前請先確認工作狀態；此畫面不會重複送出",
+  "review.count.moved": {
+    "other": "已移動 {count} 個"
+  },
+  "review.count.absent": "{count} 已不存在",
+  "review.count.partial": {
+    "other": "部分移動 {count} 個"
+  },
+  "review.count.failed": {
+    "other": "未移動 {count} 個"
+  },
+  "review.count.changed": "已變更 {count}",
+  "review.duplicates.title": "重複內容",
+  "review.duplicates.line": {
+    "other": "移動 {count} 份到資源回收筒 · 保留 {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "other": "移動 {count} 份到資源回收筒 · 保留 {keeps}（偏好的共用資料夾）"
+  },
+  "review.duplicates.partialLine": {
+    "other": "將 {count} 個資料夾中各 {items} 個相同項目移到資源回收筒 · 保留 {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "other": "永久刪除 {count} 份 · 保留 {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "other": "永久刪除 {count} 份 · 保留 {keeps}（偏好的共用資料夾）"
+  },
+  "review.duplicates.partialLineDelete": {
+    "other": "將 {count} 個資料夾中各 {items} 個相同項目永久刪除 · 保留 {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "other": "移除 {count} 份：有資源回收筒的移到回收筒，沒有的永久刪除 · 保留 {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "other": "移除 {count} 份：有資源回收筒的移到回收筒，沒有的永久刪除 · 保留 {keeps}（偏好的共用資料夾）"
+  },
+  "review.duplicates.partialLineMixed": {
+    "other": "將 {count} 個資料夾中各 {items} 個相同項目移除：有資源回收筒的移到回收筒，沒有的永久刪除 · 保留 {keeps}"
+  },
+  "review.duplicates.partialNote": "部分相同的資料夾只會移除相同的項目。資料夾本身與不同的項目（例如 .git）都會保留",
+  "review.duplicates.keptChecked": {
+    "other": "清理前會再次檢查 {count} 份保留的副本"
+  },
+  "review.duplicates.freesLater": "稍後才釋放：快照仍保留這些副本中的 {size}",
+  "review.duplicates.clear": "從清單移除重複項目",
+  "review.jobState.queued": "排入佇列",
+  "review.jobState.running": "執行中",
+  "review.jobState.pausing": "正在暫停",
+  "review.jobState.cancelling": "正在取消",
+  "review.jobState.paused": "已暫停",
+  "review.jobState.completed": "已完成",
+  "review.jobState.partial": "部分完成",
+  "review.jobState.failed": "失敗",
+  "review.jobState.cancelled": "已取消",
+  "review.jobState.interrupted": "已中斷",
+  "review.apiError.no_permission": "您的 DSM 帳號沒有規劃清理的權限",
+  "review.apiError.session_timeout": "DSM 工作階段已逾時。請重新登入並再次開啟此確認畫面",
+  "review.apiError.reload": "Syno Reclaim 服務已變更。請重新載入 DSM 視窗並再次開啟此確認畫面",
+  "review.apiError.backend_unavailable": "Syno Reclaim 無法使用。請在套件中心檢查服務，稍後再試",
+  "review.apiError.auth_unavailable": "DSM 無法確認你的登入狀態。請稍後再試",
+  "review.apiError.invalid_param": "清理要求未獲接受。請重新開啟確認畫面並檢查選取項目",
+  "review.apiError.busy": "此磁碟區正由其他作業使用。請等作業結束後再試",
+  "review.apiError.backend_busy": "Syno Reclaim 正在處理其他要求，請稍後再試",
+  "review.apiError.cli_error": "Syno Reclaim 無法完成清理要求",
+  "review.apiError.timeout": "要求逾時。開始另一項清理前，請先確認工作狀態",
+  "review.apiError.exec_failed": "Syno Reclaim 無法啟動清理要求",
+  "review.apiError.fixture_missing": "此預覽未包含所需的清理回應",
+  "review.apiError.unknown": "檢查清理時發生未預期的錯誤",
+  "review.recycle.time": "大量搬移需要時間：DSM 每秒約可移動數千個檔案，且要清空資源回收筒後才會釋放空間",
+  "review.applying.calls": {
+    "other": "DSM 已完成 {count} 次移動"
+  },
+  "review.duplicates.scanAge": "這些結果來自 {time} 的掃描。之後在要移動的副本中新增或變更的檔案也會一起移到資源回收筒，可從那裡還原。若這些資料夾可能已變更，請先重新掃描",
+  "review.duplicates.scanAgeDelete": "這些結果來自 {time} 的掃描。之後在要移除的副本中新增或變更的檔案也會一起移除：有資源回收筒的移到回收筒，沒有的永久刪除。若這些資料夾可能已變更，請先重新掃描",
+  "review.planning.count": "正在檢查選取項目：{done} / {total}",
+  "review.more": "還有 {count} 個",
+  "review.protected.volume": "這是儲存空間本身",
+  "review.protected.system": "DSM 系統檔案",
+  "review.protected.recycle_bin": "已在資源回收筒中，請在 DSM 清空",
+  "review.protected.package": "屬於 DSM 套件的資料，請在該套件中釋放空間",
+  "review.protected.packageNamed": "屬於 {package} 的資料，請在 {package} 中釋放空間",
+  "review.protected.dsm_folder": "DSM 系統資料夾",
+  "review.protected.share_root": "這是共用資料夾本身，請改選其中的項目",
+  "review.protected.home": "這是使用者家目錄，請改選其中的項目",
+  "review.protected.outside_share": "不在 DSM 共用資料夾內：清理只會把項目移到共用資料夾的資源回收筒",
+  "review.protected.other": "受保護的項目",
+  "review.refusal.cancelled": "已停止檢查",
+  "review.planning.stop": "停止檢查",
+  "review.planning.kept": "正在檢查保留的副本：{done} / {total}",
+  "review.confirmDelete": {
+    "other": "永久刪除 {count} 個項目"
+  },
+  "review.confirmMoveDelete": {
+    "other": "移動 {moves} 個、永久刪除 {deletes} 個"
+  },
+  "review.confirmCheckDelete": {
+    "other": "我了解 {deletes} 個項目會永久刪除、無法復原；其他項目會移到資源回收筒"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "other": "我了解 {deletes} 個項目會永久刪除、無法復原"
+  },
+  "review.delete.title": {
+    "other": "{deletes} 個項目會永久刪除"
+  },
+  "review.delete.body": "沒有資源回收筒可收：它們不在 DSM 共用資料夾內，或所在的共用資料夾沒有開啟資源回收筒。Reclaim 會直接刪除，無法還原",
+  "review.delete.folder": "資料夾 {share}（不是共用資料夾）",
+  "review.delete.share": "不在 DSM 共用資料夾內：{share} 中的項目會永久刪除",
+  "review.delete.binOff": "{share} 沒有開啟資源回收筒：這裡的項目會永久刪除",
+  "review.delete.binOffEnable": "若要能還原，請先開啟資源回收筒，再選擇「重新檢查」，這些項目就會改移到資源回收筒",
+  "review.numbers.removes": "會移除",
+  "review.count.deleted": {
+    "other": "永久刪除 {count} 個"
+  },
+  "review.result.deleted": {
+    "other": "已永久刪除 {deleted} 個項目，{bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "此計畫會永久刪除沒有資源回收筒的項目，請先確認再繼續",
+  "review.applying.titleDelete": "正在永久刪除",
+  "review.applying.titleMixed": "正在移到資源回收筒並永久刪除",
+  "review.result.deletedTitle": "已永久刪除",
+  "review.result.cleanedTitle": "清理完成",
+  "review.result.cancelledCounts": {
+    "other": "已取消：已處理 {done} 個，{left} 個未處理，維持原狀"
+  },
+  "review.result.cancelTooLate": "按下取消時正在處理最後一個項目，因此它仍已完成",
+  "review.numbers.frees": "約可釋放",
+  "review.numbers.allocatedDelete": "大小為項目目前占用的空間。永久刪除後儲存空間即可取回，但快照或共用資料仍可能保留部分空間",
+  "review.recycle.syncDelete": "若資料夾由 Synology Drive、ShareSync 或 Cloud Sync 同步，刪除後同步端的項目也會被移除",
+  "review.refusal.notFound": "這個項目已經不在了，請將它從清理清單移除",
+  "review.recycle.symlinks": {
+    "other": "其中 {symlinks} 個捷徑（symlink）DSM 資源回收筒不會保留，還原後也不會回來"
+  },
+  "review.applying.checkingKept": {
+    "other": "正在確認 {kept} 份保留的副本"
+  },
+  "review.applying.finishingCurrent": "正在完成目前項目，完成後停止；其餘項目維持原狀"
+}

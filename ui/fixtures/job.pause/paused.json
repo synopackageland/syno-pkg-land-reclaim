@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "command": "pause",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:30:51Z",
+  "completion": "failed",
+  "job_id": "20260930T010000Z-a1b2c",
+  "errors": [],
+  "warnings": [],
+  "outcome": "not_running",
+  "message": "job 20260930T010000Z-a1b2c is not running",
+  "state": "paused"
+}

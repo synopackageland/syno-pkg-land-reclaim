@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/volumes.schema.json",
+  "title": "synoreclaim volumes result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "volumes"
+        },
+        "volumes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mount": {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              "fsid": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "common.schema.json#/$defs/fsid"
+                  }
+                ]
+              },
+              "total_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "used_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "free_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "metadata_access": {
+                "type": "boolean"
+              },
+              "reports": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "incompatible_reports": {
+                "description": "Reports of this filesystem that cannot be read: damaged, or from another report format. Non-zero adds the note report_incompatible; answers that find no readable covering report then fail with the target error report_incompatible instead of no_report.",
+                "type": "integer",
+                "minimum": 0
+              },
+              "last_scan": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "common.schema.json#/$defs/timestamp"
+                  }
+                ]
+              },
+              "last_consistency": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "common.schema.json#/$defs/consistency"
+                  }
+                ]
+              },
+              "pending_deletion": {
+                "description": "Deleted subvolumes the Btrfs cleaner has not freed yet; their space is freed later without any action. null when subvolume discovery failed (see notes).",
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "count": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "bytes": {
+                        "type": "null",
+                        "description": "Not known before the cleaner frees it: a root item counts only its tree blocks."
+                      }
+                    },
+                    "required": [
+                      "count",
+                      "bytes"
+                    ]
+                  }
+                ]
+              },
+              "shares": {
+                "description": "Btrfs writable share subvolumes, or ext4 directories verified against the trusted DSM share inventory and pinned inode identity. Ordinary ext4 volume directories are not shares.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "common.schema.json#/$defs/path"
+                    },
+                    "path": {
+                      "$ref": "common.schema.json#/$defs/path"
+                    },
+                    "subvolume_id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "size_bytes": {
+                      "description": "Physical bytes of the share's live namespace in the newest volume report's overview; omitted when no volume report exists.",
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "inode": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "path",
+                    "subvolume_id"
+                  ]
+                }
+              },
+              "notes": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/notice"
+                }
+              },
+              "last_attribution": {
+                "$ref": "common.schema.json#/$defs/attribution"
+              },
+              "filesystem": {
+                "$ref": "common.schema.json#/$defs/filesystem_kind"
+              },
+              "capabilities": {
+                "$ref": "common.schema.json#/$defs/capabilities"
+              }
+            },
+            "required": [
+              "mount",
+              "fsid",
+              "total_bytes",
+              "used_bytes",
+              "free_bytes",
+              "metadata_access",
+              "reports",
+              "incompatible_reports",
+              "last_scan",
+              "last_consistency",
+              "pending_deletion",
+              "shares",
+              "notes",
+              "filesystem",
+              "capabilities"
+            ]
+          }
+        },
+        "system_partition": {
+          "$ref": "common.schema.json#/$defs/system_partition"
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/target_error",
+            "description": "Mounts that are not usable Btrfs volumes."
+          }
+        }
+      },
+      "required": [
+        "command",
+        "volumes",
+        "excluded"
+      ]
+    }
+  ]
+}

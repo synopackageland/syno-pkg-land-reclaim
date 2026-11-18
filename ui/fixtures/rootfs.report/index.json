@@ -1,0 +1,20 @@
+[
+  { "file": "golden.json" },
+  { "file": "getting-full.json", "scenario": "sysvol_getting_full" },
+  { "file": "full.json", "scenario": "sysvol_full" },
+  { "file": "partial.json", "scenario": "sysvol_partial" },
+  { "file": "small.json", "scenario": "sysvol_small" },
+  { "file": "nothing-movable.json", "scenario": "sysvol_nothing_movable" },
+  { "file": "report.json", "scenario": "rootfs_cleanup" },
+  { "file": "report.json", "scenario": "rootfs_destination_full" },
+  { "file": "report.json", "scenario": "rootfs_busy" },
+  { "file": "report.json", "scenario": "rootfs_walk_stopped" },
+  { "file": "report.json", "scenario": "rootfs_dsm_update_active" },
+  { "file": "report.json", "scenario": "rootfs_stale" },
+  { "file": "report.json", "scenario": "rootfs_nothing" },
+  { "file": "report.json", "scenario": "rootfs_tools_only" },
+  { "file": "report.json", "scenario": "rootfs_no_room" },
+  { "file": "report.json", "scenario": "rootfs_no_shares" },
+  { "file": "full.json", "scenario": "abb_share" },
+  { "file": "deep-short.json", "scenario": "sysvol_deep_short" }
+]

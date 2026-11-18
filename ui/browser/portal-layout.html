@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>DSM Portal regression</title>
+<!-- Like DSM's own page, no viewport meta: the full-page mount must add one
+     before a phone lays the app out at its real width. -->
+<style>html, body, #synoreclaim { height: 100%; margin: 0; }</style></head>
+<body><div id="synoreclaim"></div>
+<script type="module">
+  // Development-only harness: the app owns the whole page, as in a DSM
+  // Portal/standalone launch. ?fullPage=0 mounts it as inside a DSM window.
+  const params = new URLSearchParams(location.search)
+  // Model DSM sizing its standalone window before prepareFullPage sets the
+  // viewport. iOS only refits that window after the UI dispatches resize.
+  if (params.get('prepareFullPage') === '1') {
+    const host = document.querySelector('#synoreclaim')
+    host.style.width = `${window.innerWidth}px`
+    host.dataset.initialWidth = String(window.innerWidth)
+    window.addEventListener('resize', () => { host.style.width = `${window.innerWidth}px` })
+    const viewport = document.createElement('meta')
+    viewport.name = 'viewport'
+    viewport.content = 'width=device-width, initial-scale=1'
+    document.head.append(viewport)
+  }
+  window.SYNO = { API: {} } // Hide the dev scenario selector, as in DSM.
+  const { fixtureAuthorizationClient } = await import('/src/api/authorizationFixtures.ts')
+  const { nav } = await import('/src/stores/nav.ts')
+  const view = params.get('view')
+  nav.page = ['explore', 'snapshots', 'packages', 'recycle', 'history', 'settings'].includes(view) ? view : 'overview'
+  const { mount } = await import('/src/dsmBundle.ts')
+  mount(document.querySelector('#synoreclaim'), {
+    lang: params.get('lang') || 'enu',
+    shell: { fullPage: params.get('fullPage') !== '0', displayName: 'Syno Reclaim', appIcon: params.get('icon') || undefined, user: { name: 'admin', isAdmin: true } },
+    authorization: { client: fixtureAuthorizationClient({ state: 'ready', reason: null }) },
+  })
+</script></body></html>

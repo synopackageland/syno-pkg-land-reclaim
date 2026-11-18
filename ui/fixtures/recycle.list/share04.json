@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "command": "recycle",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:54:34Z",
+  "completion": "complete",
+  "job_id": "fixture-job0011",
+  "errors": [],
+  "warnings": [],
+  "target": {
+    "path": "/volume1/share04"
+  },
+  "report_info": {
+    "fsid": "f0000000-0000-4000-8000-000000000007",
+    "path": "/fixture/entry9999/entry9999/entry9999/entry9999",
+    "job_id": "fixture-job0011",
+    "scan_started": "2026-09-29T11:54:34Z",
+    "scan_finished": "2026-09-29T11:54:34Z",
+    "age_seconds": 0,
+    "stale": false,
+    "consistency": "observed-stable",
+    "change_reasons": [],
+    "coverage": {
+      "encrypted_directories": 0,
+      "snapshots_not_materialized": 0,
+      "unlinked_subvolume_entries": 0,
+      "dangling_entries": 0,
+      "cycles": 0,
+      "unsupported_locations": 0,
+      "missing_subvolume_roots": 0,
+      "reference_accounting": "complete",
+      "unresolved_extents": 0
+    },
+    "filesystem": "btrfs",
+    "capabilities": {
+      "scan": true,
+      "snapshots": true,
+      "reflinks": true,
+      "cleanup": true,
+      "cleanup_unavailable_reason": null
+    }
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "share04"
+      },
+      "items": 1,
+      "bytes": 196608,
+      "reclaimable_bytes": 0,
+      "held_by": [
+        {
+          "class": "snapshot",
+          "bytes": 196608
+        }
+      ]
+    }
+  ],
+  "moved_by_reclaim": [],
+  "scans": []
+}

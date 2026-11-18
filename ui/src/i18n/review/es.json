@@ -1,0 +1,250 @@
+{
+  "review.title": "Confirmar limpieza",
+  "review.planning": "Comprobando los elementos seleccionados",
+  "review.empty": "Seleccione primero elementos en Explorar",
+  "review.empty.title": "Nada seleccionado",
+  "review.disabled.cleanup": "La limpieza está desactivada en este NAS",
+  "review.disabled.allow": "Permitir la limpieza",
+  "review.disabled.allowFailed": "No se pudo permitir la limpieza. Inténtelo de nuevo",
+  "review.recycle.title": "Los elementos van a la papelera de reciclaje de su carpeta compartida",
+  "review.recycle.body": "No se elimina nada de forma permanente. Restaure los elementos o vacíe la papelera en DSM; el espacio se libera solo al vaciarla",
+  "review.recycle.restore": "Para deshacer, abra #recycle de la carpeta compartida en File Station, seleccione los elementos y elija Restaurar",
+  "review.recycle.olderDsm": "DSM anterior a 7.2.1 no tiene botón Restaurar: mueva los elementos fuera de #recycle en File Station",
+  "review.recycle.sync": "En una carpeta que sincroniza Synology Drive, ShareSync o Cloud Sync, mover los elementos también los quita de las copias sincronizadas",
+  "review.numbers.title": "Resumen de la limpieza",
+  "review.numbers.moves": "Va a la papelera",
+  "review.numbers.items": "Elementos seleccionados",
+  "review.numbers.freeLater": "Libera aprox. al vaciarla",
+  "review.numbers.about": "Acerca de estas cifras",
+  "review.numbers.allocated": "Los tamaños son el espacio que ocupan ahora los elementos. El volumen lo recupera solo al vaciar la papelera, y las instantáneas o los datos compartidos pueden conservar una parte",
+  "review.willMove": {
+    "one": "Va a la papelera: {count} elemento, {bytes}; vacíe la papelera de la carpeta compartida para liberar unos {free}",
+    "other": "Va a la papelera: {count} elementos, {bytes}; vacíe la papelera de la carpeta compartida para liberar unos {free}"
+  },
+  "review.willMoveOnly": {
+    "one": "Va a la papelera: {count} elemento, {bytes}",
+    "other": "Va a la papelera: {count} elementos, {bytes}"
+  },
+  "review.confirmCheck": "Entiendo que los elementos van a la papelera y que el espacio se libera solo al vaciarla",
+  "review.confirmMove": {
+    "one": "Mover {count} elemento a la papelera",
+    "other": "Mover {count} elementos a la papelera"
+  },
+  "review.share.title": "Carpeta compartida {share}",
+  "review.share.size": {
+    "one": "{count} elemento, {bytes}",
+    "other": "{count} elementos, {bytes}"
+  },
+  "review.share.adminOnly": "Solo los administradores pueden ver y restaurar estos elementos en la papelera",
+  "review.share.everyone": "Cualquiera que pueda abrir {share} puede ver y restaurar estos elementos en su papelera",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "Algunos elementos están en carpetas de Synology Drive: los equipos que sincronizan esas carpetas también los pierden",
+  "review.recheck": "Volver a comprobar",
+  "review.rescan.open": "Volver a escanear",
+  "review.dropChanged": "Quitar de la lista",
+  "review.refusal.cleanupDisabled": "La limpieza está desactivada en este NAS",
+  "review.refusal.busy": "Otro escaneo o limpieza está usando este volumen. Vuelva a comprobar cuando termine",
+  "review.refusal.noReport": "Escanee primero este volumen",
+  "review.refusal.targetChanged": "Cambió desde el último escaneo. Vuelva a escanear o quítelo de la lista",
+  "review.refusal.changed": "El plan caducó o ya no coincide. Vuelva a comprobar antes de continuar",
+  "review.refusal.inRecycleBin": "Ya está en una papelera. Syno Reclaim nunca quita nada de una papelera; vacíela en DSM",
+  "review.refusal.boundary": "Es un subvolumen Btrfs o está en otro volumen. Quítelo y seleccione los elementos que contiene",
+  "review.refusal.outsideRoots": "Fuera de las carpetas que la limpieza puede cambiar. Quítelo de la lista",
+  "review.refusal.recycleBinUnavailable": "El servicio de papelera de DSM no está disponible ahora, así que no se movió nada. Inténtelo más tarde",
+  "review.refusal.untrustedState": "Los registros de limpieza no superaron una comprobación de seguridad, así que no se movió nada. Descargue un paquete de soporte en Configuración > Diagnóstico y contacte con soporte",
+  "review.refusal.ioError": "Un error de lectura o escritura detuvo la limpieza. Compruebe las unidades en el Administrador de almacenamiento",
+  "review.refusal.duplicatesStale": "Los resultados de duplicados son anteriores al último análisis. Abra Duplicados, analice de nuevo y vuelva a seleccionar",
+  "review.refusal.duplicatesUnknownGroup": "Un grupo de duplicados seleccionado ya no existe. Abra Duplicados y vuelva a seleccionar",
+  "review.refusal.keeperChanged": "Una copia que se iba a conservar cambió o falta, así que no se movió nada. Vuelva a analizar, busque duplicados de nuevo y vuelva a seleccionar",
+  "review.refusal.keeperRemoved": "Juntos, los duplicados seleccionados no dejarían ninguna copia de algunos archivos, así que no se movió nada. Quite un grupo de la lista o conserve una copia más",
+  "review.refusal.keeperConflict": "Un grupo seleccionado eliminaría una copia que eligió conservar en otro grupo, así que no se movió nada. Quite uno de los grupos de la lista o conserve otra copia",
+  "review.refusal.keeperConflictNamed": "{copy} se conserva en «{kept}», pero quitar «{removing}» la eliminaría, así que no se movió nada. Quite uno de los dos grupos de la lista o conserve otra copia",
+  "review.refusal.duplicatesNothing": "Los duplicados seleccionados ya no mueven nada. Quítelos de la lista",
+  "review.refusal.other": "La limpieza fue rechazada. Vuelva a comprobar la selección",
+  "review.refusal.selectedItem": "Un elemento seleccionado",
+  "review.applying.title": "Moviendo a la papelera",
+  "review.applying.count": "{done} / {total} elementos",
+  "review.applying.indeterminate": "Esperando el progreso",
+  "review.applying.pollError": "No se puede leer el progreso ahora. Se sigue comprobando; la limpieza no se volverá a enviar",
+  "review.applying.cancel": "Cancelar limpieza",
+  "review.applying.cancelling": "Cancelando",
+  "review.applying.cancelError": "No se pudo cancelar; la limpieza puede seguir en curso",
+  "review.result.title": "Resultado de la limpieza",
+  "review.result.completeTitle": "Movido a la papelera",
+  "review.result.cancelledTitle": "Limpieza cancelada",
+  "review.result.unableToStartTitle": "No se pudo iniciar",
+  "review.result.partialTitle": "Algunos elementos se quedaron en su lugar",
+  "review.result.moved": "Movido a la papelera: {bytes}; el espacio se libera al vaciarla",
+  "review.result.empty": "Vacíela en Panel de control > Carpeta compartida > Acción > Vaciar papelera de reciclaje, o con una tarea de papelera en el Programador de tareas",
+  "review.result.bin": {
+    "one": "Papelera de {share}: {count} elemento",
+    "other": "Papelera de {share}: {count} elementos"
+  },
+  "review.result.leftTitle": "Siguen en su lugar",
+  "review.result.detailsUnavailable": "Limpieza finalizada; detalles no disponibles",
+  "review.result.lastKnown": "Último registro: {counts}",
+  "review.outcome.partial": "Movido en parte",
+  "review.outcome.changed": "Cambió, no se tocó",
+  "review.outcome.failed": "No movido",
+  "review.applyError.noRetry": "Compruebe el estado de la tarea antes de otra limpieza; esta pantalla no la volverá a enviar",
+  "review.count.moved": {
+    "one": "{count} movido",
+    "other": "{count} movidos"
+  },
+  "review.count.absent": "{count} ya no estaban",
+  "review.count.partial": {
+    "one": "{count} movido en parte",
+    "other": "{count} movidos en parte"
+  },
+  "review.count.failed": {
+    "one": "{count} no movido",
+    "other": "{count} no movidos"
+  },
+  "review.count.changed": "{count} cambiados",
+  "review.duplicates.title": "Duplicados",
+  "review.duplicates.line": {
+    "one": "Mueve {count} a la papelera · conserva {keeps}",
+    "other": "Mueve {count} a la papelera · conserva {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "one": "Mueve {count} a la papelera · conserva {keeps} (carpeta preferida)",
+    "other": "Mueve {count} a la papelera · conserva {keeps} (carpeta preferida)"
+  },
+  "review.duplicates.partialLine": {
+    "one": "Mueve {items} elementos idénticos de {count} carpeta a la papelera · conserva {keeps}",
+    "other": "Mueve {items} elementos idénticos de cada una de {count} carpetas a la papelera · conserva {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "one": "Elimina {count} para siempre · conserva {keeps}",
+    "other": "Elimina {count} para siempre · conserva {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "one": "Elimina {count} para siempre · conserva {keeps} (carpeta preferida)",
+    "other": "Elimina {count} para siempre · conserva {keeps} (carpeta preferida)"
+  },
+  "review.duplicates.partialLineDelete": {
+    "one": "Elimina para siempre {items} elementos idénticos de {count} carpeta · conserva {keeps}",
+    "other": "Elimina para siempre {items} elementos idénticos de cada una de {count} carpetas · conserva {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "one": "Quita {count}: a la papelera, o para siempre donde no la hay · conserva {keeps}",
+    "other": "Quita {count}: a la papelera, o para siempre donde no la hay · conserva {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "one": "Quita {count}: a la papelera, o para siempre donde no la hay · conserva {keeps} (carpeta preferida)",
+    "other": "Quita {count}: a la papelera, o para siempre donde no la hay · conserva {keeps} (carpeta preferida)"
+  },
+  "review.duplicates.partialLineMixed": {
+    "one": "Quita {items} elementos idénticos de {count} carpeta: a la papelera, o para siempre donde no la hay · conserva {keeps}",
+    "other": "Quita {items} elementos idénticos de cada una de {count} carpetas: a la papelera, o para siempre donde no la hay · conserva {keeps}"
+  },
+  "review.duplicates.partialNote": "De las carpetas en parte idénticas solo se eliminan los elementos idénticos. Las carpetas y los elementos que difieren, como .git, se conservan",
+  "review.duplicates.keptChecked": {
+    "one": "{count} copia conservada se vuelve a comprobar justo antes de quitar nada",
+    "other": "{count} copias conservadas se vuelven a comprobar justo antes de quitar nada"
+  },
+  "review.duplicates.freesLater": "Se libera más tarde: las instantáneas aún retienen {size} de estas copias",
+  "review.duplicates.clear": "Quitar los duplicados de la lista",
+  "review.jobState.queued": "En cola",
+  "review.jobState.running": "En ejecución",
+  "review.jobState.pausing": "Pausando",
+  "review.jobState.cancelling": "Cancelando",
+  "review.jobState.paused": "En pausa",
+  "review.jobState.completed": "Completado",
+  "review.jobState.partial": "Completado parcialmente",
+  "review.jobState.failed": "Falló",
+  "review.jobState.cancelled": "Cancelado",
+  "review.jobState.interrupted": "Interrumpido",
+  "review.apiError.no_permission": "Su cuenta de DSM no tiene permiso para planificar la limpieza",
+  "review.apiError.session_timeout": "Su sesión de DSM ha caducado. Inicie sesión de nuevo y vuelva a abrir esta revisión",
+  "review.apiError.reload": "El servicio Syno Reclaim cambió. Recargue la ventana de DSM y vuelva a abrir esta revisión",
+  "review.apiError.backend_unavailable": "Syno Reclaim no está disponible. Compruebe el Centro de paquetes e inténtelo más tarde",
+  "review.apiError.auth_unavailable": "DSM no pudo verificar tu inicio de sesión. Vuelve a intentarlo en unos momentos",
+  "review.apiError.invalid_param": "La solicitud de limpieza no se aceptó. Vuelva a abrir la revisión y compruebe la selección",
+  "review.apiError.busy": "Otra operación está usando este volumen. Inténtelo cuando termine",
+  "review.apiError.backend_busy": "Syno Reclaim está atendiendo otras solicitudes. Inténtelo de nuevo en breve",
+  "review.apiError.cli_error": "Syno Reclaim no pudo completar la solicitud de limpieza",
+  "review.apiError.timeout": "La solicitud agotó el tiempo. Compruebe el estado del trabajo antes de iniciar otra limpieza",
+  "review.apiError.exec_failed": "Syno Reclaim no pudo iniciar la solicitud de limpieza",
+  "review.apiError.fixture_missing": "Esta vista previa no incluye la respuesta de limpieza solicitada",
+  "review.apiError.unknown": "Se produjo un error inesperado al comprobar la limpieza",
+  "review.recycle.time": "Los movimientos grandes llevan tiempo: DSM mueve unos pocos miles de archivos por segundo, y el espacio se libera solo al vaciar la papelera",
+  "review.applying.calls": {
+    "one": "{count} movimiento de DSM hecho",
+    "other": "{count} movimientos de DSM hechos"
+  },
+  "review.duplicates.scanAge": "Estos resultados vienen del análisis del {time}. Los archivos añadidos o cambiados desde entonces en las copias que se mueven también van a la papelera, desde donde se pueden restaurar. Si esas carpetas pueden haber cambiado, vuelva a analizar primero",
+  "review.duplicates.scanAgeDelete": "Estos resultados vienen del análisis del {time}. Los archivos añadidos o cambiados desde entonces en las copias que se quitan se quitan con ellas: a la papelera, o para siempre donde no la hay. Si esas carpetas pueden haber cambiado, vuelva a analizar primero",
+  "review.planning.count": "Comprobando los elementos seleccionados: {done} / {total}",
+  "review.more": "Y {count} más",
+  "review.protected.volume": "Es el propio volumen",
+  "review.protected.system": "Un archivo del sistema de DSM",
+  "review.protected.recycle_bin": "Ya está en una Papelera de reciclaje: vacíela en DSM",
+  "review.protected.package": "Datos de un paquete de DSM: libere su espacio en ese paquete",
+  "review.protected.packageNamed": "Datos de {package}: libere su espacio en {package}",
+  "review.protected.dsm_folder": "Una carpeta del sistema de DSM",
+  "review.protected.share_root": "Es una carpeta compartida: seleccione los elementos de su interior",
+  "review.protected.home": "Una carpeta personal: seleccione los elementos de su interior",
+  "review.protected.outside_share": "No está en una carpeta compartida de DSM: la limpieza solo mueve a la Papelera de reciclaje de una carpeta compartida",
+  "review.protected.other": "Elemento protegido",
+  "review.refusal.cancelled": "Comprobación detenida",
+  "review.planning.stop": "Detener comprobación",
+  "review.planning.kept": "Comprobando las copias que se conservan: {done} / {total}",
+  "review.confirmDelete": {
+    "one": "Eliminar {count} elemento para siempre",
+    "other": "Eliminar {count} elementos para siempre"
+  },
+  "review.confirmMoveDelete": {
+    "one": "Mover {moves}, eliminar {deletes}",
+    "other": "Mover {moves}, eliminar {deletes}"
+  },
+  "review.confirmCheckDelete": {
+    "one": "Entiendo que {deletes} elemento se elimina para siempre y no se puede restaurar; los demás van a la papelera",
+    "other": "Entiendo que {deletes} elementos se eliminan para siempre y no se pueden restaurar; los demás van a la papelera"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "one": "Entiendo que {deletes} elemento se elimina para siempre y no se puede restaurar",
+    "other": "Entiendo que {deletes} elementos se eliminan para siempre y no se pueden restaurar"
+  },
+  "review.delete.title": {
+    "one": "{deletes} elemento se elimina para siempre",
+    "other": "{deletes} elementos se eliminan para siempre"
+  },
+  "review.delete.body": "Ninguna papelera puede recibirlos: no están en una carpeta compartida de DSM, o están en una cuya papelera está desactivada. Reclaim los elimina y no se pueden restaurar",
+  "review.delete.folder": "Carpeta {share} (no es una carpeta compartida)",
+  "review.delete.share": "Fuera de las carpetas compartidas de DSM: los elementos de {share} se eliminan para siempre",
+  "review.delete.binOff": "{share} no tiene la papelera activada: sus elementos se eliminan para siempre",
+  "review.delete.binOffEnable": "Para poder restaurarlos, active primero la papelera y elija Volver a comprobar: así se moverán a la papelera",
+  "review.numbers.removes": "Se quita",
+  "review.count.deleted": {
+    "one": "{count} eliminado para siempre",
+    "other": "{count} eliminados para siempre"
+  },
+  "review.result.deleted": {
+    "one": "Eliminado para siempre: {deleted} elemento, {bytes}",
+    "other": "Eliminados para siempre: {deleted} elementos, {bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "Este plan elimina para siempre elementos sin papelera: confírmelo para continuar",
+  "review.applying.titleDelete": "Eliminando para siempre",
+  "review.applying.titleMixed": "Moviendo a la papelera y eliminando para siempre",
+  "review.result.deletedTitle": "Eliminado para siempre",
+  "review.result.cleanedTitle": "Limpieza terminada",
+  "review.result.cancelledCounts": {
+    "one": "Cancelado: {done} hechos, {left} elemento sin tocar y tal como estaba",
+    "other": "Cancelado: {done} hechos, {left} elementos sin tocar y tal como estaban"
+  },
+  "review.result.cancelTooLate": "La cancelación llegó durante el último elemento, así que se terminó",
+  "review.numbers.frees": "Libera aprox.",
+  "review.numbers.allocatedDelete": "Los tamaños son el espacio que ocupan ahora los elementos. Eliminarlos lo devuelve al volumen, pero las instantáneas o los datos compartidos pueden conservar una parte",
+  "review.recycle.syncDelete": "En una carpeta que sincroniza Synology Drive, ShareSync o Cloud Sync, eliminar los elementos también los quita de las copias sincronizadas",
+  "review.refusal.notFound": "Este elemento ya no existe. Quítalo de la lista de limpieza",
+  "review.recycle.symlinks": {
+    "one": "{symlinks} acceso directo (enlace simbólico) entre ellos no lo conserva la papelera de DSM y no vuelve al restaurar",
+    "other": "{symlinks} accesos directos (enlaces simbólicos) entre ellos no los conserva la papelera de DSM y no vuelven al restaurar"
+  },
+  "review.applying.checkingKept": {
+    "one": "Comprobando la copia conservada",
+    "other": "Comprobando {kept} copias conservadas"
+  },
+  "review.applying.finishingCurrent": "Terminando el elemento actual y luego se detiene; el resto se queda donde está"
+}

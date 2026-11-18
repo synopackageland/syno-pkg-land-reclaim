@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "command": "overview",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-10-06T03:21:35Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "filesystem": "ext4",
+        "capabilities": {
+          "scan": true,
+          "snapshots": false,
+          "reflinks": false,
+          "cleanup": false,
+          "cleanup_unavailable_reason": "ext4_read_only"
+        },
+        "fsid": "9f6184b6-06bd-46be-996a-621edbb25a6f",
+        "path": "/state/reports/9f6184b6-06bd-46be-996a-621edbb25a6f/9c4861020cfc4280.srrep",
+        "job_id": "20261006T032134Z-8d2e8",
+        "scan_started": "2026-10-06T03:21:34Z",
+        "scan_finished": "2026-10-06T03:21:34Z",
+        "age_seconds": 1,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "cycles": 0,
+          "dangling_entries": 0,
+          "encrypted_directories": 0,
+          "missing_subvolume_roots": null,
+          "namespace_uncertain_subvolumes": null,
+          "reference_accounting": "complete",
+          "snapshots_materialized": null,
+          "snapshots_not_materialized": null,
+          "unlinked_subvolume_entries": null,
+          "unreadable_roots": 0,
+          "unresolved_extents": null,
+          "unsupported_locations": 0
+        },
+        "attribution": {
+          "unknown_bytes": 0,
+          "used_bytes": 45056,
+          "coverage_gaps": false
+        },
+        "cleanup_since_report": null
+      },
+      "filesystem": {
+        "uuid": "9f6184b6-06bd-46be-996a-621edbb25a6f",
+        "mount": {
+          "path": "/volume1"
+        },
+        "kind": "ext4",
+        "capabilities": {
+          "scan": true,
+          "snapshots": false,
+          "reflinks": false,
+          "cleanup": false,
+          "cleanup_unavailable_reason": "ext4_read_only"
+        }
+      },
+      "space": {
+        "df": {
+          "total_bytes": 234594304,
+          "used_bytes": 45056,
+          "free_bytes": 234549248,
+          "available_bytes": 215764992
+        },
+        "space_info": null,
+        "inode_allocated_bytes": 40960,
+        "unattributed_df_bytes": 4096
+      },
+      "parts": [
+        {
+          "kind": "system_other",
+          "bytes": 40960,
+          "reclaimable_bytes": null,
+          "held_bytes": null,
+          "items": [
+            {
+              "bytes": 40960,
+              "reclaimable_bytes": null
+            }
+          ]
+        }
+      ],
+      "reconciliation": {
+        "data": {
+          "parts_sum_bytes": 40960,
+          "space_info_used_bytes": null,
+          "residual_bytes": null,
+          "tolerance_bytes": null,
+          "status": "inode_allocations",
+          "coverage_gaps": false
+        },
+        "df": {
+          "used_bytes": 45056,
+          "metadata_system_bytes": null,
+          "data_metadata_system_bytes": null,
+          "residual_bytes": 4096,
+          "status": "display_only"
+        }
+      },
+      "actions": []
+    }
+  ],
+  "scans": []
+}

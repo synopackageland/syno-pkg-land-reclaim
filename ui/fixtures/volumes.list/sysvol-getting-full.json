@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "command": "volumes",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:35:33Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "volumes": [
+    {
+      "mount": {
+        "path": "/volume1"
+      },
+      "fsid": "f0000000-0000-4000-8000-00000000009a",
+      "total_bytes": 939051651072,
+      "used_bytes": 43322335232,
+      "free_bytes": 895729315840,
+      "metadata_access": true,
+      "reports": 1,
+      "incompatible_reports": 0,
+      "last_scan": "2026-09-30T00:30:06Z",
+      "last_consistency": "partial",
+      "pending_deletion": {
+        "count": 0,
+        "bytes": null
+      },
+      "shares": [
+        {
+          "name": {
+            "path": "share43"
+          },
+          "path": {
+            "path": "/volume1/share43"
+          },
+          "subvolume_id": 501
+        },
+        {
+          "name": {
+            "path": "entry0001"
+          },
+          "path": {
+            "path": "/volume1/share46"
+          },
+          "subvolume_id": 502
+        },
+        {
+          "name": {
+            "path": "share47"
+          },
+          "path": {
+            "path": "/volume1/share47"
+          },
+          "subvolume_id": 503,
+          "size_bytes": 4096
+        },
+        {
+          "name": {
+            "path": "share48"
+          },
+          "path": {
+            "path": "/volume1/share48"
+          },
+          "subvolume_id": 504,
+          "size_bytes": 1314816
+        },
+        {
+          "name": {
+            "path": "share50"
+          },
+          "path": {
+            "path": "/volume1/share50"
+          },
+          "subvolume_id": 261,
+          "size_bytes": 2574819328
+        },
+        {
+          "name": {
+            "path": "share51"
+          },
+          "path": {
+            "path": "/volume1/share51"
+          },
+          "subvolume_id": 1145,
+          "size_bytes": 40960
+        },
+        {
+          "name": {
+            "path": "share52"
+          },
+          "path": {
+            "path": "/volume1/share52"
+          },
+          "subvolume_id": 258
+        },
+        {
+          "name": {
+            "path": "share55"
+          },
+          "path": {
+            "path": "/volume1/share55"
+          },
+          "subvolume_id": 800
+        },
+        {
+          "name": {
+            "path": "share56"
+          },
+          "path": {
+            "path": "/volume1/share56"
+          },
+          "subvolume_id": 840
+        },
+        {
+          "name": {
+            "path": "share57"
+          },
+          "path": {
+            "path": "/volume1/share57"
+          },
+          "subvolume_id": 764
+        },
+        {
+          "name": {
+            "path": "share58"
+          },
+          "path": {
+            "path": "/volume1/share58"
+          },
+          "subvolume_id": 782
+        },
+        {
+          "name": {
+            "path": "share59"
+          },
+          "path": {
+            "path": "/volume1/share59"
+          },
+          "subvolume_id": 265,
+          "size_bytes": 9502720
+        },
+        {
+          "name": {
+            "path": "share60"
+          },
+          "path": {
+            "path": "/volume1/share60"
+          },
+          "subvolume_id": 845,
+          "size_bytes": 40960
+        },
+        {
+          "name": {
+            "path": "share62"
+          },
+          "path": {
+            "path": "/volume1/share62"
+          },
+          "subvolume_id": 260,
+          "size_bytes": 13748457472
+        },
+        {
+          "name": {
+            "path": "share63"
+          },
+          "path": {
+            "path": "/volume1/share63"
+          },
+          "subvolume_id": 500
+        },
+        {
+          "name": {
+            "path": "share67"
+          },
+          "path": {
+            "path": "/volume1/share67"
+          },
+          "subvolume_id": 1144
+        },
+        {
+          "name": {
+            "path": "entry0005"
+          },
+          "path": {
+            "path": "/volume1/share73"
+          },
+          "subvolume_id": 263,
+          "size_bytes": 84037632
+        },
+        {
+          "name": {
+            "path": "share74"
+          },
+          "path": {
+            "path": "/volume1/share74"
+          },
+          "subvolume_id": 264
+        }
+      ],
+      "notes": [],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ],
+  "excluded": [],
+  "system_partition": {
+    "mount": "/fixture",
+    "source": "/fixture/entry9999",
+    "fstype": "ext4",
+    "total_bytes": 8589934592,
+    "available_bytes": 930000000,
+    "used_bytes": 7659934592,
+    "free_bytes": 930000000,
+    "used_percent": 89,
+    "level": "getting_full",
+    "level_reasons": [
+      "used_over_recommended",
+      "update_headroom_low"
+    ],
+    "nearly_full": false
+  }
+}

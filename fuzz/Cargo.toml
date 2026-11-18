@@ -1,0 +1,30 @@
+[package]
+name = "syno-reclaim-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+syno-reclaim = { path = ".." }
+
+# Keep the fuzz crate out of any parent workspace.
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "items"
+path = "fuzz_targets/items.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "replay"
+path = "fuzz_targets/replay.rs"
+test = false
+doc = false
+bench = false

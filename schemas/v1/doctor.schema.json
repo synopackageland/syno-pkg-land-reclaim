@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/doctor.schema.json",
+  "title": "synoreclaim doctor result v1",
+  "description": "Read-only environment diagnostics. The system_partition block is the same as in volumes.list.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "target": {
+      "type": "string"
+    },
+    "kernel": {
+      "type": ["string", "null"]
+    },
+    "filesystem_uuid": {
+      "type": ["string", "null"]
+    },
+    "subvolume_id": {
+      "type": ["integer", "null"]
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": ["pass", "warn", "fail", "skip"]
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": ["name", "status", "detail"]
+      }
+    },
+    "system_partition": {
+      "$ref": "common.schema.json#/$defs/system_partition"
+    },
+    "subvolumes": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "properties": {
+            "count": {"type": "integer", "minimum": 0},
+            "readonly": {"type": "integer", "minimum": 0},
+            "pending_deletion": {"type": "integer", "minimum": 0},
+            "pending_deletion_bytes": {"type": ["integer", "null"], "minimum": 0},
+            "quota_enabled": {"type": "boolean"}
+          },
+          "required": [
+            "count",
+            "readonly",
+            "pending_deletion",
+            "pending_deletion_bytes",
+            "quota_enabled"
+          ]
+        }
+      ]
+    },
+    "item_sample": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "properties": {
+            "items": {"type": "integer", "minimum": 0},
+            "unknown_types": {
+              "type": "object",
+              "additionalProperties": {"type": "integer", "minimum": 0}
+            }
+          },
+          "required": ["items", "unknown_types"]
+        }
+      ]
+    },
+    "scheduling": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "properties": {
+            "profile": {"enum": ["low", "normal", "fast"]},
+            "requested_nice": {"type": ["integer", "null"]},
+            "applied_nice": {"type": ["integer", "null"]},
+            "requested_io_class": {"type": "string"},
+            "applied_io_class": {"type": ["string", "null"]},
+            "duty_percent": {"type": "integer", "minimum": 0},
+            "warnings": {"type": "array", "items": {"type": "string"}},
+            "effectiveness_unknown": {"type": "boolean"}
+          },
+          "required": [
+            "profile",
+            "requested_nice",
+            "applied_nice",
+            "requested_io_class",
+            "applied_io_class",
+            "duty_percent",
+            "warnings",
+            "effectiveness_unknown"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "target",
+    "kernel",
+    "filesystem_uuid",
+    "subvolume_id",
+    "checks",
+    "system_partition",
+    "subvolumes",
+    "item_sample",
+    "scheduling"
+  ]
+}

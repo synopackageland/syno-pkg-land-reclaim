@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:19:35Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": []
+}

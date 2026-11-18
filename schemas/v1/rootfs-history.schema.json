@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/rootfs-history.schema.json",
+  "title": "synoreclaim rootfs history result v1",
+  "description": "One durable summary per rootfs apply, newest first. Paths use the common byte-safe path object; freed_bytes is the measured statfs delta on /.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "rootfs-history"
+        },
+        "applies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plan_id": {
+                "type": "string"
+              },
+              "mode": { "type": "string", "enum": ["standard", "deep"], "description": "Omitted in legacy records: standard." },
+              "requested_by": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "started": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              },
+              "finished": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              },
+              "move_dir": {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              "manifest": {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              "moved": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "size_bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "files",
+                  "size_bytes"
+                ]
+              },
+              "freed_bytes": {
+                "type": "integer",
+                "description": "available bytes after minus available bytes before on /; may be negative when other writers use space."
+              },
+              "completion": {
+                "enum": [
+                  "complete",
+                  "partial",
+                  "paused",
+                  "failed"
+                ]
+              },
+              "skipped_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tools": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "tool": {
+                      "$ref": "rootfs-plan.schema.json#/$defs/tool"
+                    },
+                    "outcome": {
+                      "enum": [
+                        "succeeded",
+                        "failed",
+                        "killed",
+                        "timed_out",
+                        "not_started",
+                        "untrusted",
+                        "not_needed"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "tool",
+                    "outcome"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "plan_id",
+              "requested_by",
+              "started",
+              "finished",
+              "move_dir",
+              "manifest",
+              "moved",
+              "freed_bytes",
+              "completion",
+              "skipped_count",
+              "tools"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "applies"
+      ]
+    }
+  ]
+}

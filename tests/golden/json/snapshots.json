@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "command": "snapshots",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "path": "/fixture/mnt/data",
+      "report": {
+        "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+        "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/5b3a6bbbff74710a.srrep",
+        "job_id": "20260929T022926Z-ec347",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "snapshots_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "shares": [
+        {
+          "share": {
+            "path": "data"
+          },
+          "live_subvolume_id": 256,
+          "held_only_by_snapshots_bytes": 0,
+          "unknown_bytes": 0,
+          "snapshots_not_materialized": 0,
+          "snapshots": [
+            {
+              "subvolume_id": 258,
+              "name": {
+                "path": "snap"
+              },
+              "otime": "2026-09-29T02:29:25Z",
+              "read_only": true,
+              "pending_deletion": false,
+              "materialized": true,
+              "exclusive_bytes": 0,
+              "pinned_unreferenced_bytes": 0,
+              "shared_with_live_bytes": 2715648,
+              "unknown_bytes": 0,
+              "qgroup_exclusive_bytes": null
+            }
+          ],
+          "pending_deletion_ids": [],
+          "held_files": {
+            "complete": true,
+            "count": 0,
+            "files": []
+          },
+          "simulation": {
+            "selector": "all",
+            "selected_ids": [
+              258
+            ],
+            "freed_bytes": 0,
+            "unknown_bytes": 0,
+            "not_materialized_ids": [],
+            "upper_bound_bytes": 0,
+            "exact": true,
+            "inexact_reasons": [],
+            "exact_command": null
+          },
+          "manage_in": "Snapshot Replication > Snapshots",
+          "manage_in_id": "snapshot_replication"
+        }
+      ]
+    }
+  ]
+}

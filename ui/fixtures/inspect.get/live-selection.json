@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "command": "inspect",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:42:12Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 726,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share62/file0379.bin",
+        "kind": "file",
+        "flags": [],
+        "metrics": {
+          "logical": 3434029,
+          "physical": 3436544,
+          "shared": 0,
+          "reclaimable": 3436544,
+          "reclaimable_resolved": 3436544,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 1,
+          "inline": 0,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 260,
+        "objectid": 285
+      },
+      "explain": [
+        {
+          "code": "snapshots_not_materialized",
+          "message": "6 snapshot(s) in scope were not read; name0016 they share62 is not visible here"
+        },
+        {
+          "code": "reference_accounting_partial",
+          "message": "15128 extents in the report have unresolved references"
+        },
+        {
+          "code": "consistency",
+          "message": "report is partial (selected subvolume 256 generation 4701580 -> 4702015; selected subvolume 261 generation 4701579 -> 4702015; selected subvolume 262 generation 4701579 -> 4702015)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 726,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share62/file0377.bin",
+        "kind": "file",
+        "flags": [],
+        "metrics": {
+          "logical": 6148,
+          "physical": 8192,
+          "shared": 0,
+          "reclaimable": 8192,
+          "reclaimable_resolved": 8192,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 1,
+          "inline": 0,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 260,
+        "objectid": 286
+      },
+      "explain": [
+        {
+          "code": "snapshots_not_materialized",
+          "message": "6 snapshot(s) in scope were not read; name0016 they share62 is not visible here"
+        },
+        {
+          "code": "reference_accounting_partial",
+          "message": "15128 extents in the report have unresolved references"
+        },
+        {
+          "code": "consistency",
+          "message": "report is partial (selected subvolume 256 generation 4701580 -> 4702015; selected subvolume 261 generation 4701579 -> 4702015; selected subvolume 262 generation 4701579 -> 4702015)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 726,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share62/folder0176",
+        "kind": "dir",
+        "flags": [],
+        "metrics": {
+          "logical": 13714984516,
+          "physical": 13717508096,
+          "shared": 0,
+          "reclaimable": 13717508096,
+          "reclaimable_resolved": 13717508096,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 16643,
+          "inline": 12388,
+          "entries": 1327,
+          "files": 1290
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 260,
+        "objectid": 4080
+      },
+      "explain": [
+        {
+          "code": "snapshots_not_materialized",
+          "message": "6 snapshot(s) in scope were not read; name0016 they share62 is not visible here"
+        },
+        {
+          "code": "reference_accounting_partial",
+          "message": "15128 extents in the report have unresolved references"
+        },
+        {
+          "code": "consistency",
+          "message": "report is partial (selected subvolume 256 generation 4701580 -> 4702015; selected subvolume 261 generation 4701579 -> 4702015; selected subvolume 262 generation 4701579 -> 4702015)"
+        }
+      ]
+    }
+  ],
+  "scans": []
+}

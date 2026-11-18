@@ -1,0 +1,7 @@
+{
+  "shell.navigation": "Navigation",
+  "shell.newScan": "New scan",
+  "shell.scenario": "Fixture scenario",
+  "shell.purpose": "It needs system privileges to measure the space used by every shared folder, snapshot and package, and to move only what you confirm into its shared folder's Recycle Bin, or delete it for good when that Recycle Bin is off or it is in no shared folder",
+  "shell.status": "Status"
+}

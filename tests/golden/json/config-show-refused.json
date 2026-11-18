@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "command": "config-show",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T13:40:00Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1/@appconf/SynoReclaim/config.json",
+      "code": "config_untrusted",
+      "message": "/volume1/@appconf/SynoReclaim/config.json: not a valid configuration only its owner can change; left as is"
+    }
+  ],
+  "warnings": []
+}

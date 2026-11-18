@@ -1,0 +1,16 @@
+target/
+/.idea/
+/.vscode/
+.DS_Store
+*.tmp
+
+
+/node_modules/
+/dist/
+/.synopkgland-cache/
+__pycache__/
+/root/
+
+/.e2e/
+/.env
+

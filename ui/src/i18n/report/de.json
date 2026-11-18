@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "Bericht",
+  "report.choice.newest": "Neuester Scan",
+  "report.choice.newestEach": "Neuester Scan jedes Ordners",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "Ganzes Volume",
+  "report.scope.share": "Freigegebener Ordner {name}",
+  "report.scope.paths": {
+    "one": "{count} Ordner",
+    "other": "{count} Ordner"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "Ganzes Volume + {count} neuerer freigegebener Ordner",
+    "other": "Ganzes Volume + {count} neuere freigegebene Ordner"
+  },
+  "report.row.shareScan": "Scan des freigegebenen Ordners {time}"
+}

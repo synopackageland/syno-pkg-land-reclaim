@@ -1,0 +1,221 @@
+{
+  "review.title": "クリーンアップの確認",
+  "review.planning": "選択した項目を確認中",
+  "review.empty": "先に「探索」で項目を選択してください",
+  "review.empty.title": "何も選択されていません",
+  "review.disabled.cleanup": "この NAS ではクリーンアップがオフです",
+  "review.disabled.allow": "クリーンアップを許可",
+  "review.disabled.allowFailed": "クリーンアップを許可できませんでした。もう一度お試しください",
+  "review.recycle.title": "項目は共有フォルダのごみ箱に移動します",
+  "review.recycle.body": "完全には削除されません。DSM で項目を復元するか、ごみ箱を空にしてください。空にした後に容量が解放されます",
+  "review.recycle.restore": "元に戻すには、File Station で共有フォルダの #recycle を開き、項目を選択して「復元」を選びます",
+  "review.recycle.olderDsm": "DSM 7.2.1 より前には「復元」ボタンがありません。File Station で #recycle から項目を移動してください",
+  "review.recycle.sync": "Synology Drive、ShareSync、Cloud Sync で同期しているフォルダでは、移動すると同期先の項目も削除されます",
+  "review.numbers.title": "クリーンアップの概要",
+  "review.numbers.moves": "ごみ箱へ移動",
+  "review.numbers.items": "選択した項目",
+  "review.numbers.freeLater": "空にした後に解放される容量",
+  "review.numbers.about": "これらの数値について",
+  "review.numbers.allocated": "サイズは項目が現在使用している容量です。ボリュームに戻るのはごみ箱を空にした後で、スナップショットや共有データが一部を保持する場合があります",
+  "review.willMove": {
+    "other": "ごみ箱へ移動：{count} 個の項目、{bytes}。共有フォルダのごみ箱を空にすると約 {free} を解放"
+  },
+  "review.willMoveOnly": {
+    "other": "ごみ箱へ移動：{count} 個の項目、{bytes}"
+  },
+  "review.confirmCheck": "項目はごみ箱に移動し、空にした後に容量が解放されることを理解しました",
+  "review.confirmMove": {
+    "other": "{count} 個の項目をごみ箱へ移動"
+  },
+  "review.share.title": "共有フォルダ {share}",
+  "review.share.size": {
+    "other": "{count} 個の項目、{bytes}"
+  },
+  "review.share.adminOnly": "ごみ箱のこれらの項目を表示・復元できるのは管理者だけです",
+  "review.share.everyone": "{share} を開けるすべてのユーザーが、ごみ箱でこれらの項目を表示・復元できます",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "一部の項目は Synology Drive フォルダにあります。そのフォルダを同期しているコンピュータからも削除されます",
+  "review.recheck": "再確認",
+  "review.rescan.open": "再スキャン",
+  "review.dropChanged": "リストから外す",
+  "review.refusal.cleanupDisabled": "この NAS ではクリーンアップがオフです",
+  "review.refusal.busy": "別のスキャンまたはクリーンアップがこのボリュームを使用中です。終了後に再確認してください",
+  "review.refusal.noReport": "先にこのボリュームをスキャンしてください",
+  "review.refusal.targetChanged": "前回のスキャン後に変更されました。再スキャンするか、リストから外してください",
+  "review.refusal.changed": "プランが期限切れか、一致しなくなりました。続ける前に再確認してください",
+  "review.refusal.inRecycleBin": "すでにごみ箱にあります。Syno Reclaim はごみ箱から何も削除しません。DSM で空にしてください",
+  "review.refusal.boundary": "Btrfs サブボリュームか、別のボリューム上にあります。削除して中の項目を選んでください",
+  "review.refusal.outsideRoots": "クリーンアップが変更できるフォルダーの外にあります。リストから外してください",
+  "review.refusal.recycleBinUnavailable": "DSM のごみ箱サービスが現在使えないため、何も移動していません。後でもう一度お試しください",
+  "review.refusal.untrustedState": "クリーンアップ記録が安全チェックに失敗したため、何も移動していません。「設定 > 診断」でサポートバンドルをダウンロードし、サポートにお問い合わせください",
+  "review.refusal.ioError": "読み書きエラーでクリーンアップが停止しました。ストレージ マネージャーでドライブを確認してください",
+  "review.refusal.duplicatesStale": "重複の結果が最新のスキャンより古くなっています。「重複」を開いて再分析し、選択し直してください",
+  "review.refusal.duplicatesUnknownGroup": "選択した重複グループはもう存在しません。「重複」を開いて選択し直してください",
+  "review.refusal.keeperChanged": "残すはずのコピーが変更されたか見つからないため、何も移動していません。再スキャンして重複を探し直し、選び直してください",
+  "review.refusal.keeperRemoved": "選択した重複をまとめると一部のファイルのコピーが残らないため、何も移動していません。グループを 1 つリストから外すか、コピーをもう 1 つ残してください",
+  "review.refusal.keeperConflict": "選択したグループが、別のグループで残すように指定したコピーを削除するため、何も移動していません。どちらかのグループをリストから外すか、別のコピーを残してください",
+  "review.refusal.keeperConflictNamed": "{copy} は「{kept}」で残すように指定したコピーですが、「{removing}」を削除するとこのコピーも削除されるため、何も移動していません。どちらかのグループをリストから外すか、別のコピーを残してください",
+  "review.refusal.duplicatesNothing": "選択した重複ではもう何も移動しません。リストから削除してください",
+  "review.refusal.other": "クリーンアップが拒否されました。選択した項目を再確認してください",
+  "review.refusal.selectedItem": "選択した項目",
+  "review.applying.title": "ごみ箱へ移動中",
+  "review.applying.count": "{done} / {total} 項目",
+  "review.applying.indeterminate": "進行状況を待っています",
+  "review.applying.pollError": "現在進行状況を読み取れません。確認は続けます。クリーンアップは再送信されません",
+  "review.applying.cancel": "クリーンアップをキャンセル",
+  "review.applying.cancelling": "キャンセル中",
+  "review.applying.cancelError": "キャンセルできませんでした。クリーンアップは続いている可能性があります",
+  "review.result.title": "クリーンアップ結果",
+  "review.result.completeTitle": "ごみ箱へ移動しました",
+  "review.result.cancelledTitle": "クリーンアップをキャンセルしました",
+  "review.result.unableToStartTitle": "開始できませんでした",
+  "review.result.partialTitle": "一部の項目は元の場所に残りました",
+  "review.result.moved": "ごみ箱へ移動：{bytes}。空にした後に容量が解放されます",
+  "review.result.empty": "「コントロールパネル > 共有フォルダ > 操作 > ごみ箱を空にする」で空にするか、「タスクスケジューラ」でごみ箱タスクを設定してください",
+  "review.result.bin": {
+    "other": "{share} のごみ箱：{count} 個の項目"
+  },
+  "review.result.leftTitle": "元の場所に残っている項目",
+  "review.result.detailsUnavailable": "クリーンアップは終了しました。詳細は取得できません",
+  "review.result.lastKnown": "最後の記録：{counts}",
+  "review.outcome.partial": "一部移動",
+  "review.outcome.changed": "変更されたため未処理",
+  "review.outcome.failed": "未移動",
+  "review.applyError.noRetry": "別のクリーンアップを始める前にジョブの状態を確認してください。この画面からは再送信しません",
+  "review.count.moved": {
+    "other": "{count} 個移動"
+  },
+  "review.count.absent": "既になし {count}",
+  "review.count.partial": {
+    "other": "{count} 個一部移動"
+  },
+  "review.count.failed": {
+    "other": "{count} 個未移動"
+  },
+  "review.count.changed": "変更 {count}",
+  "review.duplicates.title": "重複",
+  "review.duplicates.line": {
+    "other": "{count} 個をごみ箱へ移動 · {keeps} を保持"
+  },
+  "review.duplicates.linePreferred": {
+    "other": "{count} 個をごみ箱へ移動 · {keeps} を保持（優先共有フォルダ）"
+  },
+  "review.duplicates.partialLine": {
+    "other": "{count} 個のフォルダから同一項目を各 {items} 個ごみ箱へ移動 · {keeps} を保持"
+  },
+  "review.duplicates.lineDelete": {
+    "other": "{count} 個を完全に削除 · {keeps} を保持"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "other": "{count} 個を完全に削除 · {keeps} を保持（優先共有フォルダ）"
+  },
+  "review.duplicates.partialLineDelete": {
+    "other": "{count} 個のフォルダから同一項目を各 {items} 個完全に削除 · {keeps} を保持"
+  },
+  "review.duplicates.lineMixed": {
+    "other": "{count} 個を削除：ごみ箱があればごみ箱へ、なければ完全に削除 · {keeps} を保持"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "other": "{count} 個を削除：ごみ箱があればごみ箱へ、なければ完全に削除 · {keeps} を保持（優先共有フォルダ）"
+  },
+  "review.duplicates.partialLineMixed": {
+    "other": "{count} 個のフォルダから同一項目を各 {items} 個削除：ごみ箱があればごみ箱へ、なければ完全に削除 · {keeps} を保持"
+  },
+  "review.duplicates.partialNote": "一部が同じフォルダーからは同じ項目だけが削除されます。フォルダー自体と、異なる項目（.git など）は残ります",
+  "review.duplicates.keptChecked": {
+    "other": "削除の直前に、保持する {count} 個のコピーを再確認します"
+  },
+  "review.duplicates.freesLater": "後で解放：これらのコピーのうち {size} はスナップショットが保持しています",
+  "review.duplicates.clear": "重複をリストから外す",
+  "review.jobState.queued": "キュー待ち",
+  "review.jobState.running": "実行中",
+  "review.jobState.pausing": "一時停止中",
+  "review.jobState.cancelling": "キャンセル中",
+  "review.jobState.paused": "一時停止中",
+  "review.jobState.completed": "完了",
+  "review.jobState.partial": "一部完了",
+  "review.jobState.failed": "失敗",
+  "review.jobState.cancelled": "キャンセル済み",
+  "review.jobState.interrupted": "中断",
+  "review.apiError.no_permission": "お使いの DSM アカウントにはクリーンアップを計画する権限がありません",
+  "review.apiError.session_timeout": "DSM セッションが期限切れです。再度サインインしてこの確認を開き直してください",
+  "review.apiError.reload": "Syno Reclaim サービスが変更されました。DSM ウィンドウを再読み込みしてこの確認を開き直してください",
+  "review.apiError.backend_unavailable": "Syno Reclaim は利用できません。パッケージ センターを確認して後で再試行してください",
+  "review.apiError.auth_unavailable": "DSM がサインイン状態を確認できませんでした。しばらくしてからもう一度お試しください",
+  "review.apiError.invalid_param": "クリーンアップ要求は受け付けられませんでした。確認を開き直して選択内容を確認してください",
+  "review.apiError.busy": "別の操作がこのボリュームを使用しています。終了後に再試行してください",
+  "review.apiError.backend_busy": "Syno Reclaim は他のリクエストを処理中です。少し待ってから再試行してください",
+  "review.apiError.cli_error": "Syno Reclaim はクリーンアップ要求を完了できませんでした",
+  "review.apiError.timeout": "要求がタイムアウトしました。別のクリーンアップを開始する前にジョブの状態を確認してください",
+  "review.apiError.exec_failed": "Syno Reclaim はクリーンアップ要求を開始できませんでした",
+  "review.apiError.fixture_missing": "このプレビューには要求されたクリーンアップ応答が含まれていません",
+  "review.apiError.unknown": "クリーンアップの確認中に予期しないエラーが発生しました",
+  "review.recycle.time": "大量の移動には時間がかかります。DSM が移動できるのは毎秒数千ファイル程度で、容量はごみ箱を空にした後に解放されます",
+  "review.applying.calls": {
+    "other": "DSM による移動 {count} 回完了"
+  },
+  "review.duplicates.scanAge": "この結果は {time} のスキャンによるものです。その後、移動するコピーに追加・変更されたファイルも一緒にごみ箱へ移動し、そこから復元できます。フォルダが変更された可能性がある場合は、先に再スキャンしてください",
+  "review.duplicates.scanAgeDelete": "この結果は {time} のスキャンによるものです。その後、削除するコピーに追加・変更されたファイルも一緒に削除されます：ごみ箱があればごみ箱へ、なければ完全に削除します。フォルダが変更された可能性がある場合は、先に再スキャンしてください",
+  "review.planning.count": "選択した項目を確認中：{done} / {total}",
+  "review.more": "ほか {count} 件",
+  "review.protected.volume": "ボリューム自体です",
+  "review.protected.system": "DSM のシステムファイルです",
+  "review.protected.recycle_bin": "すでにごみ箱にあります。DSM で空にしてください",
+  "review.protected.package": "DSM パッケージのデータです。そのパッケージで容量を解放してください",
+  "review.protected.packageNamed": "{package} のデータです。{package} で容量を解放してください",
+  "review.protected.dsm_folder": "DSM のシステムフォルダです",
+  "review.protected.share_root": "共有フォルダ自体です。中の項目を選択してください",
+  "review.protected.home": "ユーザーのホームです。中の項目を選択してください",
+  "review.protected.outside_share": "DSM の共有フォルダ内にありません。クリーンアップは共有フォルダのごみ箱にのみ移動します",
+  "review.protected.other": "保護された項目です",
+  "review.refusal.cancelled": "確認を停止しました",
+  "review.planning.stop": "確認を停止",
+  "review.planning.kept": "残すコピーを確認中：{done} / {total}",
+  "review.confirmDelete": {
+    "other": "{count} 個の項目を完全に削除"
+  },
+  "review.confirmMoveDelete": {
+    "other": "{moves} 個を移動、{deletes} 個を完全に削除"
+  },
+  "review.confirmCheckDelete": {
+    "other": "{deletes} 個の項目が完全に削除され元に戻せないこと、その他はごみ箱に移動することを理解しました"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "other": "{deletes} 個の項目が完全に削除され元に戻せないことを理解しました"
+  },
+  "review.delete.title": {
+    "other": "{deletes} 個の項目が完全に削除されます"
+  },
+  "review.delete.body": "移動先のごみ箱がありません：DSM 共有フォルダ外にあるか、ごみ箱が無効な共有フォルダにあります。Reclaim が削除し、元に戻せません",
+  "review.delete.folder": "フォルダ {share}（共有フォルダではありません）",
+  "review.delete.share": "DSM 共有フォルダ外：{share} の項目は完全に削除されます",
+  "review.delete.binOff": "{share} のごみ箱が無効です：ここの項目は完全に削除されます",
+  "review.delete.binOffEnable": "元に戻せるようにするには、先にごみ箱を有効にしてから「再確認」を選びます。項目はごみ箱へ移動されます",
+  "review.numbers.removes": "削除・移動",
+  "review.count.deleted": {
+    "other": "完全に削除 {count}"
+  },
+  "review.result.deleted": {
+    "other": "完全に削除しました：{deleted} 個、{bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "このプランはごみ箱のない項目を完全に削除します。確認してから続けてください",
+  "review.applying.titleDelete": "完全に削除しています",
+  "review.applying.titleMixed": "ごみ箱へ移動・完全に削除しています",
+  "review.result.deletedTitle": "完全に削除しました",
+  "review.result.cleanedTitle": "クリーンアップが完了しました",
+  "review.result.cancelledCounts": {
+    "other": "キャンセルしました：{done} 個を処理済み、{left} 個は未処理のまま残っています"
+  },
+  "review.result.cancelTooLate": "キャンセル時に最後の項目を処理中だったため、その項目は完了しました",
+  "review.numbers.frees": "解放される容量",
+  "review.numbers.allocatedDelete": "サイズは項目が現在使用している容量です。削除するとボリュームに戻りますが、スナップショットや共有データが一部を保持する場合があります",
+  "review.recycle.syncDelete": "Synology Drive、ShareSync、Cloud Sync で同期しているフォルダでは、削除すると同期先の項目も削除されます",
+  "review.refusal.notFound": "この項目はもう存在しません。クリーンアップリストから削除してください",
+  "review.recycle.symlinks": {
+    "other": "うち {symlinks} 個のショートカット（シンボリックリンク）は DSM のごみ箱に残らず、復元しても戻りません"
+  },
+  "review.applying.checkingKept": {
+    "other": "保持する {kept} 個のコピーを確認中"
+  },
+  "review.applying.finishingCurrent": "現在の項目を完了してから停止します。残りの項目はそのままです"
+}

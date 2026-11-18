@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "command": "history",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:54:34Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "scans": [
+    {
+      "job_id": "usage-baseline-0",
+      "targets": [
+        {
+          "path": "/volume1"
+        }
+      ],
+      "volume": true,
+      "profile": "low",
+      "started": "2026-09-29T11:54:34Z",
+      "finished": "2026-09-29T11:54:34Z",
+      "elapsed_ms": 135,
+      "total_elapsed_ms": 135,
+      "entries": 661,
+      "subvolumes": 3,
+      "reused_units": 1,
+      "full_read_ms": 120,
+      "full_read_entries": 647,
+      "outcome": "completed",
+      "peak_rss_bytes": 13987840,
+      "spill_peak_bytes": 19274,
+      "report": {
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+      },
+      "report_bytes": 21929,
+      "df_total_bytes": 1000000000000,
+      "df_used_bytes": 400000000000,
+      "df_free_bytes": 600000000000,
+      "data_used_bytes": 3305472,
+      "fsid": "f0000000-0000-4000-8000-00000000009a"
+    },
+    {
+      "job_id": "usage-baseline-1",
+      "targets": [
+        {
+          "path": "/volume2"
+        }
+      ],
+      "volume": true,
+      "profile": "low",
+      "started": "2026-09-29T11:54:34Z",
+      "finished": "2026-09-29T11:54:34Z",
+      "elapsed_ms": 135,
+      "total_elapsed_ms": 135,
+      "entries": 661,
+      "subvolumes": 3,
+      "reused_units": 1,
+      "full_read_ms": 120,
+      "full_read_entries": 647,
+      "outcome": "completed",
+      "peak_rss_bytes": 13987840,
+      "spill_peak_bytes": 19274,
+      "report": {
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+      },
+      "report_bytes": 21929,
+      "df_total_bytes": 1000000000000,
+      "df_used_bytes": 400000000000,
+      "df_free_bytes": 600000000000,
+      "data_used_bytes": 3305472,
+      "fsid": "f0000000-0000-4000-8000-000000000102"
+    }
+  ]
+}

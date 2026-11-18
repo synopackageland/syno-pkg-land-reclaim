@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>System partition mock</title>
+<style>
+body { margin: 0; background: #e4e7eb; }
+#window { position: absolute; left: 24px; top: 40px; display: flex; flex-direction: column; z-index: 10; }
+#chrome { height: 32px; flex-shrink: 0; background: white; padding-left: 16px; line-height: 32px; font: 13px/32px sans-serif; }
+#body { flex: 1; min-height: 0; overflow: hidden; }
+#synoreclaim { height: 100%; }
+</style></head>
+<body><div id="window"><div id="chrome">Syno Reclaim — mock data</div><div id="body"><div id="synoreclaim"></div></div></div>
+<script>
+window._S = key => key === 'lang' ? new URLSearchParams(location.search).get('lang') || 'enu' : undefined
+window.SYNO = { API: {} }
+</script>
+<script type="module">
+import { createUiApp } from '/src/createUiApp.ts'
+import App from '/src/App.vue'
+import '/src/styles.ts'
+import { SHELL_CONTEXT } from '/src/context.ts'
+import { DSM_WINDOW_FRONT } from '/src/dsm/appWindow.ts'
+import { configureAuthorization } from '/src/stores/authorization.ts'
+import { fixtureAuthorizationClient } from '/src/api/authorizationFixtures.ts'
+import { fixtureBackend } from '/src/api/fixtures.ts'
+import { setBackend } from '/src/api/index.ts'
+import { refreshJobs } from '/src/stores/jobs.ts'
+const params = new URLSearchParams(location.search)
+const host = document.querySelector('#window')
+const resize = (width, height) => { host.style.width = `${width}px`; host.style.height = `${height}px` }
+resize(Number(params.get('width') || 1100), Number(params.get('height') || 720))
+window._S = key => key === 'lang' ? params.get('lang') || 'enu' : undefined
+window.SYNO = { API: {} }
+const base = fixtureBackend({ scenario: 'sysvol_deep_short' })
+const scanning = fixtureBackend({ scenario: 'rootfs_cleanup' })
+const system = (await base('volumes.list', {})).system_partition
+const saved = await base('rootfs.report', {})
+const scan = (await scanning('jobs.list', {})).jobs[0]
+const report = { ...scan, job_id: 'system-report-fixture', kind: 'rootfs-report', phase: 'report', targets: [], progress: undefined, elapsed_s: 16, state: params.get('state') || 'running' }
+let waiting = null
+let release = null
+setBackend(async (method, args, options) => {
+  if (method === 'rootfs.plan' && waiting) await waiting
+  if (method === 'job.result' && args.job_id === report.job_id) return base('job.result', { job_id: saved.job_id })
+  const result = await (method === 'volumes.list' ? scanning : base)(method, args, options)
+  if (method === 'jobs.list') return { ...result, jobs: [structuredClone(report), structuredClone(scan), ...result.jobs] }
+  if (method === 'volumes.list') {
+    result.system_partition = system
+    // Keep all mock shares selectable, including the volume being scanned
+    result.volumes.forEach(volume => { volume.free_bytes = 1_000_000_000_000 })
+  }
+  return result
+})
+window.systemPartitionFixture = {
+  resize,
+  setState: async state => { report.state = state; await refreshJobs() },
+  holdPreview: () => { waiting = new Promise(resolve => { release = resolve }) },
+  releasePreview: () => { release?.(); waiting = null },
+}
+configureAuthorization({ client: fixtureAuthorizationClient({ state: 'ready', reason: null }) })
+createUiApp(App).provide(SHELL_CONTEXT, { fullPage: false, displayName: 'Syno Reclaim' }).provide(DSM_WINDOW_FRONT, () => {}).mount('#synoreclaim')
+</script></body></html>

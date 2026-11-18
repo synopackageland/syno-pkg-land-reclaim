@@ -1,0 +1,71 @@
+{
+  "applies": [
+    {
+      "plan_id": "rootfs-18d75b8423f30000-4d",
+      "requested_by": "admin",
+      "started": "2026-09-30T14:14:20Z",
+      "finished": "2026-09-30T14:15:00Z",
+      "move_dir": {
+        "path": "/volume1/backup/SynoReclaim-system-20260930-1415"
+      },
+      "manifest": {
+        "path": "/volume1/backup/SynoReclaim-system-20260930-1415/manifest.jsonl"
+      },
+      "moved": {
+        "files": 3,
+        "size_bytes": 115343360
+      },
+      "freed_bytes": 201326592,
+      "completion": "complete",
+      "skipped_count": 0,
+      "tools": [
+        {
+          "tool": "rotate_logs",
+          "outcome": "succeeded"
+        },
+        {
+          "tool": "delete_journal",
+          "outcome": "succeeded"
+        }
+      ]
+    },
+    {
+      "plan_id": "rootfs-18d75b8423f30123-5a",
+      "requested_by": "admin",
+      "started": "2026-09-12T09:01:30Z",
+      "finished": "2026-09-12T09:02:00Z",
+      "move_dir": {
+        "path": "/volume1/backup/SynoReclaim-system-20260912-0902"
+      },
+      "manifest": {
+        "path": "/volume1/backup/SynoReclaim-system-20260912-0902/manifest.jsonl"
+      },
+      "moved": {
+        "files": 1,
+        "size_bytes": 80000000
+      },
+      "freed_bytes": 100000000,
+      "completion": "partial",
+      "skipped_count": 1,
+      "tools": [
+        {
+          "tool": "rotate_logs",
+          "outcome": "succeeded"
+        },
+        {
+          "tool": "delete_journal",
+          "outcome": "failed",
+          "exit_code": 1
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "command": "rootfs-history",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:00Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "command": "inspect",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "partial",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1/share05",
+      "code": "not_found",
+      "message": "No such file or directory (os error 2)"
+    }
+  ],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-000000000007",
+        "path": "/fixture/entry9999/entry0014/entry9999/entry9999",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share04/folder0005/file0005.bin",
+        "kind": "file",
+        "flags": [],
+        "metrics": {
+          "logical": 262144,
+          "physical": 262144,
+          "shared": 262144,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 1,
+          "inline": 0,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [
+          "snapshot"
+        ],
+        "nlink": 1,
+        "tree": 256,
+        "objectid": 880
+      },
+      "explain": [
+        {
+          "code": "snapshot",
+          "message": "a snapshot references some folder0005"
+        },
+        {
+          "code": "snapshots_not_materialized",
+          "message": "1 snapshot(s) in scope were not read; share04 they share09 is not visible here"
+        }
+      ]
+    }
+  ],
+  "scans": []
+}

@@ -1,0 +1,6 @@
+{
+  "approvalWait.title": "DSM の応答を待っています",
+  "approvalWait.queued": "承認タスクは DSM による開始を待っています。NAS の負荷が高いと数分かかることがあります。このウィンドウを開いたままにしてください",
+  "approvalWait.running": "承認タスクを実行中です。NAS の負荷が高いと数分かかることがあります。このウィンドウを開いたままにしてください",
+  "approvalWait.elapsed": "経過時間 {duration}"
+}

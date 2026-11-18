@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:00:53Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "20260930T010000Z-5c4a1",
+      "kind": "scan",
+      "state": "running",
+      "phase": "scan",
+      "targets": [
+        {
+          "path": "/volume1/share04"
+        }
+      ],
+      "scope": "path",
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-30T01:00:00Z",
+      "updated": "2026-09-30T01:00:53Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": null,
+      "requested_by": "admin",
+      "progress": {
+        "phase": "scan",
+        "units_done": 0,
+        "units_total": 2,
+        "entries": 184000,
+        "items": 520000,
+        "bytes_read": 79000000,
+        "elapsed_s": 53,
+        "rss_bytes": 48000000,
+        "subvolume_id": 257,
+        "current_subvolume": {
+          "path": "share04"
+        },
+        "basis": {
+          "entries": 460000,
+          "elapsed_s": 130,
+          "items": null
+        },
+        "updated": "2026-09-30T01:00:53Z"
+      }
+    }
+  ]
+}

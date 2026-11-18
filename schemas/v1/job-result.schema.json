@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/job-result.schema.json",
+  "title": "synoreclaim job-result refusal v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "$ref": "common.schema.json#/$defs/job_request"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "job-result"
+        }
+      },
+      "required": [
+        "command"
+      ]
+    }
+  ]
+}

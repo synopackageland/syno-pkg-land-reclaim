@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "command": "history",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:36:05Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "scans": [
+    {
+      "job_id": "fixture-job0001",
+      "targets": [
+        {
+          "path": "/volume1"
+        }
+      ],
+      "volume": true,
+      "profile": "low",
+      "started": "2026-09-29T23:55:21Z",
+      "finished": "2026-09-30T00:30:06Z",
+      "elapsed_ms": 2084933,
+      "total_elapsed_ms": 2087000,
+      "entries": 5514529,
+      "subvolumes": 197,
+      "reused_units": 0,
+      "full_read_ms": 2084933,
+      "full_read_entries": 5514529,
+      "outcome": "partial",
+      "reason": "partial",
+      "peak_rss_bytes": 93372416,
+      "spill_peak_bytes": 364890649,
+      "report": {
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370"
+      },
+      "report_bytes": 301544044,
+      "df_total_bytes": 939051651072,
+      "df_used_bytes": 43399258112,
+      "df_free_bytes": 895652392960,
+      "data_used_bytes": 43029061632
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/resume.schema.json",
+  "title": "synoreclaim resume refusal v1",
+  "description": "Resume runs a scan when its saved state is usable. Before acceptance, an incompatible job or unusable checkpoint returns a refusal with outcome job_incompatible or checkpoint_unusable (exit 4), an explanation and a fresh-scan suggestion; no worker is queued and the paused job is retained. The worker revalidates full keys and checksums at use time.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "$ref": "common.schema.json#/$defs/job_request"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "resume"
+        }
+      },
+      "required": [
+        "command"
+      ]
+    }
+  ]
+}

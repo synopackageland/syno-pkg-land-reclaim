@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "command": "overview",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-000000000007",
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "filesystem": {
+        "uuid": "f0000000-0000-4000-8000-000000000007",
+        "mount": {
+          "path": "/volume1"
+        },
+        "kind": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "space": {
+        "df": {
+          "total_bytes": 536870912,
+          "used_bytes": 10055680,
+          "free_bytes": 526815232,
+          "available_bytes": 448630784
+        },
+        "space_info": [
+          {
+            "type": "data",
+            "profile": "single",
+            "copies": 1,
+            "total_bytes": 75497472,
+            "used_bytes": 3305472,
+            "captured": "scan_end",
+            "used_bytes_at_scan_start": 3305472
+          },
+          {
+            "type": "system",
+            "profile": "dup",
+            "copies": 2,
+            "total_bytes": 8388608,
+            "used_bytes": 16384,
+            "captured": "scan_end"
+          },
+          {
+            "type": "metadata",
+            "profile": "dup",
+            "copies": 2,
+            "total_bytes": 33554432,
+            "used_bytes": 475136,
+            "captured": "scan_end"
+          },
+          {
+            "type": "unknown",
+            "profile": "single",
+            "copies": 1,
+            "total_bytes": 5767168,
+            "used_bytes": 0,
+            "captured": "scan_end"
+          }
+        ]
+      },
+      "parts": [
+        {
+          "kind": "pending_cleanup",
+          "bytes": 0,
+          "reclaimable_bytes": null,
+          "held_bytes": 0,
+          "items": []
+        },
+        {
+          "kind": "snapshot_only",
+          "bytes": 0,
+          "reclaimable_bytes": null,
+          "held_bytes": 0,
+          "items": []
+        },
+        {
+          "kind": "recycle_bin",
+          "bytes": 196608,
+          "reclaimable_bytes": 0,
+          "held_bytes": null,
+          "items": [
+            {
+              "share": "share04",
+              "bytes": 196608,
+              "reclaimable_bytes": 0
+            }
+          ]
+        },
+        {
+          "kind": "dsm_service",
+          "bytes": 917504,
+          "reclaimable_bytes": null,
+          "held_bytes": 917504,
+          "items": [
+            {
+              "service": "synology_drive",
+              "managed_by": "Synology Drive Server",
+              "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle bin",
+              "manage_in_id": "drive_admin_console",
+              "bytes": 262144,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "active_backup_data",
+              "managed_by": "Active Backup for Business (backup data)",
+              "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+              "manage_in_id": "active_backup_business",
+              "bytes": 131072,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "container_manager",
+              "managed_by": "Container Manager",
+              "manage_in": "Container Manager (remove unused images and containers)",
+              "manage_in_id": "container_manager",
+              "bytes": 131072,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "surveillance_recordings",
+              "managed_by": "Surveillance Station (recordings)",
+              "manage_in": "Surveillance Station > Recording > Settings (rotation and retention)",
+              "manage_in_id": "surveillance_station",
+              "bytes": 131072,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "folder_metadata",
+              "managed_by": "DSM indexing (thumbnails and file metadata)",
+              "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+              "manage_in_id": "owning_folder",
+              "bytes": 65536,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "hyper_backup",
+              "managed_by": "Hyper Backup (backup data)",
+              "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+              "manage_in_id": "hyper_backup",
+              "bytes": 131072,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "other_dsm_service_data",
+              "managed_by": "DSM or a package",
+              "manage_in": "the package that created it",
+              "manage_in_id": "owning_package",
+              "bytes": 65536,
+              "reclaimable_bytes": null
+            }
+          ]
+        },
+        {
+          "kind": "share_live",
+          "bytes": 2125824,
+          "reclaimable_bytes": 0,
+          "held_bytes": null,
+          "items": [
+            {
+              "share": "share04",
+              "bytes": 2125824,
+              "reclaimable_bytes": 0
+            }
+          ]
+        },
+        {
+          "kind": "shared_between_folders",
+          "bytes": 0,
+          "reclaimable_bytes": null,
+          "held_bytes": 0,
+          "items": []
+        },
+        {
+          "kind": "pinned_unreferenced",
+          "bytes": 65536,
+          "reclaimable_bytes": null,
+          "held_bytes": null,
+          "items": []
+        },
+        {
+          "kind": "unknown",
+          "bytes": 0,
+          "reclaimable_bytes": null,
+          "held_bytes": null,
+          "items": []
+        }
+      ],
+      "reconciliation": {
+        "data": {
+          "parts_sum_bytes": 3305472,
+          "space_info_used_bytes": 3305472,
+          "residual_bytes": 0,
+          "tolerance_bytes": 1073741824,
+          "status": "reconciled",
+          "coverage_gaps": false
+        },
+        "df": {
+          "used_bytes": 10055680,
+          "metadata_system_bytes": 983040,
+          "data_metadata_system_bytes": 4288512,
+          "residual_bytes": 5767168,
+          "status": "display_only"
+        }
+      },
+      "actions": [
+        {
+          "rank": 1,
+          "kind": "package",
+          "service": "synology_drive",
+          "reclaimable_bytes": null,
+          "held_bytes": 262144,
+          "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle bin",
+          "manage_in_id": "drive_admin_console"
+        },
+        {
+          "rank": 2,
+          "kind": "package",
+          "service": "active_backup_data",
+          "reclaimable_bytes": null,
+          "held_bytes": 131072,
+          "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+          "manage_in_id": "active_backup_business"
+        },
+        {
+          "rank": 3,
+          "kind": "package",
+          "service": "container_manager",
+          "reclaimable_bytes": null,
+          "held_bytes": 131072,
+          "manage_in": "Container Manager (remove unused images and containers)",
+          "manage_in_id": "container_manager"
+        },
+        {
+          "rank": 4,
+          "kind": "package",
+          "service": "surveillance_recordings",
+          "reclaimable_bytes": null,
+          "held_bytes": 131072,
+          "manage_in": "Surveillance Station > Recording > Settings (rotation and retention)",
+          "manage_in_id": "surveillance_station"
+        },
+        {
+          "rank": 5,
+          "kind": "package",
+          "service": "hyper_backup",
+          "reclaimable_bytes": null,
+          "held_bytes": 131072,
+          "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+          "manage_in_id": "hyper_backup"
+        }
+      ]
+    }
+  ],
+  "scans": []
+}

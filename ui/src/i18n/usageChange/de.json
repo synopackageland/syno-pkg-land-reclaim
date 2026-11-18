@@ -1,0 +1,9 @@
+{
+  "usageChange.close": "Schließen",
+  "usageChange.decrease": "Die Nutzung ist seit dem letzten Scan um {size} gesunken. Die Ergebnisse können sich geändert haben",
+  "usageChange.increase": "Die Nutzung ist seit dem letzten Scan um {size} gestiegen. Die Ergebnisse können sich geändert haben",
+  "usageChange.noBaseline": "Nach dem nächsten vollständigen Scan kann Syno Reclaim Sie über Änderungen der Belegung informieren",
+  "usageChange.rescan": "Erneut scannen",
+  "usageChange.snooze": "Später erinnern",
+  "usageChange.volume": "{volume}: {message}"
+}

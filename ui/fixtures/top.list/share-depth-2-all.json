@@ -1,0 +1,2177 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:42:06Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 200,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 720,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1/share50",
+        "kind": "dir",
+        "flags": [
+          "subvolume_root"
+        ],
+        "metrics": {
+          "logical": 4980425531,
+          "physical": 4893720576,
+          "shared": 914223104,
+          "reclaimable": null,
+          "reclaimable_resolved": 3974520832,
+          "unknown": 4976640,
+          "pinned_unreferenced": 0,
+          "extents": 6920,
+          "inline": 37852,
+          "entries": 3599,
+          "files": 3455
+        },
+        "blockers": [
+          "shared_tree",
+          "unknown"
+        ],
+        "nlink": 1,
+        "tree": 261,
+        "objectid": 256,
+        "without_package_data": {
+          "logical": 1665384807,
+          "physical": 1665454080,
+          "shared": 0,
+          "reclaimable": null,
+          "reclaimable_resolved": 1660477440,
+          "unknown": 4976640,
+          "pinned_unreferenced": 0,
+          "extents": 730,
+          "inline": 1661,
+          "entries": 74,
+          "files": 67
+        }
+      },
+      "entries": [
+        {
+          "path": "/volume1/share50/folder0123",
+          "kind": "dir",
+          "flags": [
+            "recycle"
+          ],
+          "metrics": {
+            "logical": 2831079132,
+            "physical": 2832003072,
+            "shared": 914223104,
+            "reclaimable": 1917779968,
+            "reclaimable_resolved": 1917779968,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 459,
+            "inline": 74,
+            "entries": 461,
+            "files": 460
+          },
+          "blockers": [
+            "shared_tree"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 259,
+          "service": null,
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 914223104
+            }
+          ],
+          "where_to_fix": {
+            "token": "recycle_bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "command": [
+              "synoreclaim",
+              "recycle",
+              "/fixture/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0141",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 1514835792,
+            "physical": 1514835968,
+            "shared": 0,
+            "reclaimable": 1514835968,
+            "reclaimable_resolved": 1514835968,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 41,
+            "inline": 0,
+            "entries": 2,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 264,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0125",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 483961592,
+            "physical": 396263424,
+            "shared": 0,
+            "reclaimable": 396263424,
+            "reclaimable_resolved": 396263424,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5731,
+            "inline": 36117,
+            "entries": 3064,
+            "files": 2928
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "hyper_backup",
+            "names": "*.hbk",
+            "managed_by": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share50/folder0125"
+              },
+              {
+                "path": "/volume1/share50/folder0126"
+              },
+              {
+                "path": "/volume1/share50/folder0127"
+              },
+              {
+                "path": "/volume1/share50/folder0128"
+              },
+              {
+                "path": "/volume1/share50/folder0129"
+              },
+              {
+                "path": "/volume1/share50/folder0130"
+              },
+              {
+                "path": "/volume1/share50/folder0131"
+              },
+              {
+                "path": "/volume1/share50/folder0132"
+              },
+              {
+                "path": "/volume1/share50/folder0133"
+              },
+              {
+                "path": "/volume1/share50/folder0134"
+              },
+              {
+                "path": "/volume1/share50/folder0135"
+              },
+              {
+                "path": "/volume1/share50/folder0136"
+              },
+              {
+                "path": "/volume1/share50/folder0137"
+              },
+              {
+                "path": "/volume1/share50/folder0138"
+              },
+              {
+                "path": "/volume1/share50/folder0139"
+              },
+              {
+                "path": "/volume1/share50/folder0140"
+              },
+              {
+                "path": "/volume1/share50/folder0143"
+              }
+            ],
+            "path_count": 17
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share50/file0363.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6582031,
+            "physical": 6582272,
+            "shared": 0,
+            "reclaimable": 6582272,
+            "reclaimable_resolved": 6582272,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1197,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0364.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6582031,
+            "physical": 6582272,
+            "shared": 0,
+            "reclaimable": 6582272,
+            "reclaimable_resolved": 6582272,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1199,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0367.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6553967,
+            "physical": 6557696,
+            "shared": 0,
+            "reclaimable": 6557696,
+            "reclaimable_resolved": 6557696,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1206,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0368.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6553967,
+            "physical": 6557696,
+            "shared": 0,
+            "reclaimable": 6557696,
+            "reclaimable_resolved": 6557696,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1208,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0369.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6553967,
+            "physical": 6557696,
+            "shared": 0,
+            "reclaimable": 6557696,
+            "reclaimable_resolved": 6557696,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1210,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0370.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6554006,
+            "physical": 6557696,
+            "shared": 0,
+            "reclaimable": 6557696,
+            "reclaimable_resolved": 6557696,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1212,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0371.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6554006,
+            "physical": 6557696,
+            "shared": 0,
+            "reclaimable": 6557696,
+            "reclaimable_resolved": 6557696,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1214,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0372.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6554006,
+            "physical": 6557696,
+            "shared": 0,
+            "reclaimable": 6557696,
+            "reclaimable_resolved": 6557696,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1216,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0365.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6545125,
+            "physical": 6545408,
+            "shared": 0,
+            "reclaimable": 6545408,
+            "reclaimable_resolved": 6545408,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1202,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0366.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 6545125,
+            "physical": 6545408,
+            "shared": 0,
+            "reclaimable": 6545408,
+            "reclaimable_resolved": 6545408,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1204,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0361.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5837074,
+            "physical": 5840896,
+            "shared": 0,
+            "reclaimable": 5840896,
+            "reclaimable_resolved": 5840896,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1143,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0362.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5837072,
+            "physical": 5840896,
+            "shared": 0,
+            "reclaimable": 5840896,
+            "reclaimable_resolved": 5840896,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1144,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0358.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5835058,
+            "physical": 5836800,
+            "shared": 0,
+            "reclaimable": 5836800,
+            "reclaimable_resolved": 5836800,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 696,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0359.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5835058,
+            "physical": 5836800,
+            "shared": 0,
+            "reclaimable": 5836800,
+            "reclaimable_resolved": 5836800,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 741,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0360.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5829725,
+            "physical": 5832704,
+            "shared": 0,
+            "reclaimable": 5832704,
+            "reclaimable_resolved": 5832704,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 886,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0356.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5732295,
+            "physical": 5734400,
+            "shared": 0,
+            "reclaimable": 5734400,
+            "reclaimable_resolved": 5734400,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 456,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0357.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5732295,
+            "physical": 5734400,
+            "shared": 0,
+            "reclaimable": 5734400,
+            "reclaimable_resolved": 5734400,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 517,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0354.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5672902,
+            "physical": 5672960,
+            "shared": 0,
+            "reclaimable": 5672960,
+            "reclaimable_resolved": 5672960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 358,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0355.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5672904,
+            "physical": 5672960,
+            "shared": 0,
+            "reclaimable": 5672960,
+            "reclaimable_resolved": 5672960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 439,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0374.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5672902,
+            "physical": 5672960,
+            "shared": 0,
+            "reclaimable": 5672960,
+            "reclaimable_resolved": 5672960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 341,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0353.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5154796,
+            "physical": 5156864,
+            "shared": 0,
+            "reclaimable": 5156864,
+            "reclaimable_resolved": 5156864,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 340,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0335.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4907008,
+            "physical": 4907008,
+            "shared": 0,
+            "reclaimable": 4907008,
+            "reclaimable_resolved": 4907008,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 161,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 56175,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0352.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 3434021,
+            "physical": 3436544,
+            "shared": 0,
+            "reclaimable": 3436544,
+            "reclaimable_resolved": 3436544,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 270,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0336.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 3014656,
+            "physical": 3014656,
+            "shared": 0,
+            "reclaimable": 3014656,
+            "reclaimable_resolved": 3014656,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 101,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 56195,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0339.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 1839104,
+            "physical": 1839104,
+            "shared": 0,
+            "reclaimable": 1839104,
+            "reclaimable_resolved": 1839104,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 66,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 58259,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0342.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 1298432,
+            "physical": 1298432,
+            "shared": 0,
+            "reclaimable": 1298432,
+            "reclaimable_resolved": 1298432,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 45,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 58258,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0328.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 585728,
+            "physical": 585728,
+            "shared": 0,
+            "reclaimable": 585728,
+            "reclaimable_resolved": 585728,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 51,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1231,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0337.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 516096,
+            "physical": 516096,
+            "shared": 0,
+            "reclaimable": 516096,
+            "reclaimable_resolved": 516096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 46,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 56173,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0331.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 462848,
+            "physical": 462848,
+            "shared": 0,
+            "reclaimable": 462848,
+            "reclaimable_resolved": 462848,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 47,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 27231,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0329.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 180224,
+            "physical": 180224,
+            "shared": 0,
+            "reclaimable": 180224,
+            "reclaimable_resolved": 180224,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 16,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1232,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0332.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 172032,
+            "physical": 172032,
+            "shared": 0,
+            "reclaimable": 172032,
+            "reclaimable_resolved": 172032,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 8,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 27237,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0349.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 151648,
+            "physical": 155648,
+            "shared": 0,
+            "reclaimable": 155648,
+            "reclaimable_resolved": 155648,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 267,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0350.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 151864,
+            "physical": 155648,
+            "shared": 0,
+            "reclaimable": 155648,
+            "reclaimable_resolved": 155648,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 268,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0351.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 151553,
+            "physical": 155648,
+            "shared": 0,
+            "reclaimable": 155648,
+            "reclaimable_resolved": 155648,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 269,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0330.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 131072,
+            "physical": 131072,
+            "shared": 0,
+            "reclaimable": 131072,
+            "reclaimable_resolved": 131072,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 17,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1243,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0333.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 40960,
+            "physical": 40960,
+            "shared": 0,
+            "reclaimable": 40960,
+            "reclaimable_resolved": 40960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 27229,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0334.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 40960,
+            "physical": 40960,
+            "shared": 0,
+            "reclaimable": 40960,
+            "reclaimable_resolved": 40960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 2,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 31672,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0345.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 40960,
+            "physical": 40960,
+            "shared": 0,
+            "reclaimable": 40960,
+            "reclaimable_resolved": 40960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 58282,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0338.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 28672,
+            "physical": 28672,
+            "shared": 0,
+            "reclaimable": 28672,
+            "reclaimable_resolved": 28672,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 2,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 58041,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0348.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 28672,
+            "physical": 28672,
+            "shared": 0,
+            "reclaimable": 28672,
+            "reclaimable_resolved": 28672,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 2,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 59335,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0327.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12292,
+            "physical": 16384,
+            "shared": 0,
+            "reclaimable": 16384,
+            "reclaimable_resolved": 16384,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 1229,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0124",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 1476,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 0,
+            "inline": 1476,
+            "entries": 22,
+            "files": 18
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "folder_metadata",
+            "names": "@eaDir",
+            "managed_by": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share50/folder0124"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share50/file0340.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 32768,
+            "physical": 32768,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 0,
+            "unknown": 32768,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 66027,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 32768
+            }
+          ],
+          "where_to_fix": {
+            "token": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0341.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 3061192,
+            "physical": 3063808,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 0,
+            "unknown": 3063808,
+            "pinned_unreferenced": 0,
+            "extents": 43,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 66026,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 3063808
+            }
+          ],
+          "where_to_fix": {
+            "token": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0343.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 32768,
+            "physical": 32768,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 0,
+            "unknown": 32768,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 66029,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 32768
+            }
+          ],
+          "where_to_fix": {
+            "token": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0344.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 1685112,
+            "physical": 1687552,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 0,
+            "unknown": 1687552,
+            "pinned_unreferenced": 0,
+            "extents": 39,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 66028,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 1687552
+            }
+          ],
+          "where_to_fix": {
+            "token": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0346.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 32768,
+            "physical": 32768,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 0,
+            "unknown": 32768,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 66031,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 32768
+            }
+          ],
+          "where_to_fix": {
+            "token": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/file0347.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 123632,
+            "physical": 126976,
+            "shared": 0,
+            "reclaimable": null,
+            "reclaimable_resolved": 0,
+            "unknown": 126976,
+            "pinned_unreferenced": 0,
+            "extents": 4,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "unknown"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 66030,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "unknown",
+              "bytes": 126976
+            }
+          ],
+          "where_to_fix": {
+            "token": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0142",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 185,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 0,
+            "inline": 185,
+            "entries": 2,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 262,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        }
+      ],
+      "hidden_system": 18,
+      "services": {
+        "lines": [
+          {
+            "service": "recycle_bin",
+            "names": "#recycle",
+            "package": "shared folder Recycle Bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "confirmed": true,
+            "path": "/volume1/share50/folder0123",
+            "paths": 1,
+            "metrics": {
+              "logical": 2831079132,
+              "physical": 2832003072,
+              "shared": 914223104,
+              "reclaimable": 1917779968,
+              "reclaimable_resolved": 1917779968,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 459,
+              "inline": 74,
+              "entries": 461,
+              "files": 460
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "hyper_backup",
+            "names": "*.hbk",
+            "package": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": 17,
+            "metrics": {
+              "logical": 483961592,
+              "physical": 396263424,
+              "shared": 0,
+              "reclaimable": 396263424,
+              "reclaimable_resolved": 396263424,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 5731,
+              "inline": 36117,
+              "entries": 3064,
+              "files": 2928
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 1476,
+              "physical": 0,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 0,
+              "inline": 1476,
+              "entries": 22,
+              "files": 18
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 0
+      }
+    }
+  ],
+  "scans": []
+}

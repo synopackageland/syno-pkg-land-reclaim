@@ -1,0 +1,9 @@
+{
+  "cli": "0.54.6",
+  "templates": "0.42.1",
+  "sdk": "0.53.49",
+  "app": "0.53.49",
+  "ui": "0.25.29",
+  "executorTag": "executor/v0.53.6",
+  "goToolchain": "go1.26.10"
+}

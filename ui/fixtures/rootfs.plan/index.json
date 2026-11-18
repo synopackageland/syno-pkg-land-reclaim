@@ -1,0 +1,12 @@
+[
+  { "file": "deep.json", "params": { "mode": "deep" }, "scenario": "rootfs_cleanup" },
+  { "file": "plan.json", "params": {} },
+  { "file": "destination-full.json", "scenario": "rootfs_destination_full" },
+  { "file": "busy.json", "scenario": "rootfs_busy" },
+  { "file": "walk-stopped.json", "scenario": "rootfs_walk_stopped" },
+  { "file": "dsm-update-active.json", "scenario": "rootfs_dsm_update_active" },
+  { "file": "stale.json", "scenario": "rootfs_stale" },
+  { "file": "nothing.json", "scenario": "rootfs_nothing" },
+  { "file": "tools-only.json", "scenario": "rootfs_tools_only" },
+  { "file": "deep-short.json", "params": { "mode": "deep" }, "scenario": "sysvol_deep_short" }
+]

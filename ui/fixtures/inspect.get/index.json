@@ -1,0 +1,54 @@
+[
+  {
+    "file": "partial.json",
+    "scenario": "partial"
+  },
+  {
+    "file": "live-selection.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share62/file0379.bin"
+        },
+        {
+          "path": "/volume1/share62/file0377.bin"
+        },
+        {
+          "path": "/volume1/share62/folder0176"
+        }
+      ]
+    }
+  },
+  {
+    "file": "short-selection.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share73/folder0373/file0589.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0590.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0592.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0591.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0375"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0374"
+        }
+      ]
+    }
+  },
+  {
+    "file": "partial.json"
+  },
+  {
+    "file": "interaction.json",
+    "scenario": "interaction"
+  }
+]

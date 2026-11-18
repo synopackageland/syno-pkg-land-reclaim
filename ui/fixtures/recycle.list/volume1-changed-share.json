@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "command": "recycle",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:36:01Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "target": {
+    "path": "/volume1"
+  },
+  "report_info": {
+    "fsid": "f0000000-0000-4000-8000-00000000009a",
+    "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+    "job_id": "fixture-job0001",
+    "scan_started": "2026-09-29T23:55:21Z",
+    "scan_finished": "2026-09-30T00:30:06Z",
+    "age_seconds": 355,
+    "stale": false,
+    "consistency": "changed-during-scan",
+    "change_reasons": [
+      {
+        "kind": "subvolume-generation-changed",
+        "subvolume_id": 262,
+        "selected": true,
+        "generation_before": 7,
+        "generation_after": 8
+      }
+    ],
+    "coverage": {
+      "encrypted_directories": 0,
+      "snapshots_not_materialized": 6,
+      "snapshots_materialized": 6,
+      "unlinked_subvolume_entries": 0,
+      "dangling_entries": 3,
+      "cycles": 0,
+      "unsupported_locations": 0,
+      "missing_subvolume_roots": 0,
+      "reference_accounting": "partial",
+      "unresolved_extents": 15128
+    },
+    "cleanup_since_report": null,
+    "filesystem": "btrfs",
+    "capabilities": {
+      "scan": true,
+      "snapshots": true,
+      "reflinks": true,
+      "cleanup": true,
+      "cleanup_unavailable_reason": null
+    }
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "/volume1/share50"
+      },
+      "items": 460,
+      "bytes": 2832003072,
+      "reclaimable_bytes": 1917779968,
+      "held_by": [
+        {
+          "class": "snapshot",
+          "bytes": 914223104
+        }
+      ]
+    },
+    {
+      "share": {
+        "path": "/volume1/share59/folder0149"
+      },
+      "items": 220,
+      "bytes": 88768512,
+      "reclaimable_bytes": 15708160,
+      "held_by": [
+        {
+          "class": "reflink",
+          "bytes": 73060352
+        }
+      ]
+    },
+    {
+      "share": {
+        "path": "/volume1/share59/entry0074"
+      },
+      "items": 100,
+      "bytes": 34357248,
+      "reclaimable_bytes": 34357248,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share73"
+      },
+      "items": 87,
+      "bytes": 20758528,
+      "reclaimable_bytes": 0,
+      "held_by": [
+        {
+          "class": "snapshot",
+          "bytes": 20758528
+        }
+      ]
+    },
+    {
+      "share": {
+        "path": "/volume1/share56"
+      },
+      "items": 27,
+      "bytes": 589824,
+      "reclaimable_bytes": 589824,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share62"
+      },
+      "items": 31,
+      "bytes": 258048,
+      "reclaimable_bytes": 258048,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share43"
+      },
+      "items": 9,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share46"
+      },
+      "items": 1,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share47"
+      },
+      "items": 10,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share48"
+      },
+      "items": 1,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share52"
+      },
+      "items": 1,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share55"
+      },
+      "items": 1,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share57"
+      },
+      "items": 3,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    },
+    {
+      "share": {
+        "path": "/volume1/share59"
+      },
+      "items": 2,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    }
+  ],
+  "moved_by_reclaim": [],
+  "scans": []
+}

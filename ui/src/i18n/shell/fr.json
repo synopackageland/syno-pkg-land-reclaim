@@ -1,0 +1,7 @@
+{
+  "shell.navigation": "Navigation",
+  "shell.newScan": "Nouvelle analyse",
+  "shell.scenario": "Scénario de test",
+  "shell.purpose": "Il a besoin de privilèges système pour mesurer l'espace utilisé par chaque dossier partagé, instantané et paquet, et pour placer uniquement ce que vous confirmez dans la corbeille de son dossier partagé, ou le supprimer définitivement si cette corbeille est désactivée ou s'il n'est dans aucun dossier partagé",
+  "shell.status": "État"
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "file": "recorded.json",
+    "params": {}
+  },
+  {
+    "file": "no-report.json",
+    "scenario": "no_report"
+  },
+  {
+    "file": "recorded-partial.json",
+    "scenario": "partial"
+  },
+  {
+    "file": "recorded-days.json",
+    "scenario": "days"
+  },
+  {
+    "scenario": "error",
+    "error": {
+      "code": "cli_error"
+    }
+  },
+  {
+    "file": "share-scan.json",
+    "scenario": "share_scan"
+  },
+  {
+    "file": "interaction.json",
+    "scenario": "interaction"
+  },
+  {
+    "file": "usage-change.json",
+    "scenario": "usage_change"
+  },
+  {
+    "file": "no-report.json",
+    "scenario": "first_scan"
+  }
+]

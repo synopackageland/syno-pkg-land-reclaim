@@ -1,0 +1,1436 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:42:00Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "dirs",
+  "limit": 200,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 714,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1/share62/folder0176",
+        "kind": "dir",
+        "flags": [],
+        "metrics": {
+          "logical": 13714984516,
+          "physical": 13717508096,
+          "shared": 0,
+          "reclaimable": 13717508096,
+          "reclaimable_resolved": 13717508096,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 16643,
+          "inline": 12388,
+          "entries": 1327,
+          "files": 1290
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 260,
+        "objectid": 4080
+      },
+      "entries": [
+        {
+          "path": "/volume1/share62/folder0176/folder0177",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 9452558795,
+            "physical": 9453031424,
+            "shared": 0,
+            "reclaimable": 9453031424,
+            "reclaimable_resolved": 9453031424,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 8540,
+            "inline": 12388,
+            "entries": 312,
+            "files": 309
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 6107,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/folder0178",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 5363710040,
+            "physical": 5364178944,
+            "shared": 0,
+            "reclaimable": 5364178944,
+            "reclaimable_resolved": 5364178944,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5066,
+            "inline": 12388,
+            "entries": 310,
+            "files": 308
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 6109,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 4262425721,
+            "physical": 4264476672,
+            "shared": 0,
+            "reclaimable": 4264476672,
+            "reclaimable_resolved": 4264476672,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 8103,
+            "inline": 0,
+            "entries": 1014,
+            "files": 981
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4082,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 4262425721,
+            "physical": 4264476672,
+            "shared": 0,
+            "reclaimable": 4264476672,
+            "reclaimable_resolved": 4264476672,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 8103,
+            "inline": 0,
+            "entries": 1013,
+            "files": 981
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4083,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 2846022411,
+            "physical": 2847285248,
+            "shared": 0,
+            "reclaimable": 2847285248,
+            "reclaimable_resolved": 2847285248,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5382,
+            "inline": 0,
+            "entries": 643,
+            "files": 621
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4086,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 1177338359,
+            "physical": 1178042368,
+            "shared": 0,
+            "reclaimable": 1178042368,
+            "reclaimable_resolved": 1178042368,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 2269,
+            "inline": 0,
+            "entries": 322,
+            "files": 315
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4085,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183/folder0184",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 719600580,
+            "physical": 720027648,
+            "shared": 0,
+            "reclaimable": 720027648,
+            "reclaimable_resolved": 720027648,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1404,
+            "inline": 0,
+            "entries": 191,
+            "files": 189
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4122,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0200",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 453751996,
+            "physical": 453926912,
+            "shared": 0,
+            "reclaimable": 453926912,
+            "reclaimable_resolved": 453926912,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 846,
+            "inline": 0,
+            "entries": 89,
+            "files": 86
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4147,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0203",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 442612944,
+            "physical": 442789888,
+            "shared": 0,
+            "reclaimable": 442789888,
+            "reclaimable_resolved": 442789888,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 859,
+            "inline": 0,
+            "entries": 84,
+            "files": 81
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4152,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183/folder0184/folder0185",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 440228029,
+            "physical": 440553472,
+            "shared": 0,
+            "reclaimable": 440553472,
+            "reclaimable_resolved": 440553472,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 853,
+            "inline": 0,
+            "entries": 138,
+            "files": 137
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4574,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0206",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 415432058,
+            "physical": 415592448,
+            "shared": 0,
+            "reclaimable": 415592448,
+            "reclaimable_resolved": 415592448,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 807,
+            "inline": 0,
+            "entries": 87,
+            "files": 84
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4153,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0209",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 399030195,
+            "physical": 399187968,
+            "shared": 0,
+            "reclaimable": 399187968,
+            "reclaimable_resolved": 399187968,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 768,
+            "inline": 0,
+            "entries": 85,
+            "files": 82
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4158,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0197",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 326743490,
+            "physical": 326897664,
+            "shared": 0,
+            "reclaimable": 326897664,
+            "reclaimable_resolved": 326897664,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 619,
+            "inline": 0,
+            "entries": 66,
+            "files": 63
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4146,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0191",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 293537486,
+            "physical": 293679104,
+            "shared": 0,
+            "reclaimable": 293679104,
+            "reclaimable_resolved": 293679104,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 544,
+            "inline": 0,
+            "entries": 85,
+            "files": 83
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4123,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183/folder0186",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 291395767,
+            "physical": 291590144,
+            "shared": 0,
+            "reclaimable": 291590144,
+            "reclaimable_resolved": 291590144,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 533,
+            "inline": 0,
+            "entries": 87,
+            "files": 85
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4134,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0195",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 262588167,
+            "physical": 262709248,
+            "shared": 0,
+            "reclaimable": 262709248,
+            "reclaimable_resolved": 262709248,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 500,
+            "inline": 0,
+            "entries": 62,
+            "files": 60
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4141,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0193",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 242260758,
+            "physical": 242429952,
+            "shared": 0,
+            "reclaimable": 242429952,
+            "reclaimable_resolved": 242429952,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 419,
+            "inline": 0,
+            "entries": 81,
+            "files": 79
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4135,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0200/folder0201",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 168771289,
+            "physical": 168833024,
+            "shared": 0,
+            "reclaimable": 168833024,
+            "reclaimable_resolved": 168833024,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 307,
+            "inline": 0,
+            "entries": 30,
+            "files": 29
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4212,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183/folder0188",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 166342012,
+            "physical": 166424576,
+            "shared": 0,
+            "reclaimable": 166424576,
+            "reclaimable_resolved": 166424576,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 332,
+            "inline": 0,
+            "entries": 43,
+            "files": 41
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4140,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0191/folder0192",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 164535079,
+            "physical": 164638720,
+            "shared": 0,
+            "reclaimable": 164638720,
+            "reclaimable_resolved": 164638720,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 301,
+            "inline": 0,
+            "entries": 61,
+            "files": 60
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4769,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0203/folder0204",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 157208734,
+            "physical": 157270016,
+            "shared": 0,
+            "reclaimable": 157270016,
+            "reclaimable_resolved": 157270016,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 304,
+            "inline": 0,
+            "entries": 28,
+            "files": 27
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4215,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0206/folder0207",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 152865156,
+            "physical": 152920064,
+            "shared": 0,
+            "reclaimable": 152920064,
+            "reclaimable_resolved": 152920064,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 295,
+            "inline": 0,
+            "entries": 29,
+            "files": 28
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4218,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183/folder0186/folder0187",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 146722802,
+            "physical": 146857984,
+            "shared": 0,
+            "reclaimable": 146857984,
+            "reclaimable_resolved": 146857984,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 259,
+            "inline": 0,
+            "entries": 59,
+            "files": 58
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4520,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0209/folder0210",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 143036565,
+            "physical": 143085568,
+            "shared": 0,
+            "reclaimable": 143085568,
+            "reclaimable_resolved": 143085568,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 271,
+            "inline": 0,
+            "entries": 28,
+            "files": 27
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4221,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0197/folder0199",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 142495317,
+            "physical": 142561280,
+            "shared": 0,
+            "reclaimable": 142561280,
+            "reclaimable_resolved": 142561280,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 264,
+            "inline": 0,
+            "entries": 32,
+            "files": 31
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4820,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0200/folder0202",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 136753055,
+            "physical": 136818688,
+            "shared": 0,
+            "reclaimable": 136818688,
+            "reclaimable_resolved": 136818688,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 260,
+            "inline": 0,
+            "entries": 31,
+            "files": 30
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4830,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0203/folder0205",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 135565676,
+            "physical": 135622656,
+            "shared": 0,
+            "reclaimable": 135622656,
+            "reclaimable_resolved": 135622656,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 262,
+            "inline": 0,
+            "entries": 28,
+            "files": 27
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4833,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0209/folder0211",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 119451129,
+            "physical": 119513088,
+            "shared": 0,
+            "reclaimable": 119513088,
+            "reclaimable_resolved": 119513088,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 233,
+            "inline": 0,
+            "entries": 29,
+            "files": 28
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4837,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0206/folder0208",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 115579384,
+            "physical": 115630080,
+            "shared": 0,
+            "reclaimable": 115630080,
+            "reclaimable_resolved": 115630080,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 221,
+            "inline": 0,
+            "entries": 29,
+            "files": 28
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4838,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0193/folder0194",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 101315689,
+            "physical": 101433344,
+            "shared": 0,
+            "reclaimable": 101433344,
+            "reclaimable_resolved": 101433344,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 161,
+            "inline": 0,
+            "entries": 55,
+            "files": 54
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4786,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0195/folder0196",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 97359729,
+            "physical": 97427456,
+            "shared": 0,
+            "reclaimable": 97427456,
+            "reclaimable_resolved": 97427456,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 181,
+            "inline": 0,
+            "entries": 32,
+            "files": 31
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4815,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0183/folder0188/folder0189",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 95793507,
+            "physical": 95854592,
+            "shared": 0,
+            "reclaimable": 95854592,
+            "reclaimable_resolved": 95854592,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 194,
+            "inline": 0,
+            "entries": 29,
+            "files": 28
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4358,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0182",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 85944513,
+            "physical": 85970944,
+            "shared": 0,
+            "reclaimable": 85970944,
+            "reclaimable_resolved": 85970944,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 169,
+            "inline": 0,
+            "entries": 16,
+            "files": 15
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4084,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0212",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 62037189,
+            "physical": 62066688,
+            "shared": 0,
+            "reclaimable": 62066688,
+            "reclaimable_resolved": 62066688,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 120,
+            "inline": 0,
+            "entries": 15,
+            "files": 14
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4119,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0180/folder0181/folder0190/folder0197/folder0198",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 24515422,
+            "physical": 24526848,
+            "shared": 0,
+            "reclaimable": 24526848,
+            "reclaimable_resolved": 24526848,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 47,
+            "inline": 0,
+            "entries": 5,
+            "files": 4
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 4207,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/folder0178/folder0179",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 12388,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 0,
+            "inline": 12388,
+            "entries": 77,
+            "files": 76
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "folder_metadata",
+            "names": "@eaDir",
+            "managed_by": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share62/folder0176/folder0177/folder0178/folder0179"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "command": null
+          }
+        }
+      ],
+      "hidden_system": 1,
+      "services": {
+        "lines": [
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 12388,
+              "physical": 0,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 0,
+              "inline": 12388,
+              "entries": 77,
+              "files": 76
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 0
+      }
+    }
+  ],
+  "scans": []
+}

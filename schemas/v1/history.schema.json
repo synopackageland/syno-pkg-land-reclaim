@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/history.schema.json",
+  "title": "synoreclaim history result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "history"
+        },
+        "scans": {
+          "type": "array",
+          "description": "Newest first: one entry per completed scan or finished job.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "job_id": {
+                "type": "string"
+              },
+              "targets": {
+                "type": "array",
+                "description": "The scan's roots: a volume mount or share paths.",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/path"
+                }
+              },
+              "volume": {
+                "type": "boolean"
+              },
+              "profile": {
+                "enum": [
+                  "low",
+                  "normal",
+                  "fast"
+                ]
+              },
+              "started": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              },
+              "finished": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              },
+              "elapsed_ms": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "This run's elapsed time."
+              },
+              "total_elapsed_ms": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "All runs of the job so far, earlier resumes included."
+              },
+              "entries": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Namespace entries read (the report's entry count)."
+              },
+              "subvolumes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "reused_units": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "full_read_ms": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "The last full read of this scope; what an ETA should use. Absent when no full read is recorded."
+              },
+              "full_read_entries": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "outcome": {
+                "enum": [
+                  "completed",
+                  "partial",
+                  "cancelled",
+                  "failed",
+                  "paused",
+                  "superseded"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "description": "Why a partial or superseded scan is not complete."
+              },
+              "peak_rss_bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "spill_peak_bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Largest size the scan's spill directory reached."
+              },
+              "report": {
+                "$ref": "common.schema.json#/$defs/path",
+                "description": "The published report, while its file still exists."
+              },
+              "report_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Bytes of the published report."
+              },
+              "df_total_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Statvfs total at scan end, as volumes --json reports it."
+              },
+              "df_used_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "df_free_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "data_used_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Btrfs DATA block-group bytes in use at the scan's end, the overview reconciliation number."
+              },
+              "fsid": {
+                "type": "string",
+                "description": "Filesystem identity from the history filename; absent for job-only entries."
+              },
+              "original_outcome": {
+                "enum": [
+                  "completed",
+                  "partial"
+                ],
+                "description": "Outcome before superseding; absent in legacy superseded records."
+              },
+              "attribution": {
+                "$ref": "common.schema.json#/$defs/attribution"
+              }
+            },
+            "required": [
+              "job_id",
+              "targets",
+              "volume",
+              "started",
+              "finished",
+              "elapsed_ms",
+              "total_elapsed_ms",
+              "entries",
+              "subvolumes",
+              "reused_units",
+              "outcome",
+              "spill_peak_bytes",
+              "report_bytes",
+              "df_total_bytes",
+              "df_used_bytes",
+              "df_free_bytes",
+              "data_used_bytes"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "scans"
+      ]
+    }
+  ]
+}

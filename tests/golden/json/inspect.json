@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "command": "inspect",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "partial",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/fixture/mnt/nope",
+      "code": "not_found",
+      "message": "No such file or directory (os error 2)"
+    }
+  ],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+        "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/8adc2669478811d6.srrep",
+        "job_id": "20260929T022925Z-ec33b",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/fixture/mnt/data/extents/reflink-copy.bin",
+        "kind": "file",
+        "flags": [],
+        "metrics": {
+          "logical": 262144,
+          "physical": 262144,
+          "shared": 262144,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 1,
+          "inline": 0,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [
+          "snapshot"
+        ],
+        "nlink": 1,
+        "tree": 256,
+        "objectid": 880
+      },
+      "explain": [
+        {
+          "code": "snapshot",
+          "message": "a snapshot references some extents"
+        },
+        {
+          "code": "snapshots_not_materialized",
+          "message": "1 snapshot(s) in scope were not read; data they share is not visible here"
+        }
+      ]
+    }
+  ],
+  "scans": []
+}

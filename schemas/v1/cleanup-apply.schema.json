@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/cleanup-apply.schema.json",
+  "title": "synoreclaim cleanup apply result v1",
+  "description": "`cleanup apply` (SPEC 5.7): each planned item checked again and moved into its shared folder's Recycle Bin with DSM's synorecycle, with what moved and what stayed in place; an item with no Recycle Bin is removed for good instead: one in no shared folder or in a shared folder whose Recycle Bin was off at the plan, only when confirmed; one whose Recycle Bin was turned off after the plan, as it comes; or a refusal.",
+  "type": "object",
+  "$defs": {
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "share": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "outcome": {
+          "enum": [
+            "moved",
+            "deleted",
+            "already_absent",
+            "partial",
+            "changed",
+            "failed"
+          ]
+        },
+        "moved_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "remaining_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "remaining_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "remaining": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "$ref": "common.schema.json#/$defs/path"
+          },
+          "description": "Up to 50 paths still at the item's place."
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "remaining_complete": {
+          "type": "boolean",
+          "description": "False when the count of what stayed stopped at its bound (100,000 entries): the remaining values are then lower bounds."
+        }
+      },
+      "required": [
+        "path",
+        "share",
+        "outcome",
+        "moved_bytes",
+        "remaining_entries",
+        "remaining_bytes",
+        "remaining",
+        "detail",
+        "remaining_complete"
+      ]
+    },
+    "received": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "share": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "path": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "admin_only": {
+          "type": "boolean"
+        },
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "moved_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "share",
+        "path",
+        "admin_only",
+        "items",
+        "moved_bytes"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "cleanup-apply"
+        },
+        "plan_id": {
+          "type": "string"
+        },
+        "moved": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deleted": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Items with no Recycle Bin, removed for good: in no shared folder, or in a shared folder whose Recycle Bin is off."
+        },
+        "already_absent": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "partial": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "changed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "moved_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Allocated size now in Recycle Bins; freed only after they are emptied."
+        },
+        "deleted_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Allocated size of what was removed for good."
+        },
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Items in the plan."
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/target"
+          },
+          "description": "The first 1,000 items that did not move: moved or removed only partly, changed, or failed. The counts cover every item."
+        },
+        "recycle_bins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/received"
+          }
+        },
+        "report_state_stale": {
+          "type": "boolean"
+        },
+        "rescan": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/path"
+          }
+        },
+        "space_release": {
+          "type": "string"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "plan_id",
+            "moved",
+            "deleted",
+            "already_absent",
+            "partial",
+            "changed",
+            "failed",
+            "moved_bytes",
+            "deleted_bytes",
+            "items",
+            "targets",
+            "recycle_bins",
+            "report_state_stale",
+            "rescan",
+            "space_release"
+          ]
+        },
+        {
+          "properties": {
+            "completion": {
+              "enum": [
+                "failed",
+                "busy"
+              ]
+            }
+          },
+          "description": "A refusal before anything moved: errors[0].code says why (plan_stale, busy, cleanup_disabled, keeper_changed, recycle_bin_unavailable, not_confirmed, ...)."
+        }
+      ]
+    }
+  ]
+}

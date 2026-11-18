@@ -1,0 +1,208 @@
+{
+  "duplicates.title": "Doublons",
+  "duplicates.breadcrumb.label": "Emplacement",
+  "duplicates.info.what": "Fichiers identiques de 10 Mo ou plus et dossiers dont tout le contenu est identique",
+  "duplicates.info.keep": "Chaque groupe garde une copie sur tout le volume : dans un dossier préféré, sinon une copie non déplaçable, sinon la plus ancienne. La page d'un dossier ne fait que filtrer la liste",
+  "duplicates.info.excluded": "Les données d'app, système et de sauvegarde que Reclaim reconnaît ne comptent jamais : dossiers commençant par @, données Hyper Backup et Active Backup, Surveillance",
+  "duplicates.shares.title": "Dossiers partagés avec des doublons",
+  "duplicates.shares.name": "Dossier partagé",
+  "duplicates.shares.folders": "Dossiers identiques",
+  "duplicates.shares.files": "Gros fichiers en double",
+  "duplicates.shares.copies": {
+    "one": "{count} copie",
+    "other": "{count} copies"
+  },
+  "duplicates.table.name": "Nom",
+  "duplicates.table.kept": "Copie gardée",
+  "duplicates.table.canFree": "Libérable",
+  "duplicates.table.selectRow": "Ajouter les copies de {name} à supprimer à la liste de nettoyage",
+  "duplicates.folders.title": "Dossiers identiques",
+  "duplicates.files.title": "Gros fichiers en double",
+  "duplicates.files.threshold": "10 Mo ou plus",
+  "duplicates.files.empty": "Aucun gros fichier en double ici",
+  "duplicates.filter.label": "Type",
+  "duplicates.filter.all": "Tout",
+  "duplicates.filter.photo": "Photos",
+  "duplicates.filter.video": "Vidéos",
+  "duplicates.filter.music": "Musique",
+  "duplicates.selectAll.volume": "Sélectionner tous les doublons de {scope}",
+  "duplicates.selectAll.all": "Sélectionner tous les doublons dans {scope}",
+  "duplicates.selectAll.photo": "Sélectionner toutes les photos en double dans {scope}",
+  "duplicates.selectAll.video": "Sélectionner toutes les vidéos en double dans {scope}",
+  "duplicates.selectAll.music": "Sélectionner toute la musique en double dans {scope}",
+  "duplicates.scope.title": "{scope} · {size} libérables",
+  "duplicates.scope.copies": {
+    "one": "{count} copie à supprimer",
+    "other": "{count} copies à supprimer"
+  },
+  "duplicates.scope.groups": {
+    "one": "{count} groupe",
+    "other": "{count} groupes"
+  },
+  "duplicates.scope.overlap": "Un groupe avec des copies dans plusieurs dossiers compte dans chacun, donc la somme des lignes est plus grande",
+  "duplicates.state.recalculating": "Recalcul après un changement des dossiers préférés",
+  "duplicates.state.failed": "Impossible de charger les doublons",
+  "duplicates.state.keepFailed": "Impossible de changer la copie gardée",
+  "duplicates.state.empty": "Aucun doublon dans {scope}",
+  "duplicates.row.copiesIn": {
+    "one": "{count} copie dans {scope}",
+    "other": "{count} copies dans {scope}"
+  },
+  "duplicates.row.files": {
+    "one": "{files} fichier",
+    "other": "{files} fichiers"
+  },
+  "duplicates.row.copies": {
+    "one": "{count} copie",
+    "other": "{count} copies"
+  },
+  "duplicates.row.allIn": "toutes dans {scope}",
+  "duplicates.row.hereElsewhere": "{here} ici · {elsewhere} ailleurs",
+  "duplicates.row.each": "{size} chacune",
+  "duplicates.reason.user": "Votre choix",
+  "duplicates.reason.preferred_share": "Dossier préféré",
+  "duplicates.reason.oldest": "Copie la plus ancienne",
+  "duplicates.reason.shortest": "Chemin le plus court",
+  "duplicates.action.keep": "Garder",
+  "duplicates.action.remove": "Supprimer",
+  "duplicates.sheet.folderDescription": {
+    "one": "{files} fichier · {size} à chaque emplacement",
+    "other": "{files} fichiers · {size} à chaque emplacement"
+  },
+  "duplicates.basket.count": {
+    "one": "{count} copie dans la liste de nettoyage",
+    "other": "{count} copies dans la liste de nettoyage"
+  },
+  "duplicates.basket.lead": {
+    "one": "Liste de nettoyage : {count} copie de {groups} libère au moins",
+    "other": "Liste de nettoyage : {count} copies de {groups} libèrent au moins"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count} groupe",
+    "other": "{count} groupes"
+  },
+  "duplicates.basket.keepsOne": "Une copie de chaque groupe reste",
+  "duplicates.info.junk": "Les dossiers sont comparés sans les fichiers que les systèmes recréent : .DS_Store, Thumbs.db, desktop.ini, fichiers ._, @eaDir. Supprimer un dossier les supprime aussi",
+  "duplicates.scope.later": "{size} de plus après la rotation des instantanés",
+  "duplicates.scope.unchecked": {
+    "one": "{count} copie n'a pas pu être comparée par somme de contrôle et n'est pas listée",
+    "other": "{count} copies n'ont pas pu être comparées par somme de contrôle et ne sont pas listées"
+  },
+  "duplicates.analysis.running": "Recherche des doublons. Cela peut prendre quelques minutes sur un grand volume",
+  "duplicates.analysis.stale": "Ces résultats datent d'avant la dernière analyse. Analysez de nouveau pour les mettre à jour",
+  "duplicates.analysis.again": "Analyser de nouveau",
+  "duplicates.analysis.failed": "Impossible de lancer la recherche des doublons",
+  "duplicates.analysis.noneTitle": "Les doublons n'ont pas encore été recherchés sur ce volume",
+  "duplicates.analysis.noneBody": "La recherche utilise la dernière analyse et ne lit aucun contenu de fichier. Elle peut prendre quelques minutes sur un grand volume",
+  "duplicates.analysis.find": "Rechercher les doublons",
+  "duplicates.unavailable.title": "Aucune donnée de doublons pour ce volume",
+  "duplicates.unavailable.body": "Les doublons nécessitent une analyse du volume Btrfs entier faite par cette version de Syno Reclaim. Les analyses antérieures ne contiennent pas les données nécessaires. Analysez ce volume, puis revenez ici",
+  "duplicates.unavailable.scan": "Analyser",
+  "duplicates.more": {
+    "one": "Afficher {count} de plus",
+    "other": "Afficher {count} de plus"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count} dans des dossiers identiques",
+    "other": "{count} dans des dossiers identiques"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "{count} de plus dans des dossiers identiques, supprimée avec ces dossiers",
+    "other": "{count} de plus dans des dossiers identiques, supprimées avec ces dossiers"
+  },
+  "duplicates.info.partial": "Les dossiers dont les éléments sont identiques à au moins 80 % (en taille, aux mêmes emplacements) forment une seule ligne : seuls les éléments identiques sont supprimés",
+  "duplicates.row.partial": {
+    "one": "{same} élément sur {total} identique à {counterpart}",
+    "other": "{same} éléments sur {total} identiques à {counterpart}"
+  },
+  "duplicates.row.folders": {
+    "one": "{count} dossier",
+    "other": "{count} dossiers"
+  },
+  "duplicates.row.sameEach": "{size} identiques dans chacun",
+  "duplicates.partial.title": {
+    "one": "Supprime {items} élément identique de {name}",
+    "other": "Supprime {items} éléments identiques de {name}"
+  },
+  "duplicates.partial.stays": "{name} lui-même et les éléments qui diffèrent, comme .git, sont conservés",
+  "duplicates.partial.folderItem": {
+    "one": "{files} fichier · {size}",
+    "other": "{files} fichiers · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "{count} autre élément identique",
+    "other": "{count} autres éléments identiques"
+  },
+  "duplicates.partial.label": "Éléments identiques de {name}",
+  "duplicates.partial.failed": "Impossible de charger les éléments identiques",
+  "duplicates.partial.retry": "Réessayer",
+  "duplicates.folders.empty": "Aucun dossier identique ici",
+  "duplicates.shares.recycleBin": "Corbeille",
+  "duplicates.shares.binOn": "Activée",
+  "duplicates.shares.binOffDeletes": "Désactivée · suppression définitive",
+  "duplicates.table.moves": "Retrait",
+  "duplicates.row.moves": {
+    "one": "{count} copie",
+    "other": "{count} copies"
+  },
+  "duplicates.row.noMove": "Aucune",
+  "duplicates.row.deletes": "Supprimé définitivement",
+  "duplicates.row.keptMany": {
+    "one": "Garde {count} copie",
+    "other": "Garde {count} copies"
+  },
+  "duplicates.keep.kept": "Gardée",
+  "duplicates.keep.add": "Ajouter à la liste de nettoyage",
+  "duplicates.keep.drop": "Retirer de la liste de nettoyage",
+  "duplicates.list.label": "Liste",
+  "duplicates.reason.unmovable": "Non déplaçable",
+  "duplicates.reason.in_kept_folder": "Reste avec son dossier",
+  "duplicates.stays.shareRoot": "Est un dossier partagé, reste",
+  "duplicates.stays.notShared": "Hors d'un dossier partagé DSM, reste",
+  "duplicates.stays.belowVolume": "Juste sous le volume, reste",
+  "duplicates.merged.match": {
+    "one": "{count} dossier correspond : {names}",
+    "other": "{count} dossiers correspondent : {names}"
+  },
+  "duplicates.merged.ratio": "{percent} identique · {same} sur {total} éléments",
+  "duplicates.merged.groups": {
+    "one": "Comprend {count} groupe",
+    "other": "Comprend {count} groupes"
+  },
+  "duplicates.merged.identical": "Identique",
+  "duplicates.merged.lead": "Les dossiers cochés vont dans la Corbeille. Le dossier gardé reste",
+  "duplicates.merged.kept": "Dossier gardé",
+  "duplicates.sheet.lead": "Les copies cochées vont dans la Corbeille. Décochez une copie pour la garder aussi",
+  "duplicates.sheet.sort": "Date",
+  "duplicates.sheet.oldest": "Plus ancienne d'abord",
+  "duplicates.sheet.newest": "Plus récente d'abord",
+  "duplicates.sheet.summary": "Déplace {moves} sur {total} · garde {kept}",
+  "duplicates.sheet.atLeastOne": "Laissez au moins une copie décochée",
+  "duplicates.sheet.apply": "Ajouter à la liste",
+  "duplicates.sheet.update": "Mettre à jour la liste",
+  "duplicates.sheet.size": "{size} chacune",
+  "duplicates.block.inFolder": "Déplacée avec son dossier identique",
+  "duplicates.selectAll.title": "Tout sélectionner",
+  "duplicates.selectAll.checking": "Vérification des groupes",
+  "duplicates.selectAll.progress": "{done} groupes sur {total} vérifiés",
+  "duplicates.selectAll.selected": {
+    "one": "{count} groupe sélectionné",
+    "other": "{count} groupes sélectionnés"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "{count} groupe n'a pas pu être sélectionné",
+    "other": "{count} groupes n'ont pas pu être sélectionnés"
+  },
+  "duplicates.selectAll.stays": "Ces copies restent",
+  "duplicates.selectAll.stopped": "Arrêté : les groupes déjà vérifiés sont sélectionnés",
+  "duplicates.why.nothing": "Rien à déplacer : les autres copies sont gardées ou non déplaçables",
+  "duplicates.sheet.deletes": "Pas de corbeille : la retirer la supprime définitivement",
+  "duplicates.row.toBin": "Vers la corbeille",
+  "duplicates.block.inFolderDelete": "Supprimée définitivement avec son dossier identique",
+  "duplicates.sheet.leadDelete": "Les copies cochées sont supprimées définitivement : ce dossier partagé n'a pas de corbeille. Décochez une copie pour la garder aussi",
+  "duplicates.sheet.leadMixed": "Les copies cochées vont dans la corbeille, ou sont supprimées définitivement là où un dossier partagé n'en a pas. Décochez une copie pour la garder aussi",
+  "duplicates.sheet.summaryDelete": "Supprime définitivement {moves} sur {total} · garde {kept}",
+  "duplicates.sheet.summaryMixed": "Retire {moves} sur {total} · garde {kept}",
+  "duplicates.merged.leadDelete": "Les dossiers cochés sont supprimés définitivement : leur dossier partagé n'a pas de corbeille. Le dossier gardé reste",
+  "duplicates.merged.leadMixed": "Les dossiers cochés vont dans la corbeille, ou sont supprimés définitivement là où un dossier partagé n'en a pas. Le dossier gardé reste"
+}

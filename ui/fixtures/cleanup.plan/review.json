@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-plan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:59:58Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5",
+  "plan_file": {
+    "path": "/fixture/state/cleanup/plans/cleanup-18d9cccbc2d8b089-31e7a5.json"
+  },
+  "expires_at": "2026-10-01T01:00:00Z",
+  "items": 1,
+  "deletes": 0,
+  "paths": [
+    {
+      "path": "/volume1/share01/cleanup-golden/apply"
+    }
+  ],
+  "size": {
+    "entries": 2,
+    "files": 1,
+    "allocated_bytes": 1048576
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "share01"
+      },
+      "path": {
+        "path": "/volume1/share01"
+      },
+      "recycle_bin": {
+        "enabled": true,
+        "admin_only": true
+      },
+      "item_count": 1,
+      "drive_items": 0,
+      "items": [
+        {
+          "path": {
+            "path": "/volume1/share01/cleanup-golden/apply"
+          },
+          "kind": "directory",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 1048576,
+          "drive": false
+        }
+      ],
+      "entries": 2,
+      "files": 1,
+      "allocated_bytes": 1048576
+    }
+  ]
+}

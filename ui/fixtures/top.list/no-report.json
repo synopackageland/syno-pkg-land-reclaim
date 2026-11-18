@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "partial",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1",
+      "code": "no_report",
+      "message": "No report covers this target"
+    }
+  ],
+  "warnings": [],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 200,
+  "include_system": false,
+  "results": [],
+  "scans": [],
+  "scan_hints": [
+    {
+      "path": "/volume1",
+      "command": "scan /volume1 --scope volume",
+      "last_scan": {
+        "finished": "2026-09-29T02:00:00Z",
+        "elapsed_ms": 120000,
+        "entries": 500
+      }
+    }
+  ]
+}

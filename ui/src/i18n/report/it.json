@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "Report",
+  "report.choice.newest": "Scansione più recente",
+  "report.choice.newestEach": "Scansione più recente di ogni cartella",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "Intero volume",
+  "report.scope.share": "Cartella condivisa {name}",
+  "report.scope.paths": {
+    "one": "{count} cartella",
+    "other": "{count} cartelle"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "Intero volume + {count} cartella condivisa più recente",
+    "other": "Intero volume + {count} cartelle condivise più recenti"
+  },
+  "report.row.shareScan": "Scansione della cartella condivisa {time}"
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "command": "recycle",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:00:49Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "target": {
+    "path": "/volume1/share73"
+  },
+  "report_info": {
+    "fsid": "f0000000-0000-4000-8000-00000000009a",
+    "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+    "job_id": "fixture-job0001",
+    "scan_started": "2026-09-29T23:55:21Z",
+    "scan_finished": "2026-09-30T00:30:06Z",
+    "age_seconds": 1843,
+    "stale": false,
+    "consistency": "partial",
+    "change_reasons": [
+      {
+        "kind": "subvolume-generation-changed",
+        "subvolume_id": 256,
+        "selected": true,
+        "generation_before": 4701580,
+        "generation_after": 4702015
+      },
+      {
+        "kind": "subvolume-generation-changed",
+        "subvolume_id": 261,
+        "selected": true,
+        "generation_before": 4701579,
+        "generation_after": 4702015
+      },
+      {
+        "kind": "subvolume-generation-changed",
+        "subvolume_id": 262,
+        "selected": true,
+        "generation_before": 4701579,
+        "generation_after": 4702015
+      }
+    ],
+    "coverage": {
+      "encrypted_directories": 0,
+      "snapshots_not_materialized": 6,
+      "snapshots_materialized": 6,
+      "unlinked_subvolume_entries": 0,
+      "dangling_entries": 3,
+      "cycles": 0,
+      "unsupported_locations": 0,
+      "missing_subvolume_roots": 0,
+      "reference_accounting": "partial",
+      "unresolved_extents": 15128
+    },
+    "cleanup_since_report": null,
+    "filesystem": "btrfs",
+    "capabilities": {
+      "scan": true,
+      "snapshots": true,
+      "reflinks": true,
+      "cleanup": true,
+      "cleanup_unavailable_reason": null
+    }
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "/volume1/share73"
+      },
+      "items": 87,
+      "bytes": 20758528,
+      "reclaimable_bytes": 0,
+      "held_by": [
+        {
+          "class": "snapshot",
+          "bytes": 20758528
+        }
+      ],
+      "oldest": [
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0589.bin"
+          },
+          "ctime": "2026-04-08T14:55:46Z",
+          "bytes": 0,
+          "reclaimable_bytes": 0
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0590.bin"
+          },
+          "ctime": "2026-04-08T14:55:46Z",
+          "bytes": 0,
+          "reclaimable_bytes": 0
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0592.bin"
+          },
+          "ctime": "2026-04-08T15:57:31Z",
+          "bytes": 0,
+          "reclaimable_bytes": 0
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/file0591.bin"
+          },
+          "ctime": "2026-04-08T16:42:26Z",
+          "bytes": 0,
+          "reclaimable_bytes": 0
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/folder0375"
+          },
+          "ctime": "2026-04-08T16:42:26Z",
+          "bytes": 0,
+          "reclaimable_bytes": 0
+        },
+        {
+          "path": {
+            "path": "/volume1/share73/folder0373/folder0374"
+          },
+          "ctime": "2026-07-22T08:24:35Z",
+          "bytes": 8192,
+          "reclaimable_bytes": 0
+        }
+      ]
+    }
+  ],
+  "moved_by_reclaim": [],
+  "scans": []
+}

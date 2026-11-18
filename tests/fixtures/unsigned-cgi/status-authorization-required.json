@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "data": {
+    "command": "authorization",
+    "schema_version": 1,
+    "state": "authorization_required",
+    "reason": "grant_missing"
+  }
+}

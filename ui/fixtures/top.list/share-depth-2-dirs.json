@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:42:08Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "dirs",
+  "limit": 200,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 722,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1/share50",
+        "kind": "dir",
+        "flags": [
+          "subvolume_root"
+        ],
+        "metrics": {
+          "logical": 4980425531,
+          "physical": 4893720576,
+          "shared": 914223104,
+          "reclaimable": null,
+          "reclaimable_resolved": 3974520832,
+          "unknown": 4976640,
+          "pinned_unreferenced": 0,
+          "extents": 6920,
+          "inline": 37852,
+          "entries": 3599,
+          "files": 3455
+        },
+        "blockers": [
+          "shared_tree",
+          "unknown"
+        ],
+        "nlink": 1,
+        "tree": 261,
+        "objectid": 256,
+        "without_package_data": {
+          "logical": 1665384807,
+          "physical": 1665454080,
+          "shared": 0,
+          "reclaimable": null,
+          "reclaimable_resolved": 1660477440,
+          "unknown": 4976640,
+          "pinned_unreferenced": 0,
+          "extents": 730,
+          "inline": 1661,
+          "entries": 74,
+          "files": 67
+        }
+      },
+      "entries": [
+        {
+          "path": "/volume1/share50/folder0123",
+          "kind": "dir",
+          "flags": [
+            "recycle"
+          ],
+          "metrics": {
+            "logical": 2831079132,
+            "physical": 2832003072,
+            "shared": 914223104,
+            "reclaimable": 1917779968,
+            "reclaimable_resolved": 1917779968,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 459,
+            "inline": 74,
+            "entries": 461,
+            "files": 460
+          },
+          "blockers": [
+            "shared_tree"
+          ],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 259,
+          "service": null,
+          "cleanup_eligible": false,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 914223104
+            }
+          ],
+          "where_to_fix": {
+            "token": "recycle_bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "command": [
+              "synoreclaim",
+              "recycle",
+              "/fixture/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0141",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 1514835792,
+            "physical": 1514835968,
+            "shared": 0,
+            "reclaimable": 1514835968,
+            "reclaimable_resolved": 1514835968,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 41,
+            "inline": 0,
+            "entries": 2,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 264,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0125",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 483961592,
+            "physical": 396263424,
+            "shared": 0,
+            "reclaimable": 396263424,
+            "reclaimable_resolved": 396263424,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 5731,
+            "inline": 36117,
+            "entries": 3064,
+            "files": 2928
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "hyper_backup",
+            "names": "*.hbk",
+            "managed_by": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share50/folder0125"
+              },
+              {
+                "path": "/volume1/share50/folder0126"
+              },
+              {
+                "path": "/volume1/share50/folder0127"
+              },
+              {
+                "path": "/volume1/share50/folder0128"
+              },
+              {
+                "path": "/volume1/share50/folder0129"
+              },
+              {
+                "path": "/volume1/share50/folder0130"
+              },
+              {
+                "path": "/volume1/share50/folder0131"
+              },
+              {
+                "path": "/volume1/share50/folder0132"
+              },
+              {
+                "path": "/volume1/share50/folder0133"
+              },
+              {
+                "path": "/volume1/share50/folder0134"
+              },
+              {
+                "path": "/volume1/share50/folder0135"
+              },
+              {
+                "path": "/volume1/share50/folder0136"
+              },
+              {
+                "path": "/volume1/share50/folder0137"
+              },
+              {
+                "path": "/volume1/share50/folder0138"
+              },
+              {
+                "path": "/volume1/share50/folder0139"
+              },
+              {
+                "path": "/volume1/share50/folder0140"
+              },
+              {
+                "path": "/volume1/share50/folder0143"
+              }
+            ],
+            "path_count": 17
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0124",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 1476,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 0,
+            "inline": 1476,
+            "entries": 22,
+            "files": 18
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "folder_metadata",
+            "names": "@eaDir",
+            "managed_by": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share50/folder0124"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share50/folder0142",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 185,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 0,
+            "inline": 185,
+            "entries": 2,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 261,
+          "objectid": 262,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999"
+            ]
+          }
+        }
+      ],
+      "hidden_system": 140,
+      "services": {
+        "lines": [
+          {
+            "service": "recycle_bin",
+            "names": "#recycle",
+            "package": "shared folder Recycle Bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "confirmed": true,
+            "path": "/volume1/share50/folder0123",
+            "paths": 1,
+            "metrics": {
+              "logical": 2831079132,
+              "physical": 2832003072,
+              "shared": 914223104,
+              "reclaimable": 1917779968,
+              "reclaimable_resolved": 1917779968,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 459,
+              "inline": 74,
+              "entries": 461,
+              "files": 460
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "hyper_backup",
+            "names": "*.hbk",
+            "package": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": 17,
+            "metrics": {
+              "logical": 483961592,
+              "physical": 396263424,
+              "shared": 0,
+              "reclaimable": 396263424,
+              "reclaimable_resolved": 396263424,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 5731,
+              "inline": 36117,
+              "entries": 3064,
+              "files": 2928
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 1476,
+              "physical": 0,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 0,
+              "inline": 1476,
+              "entries": 22,
+              "files": 18
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 0
+      }
+    }
+  ],
+  "scans": []
+}

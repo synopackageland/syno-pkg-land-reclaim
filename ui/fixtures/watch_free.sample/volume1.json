@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "command": "watch-free",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:36:11Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "volume": {
+    "path": "/volume1"
+  },
+  "duration_seconds": 4,
+  "observed_duration_ms": 4004,
+  "interrupted": false,
+  "interval_seconds": 2,
+  "samples": [
+    {
+      "elapsed_ms": 1158,
+      "data_used_bytes": 43410919424,
+      "free_bytes": 895572570112,
+      "pending_deletion_roots": 0
+    },
+    {
+      "elapsed_ms": 2002,
+      "data_used_bytes": 43254439936,
+      "free_bytes": 895729049600,
+      "pending_deletion_roots": 0
+    },
+    {
+      "elapsed_ms": 4004,
+      "data_used_bytes": 43254439936,
+      "free_bytes": 895729049600,
+      "pending_deletion_roots": 0
+    }
+  ],
+  "data_used_delta_bytes": -156479488,
+  "free_delta_bytes": 156479488,
+  "pending_deletion_roots_delta": 0,
+  "concurrent_writers_may_affect_delta": true
+}

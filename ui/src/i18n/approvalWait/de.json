@@ -1,0 +1,6 @@
+{
+  "approvalWait.title": "Warten auf DSM",
+  "approvalWait.queued": "Die Freigabeaufgabe wartet darauf, dass DSM sie startet. Auf einem ausgelasteten NAS kann das einige Minuten dauern; lassen Sie dieses Fenster geöffnet",
+  "approvalWait.running": "Die Freigabeaufgabe läuft. Auf einem ausgelasteten NAS kann das einige Minuten dauern; lassen Sie dieses Fenster geöffnet",
+  "approvalWait.elapsed": "Gewartet: {duration}"
+}

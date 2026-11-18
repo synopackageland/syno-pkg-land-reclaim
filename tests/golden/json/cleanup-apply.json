@@ -1,0 +1,67 @@
+{
+  "already_absent": 0,
+  "changed": 0,
+  "command": "cleanup-apply",
+  "completion": "partial",
+  "errors": [
+    {
+      "code": "moved_partly",
+      "message": "DSM's synorecycle exited 255",
+      "path": "/volume1/photos/old.iso"
+    }
+  ],
+  "failed": 0,
+  "generated_at": "2026-11-13T00:00:00Z",
+  "items": 2,
+  "job_id": null,
+  "moved": 1,
+  "deleted": 0,
+  "moved_bytes": 2097152,
+  "deleted_bytes": 0,
+  "partial": 1,
+  "plan_id": "cleanup-1-2",
+  "recycle_bins": [
+    {
+      "admin_only": false,
+      "items": 1,
+      "moved_bytes": 2097152,
+      "path": {
+        "path": "/volume1/photos"
+      },
+      "share": {
+        "path": "photos"
+      }
+    }
+  ],
+  "report_state_stale": true,
+  "rescan": [
+    {
+      "path": "/volume1/photos"
+    }
+  ],
+  "schema_version": 1,
+  "space_release": "moved items stay on the volume in their shared folder's Recycle Bin: their space is freed after the Recycle Bin is emptied (Control Panel > Shared Folder > Action > Empty Recycle Bin, or a Recycle Bin task in Task Scheduler), then the Btrfs commit and cleaner",
+  "targets": [
+    {
+      "detail": "DSM's synorecycle exited 255",
+      "moved_bytes": 0,
+      "outcome": "partial",
+      "path": {
+        "path": "/volume1/photos/old.iso"
+      },
+      "remaining": [
+        {
+          "path": "/volume1/photos/old.iso"
+        }
+      ],
+      "remaining_bytes": 4194304,
+      "remaining_complete": true,
+      "remaining_entries": 1,
+      "share": {
+        "path": "photos"
+      }
+    }
+  ],
+  "tool_version": "0.1.0",
+  "warnings": []
+}

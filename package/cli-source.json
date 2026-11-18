@@ -1,0 +1,33 @@
+{
+  "version": "0.54.6",
+  "registry": "https://registry.npmjs.org",
+  "tarball": "https://registry.npmjs.org/@synopackageland/cli/-/cli-0.54.6.tgz",
+  "integrity": "sha512-scY8cvKZJi5ByFf2KSUoqflDLCZ5SaumNLAP5MSuqhJ3D6qwdgoa1C1NxdAr+bujvQzauRVRXonhSRwm3Gckug==",
+  "verifiedInstalledFiles": {
+    "dist/standalone/native-layout.js": "59dcea4332c33e1c0b068f3e83cfe7c0a9378a3bc86ec583437264c49e831cb6",
+    "dist/standalone/manifest.js": "9866365cfd969c52347206e9f9e08e641b2b3d8fd3bbc347a0c30755d09102d7",
+    "dist/standalone/inspect-spk.js": "6cad742a8a5438a7b5b55d109f660aa0be43717f096e4dff0910bbd5228059d2",
+    "dist/spk/inspect.js": "6d92294cd13e7c6c391c847fbfb6675e3bb24aaab3855f0cd07020e0ba7bda78",
+    "dist/spk/validate-spk.js": "cc583dd2d282157ca130dad0201e96e976d2a6c737c4104d0660c86d1ce26c87",
+    "dist/cli.js": "2174ae4905c3bc73587f192f1de0483e266d2498ce302ebdfa41a06e899ca150",
+    "dist/build-spk/dsm-arch.js": "eb4148dc9294b899fe28764b1b7159a2e10966138af9dc68a478472564f7680c",
+    "dist/build-spk/dsm-icons.js": "fb19af96d6221db96c53d90456d10feb9fe68984518f837787f78f3a78ced62a",
+    "dist/build-spk/png.js": "dccc45dfb52cce2799bb86c1ebdd0cc96b5aa26e62584c7f012f52b9cca148c9",
+    "dist/build-spk/login-style.js": "d93ce50131296f415db02071408bc741dbfe3846027d0558a66c09f73cdee05f",
+    "dist/standalone/bridge-runtime.js": "91fadbd34997f151aa45facfaf66dea06f563c10d62e28d73d876dfb3b414ecf",
+    "dist/ctl/input.js": "542268c36d3a4797738686b57744943f499f2811b235ef803e634830453c8cca",
+    "dist/ctl/service.js": "d1dab488d9fc63e9d125fc7d3126851b1031ef2fb4b2853e1761f9abeda2a4f5",
+    "dist/ctl/errors.js": "d9ff5e52e58ba8e989721ccb7c9a5dd6701ff36f404400f87d0fdea4005c272e",
+    "dist/ctl/descriptor.js": "d771869fbb70314d9d83be406ceb2a567227b26e80595d01b55e83b2a6f3ed64",
+    "dist/ctl/redaction.js": "c1b5a664364478950441c3d4d7244706244980f77f70183ccc7f3f73c2817a5b",
+    "dist/runtime/executor-digests.json": "dd2783d0c143e340f6bb413e9e451a24eade322c5c8f09f7e8e442ed2eb9495f",
+    "dist/standalone/dsm-window.js": "c8af30105995aee187464a07d5c7264b17dc210ed0b950f4f5bc22601f269c46",
+    "dist/ctl/registry.js": "e64f477be24309c65746b54e251109d923affbbd6d8dfb4c025cd525275892d2",
+    "dist/standalone/operation-registry.js": "c80b0f8a2daac4a116280b868342a6f484a8f5a3821c542ed7a0654f5f5ee0ad",
+    "dist/standalone/api-description.js": "d96a02172712d24cf83113931739d54c11b123efa761e779315dfed30b901d59",
+    "dist/standalone/bridge-build.js": "33e4f017af9d0d4b3c592483e41fab7cd435e3c1e901ceb3286d19d11d6df9a3",
+    "dist/standalone/mobile.js": "aa086628e896a2a02cbc6c3fdb2d73e67b1eafa4a332ae7d916e68c80be562a8",
+    "dist/standalone/public-ui.js": "d4ea932289e120161bd009fb6f7f3fb8cb06cfa93207789b2043caeb28e76d88"
+  },
+  "tarballSha256": "4baf4bc77d8d8ae6fddaf29b6443b09400873bf73cc69c00309679a69b971480"
+}

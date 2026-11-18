@@ -1,0 +1,40 @@
+[
+  {
+    "file": "files.json",
+    "params": {
+      "paths": [
+        "/volume1/share04/folder0005/file0005.bin",
+        "/volume1/share04/folder0005/file0006.bin"
+      ]
+    }
+  },
+  {
+    "file": "short-selection.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share73/folder0373/file0589.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0590.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0592.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0591.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0375"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0374"
+        }
+      ]
+    }
+  },
+  {
+    "file": "interaction.json",
+    "scenario": "interaction"
+  }
+]

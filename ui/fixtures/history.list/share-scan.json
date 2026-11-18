@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "command": "history",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:54:34Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "scans": [
+    {
+      "job_id": "fixture-job0009",
+      "targets": [
+        {
+          "path": "/volume1/share04"
+        }
+      ],
+      "volume": false,
+      "profile": "low",
+      "started": "2026-09-29T11:54:34Z",
+      "finished": "2026-09-29T11:54:34Z",
+      "elapsed_ms": 120,
+      "total_elapsed_ms": 120,
+      "entries": 647,
+      "subvolumes": 2,
+      "reused_units": 0,
+      "full_read_ms": 120,
+      "full_read_entries": 647,
+      "outcome": "superseded",
+      "reason": "a newer scan of the same target replaced this report",
+      "peak_rss_bytes": 13635584,
+      "spill_peak_bytes": 18642,
+      "report_bytes": 19684,
+      "df_total_bytes": 536870912,
+      "df_used_bytes": 10055680,
+      "df_free_bytes": 448630784,
+      "data_used_bytes": null
+    },
+    {
+      "job_id": "fixture-job0011",
+      "targets": [
+        {
+          "path": "/volume1/share04"
+        }
+      ],
+      "volume": false,
+      "profile": "low",
+      "started": "2026-09-29T11:54:34Z",
+      "finished": "2026-09-29T11:54:34Z",
+      "elapsed_ms": 57,
+      "total_elapsed_ms": 57,
+      "entries": 647,
+      "subvolumes": 2,
+      "reused_units": 2,
+      "full_read_ms": 120,
+      "full_read_entries": 647,
+      "outcome": "completed",
+      "peak_rss_bytes": 13934592,
+      "spill_peak_bytes": 18642,
+      "report": {
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+      },
+      "report_bytes": 19720,
+      "df_total_bytes": 536870912,
+      "df_used_bytes": 10055680,
+      "df_free_bytes": 448630784,
+      "data_used_bytes": null
+    },
+    {
+      "job_id": "fixture-job0012",
+      "targets": [
+        {
+          "path": "/volume1/share04/folder0005/file0005.bin"
+        },
+        {
+          "path": "/volume1/share04/folder0005/file0006.bin"
+        }
+      ],
+      "volume": false,
+      "profile": "low",
+      "started": "2026-09-29T11:54:34Z",
+      "finished": "2026-09-29T11:54:34Z",
+      "elapsed_ms": 52,
+      "total_elapsed_ms": 52,
+      "entries": 2,
+      "subvolumes": 1,
+      "reused_units": 0,
+      "full_read_ms": 52,
+      "full_read_entries": 2,
+      "outcome": "completed",
+      "peak_rss_bytes": 13881344,
+      "spill_peak_bytes": 225,
+      "report": {
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999"
+      },
+      "report_bytes": 2088,
+      "df_total_bytes": 536870912,
+      "df_used_bytes": 10055680,
+      "df_free_bytes": 448630784,
+      "data_used_bytes": null
+    }
+  ]
+}

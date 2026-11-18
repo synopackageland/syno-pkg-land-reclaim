@@ -1,0 +1,321 @@
+[
+  {
+    "file": "ext4.json",
+    "scenario": "ext4"
+  },
+  {
+    "file": "volume1-all.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "volume1-changed-system.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "changed_system"
+  },
+  {
+    "file": "volume1-changed-share.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "changed_share"
+  },
+  {
+    "file": "volume1-dirs.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "dirs",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "volume1-files.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "files",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-depth-1-all.json",
+    "params": {
+      "target": "/volume1/share62",
+      "kind": "all",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-depth-1-dirs.json",
+    "params": {
+      "target": "/volume1/share62",
+      "kind": "dirs",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-depth-1-files.json",
+    "params": {
+      "target": "/volume1/share62",
+      "kind": "files",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "folder-depth-1-all.json",
+    "params": {
+      "target": "/volume1/share62/folder0176",
+      "kind": "all",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "folder-depth-1-dirs.json",
+    "params": {
+      "target": "/volume1/share62/folder0176",
+      "kind": "dirs",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "folder-depth-1-files.json",
+    "params": {
+      "target": "/volume1/share62/folder0176",
+      "kind": "files",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "folder-depth-2-all.json",
+    "params": {
+      "target": "/volume1/share62/folder0176/folder0177",
+      "kind": "all",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-depth-2-all.json",
+    "params": {
+      "target": "/volume1/share50",
+      "kind": "all",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-depth-2-dirs.json",
+    "params": {
+      "target": "/volume1/share50",
+      "kind": "dirs",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-depth-2-files.json",
+    "params": {
+      "target": "/volume1/share50",
+      "kind": "files",
+      "by": "reclaimable",
+      "limit": 200
+    }
+  },
+  {
+    "file": "share-held.json",
+    "params": {
+      "target": "/volume1/share04",
+      "kind": "all"
+    }
+  },
+  {
+    "file": "share-files.json",
+    "params": {
+      "target": "/volume1/share04",
+      "kind": "files"
+    }
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "no_report"
+  },
+  {
+    "file": "partial.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "partial"
+  },
+  {
+    "file": "partial-stale.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "partial_stale"
+  },
+  {
+    "file": "stale.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "stale"
+  },
+  {
+    "file": "error.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "error"
+  },
+  {
+    "scenario": "busy",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "document": {
+      "completion": "busy",
+      "exit": 4
+    }
+  },
+  {
+    "file": "volume1-all.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    }
+  },
+  {
+    "file": "share04-share-scan.json",
+    "params": {
+      "target": "/volume1/share04",
+      "kind": "all"
+    },
+    "scenario": "share_scan"
+  },
+  {
+    "file": "share04-files-share-scan.json",
+    "params": {
+      "target": "/volume1/share04",
+      "kind": "files"
+    },
+    "scenario": "share_scan"
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "target": "/volume1"
+    },
+    "scenario": "share_scan"
+  },
+  {
+    "scenario": "invalid_param",
+    "document": {
+      "outcome": "invalid_param",
+      "exit": 2
+    }
+  },
+  {
+    "file": "interaction-volume1-all.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "interaction"
+  },
+  {
+    "file": "interaction-share-held.json",
+    "params": {
+      "target": "/volume1/share04",
+      "kind": "all"
+    },
+    "scenario": "interaction"
+  },
+  {
+    "file": "interaction-share-files.json",
+    "params": {
+      "target": "/volume1/share04",
+      "kind": "files"
+    },
+    "scenario": "interaction"
+  },
+  {
+    "file": "many-volumes.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all",
+      "by": "reclaimable",
+      "limit": 200
+    },
+    "scenario": "many_volumes"
+  },
+  {
+    "file": "volume1-packages.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "packages"
+  },
+  {
+    "file": "volume1-packages-own.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "packages_own"
+  },
+  {
+    "file": "no-report.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "first_scan"
+  },
+  {
+    "file": "volume1-abb-share.json",
+    "params": {
+      "target": "/volume1",
+      "kind": "all"
+    },
+    "scenario": "abb_share"
+  },
+  {
+    "file": "small-items-level.json",
+    "params": {
+      "target": "/volume1/share62/folder0176/folder0177",
+      "kind": "all"
+    },
+    "scenario": "small_items"
+  },
+  {
+    "file": "small-items-archive.json",
+    "params": {
+      "target": "/volume1/share62/folder0176/folder0177/logs-archive",
+      "kind": "all"
+    },
+    "scenario": "small_items"
+  }
+]

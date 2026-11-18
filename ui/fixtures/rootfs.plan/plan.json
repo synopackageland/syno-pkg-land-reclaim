@@ -1,0 +1,125 @@
+{
+  "apply": {
+    "command": [
+      "synoreclaim",
+      "rootfs",
+      "apply",
+      "/var/lib/synoreclaim/rootfs-plans/rootfs-18d75b8423f30000-4d.json",
+      "--yes"
+    ],
+    "notice": {
+      "code": "no_restore_command",
+      "message": "apply copies each item into /volume1/backup/SynoReclaim-system-20260921-1413, verifies its size and SHA-256, then removes it from /; synoreclaim has no restore command"
+    },
+    "tools_notice": {
+      "code": "tools_no_undo",
+      "message": "DSM log and journal tools permanently delete the data they clean up; there is no undo"
+    }
+  },
+  "command": "rootfs-plan",
+  "completion": "complete",
+  "destination": {
+    "available_bytes": 5497558138880,
+    "move_dir": {
+      "path": "/volume1/backup/SynoReclaim-system-20260921-1413"
+    },
+    "path": "/volume1/backup",
+    "required_bytes": 383778816,
+    "share": {
+      "path": "/volume1/backup"
+    }
+  },
+  "errors": [],
+  "expires_at": "2026-10-01T14:13:20Z",
+  "generated_at": "2026-09-21T14:13:20Z",
+  "held_open": [
+    {
+      "bytes": 4096,
+      "holder": "synoupgrade",
+      "path": "/upd@te/held"
+    }
+  ],
+  "kept": [
+    {
+      "bytes": 4096,
+      "path": "/var/log/messages.1.xz",
+      "reason": "recent_log_archive"
+    }
+  ],
+  "items": [
+    {
+      "bytes": 104857600,
+      "category": "update_leftover",
+      "kind": "file",
+      "path": "/upd@te/a"
+    },
+    {
+      "bytes": 524288,
+      "category": "update_leftover",
+      "kind": "file",
+      "path": "/upd@te/old.part"
+    },
+    {
+      "bytes": 9961472,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/messages.2.xz"
+    }
+  ],
+  "job_id": null,
+  "moves": {
+    "bytes": 115343360,
+    "required_destination_bytes": 383778816,
+    "items": 3,
+    "by_category": [
+      {
+        "bytes": 105381888,
+        "category": "update_leftover",
+        "items": 2
+      },
+      {
+        "bytes": 9961472,
+        "category": "log_archive",
+        "items": 1
+      }
+    ]
+  },
+  "plan_file": {
+    "path": "/var/lib/synoreclaim/rootfs-plans/rootfs-18d75b8423f30000-4d.json"
+  },
+  "plan_id": "rootfs-18d75b8423f30000-4d",
+  "root": {
+    "available_bytes": 930000000,
+    "available_after_bytes": 1045343360
+  },
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "tools": [
+    {
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--rotate-log"
+      ],
+      "effect": "rotates DSM logs",
+      "tool": "rotate_logs"
+    },
+    {
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--delete-journal"
+      ],
+      "effect": "deletes obsolete system journals",
+      "tool": "delete_journal"
+    },
+    {
+      "argv": [
+        "/usr/syno/bin/synosystemctl",
+        "restart",
+        "syslog-ng"
+      ],
+      "effect": "frees deleted logs still held open",
+      "tool": "restart_syslog_ng"
+    }
+  ],
+  "warnings": []
+}

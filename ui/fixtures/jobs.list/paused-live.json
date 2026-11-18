@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:01:49Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "fixture-job0002",
+      "state": "paused",
+      "phase": "discover",
+      "targets": [
+        {
+          "path": "/volume1/share73/folder0373/file0589.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0590.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0592.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0591.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0375"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0374"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-00000000009a",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-30T01:01:47Z",
+      "updated": "2026-09-30T01:01:49Z",
+      "resumes": 0,
+      "units": 0,
+      "progress": {
+        "phase": "discover",
+        "units_done": 0,
+        "units_total": null,
+        "entries": 0,
+        "items": 623,
+        "bytes_read": 123007,
+        "elapsed_s": 0,
+        "rss_bytes": 3383296,
+        "subvolume_id": null,
+        "current_subvolume": null,
+        "basis": null,
+        "updated": "2026-09-30T01:01:48Z"
+      },
+      "reason": "paused",
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "paused",
+        "exit_code": 10,
+        "reports": [],
+        "error_codes": [],
+        "document": {
+          "path": "/volume1/share64/entry0081/entry0085/entry0086/entry0087"
+        }
+      },
+      "requested_by": null,
+      "kind": "scan"
+    }
+  ]
+}

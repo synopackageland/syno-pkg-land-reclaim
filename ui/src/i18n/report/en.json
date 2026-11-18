@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "Report",
+  "report.choice.newest": "Newest scan",
+  "report.choice.newestEach": "Newest scan of each folder",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "Whole volume",
+  "report.scope.share": "Shared folder {name}",
+  "report.scope.paths": {
+    "one": "{count} folder",
+    "other": "{count} folders"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "Whole volume + {count} newer shared folder",
+    "other": "Whole volume + {count} newer shared folders"
+  },
+  "report.row.shareScan": "Shared folder scan {time}"
+}

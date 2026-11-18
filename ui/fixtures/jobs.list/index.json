@@ -1,0 +1,105 @@
+[
+  {
+    "file": "finished.json",
+    "params": {}
+  },
+  {
+    "file": "running.json",
+    "params": {},
+    "scenario": "scanning"
+  },
+  {
+    "file": "system-scanning.json",
+    "params": {},
+    "scenario": "system_scanning"
+  },
+  {
+    "file": "paused.json",
+    "scenario": "paused"
+  },
+  {
+    "file": "paused-entries.json",
+    "scenario": "paused_entries"
+  },
+  {
+    "file": "no-report.json",
+    "scenario": "no_report"
+  },
+  {
+    "file": "review-cleanup-completed.json",
+    "scenario": "review_cleanup"
+  },
+  {
+    "file": "review-cleanup-refused.json",
+    "scenario": "review_cleanup_refused"
+  },
+  {
+    "file": "paused-live.json",
+    "params": {},
+    "scenario": "paused_real"
+  },
+  {
+    "file": "share-scanning.json",
+    "scenario": "share_scanning"
+  },
+  {
+    "file": "share-scan.json",
+    "scenario": "share_scan"
+  },
+  {
+    "file": "interaction-finished.json",
+    "scenario": "interaction"
+  },
+  {
+    "file": "interaction-running.json",
+    "scenario": "scan_test"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_cleanup"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_destination_full"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_busy"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_walk_stopped"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_dsm_update_active"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_stale"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_nothing"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_tools_only"
+  },
+  {
+    "file": "rootfs-empty.json",
+    "scenario": "rootfs_no_room"
+  },
+  {
+    "file": "rootfs-empty.json",
+    "scenario": "rootfs_no_shares"
+  },
+  {
+    "file": "job-recovery.json",
+    "scenario": "job_recovery"
+  },
+  {
+    "file": "running.json",
+    "scenario": "first_scan"
+  }
+]

@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 4,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-000000000007",
+        "path": "/fixture/entry9999/entry9999/entry9999/entry9999",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1",
+        "kind": "dir",
+        "flags": [],
+        "metrics": {
+          "logical": 4822215,
+          "physical": 3305472,
+          "shared": 2715648,
+          "reclaimable": 589824,
+          "reclaimable_resolved": 589824,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 18,
+          "inline": 2361,
+          "entries": 661,
+          "files": 625
+        },
+        "blockers": [
+          "snapshot"
+        ],
+        "nlink": 1,
+        "tree": 5,
+        "objectid": 256,
+        "without_package_data": {
+          "logical": 4428999,
+          "physical": 2912256,
+          "shared": 2453504,
+          "reclaimable": 458752,
+          "reclaimable_resolved": 458752,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 15,
+          "inline": 2361,
+          "entries": 648,
+          "files": 621
+        }
+      },
+      "entries": [
+        {
+          "path": "/volume1/share03",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 262144,
+            "physical": 262144,
+            "shared": 0,
+            "reclaimable": 262144,
+            "reclaimable_resolved": 262144,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 4,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 5,
+          "objectid": 257,
+          "service": {
+            "id": "synology_drive",
+            "names": "@synologydrive",
+            "managed_by": "Synology Drive Server",
+            "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle bin",
+            "manage_in_id": "drive_admin_console",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share03"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle bin",
+            "manage_in_id": "drive_admin_console",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share02",
+          "kind": "service",
+          "flags": [
+            "system"
+          ],
+          "metrics": {
+            "logical": 131072,
+            "physical": 131072,
+            "shared": 0,
+            "reclaimable": 131072,
+            "reclaimable_resolved": 131072,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 3,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 5,
+          "objectid": 261,
+          "service": {
+            "id": "container_manager",
+            "names": "@docker",
+            "managed_by": "Container Manager",
+            "manage_in": "Container Manager (remove unused images and containers)",
+            "manage_in_id": "container_manager",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share02"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Container Manager (remove unused images and containers)",
+            "manage_in_id": "container_manager",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share07",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 131072,
+            "physical": 131072,
+            "shared": 0,
+            "reclaimable": 131072,
+            "reclaimable_resolved": 131072,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 4,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 5,
+          "objectid": 265,
+          "service": {
+            "id": "surveillance_recordings",
+            "names": "surveillance",
+            "managed_by": "Surveillance Station (recordings)",
+            "manage_in": "Surveillance Station > Recording > Settings (rotation and retention)",
+            "manage_in_id": "surveillance_station",
+            "confirmed": true,
+            "paths": [
+              {
+                "path": "/volume1/share07"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "Surveillance Station > Recording > Settings (rotation and retention)",
+            "manage_in_id": "surveillance_station",
+            "command": null
+          }
+        },
+        {
+          "path": "/volume1/share01",
+          "kind": "service",
+          "flags": [],
+          "metrics": {
+            "logical": 65536,
+            "physical": 65536,
+            "shared": 0,
+            "reclaimable": 65536,
+            "reclaimable_resolved": 65536,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 0,
+          "tree": 0,
+          "objectid": 0,
+          "service": {
+            "id": "other_dsm_service_data",
+            "names": "@*",
+            "managed_by": "DSM or a package",
+            "manage_in": "the package that created it",
+            "manage_in_id": "owning_package",
+            "confirmed": false,
+            "paths": [
+              {
+                "path": "/volume1/share01"
+              }
+            ],
+            "path_count": 1
+          },
+          "cleanup_eligible": false,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "package",
+            "manage_in": "the package that created it",
+            "manage_in_id": "owning_package",
+            "command": null
+          }
+        }
+      ],
+      "hidden_system": 4,
+      "services": {
+        "lines": [
+          {
+            "service": "synology_drive",
+            "names": "@synologydrive",
+            "package": "Synology Drive Server",
+            "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle bin",
+            "manage_in_id": "drive_admin_console",
+            "confirmed": true,
+            "path": "/volume1/share03",
+            "paths": 1,
+            "metrics": {
+              "logical": 262144,
+              "physical": 262144,
+              "shared": 0,
+              "reclaimable": 262144,
+              "reclaimable_resolved": 262144,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 4,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "recycle_bin",
+            "names": "#recycle",
+            "package": "shared folder Recycle Bin",
+            "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share21's Recycle Bin settings",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "confirmed": true,
+            "path": "/volume1/share04/folder0002",
+            "paths": 1,
+            "metrics": {
+              "logical": 196608,
+              "physical": 196608,
+              "shared": 196608,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 2,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "container_manager",
+            "names": "@docker",
+            "package": "Container Manager",
+            "manage_in": "Container Manager (remove unused images and containers)",
+            "manage_in_id": "container_manager",
+            "confirmed": true,
+            "path": "/volume1/share02",
+            "paths": 1,
+            "metrics": {
+              "logical": 131072,
+              "physical": 131072,
+              "shared": 0,
+              "reclaimable": 131072,
+              "reclaimable_resolved": 131072,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 3,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "active_backup_data",
+            "names": "@ActiveBackup",
+            "package": "Active Backup for Business (backup data)",
+            "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+            "manage_in_id": "active_backup_business",
+            "confirmed": true,
+            "paths": 1,
+            "metrics": {
+              "logical": 131072,
+              "physical": 131072,
+              "shared": 131072,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 4,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "hyper_backup",
+            "names": "*.hbk",
+            "package": "Hyper Backup (backup data)",
+            "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+            "manage_in_id": "hyper_backup",
+            "confirmed": true,
+            "paths": 1,
+            "metrics": {
+              "logical": 131072,
+              "physical": 131072,
+              "shared": 131072,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 5,
+              "files": 2
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "surveillance_recordings",
+            "names": "surveillance",
+            "package": "Surveillance Station (recordings)",
+            "manage_in": "Surveillance Station > Recording > Settings (rotation and retention)",
+            "manage_in_id": "surveillance_station",
+            "confirmed": true,
+            "path": "/volume1/share07",
+            "paths": 1,
+            "metrics": {
+              "logical": 131072,
+              "physical": 131072,
+              "shared": 0,
+              "reclaimable": 131072,
+              "reclaimable_resolved": 131072,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 4,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "other_dsm_service_data",
+            "names": "@*",
+            "package": "DSM or a package",
+            "manage_in": "the package that created it",
+            "manage_in_id": "owning_package",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 65536,
+              "physical": 65536,
+              "shared": 0,
+              "reclaimable": 65536,
+              "reclaimable_resolved": 65536,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 1,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          },
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 65536,
+              "physical": 65536,
+              "shared": 65536,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 1,
+              "inline": 0,
+              "entries": 3,
+              "files": 1
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 1
+      }
+    }
+  ],
+  "scans": []
+}

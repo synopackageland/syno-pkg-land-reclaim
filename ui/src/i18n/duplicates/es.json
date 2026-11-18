@@ -1,0 +1,208 @@
+{
+  "duplicates.title": "Duplicados",
+  "duplicates.breadcrumb.label": "Ubicación",
+  "duplicates.info.what": "Archivos iguales de 10 MB o más y carpetas con todo su contenido igual",
+  "duplicates.info.keep": "Cada grupo conserva una copia en todo el volumen: en una carpeta preferida, si no una que no se puede mover, si no la más antigua. La página de una carpeta solo filtra la lista",
+  "duplicates.info.excluded": "Los datos de apps, sistema y copias que Reclaim reconoce nunca cuentan: carpetas que empiezan por @, datos de Hyper Backup y Active Backup, Surveillance",
+  "duplicates.shares.title": "Carpetas compartidas con duplicados",
+  "duplicates.shares.name": "Carpeta compartida",
+  "duplicates.shares.folders": "Carpetas idénticas",
+  "duplicates.shares.files": "Archivos grandes duplicados",
+  "duplicates.shares.copies": {
+    "one": "{count} copia",
+    "other": "{count} copias"
+  },
+  "duplicates.table.name": "Nombre",
+  "duplicates.table.kept": "Copia conservada",
+  "duplicates.table.canFree": "Liberable",
+  "duplicates.table.selectRow": "Añadir las copias de {name} que se quitan a la lista de limpieza",
+  "duplicates.folders.title": "Carpetas idénticas",
+  "duplicates.files.title": "Archivos grandes duplicados",
+  "duplicates.files.threshold": "10 MB o más",
+  "duplicates.files.empty": "Aquí no hay archivos grandes duplicados",
+  "duplicates.filter.label": "Tipo",
+  "duplicates.filter.all": "Todo",
+  "duplicates.filter.photo": "Fotos",
+  "duplicates.filter.video": "Vídeos",
+  "duplicates.filter.music": "Música",
+  "duplicates.selectAll.volume": "Seleccionar todos los duplicados de {scope}",
+  "duplicates.selectAll.all": "Seleccionar todos los duplicados de {scope}",
+  "duplicates.selectAll.photo": "Seleccionar todas las fotos duplicadas de {scope}",
+  "duplicates.selectAll.video": "Seleccionar todos los vídeos duplicados de {scope}",
+  "duplicates.selectAll.music": "Seleccionar toda la música duplicada de {scope}",
+  "duplicates.scope.title": "{scope} · se pueden liberar {size}",
+  "duplicates.scope.copies": {
+    "one": "{count} copia para quitar",
+    "other": "{count} copias para quitar"
+  },
+  "duplicates.scope.groups": {
+    "one": "{count} grupo",
+    "other": "{count} grupos"
+  },
+  "duplicates.scope.overlap": "Un grupo con copias en varias carpetas cuenta en cada una, así que la suma de las filas es mayor",
+  "duplicates.state.recalculating": "Recalculando tras un cambio en las carpetas preferidas",
+  "duplicates.state.failed": "No se pudieron cargar los duplicados",
+  "duplicates.state.keepFailed": "No se pudo cambiar la copia conservada",
+  "duplicates.state.empty": "No hay duplicados en {scope}",
+  "duplicates.row.copiesIn": {
+    "one": "{count} copia en {scope}",
+    "other": "{count} copias en {scope}"
+  },
+  "duplicates.row.files": {
+    "one": "{files} archivo",
+    "other": "{files} archivos"
+  },
+  "duplicates.row.copies": {
+    "one": "{count} copia",
+    "other": "{count} copias"
+  },
+  "duplicates.row.allIn": "todas en {scope}",
+  "duplicates.row.hereElsewhere": "{here} aquí · {elsewhere} en otro lugar",
+  "duplicates.row.each": "{size} cada una",
+  "duplicates.reason.user": "Su elección",
+  "duplicates.reason.preferred_share": "Carpeta preferida",
+  "duplicates.reason.oldest": "Copia más antigua",
+  "duplicates.reason.shortest": "Ruta más corta",
+  "duplicates.action.keep": "Conservar",
+  "duplicates.action.remove": "Quitar",
+  "duplicates.sheet.folderDescription": {
+    "one": "{files} archivo · {size} en cada ubicación",
+    "other": "{files} archivos · {size} en cada ubicación"
+  },
+  "duplicates.basket.count": {
+    "one": "{count} copia en la lista de limpieza",
+    "other": "{count} copias en la lista de limpieza"
+  },
+  "duplicates.basket.lead": {
+    "one": "Lista de limpieza: {count} copia de {groups} libera al menos",
+    "other": "Lista de limpieza: {count} copias de {groups} liberan al menos"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count} grupo",
+    "other": "{count} grupos"
+  },
+  "duplicates.basket.keepsOne": "Queda una copia de cada grupo",
+  "duplicates.info.junk": "Las carpetas se comparan sin los archivos que los sistemas vuelven a crear: .DS_Store, Thumbs.db, desktop.ini, archivos ._, @eaDir. Al quitar una carpeta también se quitan",
+  "duplicates.scope.later": "{size} más cuando roten las instantáneas",
+  "duplicates.scope.unchecked": {
+    "one": "{count} copia no se pudo comparar por suma de comprobación y no aparece",
+    "other": "{count} copias no se pudieron comparar por suma de comprobación y no aparecen"
+  },
+  "duplicates.analysis.running": "Buscando duplicados. Puede tardar unos minutos en un volumen grande",
+  "duplicates.analysis.stale": "Estos resultados son anteriores al último análisis. Analice de nuevo para actualizarlos",
+  "duplicates.analysis.again": "Analizar de nuevo",
+  "duplicates.analysis.failed": "No se pudo iniciar la búsqueda de duplicados",
+  "duplicates.analysis.noneTitle": "Aún no se han buscado duplicados en este volumen",
+  "duplicates.analysis.noneBody": "La búsqueda usa el último análisis y no lee el contenido de los archivos. Puede tardar unos minutos en un volumen grande",
+  "duplicates.analysis.find": "Buscar duplicados",
+  "duplicates.unavailable.title": "No hay datos de duplicados para este volumen",
+  "duplicates.unavailable.body": "Para encontrar duplicados hace falta un análisis del volumen Btrfs completo hecho con esta versión de Syno Reclaim. Los análisis anteriores no tienen los datos necesarios. Analice este volumen y vuelva aquí",
+  "duplicates.unavailable.scan": "Analizar",
+  "duplicates.more": {
+    "one": "Mostrar {count} más",
+    "other": "Mostrar {count} más"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count} en carpetas idénticas",
+    "other": "{count} en carpetas idénticas"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "{count} más en carpetas idénticas, que se quita con esas carpetas",
+    "other": "{count} más en carpetas idénticas, que se quitan con esas carpetas"
+  },
+  "duplicates.info.partial": "Las carpetas cuyos elementos son iguales en al menos un 80 % (por tamaño y en las mismas ubicaciones) forman una sola fila: solo se eliminan los elementos idénticos",
+  "duplicates.row.partial": {
+    "one": "{same} de {total} elemento igual que {counterpart}",
+    "other": "{same} de {total} elementos iguales que {counterpart}"
+  },
+  "duplicates.row.folders": {
+    "one": "{count} carpeta",
+    "other": "{count} carpetas"
+  },
+  "duplicates.row.sameEach": "{size} idénticos en cada una",
+  "duplicates.partial.title": {
+    "one": "Elimina {items} elemento idéntico de {name}",
+    "other": "Elimina {items} elementos idénticos de {name}"
+  },
+  "duplicates.partial.stays": "{name} y los elementos que difieren, como .git, se conservan",
+  "duplicates.partial.folderItem": {
+    "one": "{files} archivo · {size}",
+    "other": "{files} archivos · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "{count} elemento idéntico más",
+    "other": "{count} elementos idénticos más"
+  },
+  "duplicates.partial.label": "Elementos idénticos de {name}",
+  "duplicates.partial.failed": "No se pudieron cargar los elementos idénticos",
+  "duplicates.partial.retry": "Reintentar",
+  "duplicates.folders.empty": "No hay carpetas idénticas aquí",
+  "duplicates.shares.recycleBin": "Papelera de reciclaje",
+  "duplicates.shares.binOn": "Activada",
+  "duplicates.shares.binOffDeletes": "Desactivada · se elimina para siempre",
+  "duplicates.table.moves": "Eliminación",
+  "duplicates.row.moves": {
+    "one": "{count} copia",
+    "other": "{count} copias"
+  },
+  "duplicates.row.noMove": "Ninguna",
+  "duplicates.row.deletes": "Se elimina para siempre",
+  "duplicates.row.keptMany": {
+    "one": "Conserva {count} copia",
+    "other": "Conserva {count} copias"
+  },
+  "duplicates.keep.kept": "Se conserva",
+  "duplicates.keep.add": "Añadir a la lista de limpieza",
+  "duplicates.keep.drop": "Quitar de la lista de limpieza",
+  "duplicates.list.label": "Lista",
+  "duplicates.reason.unmovable": "No se puede mover",
+  "duplicates.reason.in_kept_folder": "Se queda con su carpeta",
+  "duplicates.stays.shareRoot": "Es una carpeta compartida, se queda",
+  "duplicates.stays.notShared": "Fuera de una carpeta compartida de DSM, se queda",
+  "duplicates.stays.belowVolume": "Justo bajo el volumen, se queda",
+  "duplicates.merged.match": {
+    "one": "{count} carpeta coincide: {names}",
+    "other": "{count} carpetas coinciden: {names}"
+  },
+  "duplicates.merged.ratio": "{percent} igual · {same} de {total} elementos",
+  "duplicates.merged.groups": {
+    "one": "Incluye {count} grupo",
+    "other": "Incluye {count} grupos"
+  },
+  "duplicates.merged.identical": "Idéntica",
+  "duplicates.merged.lead": "Las carpetas marcadas van a la Papelera. La carpeta conservada se queda",
+  "duplicates.merged.kept": "Carpeta conservada",
+  "duplicates.sheet.lead": "Las copias marcadas van a la Papelera. Desmarca una copia para conservarla también",
+  "duplicates.sheet.sort": "Fecha",
+  "duplicates.sheet.oldest": "Más antigua primero",
+  "duplicates.sheet.newest": "Más reciente primero",
+  "duplicates.sheet.summary": "Mueve {moves} de {total} · conserva {kept}",
+  "duplicates.sheet.atLeastOne": "Deja al menos una copia sin marcar",
+  "duplicates.sheet.apply": "Añadir a la lista",
+  "duplicates.sheet.update": "Actualizar la lista",
+  "duplicates.sheet.size": "{size} cada una",
+  "duplicates.block.inFolder": "Se mueve con su carpeta idéntica",
+  "duplicates.selectAll.title": "Seleccionar todo",
+  "duplicates.selectAll.checking": "Comprobando grupos",
+  "duplicates.selectAll.progress": "{done} de {total} grupos comprobados",
+  "duplicates.selectAll.selected": {
+    "one": "{count} grupo seleccionado",
+    "other": "{count} grupos seleccionados"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "{count} grupo no se pudo seleccionar",
+    "other": "{count} grupos no se pudieron seleccionar"
+  },
+  "duplicates.selectAll.stays": "Estas copias se quedan",
+  "duplicates.selectAll.stopped": "Detenido: los grupos ya comprobados están seleccionados",
+  "duplicates.why.nothing": "Nada que mover: las demás copias se conservan o no se pueden mover",
+  "duplicates.sheet.deletes": "Sin papelera: quitarla la elimina para siempre",
+  "duplicates.row.toBin": "A la papelera",
+  "duplicates.block.inFolderDelete": "Se elimina para siempre con su carpeta idéntica",
+  "duplicates.sheet.leadDelete": "Las copias marcadas se eliminan para siempre: esta carpeta compartida no tiene papelera. Desmarca una copia para conservarla también",
+  "duplicates.sheet.leadMixed": "Las copias marcadas van a la papelera, o se eliminan para siempre donde la carpeta compartida no tiene. Desmarca una copia para conservarla también",
+  "duplicates.sheet.summaryDelete": "Elimina para siempre {moves} de {total} · conserva {kept}",
+  "duplicates.sheet.summaryMixed": "Quita {moves} de {total} · conserva {kept}",
+  "duplicates.merged.leadDelete": "Las carpetas marcadas se eliminan para siempre: su carpeta compartida no tiene papelera. La carpeta conservada se queda",
+  "duplicates.merged.leadMixed": "Las carpetas marcadas van a la papelera, o se eliminan para siempre donde la carpeta compartida no tiene. La carpeta conservada se queda"
+}

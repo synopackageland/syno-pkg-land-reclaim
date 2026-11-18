@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "command": "recycle",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T10:58:31Z",
+  "completion": "complete",
+  "job_id": "20260929T105831Z-a1b2c",
+  "errors": [],
+  "warnings": [],
+  "target": {
+    "path": "/volume1"
+  },
+  "report_info": {
+    "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+    "path": "/var/lib/synoreclaim/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/f770fce9f8088316.srrep",
+    "job_id": "20260929T105831Z-a1b2c",
+    "scan_started": "2026-09-29T10:45:00Z",
+    "scan_finished": "2026-09-29T10:58:31Z",
+    "age_seconds": 0,
+    "stale": false,
+    "consistency": "observed-stable",
+    "change_reasons": [],
+    "coverage": {
+      "encrypted_directories": 0,
+      "snapshots_not_materialized": 0,
+      "unlinked_subvolume_entries": 0,
+      "dangling_entries": 0,
+      "cycles": 0,
+      "unsupported_locations": 0,
+      "missing_subvolume_roots": 0,
+      "reference_accounting": "complete",
+      "unresolved_extents": 0
+    },
+    "filesystem": "btrfs",
+    "capabilities": {
+      "scan": true,
+      "snapshots": true,
+      "reflinks": true,
+      "cleanup": true,
+      "cleanup_unavailable_reason": null
+    }
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "share01"
+      },
+      "items": 250,
+      "bytes": 201863462912,
+      "reclaimable_bytes": 199715979264,
+      "held_by": [
+        {
+          "class": "hard_link",
+          "bytes": 2147483648
+        }
+      ]
+    },
+    {
+      "share": {
+        "path": "share02"
+      },
+      "items": 12,
+      "bytes": 23622320128,
+      "reclaimable_bytes": 1073741824,
+      "held_by": [
+        {
+          "class": "snapshot",
+          "bytes": 22548578304
+        }
+      ]
+    },
+    {
+      "share": {
+        "path": "share03"
+      },
+      "items": 0,
+      "bytes": 0,
+      "reclaimable_bytes": 0,
+      "held_by": []
+    }
+  ],
+  "moved_by_reclaim": [],
+  "scans": [
+    {
+      "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+      "mount": {
+        "path": "/volume1"
+      },
+      "completion": "complete",
+      "targets": [
+        {
+          "path": "/volume1",
+          "scope": "path",
+          "tree": 259,
+          "ino": 256
+        }
+      ],
+      "covered": [],
+      "consistency": "observed-stable",
+      "change_reasons": [],
+      "scan_started": "2026-09-29T10:45:00Z",
+      "scan_finished": "2026-09-29T10:58:31Z",
+      "totals": {
+        "logical": 8388608,
+        "physical": 8388608,
+        "shared": 0,
+        "reclaimable": 8388608,
+        "reclaimable_resolved": 8388608,
+        "unknown": 0,
+        "pinned_unreferenced": 0,
+        "extents": 2,
+        "inline": 0,
+        "entries": 5,
+        "files": 3
+      },
+      "stats": {
+        "subvolumes_discovered": 5,
+        "subvolumes_scanned": 1,
+        "subvolumes_reused": 0,
+        "entries": 5,
+        "inodes": 4,
+        "extents": 2,
+        "items": 22,
+        "batches": 3,
+        "item_bytes": 1282,
+        "reference_searches": 2,
+        "reference_items": 3,
+        "owner_lookups": 0,
+        "owner_budget_capped_extents": 0,
+        "elapsed_ms": 27,
+        "peak_rss_bytes": 11354112
+      },
+      "resource_limit": null,
+      "coverage": {
+        "encrypted_directories": 0,
+        "snapshots_not_materialized": 0,
+        "unlinked_subvolume_entries": 0,
+        "dangling_entries": 0,
+        "cycles": 0,
+        "unsupported_locations": 0,
+        "missing_subvolume_roots": 0,
+        "reference_accounting": "complete",
+        "unresolved_extents": 0
+      },
+      "subvolumes": [
+        {
+          "id": 259,
+          "role": "scanned",
+          "generation_before": 14,
+          "generation_after": 14,
+          "uuid": "d8c71b8014c933408553b1e01acfb065",
+          "last_snapshot": 0
+        }
+      ],
+      "report": {
+        "path": "/var/lib/synoreclaim/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/f770fce9f8088316.srrep",
+        "bytes": 1827
+      },
+      "errors": [],
+      "warnings": [],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ]
+}

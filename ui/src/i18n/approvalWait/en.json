@@ -1,0 +1,6 @@
+{
+  "approvalWait.title": "Still waiting for DSM",
+  "approvalWait.queued": "The approval task is waiting for DSM to start it. On a busy NAS this can take several minutes; keep this window open",
+  "approvalWait.running": "The approval task is running. On a busy NAS this can take several minutes; keep this window open",
+  "approvalWait.elapsed": "Waited {duration}"
+}

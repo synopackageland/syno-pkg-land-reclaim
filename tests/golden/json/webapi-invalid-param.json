@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "command": "webapi",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T00:00:00Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "method": "x",
+  "outcome": "invalid_param",
+  "message": "unknown method \"x\""
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "command": "mode",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:30:51Z",
+  "completion": "complete",
+  "job_id": "20260929T113051Z-2c1c46",
+  "errors": [],
+  "warnings": [],
+  "outcome": "requested",
+  "message": "mode change requested; the scan goes on in the new mode from its next check",
+  "state": "running"
+}

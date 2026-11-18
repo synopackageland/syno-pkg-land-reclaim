@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "command": "shared",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "ranked_by": "shared",
+  "kind": "files",
+  "limit": 4,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+        "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/8adc2669478811d6.srrep",
+        "job_id": "20260929T022925Z-ec33b",
+        "scan_started": "2026-09-29T02:29:25Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 1,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/fixture/mnt/data",
+        "kind": "dir",
+        "flags": [
+          "subvolume_root"
+        ],
+        "metrics": {
+          "logical": 4232391,
+          "physical": 2715648,
+          "shared": 2715648,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 14,
+          "inline": 2361,
+          "entries": 647,
+          "files": 621
+        },
+        "blockers": [
+          "snapshot"
+        ],
+        "nlink": 1,
+        "tree": 256,
+        "objectid": 256,
+        "without_package_data": {
+          "logical": 3970247,
+          "physical": 2453504,
+          "shared": 2453504,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 12,
+          "inline": 2361,
+          "entries": 638,
+          "files": 618
+        },
+        "sharing": "snapshot",
+        "shared_ratio": 1.0
+      },
+      "entries": [
+        {
+          "path": "/fixture/mnt/data/docs/random.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 1048576,
+            "physical": 1048576,
+            "shared": 1048576,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 269,
+          "sharing": "snapshot",
+          "shared_ratio": 1.0
+        },
+        {
+          "path": "/fixture/mnt/data/extents/bookend.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 524288,
+            "physical": 589824,
+            "shared": 589824,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 2,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 881,
+          "sharing": "snapshot",
+          "shared_ratio": 1.0
+        },
+        {
+          "path": "/fixture/mnt/data/extents/prealloc.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 262144,
+            "physical": 262144,
+            "shared": 262144,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 882,
+          "sharing": "snapshot",
+          "shared_ratio": 1.0
+        },
+        {
+          "path": "/fixture/mnt/data/extents/reflink-copy.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 262144,
+            "physical": 262144,
+            "shared": 262144,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 880,
+          "sharing": "snapshot",
+          "shared_ratio": 1.0
+        }
+      ],
+      "hidden_system": 3
+    }
+  ],
+  "scans": []
+}

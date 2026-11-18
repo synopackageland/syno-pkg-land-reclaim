@@ -1,0 +1,10 @@
+{
+  "systemScan.title": "System partition scan",
+  "systemScan.status": "Status",
+  "systemScan.phase": "Phase",
+  "systemScan.waiting": "Waiting to start",
+  "systemScan.reading": "Read system files and check usage",
+  "systemScan.countsUnavailable": "Entry counts are not available for this scan",
+  "systemScan.viewResult": "View result",
+  "systemScan.cancelBody": "Stop checking the system partition? The previous result will be kept"
+}

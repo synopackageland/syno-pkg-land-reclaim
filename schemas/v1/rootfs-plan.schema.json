@@ -1,0 +1,483 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/rootfs-plan.schema.json",
+  "title": "synoreclaim rootfs plan result v1",
+  "description": "A plan to move allowlisted leftovers off `/` into a folder in a shared folder on a data volume. The plan is written as <plan_id>.json into root's private /var/lib/synoreclaim/rootfs-plans (never into the share, where others could edit it) for `rootfs apply`; apply later moves the items into <folder>/SynoReclaim-system-YYYYMMDD-HHMM and records the plan id in the move folder manifest. README.txt lists the original paths. Nothing else on `/` changes. With nothing to move and no tool to run, plan_file, plan_id, expires_at and apply are null and no file is written. A refusal has completion failed and errors[0].code, one of: not_root, dsm_update_active, destination_not_directory, destination_not_in_share, destination_on_system_partition, destination_protected, destination_full, destination_quota_unavailable, plan_dir_untrusted, walk_stopped, processes_unreadable.",
+  "type": "object",
+  "anyOf": [
+    {
+      "$ref": "#/$defs/rootfs_plan_success"
+    },
+    {
+      "$ref": "#/$defs/rootfs_plan_refusal"
+    },
+    {
+      "$ref": "#/$defs/rootfs_plan_busy"
+    }
+  ],
+  "$defs": {
+    "tool": {
+      "description": "A DSM tool run by its fixed name; each maps to one fixed argv.",
+      "enum": [
+        "rotate_logs",
+        "delete_journal",
+        "logrotate",
+        "restart_syslog_ng",
+        "clean_downloaded_update",
+        "release_update_reserve",
+        "delete_log"
+      ]
+    },
+    "rootfs_plan_fields": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "const": "rootfs-plan"
+        },
+        "plan_file": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "common.schema.json#/$defs/path"
+            }
+          ]
+        },
+        "plan_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "common.schema.json#/$defs/timestamp"
+            }
+          ]
+        },
+        "destination": {
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "common.schema.json#/$defs/path"
+            },
+            {
+              "properties": {
+                "share": {
+                  "$ref": "common.schema.json#/$defs/path"
+                },
+                "move_dir": {
+                  "$ref": "common.schema.json#/$defs/path"
+                },
+                "available_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "required_bytes": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "The moved bytes plus the margin apply keeps free."
+                }
+              },
+              "required": [
+                "share",
+                "move_dir",
+                "available_bytes",
+                "required_bytes"
+              ]
+            }
+          ],
+          "description": "The --to folder."
+        },
+        "root": {
+          "type": "object",
+          "properties": {
+            "available_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "available_after_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Estimated: available plus the moved items' allocated bytes."
+            }
+          },
+          "required": [
+            "available_bytes",
+            "available_after_bytes"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "deep"
+          ],
+          "description": "Omitted in legacy records: standard."
+        },
+        "additional_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Additional allocated movable bytes versus standard, excluding DSM tools."
+        },
+        "moves": {
+          "type": "object",
+          "properties": {
+            "bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "required_destination_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "moves.bytes plus the 256 MiB margin apply keeps free."
+            },
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "by_category": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "$ref": "rootfs.schema.json#/$defs/category"
+                  },
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "category",
+                  "bytes",
+                  "items"
+                ]
+              }
+            }
+          },
+          "required": [
+            "bytes",
+            "required_destination_bytes",
+            "items",
+            "by_category"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              {
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "file",
+                      "dir"
+                    ]
+                  },
+                  "category": {
+                    "$ref": "rootfs.schema.json#/$defs/category"
+                  },
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "kind",
+                  "category",
+                  "bytes"
+                ]
+              }
+            ]
+          },
+          "description": "What apply moves, sorted by path. A folder is removed only once it is empty."
+        },
+        "held_open": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              {
+                "properties": {
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "holder": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "bytes",
+                  "holder"
+                ]
+              }
+            ]
+          },
+          "description": "Movable files a process holds open, left on /."
+        },
+        "kept": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              {
+                "properties": {
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "reason": {
+                    "enum": [
+                      "recent_log_archive",
+                      "small_junior_log",
+                      "updated_since_boot",
+                      "too_large",
+                      "append_only",
+                      "immutable",
+                      "unrecognised_image",
+                      "update_room_enough"
+                    ],
+                    "description": "recent_log_archive: a /var/log *.xz archive modified in the last 7 days (disk-latency and healthtest archives are exempt). small_junior_log: a /.log.junior/logs.tar.* under 1 MiB. updated_since_boot: an update leftover under /upd@te, /@autoupdate or /.SynoUpgrade* (not a junior log, which DSM renames at every boot) whose mtime or ctime is not older than the last boot; it may be an installed update waiting for the restart. too_large: a file larger than 8 GiB, more than DSM's whole system partition, so sparse. append_only: a file with chattr +a (as DSM sets on /var/log/rm.log*), which the kernel refuses to unlink. immutable: a file or folder with chattr +i, or anything below such a folder. update_room_enough: Hyper Backup's restore installer (deep), while / with the other moves has room for a typical DSM update."
+                  }
+                },
+                "required": [
+                  "bytes",
+                  "reason"
+                ]
+              }
+            ]
+          },
+          "description": "Movable files the plan leaves on / by their size or age, as support needs them; not in the plan."
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tool": {
+                "$ref": "#/$defs/tool"
+              },
+              "argv": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "effect": {
+                "type": "string"
+              },
+              "estimated_bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Allocated rootfs bytes of the fixed cleanup input; other tool savings are unknown."
+              }
+            },
+            "required": [
+              "tool",
+              "argv",
+              "effect"
+            ]
+          },
+          "description": "DSM's own tools apply runs after the moves, in order: synocleaner --rotate-log and --delete-journal from DSM 6.2.3, else logrotate -f /etc/logrotate.conf; synosystemctl restart syslog-ng only while syslog-ng holds deleted files open. Each is a fixed argv run without a shell."
+        },
+        "apply": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "command": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "notice": {
+                  "$ref": "common.schema.json#/$defs/notice"
+                },
+                "tools_notice": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "$ref": "common.schema.json#/$defs/notice"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "command",
+                "notice",
+                "tools_notice"
+              ]
+            }
+          ]
+        },
+        "follow_up": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "refresh_geoip",
+              "reset_images",
+              "restart_winbind",
+              "download_update",
+              "update_dsm",
+              "backup_installer"
+            ]
+          },
+          "description": "Manual actions; no automatic restart or reboot."
+        }
+      }
+    },
+    "rootfs_plan_success": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/envelope"
+        },
+        {
+          "$ref": "#/$defs/rootfs_plan_fields"
+        }
+      ],
+      "properties": {
+        "command": {
+          "const": "rootfs-plan"
+        },
+        "completion": {
+          "const": "complete"
+        },
+        "plan_file": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/plan_file"
+        },
+        "plan_id": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/plan_id"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/expires_at"
+        },
+        "destination": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/destination"
+        },
+        "root": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/root"
+        },
+        "moves": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/moves"
+        },
+        "items": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/items"
+        },
+        "held_open": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/held_open"
+        },
+        "kept": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/kept"
+        },
+        "tools": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/tools"
+        },
+        "apply": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/apply"
+        },
+        "follow_up": {
+          "$ref": "#/$defs/rootfs_plan_fields/properties/follow_up"
+        }
+      },
+      "required": [
+        "command",
+        "completion",
+        "plan_file",
+        "plan_id",
+        "expires_at",
+        "destination",
+        "root",
+        "moves",
+        "items",
+        "held_open",
+        "kept",
+        "tools",
+        "apply"
+      ]
+    },
+    "rootfs_plan_refusal": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/envelope"
+        },
+        {
+          "$ref": "#/$defs/rootfs_plan_fields"
+        }
+      ],
+      "properties": {
+        "completion": {
+          "const": "failed"
+        }
+      },
+      "description": "A refusal: no plan; errors[0].code says why."
+    },
+    "rootfs_plan_busy": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/envelope"
+        },
+        {
+          "$ref": "#/$defs/rootfs_plan_fields"
+        },
+        {
+          "properties": {
+            "completion": {
+              "const": "busy"
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "common.schema.json#/$defs/target_error"
+                  },
+                  {
+                    "properties": {
+                      "code": {
+                        "const": "busy"
+                      }
+                    },
+                    "required": [
+                      "code"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "errors"
+          ]
+        }
+      ]
+    }
+  }
+}

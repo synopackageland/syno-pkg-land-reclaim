@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "command": "volumes",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T10:58:31Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "volumes": [
+    {
+      "mount": {
+        "path": "/fixture/mnt"
+      },
+      "fsid": "adf627b5-0c2b-4b96-836f-df36d2cca7b0",
+      "total_bytes": 536870912,
+      "used_bytes": 10022912,
+      "free_bytes": 448630784,
+      "metadata_access": true,
+      "reports": 3,
+      "incompatible_reports": 0,
+      "last_scan": "2026-09-29T10:58:31Z",
+      "last_consistency": "observed-stable",
+      "pending_deletion": {
+        "count": 0,
+        "bytes": null
+      },
+      "shares": [
+        {
+          "name": {
+            "path": "data"
+          },
+          "path": {
+            "path": "/fixture/mnt/data"
+          },
+          "subvolume_id": 256,
+          "size_bytes": 2125824
+        }
+      ],
+      "notes": [],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ],
+  "excluded": [],
+  "system_partition": {
+    "mount": "/",
+    "source": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+    "fstype": "ext4",
+    "total_bytes": 208661176320,
+    "available_bytes": 26152116224,
+    "used_bytes": 182509060096,
+    "free_bytes": 26152116224,
+    "used_percent": 87,
+    "level": "getting_full",
+    "level_reasons": [
+      "used_over_recommended"
+    ],
+    "nearly_full": false
+  }
+}

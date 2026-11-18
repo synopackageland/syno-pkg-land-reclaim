@@ -1,0 +1,22 @@
+[
+  {
+    "file": "volume1.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "partial"
+  },
+  {
+    "file": "volume1.json",
+    "params": {
+      "volume": "/volume1"
+    }
+  },
+  {
+    "file": "interaction.json",
+    "params": {
+      "volume": "/volume1"
+    },
+    "scenario": "interaction"
+  }
+]

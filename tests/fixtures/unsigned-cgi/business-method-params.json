@@ -1,0 +1,85 @@
+{
+  "volumes.list": {},
+  "jobs.list": {},
+  "history.list": {},
+  "rootfs.report": {},
+  "doctor.run": {
+    "volume": "/volume1"
+  },
+  "overview.get": {
+    "volume": "/volume1"
+  },
+  "cache.status": {
+    "volume": "/volume1"
+  },
+  "cache.clear": {
+    "volume": "/volume1"
+  },
+  "support_bundle.get": {
+    "volume": "/volume1"
+  },
+  "why_not_freed.get": {
+    "volume": "/volume1"
+  },
+  "watch_free.sample": {
+    "volume": "/volume1"
+  },
+  "top.list": {
+    "target": "/volume1",
+    "kind": "all"
+  },
+  "inspect.get": {
+    "paths": [
+      "/volume1/fixture"
+    ]
+  },
+  "simulate.get": {
+    "paths": [
+      "/volume1/fixture"
+    ]
+  },
+  "cleanup.plan": {
+    "paths": [
+      "/volume1/fixture"
+    ]
+  },
+  "cleanup.apply": {
+    "plan_id": "cleanup-0123abcd-ff",
+    "confirm_permanent": true
+  },
+  "rootfs.plan": {
+    "to": "/volume1/fixture"
+  },
+  "rootfs.apply": {
+    "plan_id": "rootfs-0123abcd-ff",
+    "confirm_no_restore": true
+  },
+  "rootfs.history": {},
+  "snapshots.list": {
+    "target": "/volume1"
+  },
+  "recycle.list": {
+    "target": "/volume1"
+  },
+  "scan.start": {
+    "targets": [
+      "/volume1/fixture"
+    ],
+    "mode": "gentle"
+  },
+  "job.pause": {
+    "job_id": "fixture-job"
+  },
+  "job.cancel": {
+    "job_id": "fixture-job"
+  },
+  "job.resume": {
+    "job_id": "fixture-job"
+  },
+  "job.result": {
+    "job_id": "fixture-job"
+  },
+  "portal.status": {},
+  "portal.register": {},
+  "portal.unregister": {}
+}

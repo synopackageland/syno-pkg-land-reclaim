@@ -1,0 +1,9 @@
+{
+  "usageChange.close": "Close",
+  "usageChange.decrease": "Usage has decreased by {size} since the last scan. Results may have changed",
+  "usageChange.increase": "Usage has increased by {size} since the last scan. Results may have changed",
+  "usageChange.noBaseline": "Syno Reclaim can tell you about usage changes after the next complete scan",
+  "usageChange.rescan": "Rescan",
+  "usageChange.snooze": "Remind me later",
+  "usageChange.volume": "{volume}: {message}"
+}

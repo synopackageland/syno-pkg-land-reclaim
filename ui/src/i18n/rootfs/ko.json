@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "확인 후 정리",
+  "rootfs.card.cleanNow": "지금 정리",
+  "rootfs.card.free": "여유",
+  "rootfs.level.full": "가득 참",
+  "rootfs.level.full.body": "DSM 업데이트가 실패하거나 설정 또는 로그를 저장하지 못할 수 있습니다. 지금 정리하십시오",
+  "rootfs.level.getting_full": "거의 가득 참",
+  "rootfs.level.getting_full.body": "다음 DSM 업데이트 전에 정리하세요",
+  "rootfs.name": "시스템 파티션"
+}

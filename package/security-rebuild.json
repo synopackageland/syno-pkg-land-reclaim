@@ -1,0 +1,185 @@
+{
+  "package": "SynoReclaim",
+  "version": "0.1.1-1585",
+  "toolchain": {
+    "cli": "0.26.0",
+    "templates": "0.26.0",
+    "sdk": "0.26.0",
+    "app": "0.26.0",
+    "ui": "0.14.4",
+    "executorTag": "executor/v0.24.0",
+    "goToolchain": "go1.26.10"
+  },
+  "check": {
+    "ok": true
+  },
+  "build": {
+    "ok": true
+  },
+  "inspect": {
+    "ok": true,
+    "findings": []
+  },
+  "nas_tested": false,
+  "manifest_sha256": "0c1444efe7d8b86f2308ed8383dd9fbb1e0d389fc76c7d36400b962686040e24",
+  "lock_sha256": {
+    "package-lock.json": "fbe105fadd00e1dac6c35d9edb058afd07968f936d1dcdf7dab12c6588285b31",
+    "ui/pnpm-lock.yaml": "848449fcce604532013f3d31c76038ad4c9c3cff4c2919b90bb36b73dc0286e6",
+    "app/Cargo.lock": "b28a9bda4dffeaf0eeb047cea27de581077eb078ea347f9f2c9d884b5340b429",
+    "Cargo.lock": "ed1a06bf0562243bcd89c93276e34f97ca99adcc939afb91997fc9b33d985434",
+    "e2e/go.sum": "704a833f639007fbac95ff14733d729044ab082813eaf7fbf27c7c0786c630c4"
+  },
+  "outputs": [
+    {
+      "file": "SynoReclaim-0.1.1-1585-aarch64.spk",
+      "sha256": "041c707f38f5a62c5e2f54d8bfbc729e395cec0cd9902cfa037d19f619c02d0e",
+      "size": 13122560,
+      "md5": "7e5ddeeebdfb1396ee9d021c9e884df3"
+    },
+    {
+      "file": "SynoReclaim-0.1.1-1585-armv7.spk",
+      "sha256": "8d63bc3029edf998ee18f6da0dba0eddc5a2d078cd7f698691e512cfd3061c25",
+      "size": 13814784,
+      "md5": "1eaef73908c0a038f5f0ae1b8d64b058"
+    },
+    {
+      "file": "SynoReclaim-0.1.1-1585-x86_64.spk",
+      "sha256": "7e40b6ec2db53183d4ca893d786a47f5131b9f36fc3e0e04aa8abdce1b43c4ed",
+      "size": 14115840,
+      "md5": "e1af5443f7a6f0cc124c9ab5b9097515"
+    }
+  ],
+  "go_binaries": [
+    {
+      "arch": "aarch64",
+      "path": "executor/lifecycle",
+      "version": "go1.26.10",
+      "sha256": "a9ca1750d4d5cff4727dc29789e6eaf0a365cb0e674f1bb796971d82f2d4fa27",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "aarch64",
+      "path": "executor/executor",
+      "version": "go1.26.10",
+      "sha256": "8ef7c736203f6c111816b76f970b7204fa6f8d871ff3222fd7c0a27d0075b847",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "aarch64",
+      "path": "ui/cgi/api.cgi",
+      "version": "go1.26.10",
+      "sha256": "9deb437cca289a7704c6307d3b7475b8f11bb8210be571be4f8b59059cef6fc8",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "armv7",
+      "path": "executor/lifecycle",
+      "version": "go1.26.10",
+      "sha256": "6d25fc972eba12e3ac68f8b6a95a45e9e5706ebe19ffc1ff774fc318acbeb90f",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "armv7",
+      "path": "executor/executor",
+      "version": "go1.26.10",
+      "sha256": "a38703119554b5f2a8bf4810ec2a6c8f1d793bfbb1ca96803eb1b39a26ffd96c",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "armv7",
+      "path": "ui/cgi/api.cgi",
+      "version": "go1.26.10",
+      "sha256": "3b259153ad052b4670dec0384fdcfa17b6f97537dc1d224263b82365b998fb41",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "x86_64",
+      "path": "executor/lifecycle",
+      "version": "go1.26.10",
+      "sha256": "c6fbb377ecd5ec7ee5b96439f22091d9fa5965dfd616d510ca9445722f436721",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "x86_64",
+      "path": "executor/executor",
+      "version": "go1.26.10",
+      "sha256": "de78684faac211c24a7cda8a4541ab1b138d37f6d580936fe354bb9bd0d78a0f",
+      "upstream_unmodified": false
+    },
+    {
+      "arch": "x86_64",
+      "path": "ui/cgi/api.cgi",
+      "version": "go1.26.10",
+      "sha256": "079131a6ed16da53c002001608b70d42914248c51ed5683fc2d9011ff1192a21",
+      "upstream_unmodified": false
+    }
+  ],
+  "approval": {
+    "x86_64": {
+      "retention": "required",
+      "permissions": "unchanged",
+      "executor_only": false,
+      "task_template_changed": false,
+      "old_policy_digest": "6c5b0067091aaa02363efd3f5d2b46638492ebb4836a43d2fef04a4fac32a31d",
+      "new_policy_digest": "af51844221c38e69c812e69c956e0f390b50d742bb02dfe4f419ce6bfa995d6f",
+      "root_programs": [
+        {
+          "name": "cli",
+          "old": "8f51d8c9f18afb860ef5aea5f2f42d3a8b0b98a9f0bc5f52b436167b0be4864a",
+          "new": "b8499dc814c0887fbe65500b1d241420340777f541806c6e5cb50bc5a4ad47b9"
+        },
+        {
+          "name": "lifecycle",
+          "old": "8f51d8c9f18afb860ef5aea5f2f42d3a8b0b98a9f0bc5f52b436167b0be4864a",
+          "new": "b8499dc814c0887fbe65500b1d241420340777f541806c6e5cb50bc5a4ad47b9"
+        }
+      ],
+      "policy_changes": [],
+      "reason": "Administrator reapproval is required for the changed payload, policy, executor anchor or task definitions."
+    },
+    "aarch64": {
+      "retention": "required",
+      "permissions": "unchanged",
+      "executor_only": false,
+      "task_template_changed": false,
+      "old_policy_digest": "a844824bd1dbc9882a9bc66d6ce42c57fd42c984db57503ba573de4de4b184be",
+      "new_policy_digest": "556a17d4716e107efd42eddbe08ea8328cb25c875801b10fef581bc0a5477f59",
+      "root_programs": [
+        {
+          "name": "cli",
+          "old": "61b9c540cba3464c2af11b2033afca09f7bc61f2745af1b130b7adbee1415701",
+          "new": "5cf7846af8c22d7388515bcb49135363be364b0ea650e54f9f205bc1657aa0bb"
+        },
+        {
+          "name": "lifecycle",
+          "old": "61b9c540cba3464c2af11b2033afca09f7bc61f2745af1b130b7adbee1415701",
+          "new": "5cf7846af8c22d7388515bcb49135363be364b0ea650e54f9f205bc1657aa0bb"
+        }
+      ],
+      "policy_changes": [],
+      "reason": "Administrator reapproval is required for the changed payload, policy, executor anchor or task definitions."
+    },
+    "armv7": {
+      "retention": "required",
+      "permissions": "unchanged",
+      "executor_only": false,
+      "task_template_changed": false,
+      "old_policy_digest": "6f1a42d59b9514ddaadc359c5be4fceeb9ca101ff2d14f270215f75d6c58a367",
+      "new_policy_digest": "c7e2a8c73e5e24856f4e92ef3d374d75f41db1f14b4fcd890b94fee3d9d22927",
+      "root_programs": [
+        {
+          "name": "cli",
+          "old": "ff74b9f79527f7565e1dba0fa17d9049d21413f47b2f55a3756fbe567885dcdd",
+          "new": "414519628b2366ae2330dbd5b870baf5c72d0555a94085e0e3950fc9e5fe105f"
+        },
+        {
+          "name": "lifecycle",
+          "old": "ff74b9f79527f7565e1dba0fa17d9049d21413f47b2f55a3756fbe567885dcdd",
+          "new": "414519628b2366ae2330dbd5b870baf5c72d0555a94085e0e3950fc9e5fe105f"
+        }
+      ],
+      "policy_changes": [],
+      "reason": "Administrator reapproval is required for the changed payload, policy, executor anchor or task definitions."
+    }
+  }
+}

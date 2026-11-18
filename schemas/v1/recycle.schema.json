@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/recycle.schema.json",
+  "title": "synoreclaim recycle result v1",
+  "description": "Recycle Bin sizes and reclaimable bytes from a scan report (SPEC 5.16).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "recycle"
+        },
+        "target": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "report_info": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/report_info"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shares": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "share": {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "reclaimable_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Null if unresolved references prevent an exact value."
+              },
+              "held_by": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "class": {
+                      "type": "string"
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "class",
+                    "bytes"
+                  ]
+                }
+              },
+              "oldest": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "$ref": "common.schema.json#/$defs/path"
+                    },
+                    "ctime": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "reclaimable_bytes": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "tree": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "description": "Report-selected object identity for cleanup.plan expect."
+                    },
+                    "objectid": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Report-selected object identity for cleanup.plan expect."
+                    },
+                    "inode_device": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "ctime",
+                    "bytes",
+                    "reclaimable_bytes"
+                  ]
+                }
+              },
+              "report_info": {
+                "$ref": "common.schema.json#/$defs/report_info",
+                "description": "The newer share report this row comes from, when it is not the answer's own report_info: a share scanned on its own after the volume scan (SPEC 5.16)."
+              }
+            },
+            "required": [
+              "share",
+              "items",
+              "bytes",
+              "reclaimable_bytes",
+              "held_by"
+            ]
+          }
+        },
+        "scans": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/filesystem_scan"
+          }
+        },
+        "moved_by_reclaim": {
+          "type": "array",
+          "description": "What Reclaim moved into these Recycle Bins after the answering report's scan, one line per shared folder; not yet in the shares' sizes.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "share": {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "last_moved": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              }
+            },
+            "required": [
+              "share",
+              "items",
+              "bytes",
+              "last_moved"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "target",
+        "report_info",
+        "shares",
+        "moved_by_reclaim",
+        "scans"
+      ]
+    }
+  ]
+}

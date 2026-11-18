@@ -1,0 +1,24 @@
+{
+  "name": "syno-reclaim",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:package": "python3 package/verify-cli.py --installed && package/build-root-programs.sh && synopkgland ctl generate --check && synopkgland check --json",
+    "build:spk": "npm run check:package && synopkgland build --jobs 3 --verify-reproducible always",
+    "e2e:nas": "node --env-file-if-exists=.env node_modules/@synopackageland/cli/dist/e2e/dsm.js tunnel -- e2e run",
+    "typecheck:e2e": "tsc -p tests/e2e/tsconfig.json",
+    "generate:operations": "node package/generate-operations.mjs && synopkgland ctl generate",
+    "check:operations": "node package/generate-operations.mjs --check && synopkgland ctl generate --check"
+  },
+  "devDependencies": {
+    "@ai-sdk/openai": "4.0.91",
+    "@e2e-dev/web": "0.14.0",
+    "@synopackageland/cli": "~0.54.6",
+    "@synopackageland/templates": "0.42.1",
+    "@types/node": "24.19.2",
+    "ai": "7.0.137",
+    "e2e": "0.19.0",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "command": "scan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": "20260929T022925Z-ec33b",
+  "errors": [],
+  "warnings": [],
+  "resources": {
+    "scheduling": {
+      "profile": "low",
+      "requested_nice": 10,
+      "applied_nice": 10,
+      "requested_io_class": "idle",
+      "applied_io_class": "idle",
+      "duty_percent": 100,
+      "warnings": [],
+      "effectiveness_unknown": true
+    },
+    "memory_budget_bytes": 536870912,
+    "max_runtime_seconds": null,
+    "peak_rss_bytes": 12058624
+  },
+  "requested_targets": [
+    {
+      "path": "/fixture/mnt"
+    }
+  ],
+  "filesystems": [
+    {
+      "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+      "mount": {
+        "path": "/fixture/mnt"
+      },
+      "completion": "complete",
+      "targets": [
+        {
+          "path": "/fixture/mnt",
+          "scope": "volume",
+          "tree": 5,
+          "ino": 256
+        }
+      ],
+      "covered": [],
+      "consistency": "observed-stable",
+      "change_reasons": [],
+      "scan_started": "2026-09-29T02:29:25Z",
+      "scan_finished": "2026-09-29T02:29:26Z",
+      "totals": {
+        "logical": 4822215,
+        "physical": 3305472,
+        "shared": 2715648,
+        "reclaimable": 589824,
+        "reclaimable_resolved": 589824,
+        "unknown": 0,
+        "pinned_unreferenced": 0,
+        "extents": 18,
+        "inline": 2361,
+        "entries": 661,
+        "files": 625
+      },
+      "stats": {
+        "subvolumes_discovered": 4,
+        "subvolumes_scanned": 2,
+        "subvolumes_reused": 1,
+        "entries": 661,
+        "inodes": 658,
+        "extents": 18,
+        "items": 3312,
+        "batches": 4,
+        "item_bytes": 185142,
+        "reference_searches": 1,
+        "reference_items": 52,
+        "owner_lookups": 0,
+        "owner_budget_capped_extents": 0,
+        "elapsed_ms": 119,
+        "peak_rss_bytes": 12054528
+      },
+      "resource_limit": null,
+      "coverage": {
+        "encrypted_directories": 0,
+        "snapshots_not_materialized": 1,
+        "unlinked_subvolume_entries": 0,
+        "dangling_entries": 0,
+        "cycles": 0,
+        "unsupported_locations": 0,
+        "missing_subvolume_roots": 0,
+        "reference_accounting": "complete",
+        "unresolved_extents": 0
+      },
+      "subvolumes": [
+        {
+          "id": 5,
+          "role": "scanned",
+          "generation_before": 13,
+          "generation_after": 13,
+          "uuid": "e23b63de0b2947b7ae53eeb04c2149fc",
+          "last_snapshot": 0
+        },
+        {
+          "id": 256,
+          "role": "scanned",
+          "generation_before": 12,
+          "generation_after": 12,
+          "uuid": "5ebab16e36dc7b44a9c188db41b13fe1",
+          "last_snapshot": 12,
+          "snapshots": [
+            258
+          ]
+        },
+        {
+          "id": 257,
+          "role": "reused",
+          "generation_before": 13,
+          "generation_after": 13,
+          "captured": 1790648965,
+          "uuid": "f7b2da91ff225c4da583f9f845f4bf5f",
+          "last_snapshot": 0
+        },
+        {
+          "id": 258,
+          "role": "snapshot-skipped",
+          "generation_before": 12,
+          "generation_after": 12,
+          "uuid": "9321abcc8b0fd24b9bd87b041e4e3592",
+          "last_snapshot": 12
+        }
+      ],
+      "report": {
+        "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/8adc2669478811d6.srrep",
+        "bytes": 21477
+      },
+      "errors": [],
+      "warnings": [
+        {
+          "code": "snapshots_not_materialized",
+          "message": "1 read-only snapshot(s) not read; their bytes are not in the totals"
+        }
+      ],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "duplicates.title": "중복 항목",
+  "duplicates.breadcrumb.label": "위치",
+  "duplicates.info.what": "내용이 같은 10MB 이상 파일과 내용 전체가 같은 폴더",
+  "duplicates.info.keep": "각 그룹은 볼륨 전체에서 하나를 남깁니다: 선호 공유 폴더, 없으면 이동할 수 없는 사본, 없으면 가장 오래된 사본. 공유 폴더 페이지는 목록만 거릅니다",
+  "duplicates.info.excluded": "Reclaim이 인식한 앱, 시스템, 백업 데이터는 세지 않습니다: @로 시작하는 폴더, Hyper Backup 및 Active Backup 데이터, Surveillance",
+  "duplicates.shares.title": "중복 항목이 있는 공유 폴더",
+  "duplicates.shares.name": "공유 폴더",
+  "duplicates.shares.folders": "동일한 폴더",
+  "duplicates.shares.files": "중복된 큰 파일",
+  "duplicates.shares.copies": {
+    "one": "사본 {count}개",
+    "other": "사본 {count}개"
+  },
+  "duplicates.table.name": "이름",
+  "duplicates.table.kept": "남길 사본",
+  "duplicates.table.canFree": "확보 가능",
+  "duplicates.table.selectRow": "{name}의 제거할 사본을 정리 목록에 추가",
+  "duplicates.folders.title": "동일한 폴더",
+  "duplicates.files.title": "중복된 큰 파일",
+  "duplicates.files.threshold": "10MB 이상",
+  "duplicates.files.empty": "여기에는 중복된 큰 파일이 없습니다",
+  "duplicates.filter.label": "종류",
+  "duplicates.filter.all": "전체",
+  "duplicates.filter.photo": "사진",
+  "duplicates.filter.video": "동영상",
+  "duplicates.filter.music": "음악",
+  "duplicates.selectAll.volume": "{scope}의 중복 항목 모두 선택",
+  "duplicates.selectAll.all": "{scope}의 중복 항목 모두 선택",
+  "duplicates.selectAll.photo": "{scope}의 중복 사진 모두 선택",
+  "duplicates.selectAll.video": "{scope}의 중복 동영상 모두 선택",
+  "duplicates.selectAll.music": "{scope}의 중복 음악 모두 선택",
+  "duplicates.scope.title": "{scope} · {size} 확보 가능",
+  "duplicates.scope.copies": {
+    "one": "제거할 사본 {count}개",
+    "other": "제거할 사본 {count}개"
+  },
+  "duplicates.scope.groups": {
+    "one": "{count}개 그룹",
+    "other": "{count}개 그룹"
+  },
+  "duplicates.scope.overlap": "여러 공유 폴더에 사본이 있는 그룹은 각각에서 세므로 행의 합이 더 큽니다",
+  "duplicates.state.recalculating": "우선 공유 폴더가 바뀌어 다시 계산하는 중",
+  "duplicates.state.failed": "중복 항목을 불러올 수 없습니다",
+  "duplicates.state.keepFailed": "남길 사본을 바꿀 수 없습니다",
+  "duplicates.state.empty": "{scope}에 중복 항목이 없습니다",
+  "duplicates.row.copiesIn": {
+    "one": "{scope}에 {count}개",
+    "other": "{scope}에 {count}개"
+  },
+  "duplicates.row.files": {
+    "one": "파일 {files}개",
+    "other": "파일 {files}개"
+  },
+  "duplicates.row.copies": {
+    "one": "사본 {count}개",
+    "other": "사본 {count}개"
+  },
+  "duplicates.row.allIn": "모두 {scope}에 있음",
+  "duplicates.row.hereElsewhere": "여기 {here} · 다른 곳 {elsewhere}",
+  "duplicates.row.each": "각 {size}",
+  "duplicates.reason.user": "내가 선택함",
+  "duplicates.reason.preferred_share": "우선 공유 폴더",
+  "duplicates.reason.oldest": "가장 오래된 사본",
+  "duplicates.reason.shortest": "가장 짧은 경로",
+  "duplicates.action.keep": "유지",
+  "duplicates.action.remove": "제거",
+  "duplicates.sheet.folderDescription": {
+    "other": "파일 {files}개 · 위치마다 {size}"
+  },
+  "duplicates.basket.count": {
+    "one": "정리 목록에 사본 {count}개",
+    "other": "정리 목록에 사본 {count}개"
+  },
+  "duplicates.basket.lead": {
+    "one": "정리 목록: {groups}의 사본 {count}개, 최소 확보",
+    "other": "정리 목록: {groups}의 사본 {count}개, 최소 확보"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count}개 그룹",
+    "other": "{count}개 그룹"
+  },
+  "duplicates.basket.keepsOne": "각 그룹에서 사본 하나가 남습니다",
+  "duplicates.info.junk": "폴더를 비교할 때 시스템이 다시 만드는 파일(.DS_Store, Thumbs.db, desktop.ini, ._ 파일, @eaDir)은 무시합니다. 폴더를 제거하면 이 파일도 함께 제거됩니다",
+  "duplicates.scope.later": "스냅샷 교체 후 {size} 추가",
+  "duplicates.scope.unchecked": {
+    "one": "체크섬으로 비교할 수 없는 사본 {count}개는 표시되지 않습니다",
+    "other": "체크섬으로 비교할 수 없는 사본 {count}개는 표시되지 않습니다"
+  },
+  "duplicates.analysis.running": "중복 항목을 찾는 중입니다. 큰 볼륨에서는 몇 분 걸릴 수 있습니다",
+  "duplicates.analysis.stale": "이 결과는 최신 스캔 이전의 것입니다. 다시 분석하여 업데이트하세요",
+  "duplicates.analysis.again": "다시 분석",
+  "duplicates.analysis.failed": "중복 항목 찾기를 시작할 수 없습니다",
+  "duplicates.analysis.noneTitle": "이 볼륨에서 아직 중복 항목을 찾지 않았습니다",
+  "duplicates.analysis.noneBody": "최신 스캔을 사용하며 파일 내용은 읽지 않습니다. 큰 볼륨에서는 몇 분 걸릴 수 있습니다",
+  "duplicates.analysis.find": "중복 항목 찾기",
+  "duplicates.unavailable.title": "이 볼륨의 중복 데이터가 없습니다",
+  "duplicates.unavailable.body": "중복 항목을 찾으려면 이 버전의 Syno Reclaim으로 Btrfs 볼륨 전체를 스캔해야 합니다. 이전 스캔에는 필요한 정보가 없습니다. 이 볼륨을 스캔한 후 다시 오세요",
+  "duplicates.unavailable.scan": "스캔",
+  "duplicates.more": {
+    "one": "{count}개 더 보기",
+    "other": "{count}개 더 보기"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count}개는 동일한 폴더 안에 있음",
+    "other": "{count}개는 동일한 폴더 안에 있음"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "동일한 폴더 안에 {count}개 더 있으며, 해당 폴더와 함께 제거됩니다",
+    "other": "동일한 폴더 안에 {count}개 더 있으며, 해당 폴더와 함께 제거됩니다"
+  },
+  "duplicates.info.partial": "내부의 같은 위치에 있는 항목이 크기 기준 80% 이상 같은 폴더는 한 행으로 표시합니다. 같은 항목만 제거됩니다",
+  "duplicates.row.partial": {
+    "one": "항목 {total}개 중 {same}개가 {counterpart}과(와) 같음",
+    "other": "항목 {total}개 중 {same}개가 {counterpart}과(와) 같음"
+  },
+  "duplicates.row.folders": {
+    "one": "폴더 {count}개",
+    "other": "폴더 {count}개"
+  },
+  "duplicates.row.sameEach": "같은 부분 각 {size}",
+  "duplicates.partial.title": {
+    "one": "{name}에서 같은 항목 {items}개 제거",
+    "other": "{name}에서 같은 항목 {items}개 제거"
+  },
+  "duplicates.partial.stays": "{name} 자체와 다른 항목(예: .git)은 그대로 남습니다",
+  "duplicates.partial.folderItem": {
+    "one": "파일 {files}개 · {size}",
+    "other": "파일 {files}개 · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "같은 항목 {count}개 더",
+    "other": "같은 항목 {count}개 더"
+  },
+  "duplicates.partial.label": "{name}의 같은 항목",
+  "duplicates.partial.failed": "같은 항목을 불러올 수 없습니다",
+  "duplicates.partial.retry": "다시 시도",
+  "duplicates.folders.empty": "여기에는 동일한 폴더가 없습니다",
+  "duplicates.shares.recycleBin": "휴지통",
+  "duplicates.shares.binOn": "사용",
+  "duplicates.shares.binOffDeletes": "사용 안 함 · 영구 삭제",
+  "duplicates.table.moves": "제거 방식",
+  "duplicates.row.moves": {
+    "one": "{count}개",
+    "other": "{count}개"
+  },
+  "duplicates.row.noMove": "없음",
+  "duplicates.row.deletes": "영구 삭제됨",
+  "duplicates.row.keptMany": {
+    "one": "{count}개 유지",
+    "other": "{count}개 유지"
+  },
+  "duplicates.keep.kept": "유지",
+  "duplicates.keep.add": "정리 목록에 추가",
+  "duplicates.keep.drop": "정리 목록에서 제거",
+  "duplicates.list.label": "목록",
+  "duplicates.reason.unmovable": "이동할 수 없음",
+  "duplicates.reason.in_kept_folder": "폴더와 함께 유지",
+  "duplicates.stays.shareRoot": "공유 폴더 자체, 남습니다",
+  "duplicates.stays.notShared": "DSM 공유 폴더 밖, 남습니다",
+  "duplicates.stays.belowVolume": "볼륨 바로 아래, 남습니다",
+  "duplicates.merged.match": {
+    "one": "폴더 {count}개가 일치: {names}",
+    "other": "폴더 {count}개가 일치: {names}"
+  },
+  "duplicates.merged.ratio": "{percent} 동일 · {total}개 중 {same}개",
+  "duplicates.merged.groups": {
+    "one": "{count}개 그룹 포함",
+    "other": "{count}개 그룹 포함"
+  },
+  "duplicates.merged.identical": "완전히 동일",
+  "duplicates.merged.lead": "선택한 폴더는 휴지통으로 이동합니다. 남기는 폴더는 그대로입니다",
+  "duplicates.merged.kept": "남기는 폴더",
+  "duplicates.sheet.lead": "선택한 사본은 휴지통으로 이동합니다. 선택을 해제하면 그 사본도 남깁니다",
+  "duplicates.sheet.sort": "날짜",
+  "duplicates.sheet.oldest": "오래된 순",
+  "duplicates.sheet.newest": "최신 순",
+  "duplicates.sheet.summary": "{total}개 중 {moves}개 이동 · {kept}개 남김",
+  "duplicates.sheet.atLeastOne": "하나 이상은 선택을 해제해 두세요",
+  "duplicates.sheet.apply": "정리 목록에 추가",
+  "duplicates.sheet.update": "정리 목록 업데이트",
+  "duplicates.sheet.size": "각 {size}",
+  "duplicates.block.inFolder": "동일한 폴더와 함께 이동합니다",
+  "duplicates.selectAll.title": "모두 선택",
+  "duplicates.selectAll.checking": "그룹 확인 중",
+  "duplicates.selectAll.progress": "{total}개 그룹 중 {done}개 확인",
+  "duplicates.selectAll.selected": {
+    "one": "그룹 {count}개 선택됨",
+    "other": "그룹 {count}개 선택됨"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "그룹 {count}개는 선택할 수 없습니다",
+    "other": "그룹 {count}개는 선택할 수 없습니다"
+  },
+  "duplicates.selectAll.stays": "다음 사본은 남습니다",
+  "duplicates.selectAll.stopped": "중지됨: 확인한 그룹은 선택되었습니다",
+  "duplicates.why.nothing": "이동할 것이 없습니다: 다른 사본은 모두 남기거나 이동할 수 없습니다",
+  "duplicates.sheet.deletes": "휴지통 없음: 제거하면 영구 삭제됩니다",
+  "duplicates.row.toBin": "휴지통으로 이동",
+  "duplicates.block.inFolderDelete": "동일한 폴더와 함께 영구 삭제됩니다",
+  "duplicates.sheet.leadDelete": "선택한 사본은 영구 삭제됩니다(이 공유 폴더에는 휴지통이 없음). 선택을 해제하면 그 사본도 남깁니다",
+  "duplicates.sheet.leadMixed": "선택한 사본은 휴지통으로 이동하고, 휴지통이 없는 공유 폴더의 사본은 영구 삭제됩니다. 선택을 해제하면 그 사본도 남깁니다",
+  "duplicates.sheet.summaryDelete": "{total}개 중 {moves}개 영구 삭제 · {kept}개 남김",
+  "duplicates.sheet.summaryMixed": "{total}개 중 {moves}개 제거 · {kept}개 남김",
+  "duplicates.merged.leadDelete": "선택한 폴더는 영구 삭제됩니다(공유 폴더에 휴지통이 없음). 남기는 폴더는 그대로입니다",
+  "duplicates.merged.leadMixed": "선택한 폴더는 휴지통으로 이동하고, 휴지통이 없는 공유 폴더의 폴더는 영구 삭제됩니다. 남기는 폴더는 그대로입니다"
+}

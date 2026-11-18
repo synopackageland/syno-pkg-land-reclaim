@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/authorization-status.schema.json",
+  "title": "synoreclaim unsigned CGI authorization status v1",
+  "description": "Current authorization status returned by SYNO.SynoReclaim.Authorization.status. The checking state is client-side.",
+  "type": "object",
+  "properties": {
+    "command": { "const": "authorization" },
+    "schema_version": { "const": 1 },
+    "state": {
+      "enum": ["ready", "authorization_required", "not_admin", "session_expired", "unavailable"]
+    },
+    "reason": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "grant_missing",
+        "upgrade_reapproval",
+        "helper_untrusted",
+        "cli_untrusted",
+        "grant_incompatible",
+        "package_identity_changed",
+        "maintenance_task_missing",
+        "maintenance_task_mismatch",
+        "helper_health_rejected",
+        "capability_missing",
+        "not_admin",
+        "session_expired",
+        "protected_volume_unavailable",
+        "scheduler_unavailable",
+        "health_probe_timeout",
+        "btrfs_device_unavailable",
+        "service_unavailable",
+        "credential_not_ready"
+      ]
+    }
+  },
+  "required": ["command", "schema_version", "state", "reason"],
+  "anyOf": [
+    { "$ref": "#/$defs/ready" },
+    { "$ref": "#/$defs/authorization_required" },
+    { "$ref": "#/$defs/not_admin" },
+    { "$ref": "#/$defs/session_expired" },
+    { "$ref": "#/$defs/unavailable" }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "ready": {
+      "type": "object",
+      "properties": {
+        "command": { "const": "authorization" },
+        "schema_version": { "const": 1 },
+        "state": { "const": "ready" },
+        "reason": { "const": null }
+      },
+      "required": ["command", "schema_version", "state", "reason"],
+      "additionalProperties": false
+    },
+    "authorization_required": {
+      "type": "object",
+      "properties": {
+        "command": { "const": "authorization" },
+        "schema_version": { "const": 1 },
+        "state": { "const": "authorization_required" },
+        "reason": {
+          "enum": [
+            "grant_missing",
+            "upgrade_reapproval",
+            "helper_untrusted",
+            "cli_untrusted",
+            "grant_incompatible",
+            "package_identity_changed",
+            "maintenance_task_missing",
+            "maintenance_task_mismatch",
+            "helper_health_rejected",
+            "capability_missing"
+          ]
+        }
+      },
+      "required": ["command", "schema_version", "state", "reason"],
+      "additionalProperties": false
+    },
+    "not_admin": {
+      "type": "object",
+      "properties": {
+        "command": { "const": "authorization" },
+        "schema_version": { "const": 1 },
+        "state": { "const": "not_admin" },
+        "reason": { "const": "not_admin" }
+      },
+      "required": ["command", "schema_version", "state", "reason"],
+      "additionalProperties": false
+    },
+    "session_expired": {
+      "type": "object",
+      "properties": {
+        "command": { "const": "authorization" },
+        "schema_version": { "const": 1 },
+        "state": { "const": "session_expired" },
+        "reason": { "const": "session_expired" }
+      },
+      "required": ["command", "schema_version", "state", "reason"],
+      "additionalProperties": false
+    },
+    "unavailable": {
+      "type": "object",
+      "properties": {
+        "command": { "const": "authorization" },
+        "schema_version": { "const": 1 },
+        "state": { "const": "unavailable" },
+        "reason": {
+          "enum": [
+            "protected_volume_unavailable",
+            "scheduler_unavailable",
+            "health_probe_timeout",
+            "btrfs_device_unavailable",
+            "service_unavailable",
+            "credential_not_ready"
+          ]
+        }
+      },
+      "required": ["command", "schema_version", "state", "reason"],
+      "additionalProperties": false
+    }
+  }
+}

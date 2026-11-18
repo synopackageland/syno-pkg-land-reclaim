@@ -1,0 +1,250 @@
+{
+  "review.title": "Bereinigung bestätigen",
+  "review.planning": "Ausgewählte Elemente werden geprüft",
+  "review.empty": "Wählen Sie zuerst Elemente unter Erkunden aus",
+  "review.empty.title": "Nichts ausgewählt",
+  "review.disabled.cleanup": "Die Bereinigung ist auf diesem NAS ausgeschaltet",
+  "review.disabled.allow": "Bereinigung erlauben",
+  "review.disabled.allowFailed": "Bereinigung konnte nicht erlaubt werden. Erneut versuchen",
+  "review.recycle.title": "Elemente werden in den Papierkorb ihres freigegebenen Ordners verschoben",
+  "review.recycle.body": "Nichts wird endgültig gelöscht. Stellen Sie die Elemente in DSM wieder her oder leeren Sie den Papierkorb; erst danach wird der Speicher frei",
+  "review.recycle.restore": "Zum Rückgängigmachen öffnen Sie in File Station #recycle im freigegebenen Ordner, wählen die Elemente aus und dann Wiederherstellen",
+  "review.recycle.olderDsm": "DSM vor 7.2.1 hat keine Schaltfläche Wiederherstellen: Verschieben Sie die Elemente in File Station aus #recycle zurück",
+  "review.recycle.sync": "In einem Ordner, den Synology Drive, ShareSync oder Cloud Sync synchronisiert, entfernt das Verschieben die Elemente auch aus den synchronisierten Kopien",
+  "review.numbers.title": "Übersicht",
+  "review.numbers.moves": "In den Papierkorb",
+  "review.numbers.items": "Ausgewählte Elemente",
+  "review.numbers.freeLater": "Gibt nach dem Leeren etwa frei",
+  "review.numbers.about": "Über diese Werte",
+  "review.numbers.allocated": "Größen sind der Speicher, den die Elemente jetzt belegen. Das Volume erhält ihn erst nach dem Leeren des Papierkorbs zurück, und Snapshots oder gemeinsam genutzte Daten können einen Teil behalten",
+  "review.willMove": {
+    "one": "Wird in den Papierkorb verschoben: {count} Element, {bytes}; leeren Sie den Papierkorb des Ordners, um etwa {free} freizugeben",
+    "other": "Wird in den Papierkorb verschoben: {count} Elemente, {bytes}; leeren Sie den Papierkorb des Ordners, um etwa {free} freizugeben"
+  },
+  "review.willMoveOnly": {
+    "one": "Wird in den Papierkorb verschoben: {count} Element, {bytes}",
+    "other": "Wird in den Papierkorb verschoben: {count} Elemente, {bytes}"
+  },
+  "review.confirmCheck": "Ich verstehe, dass die Elemente in den Papierkorb verschoben werden und der Speicher erst nach dem Leeren frei wird",
+  "review.confirmMove": {
+    "one": "{count} Element in den Papierkorb verschieben",
+    "other": "{count} Elemente in den Papierkorb verschieben"
+  },
+  "review.share.title": "Freigegebener Ordner {share}",
+  "review.share.size": {
+    "one": "{count} Element, {bytes}",
+    "other": "{count} Elemente, {bytes}"
+  },
+  "review.share.adminOnly": "Nur Administratoren können diese Elemente im Papierkorb sehen und wiederherstellen",
+  "review.share.everyone": "Alle, die {share} öffnen können, können diese Elemente in seinem Papierkorb sehen und wiederherstellen",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "Einige Elemente liegen in Synology Drive-Ordnern: Computer, die diese Ordner synchronisieren, verlieren sie ebenfalls",
+  "review.recheck": "Erneut prüfen",
+  "review.rescan.open": "Erneut scannen",
+  "review.dropChanged": "Aus Liste entfernen",
+  "review.refusal.cleanupDisabled": "Die Bereinigung ist auf diesem NAS ausgeschaltet",
+  "review.refusal.busy": "Ein anderer Scan oder eine Bereinigung nutzt dieses Volume. Prüfen Sie danach erneut",
+  "review.refusal.noReport": "Scannen Sie zuerst dieses Volume",
+  "review.refusal.targetChanged": "Seit dem letzten Scan geändert. Erneut scannen oder aus der Liste entfernen",
+  "review.refusal.changed": "Der Plan ist abgelaufen oder passt nicht mehr. Prüfen Sie erneut, bevor Sie fortfahren",
+  "review.refusal.inRecycleBin": "Bereits in einem Papierkorb. Syno Reclaim entfernt nie etwas aus einem Papierkorb; leeren Sie ihn in DSM",
+  "review.refusal.boundary": "Ein Btrfs-Subvolume oder auf einem anderen Volume. Entfernen Sie es und wählen Sie stattdessen die Elemente darin",
+  "review.refusal.outsideRoots": "Außerhalb der Ordner, die die Bereinigung ändern darf. Aus der Liste entfernen",
+  "review.refusal.recycleBinUnavailable": "Der Papierkorbdienst von DSM ist gerade nicht verfügbar, daher wurde nichts verschoben. Versuchen Sie es später erneut",
+  "review.refusal.untrustedState": "Bereinigungsdaten haben eine Sicherheitsprüfung nicht bestanden, daher wurde nichts verschoben. Laden Sie unter Einstellungen > Diagnose ein Support-Paket herunter und wenden Sie sich an den Support",
+  "review.refusal.ioError": "Ein Lese- oder Schreibfehler hat die Bereinigung gestoppt. Laufwerke im Speicher-Manager prüfen",
+  "review.refusal.duplicatesStale": "Die Duplikatergebnisse sind älter als der letzte Scan. Duplikate öffnen, erneut analysieren und neu auswählen",
+  "review.refusal.duplicatesUnknownGroup": "Eine ausgewählte Duplikatgruppe existiert nicht mehr. Duplikate öffnen und neu auswählen",
+  "review.refusal.keeperChanged": "Eine zu behaltende Kopie hat sich geändert oder fehlt, daher wurde nichts verschoben. Scannen Sie erneut, suchen Sie erneut nach Duplikaten und wählen Sie neu",
+  "review.refusal.keeperRemoved": "Zusammen würden die ausgewählten Duplikate von einer Datei keine Kopie übrig lassen, daher wurde nichts verschoben. Entfernen Sie eine Gruppe aus der Liste oder behalten Sie eine weitere Kopie",
+  "review.refusal.keeperConflict": "Eine ausgewählte Gruppe würde eine Kopie entfernen, die Sie in einer anderen Gruppe behalten wollten, daher wurde nichts verschoben. Entfernen Sie eine der Gruppen aus der Liste oder behalten Sie eine andere Kopie",
+  "review.refusal.keeperConflictNamed": "{copy} soll in „{kept}“ behalten werden, aber das Entfernen von „{removing}“ würde sie entfernen, daher wurde nichts verschoben. Entfernen Sie eine der beiden Gruppen aus der Liste oder behalten Sie eine andere Kopie",
+  "review.refusal.duplicatesNothing": "Die ausgewählten Duplikate verschieben nichts mehr. Entfernen Sie sie aus der Liste",
+  "review.refusal.other": "Die Bereinigung wurde abgelehnt. Prüfen Sie die Auswahl erneut",
+  "review.refusal.selectedItem": "Ein ausgewähltes Element",
+  "review.applying.title": "Wird in den Papierkorb verschoben",
+  "review.applying.count": "{done} / {total} Einträge",
+  "review.applying.indeterminate": "Warten auf Fortschritt",
+  "review.applying.pollError": "Fortschritt gerade nicht lesbar. Es wird weiter geprüft; die Bereinigung wird nicht erneut gesendet",
+  "review.applying.cancel": "Bereinigung abbrechen",
+  "review.applying.cancelling": "Wird abgebrochen",
+  "review.applying.cancelError": "Abbruch nicht möglich; die Bereinigung läuft eventuell weiter",
+  "review.result.title": "Bereinigungsergebnis",
+  "review.result.completeTitle": "In den Papierkorb verschoben",
+  "review.result.cancelledTitle": "Bereinigung abgebrochen",
+  "review.result.unableToStartTitle": "Konnte nicht gestartet werden",
+  "review.result.partialTitle": "Einige Elemente sind an ihrem Ort geblieben",
+  "review.result.moved": "In den Papierkorb verschoben: {bytes}; der Speicher wird nach dem Leeren frei",
+  "review.result.empty": "Leeren Sie ihn unter Systemsteuerung > Gemeinsamer Ordner > Aktion > Papierkorb leeren oder mit einer Papierkorb-Aufgabe im Aufgabenplaner",
+  "review.result.bin": {
+    "one": "Papierkorb von {share}: {count} Element",
+    "other": "Papierkorb von {share}: {count} Elemente"
+  },
+  "review.result.leftTitle": "Noch an ihrem Ort",
+  "review.result.detailsUnavailable": "Bereinigung beendet; Details nicht verfügbar",
+  "review.result.lastKnown": "Zuletzt erfasst: {counts}",
+  "review.outcome.partial": "Teilweise verschoben",
+  "review.outcome.changed": "Geändert, nicht angetastet",
+  "review.outcome.failed": "Nicht verschoben",
+  "review.applyError.noRetry": "Prüfen Sie den Auftragsstatus, bevor Sie eine weitere Bereinigung starten; dieser Bildschirm sendet sie nicht erneut",
+  "review.count.moved": {
+    "one": "{count} verschoben",
+    "other": "{count} verschoben"
+  },
+  "review.count.absent": "{count} schon weg",
+  "review.count.partial": {
+    "one": "{count} teilweise verschoben",
+    "other": "{count} teilweise verschoben"
+  },
+  "review.count.failed": {
+    "one": "{count} nicht verschoben",
+    "other": "{count} nicht verschoben"
+  },
+  "review.count.changed": "{count} geändert",
+  "review.duplicates.title": "Duplikate",
+  "review.duplicates.line": {
+    "one": "Verschiebt {count} in den Papierkorb · behält {keeps}",
+    "other": "Verschiebt {count} in den Papierkorb · behält {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "one": "Verschiebt {count} in den Papierkorb · behält {keeps} (bevorzugte Freigabe)",
+    "other": "Verschiebt {count} in den Papierkorb · behält {keeps} (bevorzugte Freigabe)"
+  },
+  "review.duplicates.partialLine": {
+    "one": "Verschiebt {items} identische Elemente aus {count} Ordner in den Papierkorb · behält {keeps}",
+    "other": "Verschiebt je {items} identische Elemente aus {count} Ordnern in den Papierkorb · behält {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "one": "Löscht {count} endgültig · behält {keeps}",
+    "other": "Löscht {count} endgültig · behält {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "one": "Löscht {count} endgültig · behält {keeps} (bevorzugte Freigabe)",
+    "other": "Löscht {count} endgültig · behält {keeps} (bevorzugte Freigabe)"
+  },
+  "review.duplicates.partialLineDelete": {
+    "one": "Löscht {items} identische Elemente aus {count} Ordner endgültig · behält {keeps}",
+    "other": "Löscht je {items} identische Elemente aus {count} Ordnern endgültig · behält {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "one": "Entfernt {count}: in den Papierkorb oder, wo es keinen gibt, endgültig · behält {keeps}",
+    "other": "Entfernt {count}: in den Papierkorb oder, wo es keinen gibt, endgültig · behält {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "one": "Entfernt {count}: in den Papierkorb oder, wo es keinen gibt, endgültig · behält {keeps} (bevorzugte Freigabe)",
+    "other": "Entfernt {count}: in den Papierkorb oder, wo es keinen gibt, endgültig · behält {keeps} (bevorzugte Freigabe)"
+  },
+  "review.duplicates.partialLineMixed": {
+    "one": "Entfernt {items} identische Elemente aus {count} Ordner: in den Papierkorb oder, wo es keinen gibt, endgültig · behält {keeps}",
+    "other": "Entfernt je {items} identische Elemente aus {count} Ordnern: in den Papierkorb oder, wo es keinen gibt, endgültig · behält {keeps}"
+  },
+  "review.duplicates.partialNote": "Aus teilweise gleichen Ordnern werden nur die gleichen Elemente entfernt. Die Ordner selbst und die abweichenden Elemente, etwa .git, bleiben erhalten",
+  "review.duplicates.keptChecked": {
+    "one": "{count} behaltene Kopie wird direkt vor dem Entfernen erneut geprüft",
+    "other": "{count} behaltene Kopien werden direkt vor dem Entfernen erneut geprüft"
+  },
+  "review.duplicates.freesLater": "Wird später frei: Snapshots halten noch {size} dieser Kopien",
+  "review.duplicates.clear": "Duplikate aus der Liste entfernen",
+  "review.jobState.queued": "In Warteschlange",
+  "review.jobState.running": "Wird ausgeführt",
+  "review.jobState.pausing": "Wird angehalten",
+  "review.jobState.cancelling": "Wird abgebrochen",
+  "review.jobState.paused": "Angehalten",
+  "review.jobState.completed": "Abgeschlossen",
+  "review.jobState.partial": "Teilweise abgeschlossen",
+  "review.jobState.failed": "Fehlgeschlagen",
+  "review.jobState.cancelled": "Abgebrochen",
+  "review.jobState.interrupted": "Unterbrochen",
+  "review.apiError.no_permission": "Ihr DSM-Konto hat keine Berechtigung, eine Bereinigung zu planen",
+  "review.apiError.session_timeout": "Ihre DSM-Sitzung ist abgelaufen. Melden Sie sich erneut an und öffnen Sie diese Prüfung wieder",
+  "review.apiError.reload": "Der Syno Reclaim-Dienst hat sich geändert. Laden Sie das DSM-Fenster neu und öffnen Sie diese Prüfung wieder",
+  "review.apiError.backend_unavailable": "Syno Reclaim ist nicht verfügbar. Prüfen Sie das Paket-Zentrum und versuchen Sie es später erneut",
+  "review.apiError.auth_unavailable": "DSM konnte Ihre Anmeldung nicht prüfen. Versuchen Sie es in Kürze erneut",
+  "review.apiError.invalid_param": "Die Bereinigungsanforderung wurde nicht akzeptiert. Öffnen Sie die Prüfung erneut und prüfen Sie die Auswahl",
+  "review.apiError.busy": "Ein anderer Vorgang verwendet dieses Volume. Versuchen Sie es nach dessen Ende erneut",
+  "review.apiError.backend_busy": "Syno Reclaim bearbeitet andere Anfragen. Bitte versuchen Sie es gleich erneut",
+  "review.apiError.cli_error": "Syno Reclaim konnte die Bereinigungsanforderung nicht abschließen",
+  "review.apiError.timeout": "Die Anforderung hat das Zeitlimit überschritten. Prüfen Sie den Auftragsstatus, bevor Sie eine weitere Bereinigung starten",
+  "review.apiError.exec_failed": "Syno Reclaim konnte die Bereinigungsanforderung nicht starten",
+  "review.apiError.fixture_missing": "Diese Vorschau enthält nicht die angeforderte Bereinigungsantwort",
+  "review.apiError.unknown": "Beim Prüfen der Bereinigung ist ein unerwarteter Fehler aufgetreten",
+  "review.recycle.time": "Große Verschiebungen brauchen Zeit: DSM verschiebt etwa einige tausend Dateien pro Sekunde, und der Speicher wird erst nach dem Leeren des Papierkorbs frei",
+  "review.applying.calls": {
+    "one": "{count} Verschiebung durch DSM erledigt",
+    "other": "{count} Verschiebungen durch DSM erledigt"
+  },
+  "review.duplicates.scanAge": "Diese Ergebnisse stammen vom Scan vom {time}. Dateien, die seitdem in den zu verschiebenden Kopien hinzugefügt oder geändert wurden, kommen ebenfalls in den Papierkorb und lassen sich dort wiederherstellen. Wenn sich diese Ordner geändert haben könnten, scannen Sie zuerst erneut",
+  "review.duplicates.scanAgeDelete": "Diese Ergebnisse stammen vom Scan vom {time}. Dateien, die seitdem in den zu entfernenden Kopien hinzugefügt oder geändert wurden, werden mit entfernt: in den Papierkorb oder, wo es keinen gibt, endgültig. Wenn sich diese Ordner geändert haben könnten, scannen Sie zuerst erneut",
+  "review.planning.count": "Ausgewählte Elemente werden geprüft: {done} / {total}",
+  "review.more": "Und {count} weitere",
+  "review.protected.volume": "Das ist das Volume selbst",
+  "review.protected.system": "Eine DSM-Systemdatei",
+  "review.protected.recycle_bin": "Bereits in einem Papierkorb: in DSM leeren",
+  "review.protected.package": "Daten eines DSM-Pakets: Speicher in diesem Paket freigeben",
+  "review.protected.packageNamed": "Daten von {package}: Speicher in {package} freigeben",
+  "review.protected.dsm_folder": "Ein DSM-Systemordner",
+  "review.protected.share_root": "Ein Freigabeordner selbst: Elemente darin auswählen",
+  "review.protected.home": "Ein Benutzer-Home: Elemente darin auswählen",
+  "review.protected.outside_share": "Nicht in einem DSM-Freigabeordner: Die Bereinigung verschiebt nur in den Papierkorb eines Freigabeordners",
+  "review.protected.other": "Geschütztes Element",
+  "review.refusal.cancelled": "Prüfung angehalten",
+  "review.planning.stop": "Prüfung anhalten",
+  "review.planning.kept": "Behaltene Kopien werden geprüft: {done} / {total}",
+  "review.confirmDelete": {
+    "one": "{count} Element endgültig löschen",
+    "other": "{count} Elemente endgültig löschen"
+  },
+  "review.confirmMoveDelete": {
+    "one": "{moves} verschieben, {deletes} endgültig löschen",
+    "other": "{moves} verschieben, {deletes} endgültig löschen"
+  },
+  "review.confirmCheckDelete": {
+    "one": "Ich verstehe, dass {deletes} Element endgültig gelöscht wird und nicht wiederherstellbar ist; die übrigen kommen in den Papierkorb",
+    "other": "Ich verstehe, dass {deletes} Elemente endgültig gelöscht werden und nicht wiederherstellbar sind; die übrigen kommen in den Papierkorb"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "one": "Ich verstehe, dass {deletes} Element endgültig gelöscht wird und nicht wiederherstellbar ist",
+    "other": "Ich verstehe, dass {deletes} Elemente endgültig gelöscht werden und nicht wiederherstellbar sind"
+  },
+  "review.delete.title": {
+    "one": "{deletes} Element wird endgültig gelöscht",
+    "other": "{deletes} Elemente werden endgültig gelöscht"
+  },
+  "review.delete.body": "Kein Papierkorb kann sie aufnehmen: Sie liegen in keinem freigegebenen DSM-Ordner oder in einem, dessen Papierkorb aus ist. Reclaim löscht sie; sie lassen sich nicht wiederherstellen",
+  "review.delete.folder": "Ordner {share} (kein freigegebener Ordner)",
+  "review.delete.share": "Nicht in einem freigegebenen DSM-Ordner: die Elemente in {share} werden endgültig gelöscht",
+  "review.delete.binOff": "{share} hat keinen aktivierten Papierkorb: Elemente hier werden endgültig gelöscht",
+  "review.delete.binOffEnable": "Um sie wiederherstellen zu können, aktivieren Sie zuerst den Papierkorb und wählen Sie dann Erneut prüfen: Dann werden sie in den Papierkorb verschoben",
+  "review.numbers.removes": "Wird entfernt",
+  "review.count.deleted": {
+    "one": "{count} endgültig gelöscht",
+    "other": "{count} endgültig gelöscht"
+  },
+  "review.result.deleted": {
+    "one": "Endgültig gelöscht: {deleted} Element, {bytes}",
+    "other": "Endgültig gelöscht: {deleted} Elemente, {bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "Dieser Plan löscht Elemente ohne Papierkorb endgültig: bestätigen Sie das, um fortzufahren",
+  "review.applying.titleDelete": "Wird endgültig gelöscht",
+  "review.applying.titleMixed": "Wird in den Papierkorb verschoben und endgültig gelöscht",
+  "review.result.deletedTitle": "Endgültig gelöscht",
+  "review.result.cleanedTitle": "Bereinigung abgeschlossen",
+  "review.result.cancelledCounts": {
+    "one": "Abgebrochen: {done} erledigt, {left} Element nicht bearbeitet und unverändert",
+    "other": "Abgebrochen: {done} erledigt, {left} Elemente nicht bearbeitet und unverändert"
+  },
+  "review.result.cancelTooLate": "Der Abbruch kam während des letzten Elements, daher wurde es fertig",
+  "review.numbers.frees": "Gibt etwa frei",
+  "review.numbers.allocatedDelete": "Größen sind der Speicher, den die Elemente jetzt belegen. Das Löschen gibt ihn dem Volume zurück, aber Snapshots oder gemeinsam genutzte Daten können einen Teil behalten",
+  "review.recycle.syncDelete": "In einem Ordner, den Synology Drive, ShareSync oder Cloud Sync synchronisiert, entfernt das Löschen die Elemente auch aus den synchronisierten Kopien",
+  "review.refusal.notFound": "Dieses Element ist nicht mehr vorhanden. Entfernen Sie es aus der Bereinigungsliste",
+  "review.recycle.symlinks": {
+    "one": "{symlinks} Verknüpfung (Symlink) darunter behält der DSM-Papierkorb nicht; sie kommt auch beim Wiederherstellen nicht zurück",
+    "other": "{symlinks} Verknüpfungen (Symlinks) darunter behält der DSM-Papierkorb nicht; sie kommen auch beim Wiederherstellen nicht zurück"
+  },
+  "review.applying.checkingKept": {
+    "one": "Behaltene Kopie wird geprüft",
+    "other": "{kept} behaltene Kopien werden geprüft"
+  },
+  "review.applying.finishingCurrent": "Das aktuelle Element wird noch abgeschlossen, dann wird gestoppt; der Rest bleibt, wo er ist"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/session.schema.json",
+  "title": "synoreclaim webapi session.get v1",
+  "description": "What `synoreclaim webapi session.get` prints: this binary (envelope tool_version), the DSM user the shim ran the call for, and the cleanup switches of the package's config.json (both false when it is missing or not a private file of the package user).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "session"
+        },
+        "requested_by": {
+          "type": "string"
+        },
+        "cleanup_enabled": {
+          "type": "boolean"
+        },
+        "mutations_disabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "command",
+        "requested_by",
+        "cleanup_enabled",
+        "mutations_disabled"
+      ]
+    }
+  ]
+}

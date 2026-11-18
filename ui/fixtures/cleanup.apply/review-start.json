@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "command": "detach",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:00:00Z",
+  "completion": "complete",
+  "job_id": "cleanup-18d9cccbc2d8b089-12701",
+  "errors": [],
+  "warnings": [],
+  "launcher": "none",
+  "run": [
+    "cleanup",
+    "apply",
+    "--yes",
+    "--json",
+    "--requested-by=fixture-admin",
+    "--job-id=cleanup-18d9cccbc2d8b089-12701",
+    "--",
+    "/fixture/state/cleanup/plans/cleanup-18d9cccbc2d8b089-31e7a5.json"
+  ],
+  "result": { "path": "/fixture/state/jobs/cleanup-18d9cccbc2d8b089-12701/result.json" },
+  "log": null
+}

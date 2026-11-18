@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "檢查並清理",
+  "rootfs.card.cleanNow": "立即清理",
+  "rootfs.card.free": "可用",
+  "rootfs.level.full": "已滿",
+  "rootfs.level.full.body": "DSM 可能無法更新，也可能無法儲存設定或記錄。請立即清理",
+  "rootfs.level.getting_full": "快滿了",
+  "rootfs.level.getting_full.body": "建議在下次 DSM 更新前先清理",
+  "rootfs.name": "系統磁區"
+}

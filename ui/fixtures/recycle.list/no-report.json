@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "command": "recycle",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T10:58:31Z",
+  "completion": "failed",
+  "job_id": "20260929T105831Z-a1b2c",
+  "errors": [
+    {
+      "path": "/volume1",
+      "code": "no_report",
+      "message": "no report covers /volume1"
+    }
+  ],
+  "warnings": [],
+  "scan_hints": [
+    {
+      "path": "/volume1",
+      "command": "synoreclaim scan /volume1",
+      "last_scan": null
+    }
+  ],
+  "target": {
+    "path": "/volume1"
+  },
+  "report_info": null,
+  "shares": [],
+  "moved_by_reclaim": [],
+  "scans": []
+}

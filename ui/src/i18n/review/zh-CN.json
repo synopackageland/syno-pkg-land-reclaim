@@ -1,0 +1,221 @@
+{
+  "review.title": "确认清理",
+  "review.planning": "正在检查所选项目",
+  "review.empty": "请先在“浏览”中选择项目",
+  "review.empty.title": "未选择任何项目",
+  "review.disabled.cleanup": "此 NAS 已关闭清理功能",
+  "review.disabled.allow": "允许清理",
+  "review.disabled.allowFailed": "无法允许清理，请重试",
+  "review.recycle.title": "项目会移到所属共享文件夹的回收站",
+  "review.recycle.body": "不会永久删除。请在 DSM 还原项目或清空回收站；清空后才会释放空间",
+  "review.recycle.restore": "如需撤销，请在 File Station 打开该共享文件夹的 #recycle，选择项目后选择“还原”",
+  "review.recycle.olderDsm": "DSM 7.2.1 之前没有“还原”按钮：请在 File Station 将项目从 #recycle 移回原处",
+  "review.recycle.sync": "如果文件夹由 Synology Drive、ShareSync 或 Cloud Sync 同步，移动后同步端的项目也会被移除",
+  "review.numbers.title": "清理摘要",
+  "review.numbers.moves": "移到回收站",
+  "review.numbers.items": "所选项目",
+  "review.numbers.freeLater": "清空后约可释放",
+  "review.numbers.about": "关于这些数字",
+  "review.numbers.allocated": "大小为项目当前占用的空间。要等回收站清空后存储空间才会收回，快照或共享数据仍可能保留部分空间",
+  "review.willMove": {
+    "other": "将移到回收站：{count} 个项目，{bytes}；清空该共享文件夹的回收站后约可释放 {free}"
+  },
+  "review.willMoveOnly": {
+    "other": "将移到回收站：{count} 个项目，{bytes}"
+  },
+  "review.confirmCheck": "我了解项目会移到回收站，清空后才会释放空间",
+  "review.confirmMove": {
+    "other": "将 {count} 个项目移到回收站"
+  },
+  "review.share.title": "共享文件夹 {share}",
+  "review.share.size": {
+    "other": "{count} 个项目，{bytes}"
+  },
+  "review.share.adminOnly": "只有管理员能在回收站看到并还原这些项目",
+  "review.share.everyone": "所有能打开 {share} 的用户都能在其回收站看到并还原这些项目",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "部分项目位于 Synology Drive 文件夹：同步这些文件夹的电脑也会失去它们",
+  "review.recheck": "重新检查",
+  "review.rescan.open": "重新扫描",
+  "review.dropChanged": "从清单移除",
+  "review.refusal.cleanupDisabled": "此 NAS 已关闭清理功能",
+  "review.refusal.busy": "另一个扫描或清理正在使用此存储空间，完成后再重新检查",
+  "review.refusal.noReport": "请先扫描此存储空间",
+  "review.refusal.targetChanged": "上次扫描后已变更。请重新扫描，或从清单移除",
+  "review.refusal.changed": "清理计划已过期或不再匹配，请先重新检查",
+  "review.refusal.inRecycleBin": "已在回收站中。Syno Reclaim 不会从回收站移除任何项目，请在 DSM 清空",
+  "review.refusal.boundary": "这是 Btrfs 子卷或位于其他存储空间。请移除后改选其中的项目",
+  "review.refusal.outsideRoots": "不在清理可变更的文件夹内，请从清单移除",
+  "review.refusal.recycleBinUnavailable": "DSM 的回收站服务当前不可用，没有移动任何项目。请稍后再试",
+  "review.refusal.untrustedState": "清理记录未通过安全检查，没有移动任何项目。请在“设置 > 诊断”下载支持包并联系支持",
+  "review.refusal.ioError": "读写错误使清理停止。请在存储管理器中检查硬盘",
+  "review.refusal.duplicatesStale": "重复项的结果早于最近一次扫描。请打开“重复内容”重新分析，再重新选择",
+  "review.refusal.duplicatesUnknownGroup": "所选的重复项组已不存在。请打开“重复内容”重新选择",
+  "review.refusal.keeperChanged": "要保留的副本已更改或丢失，没有移动任何项目。请重新扫描并再次查找重复文件后重选",
+  "review.refusal.keeperRemoved": "所选重复项合起来会让部分文件没有任何副本，没有移动任何项目。请从列表移除一组，或多保留一份副本",
+  "review.refusal.keeperConflict": "所选的一组会删除你在另一组指定保留的副本，没有移动任何项目。请从列表移除其中一组，或改为保留其他副本",
+  "review.refusal.keeperConflictNamed": "{copy} 是你在“{kept}”指定保留的副本，但移除“{removing}”会删除它，没有移动任何项目。请从列表移除这两组中的一组，或改为保留其他副本",
+  "review.refusal.duplicatesNothing": "所选重复项已不会移动任何文件。请从列表移除",
+  "review.refusal.other": "清理被拒绝，请重新检查所选项目",
+  "review.refusal.selectedItem": "某个所选项目",
+  "review.applying.title": "正在移到回收站",
+  "review.applying.count": "{done} / {total} 个项目",
+  "review.applying.indeterminate": "等待进度",
+  "review.applying.pollError": "暂时无法读取进度，仍会持续检查；不会重复提交清理",
+  "review.applying.cancel": "取消清理",
+  "review.applying.cancelling": "正在取消",
+  "review.applying.cancelError": "无法取消，清理可能仍在进行",
+  "review.result.title": "清理结果",
+  "review.result.completeTitle": "已移到回收站",
+  "review.result.cancelledTitle": "已取消清理",
+  "review.result.unableToStartTitle": "无法开始",
+  "review.result.partialTitle": "部分项目留在原处",
+  "review.result.moved": "已移到回收站：{bytes}；清空后才会释放空间",
+  "review.result.empty": "请在“控制面板 > 共享文件夹 > 操作 > 清空回收站”清空，或在“任务计划”设置回收站任务",
+  "review.result.bin": {
+    "other": "{share} 的回收站：{count} 个项目"
+  },
+  "review.result.leftTitle": "仍在原处",
+  "review.result.detailsUnavailable": "清理已结束，无法获取详细结果",
+  "review.result.lastKnown": "最后记录：{counts}",
+  "review.outcome.partial": "部分移动",
+  "review.outcome.changed": "已更改，未处理",
+  "review.outcome.failed": "未移动",
+  "review.applyError.noRetry": "开始另一次清理前请先确认任务状态；此界面不会重复提交",
+  "review.count.moved": {
+    "other": "已移动 {count} 个"
+  },
+  "review.count.absent": "{count} 已不存在",
+  "review.count.partial": {
+    "other": "部分移动 {count} 个"
+  },
+  "review.count.failed": {
+    "other": "未移动 {count} 个"
+  },
+  "review.count.changed": "已变更 {count}",
+  "review.duplicates.title": "重复内容",
+  "review.duplicates.line": {
+    "other": "移动 {count} 份到回收站 · 保留 {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "other": "移动 {count} 份到回收站 · 保留 {keeps}（首选共享文件夹）"
+  },
+  "review.duplicates.partialLine": {
+    "other": "将 {count} 个文件夹中各 {items} 个相同项目移到回收站 · 保留 {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "other": "永久删除 {count} 份 · 保留 {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "other": "永久删除 {count} 份 · 保留 {keeps}（首选共享文件夹）"
+  },
+  "review.duplicates.partialLineDelete": {
+    "other": "将 {count} 个文件夹中各 {items} 个相同项目永久删除 · 保留 {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "other": "移除 {count} 份：有回收站的移到回收站，没有的永久删除 · 保留 {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "other": "移除 {count} 份：有回收站的移到回收站，没有的永久删除 · 保留 {keeps}（首选共享文件夹）"
+  },
+  "review.duplicates.partialLineMixed": {
+    "other": "将 {count} 个文件夹中各 {items} 个相同项目移除：有回收站的移到回收站，没有的永久删除 · 保留 {keeps}"
+  },
+  "review.duplicates.partialNote": "部分相同的文件夹只会删除相同的项目。文件夹本身和不同的项目（例如 .git）都会保留",
+  "review.duplicates.keptChecked": {
+    "other": "清理前会再次检查 {count} 份保留的副本"
+  },
+  "review.duplicates.freesLater": "稍后才释放：快照仍保留这些副本中的 {size}",
+  "review.duplicates.clear": "从清单中移除重复项",
+  "review.jobState.queued": "排队中",
+  "review.jobState.running": "运行中",
+  "review.jobState.pausing": "正在暂停",
+  "review.jobState.cancelling": "正在取消",
+  "review.jobState.paused": "已暂停",
+  "review.jobState.completed": "已完成",
+  "review.jobState.partial": "部分完成",
+  "review.jobState.failed": "失败",
+  "review.jobState.cancelled": "已取消",
+  "review.jobState.interrupted": "已中断",
+  "review.apiError.no_permission": "您的 DSM 账户没有规划清理的权限",
+  "review.apiError.session_timeout": "您的 DSM 会话已过期。请重新登录并再次打开此查看",
+  "review.apiError.reload": "Syno Reclaim 服务已更改。请重新加载 DSM 窗口并再次打开此查看",
+  "review.apiError.backend_unavailable": "Syno Reclaim 不可用。请检查套件中心并稍后重试",
+  "review.apiError.auth_unavailable": "DSM 无法确认你的登录状态。请稍后重试",
+  "review.apiError.invalid_param": "清理请求未被接受。请重新打开查看并检查选择",
+  "review.apiError.busy": "另一个操作正在使用此存储空间。请在结束后重试",
+  "review.apiError.backend_busy": "Syno Reclaim 正在处理其他请求，请稍后重试",
+  "review.apiError.cli_error": "Syno Reclaim 无法完成清理请求",
+  "review.apiError.timeout": "请求已超时。请在开始另一次清理前检查作业状态",
+  "review.apiError.exec_failed": "Syno Reclaim 无法启动清理请求",
+  "review.apiError.fixture_missing": "此预览不包含所要求的清理响应",
+  "review.apiError.unknown": "检查清理时发生意外错误",
+  "review.recycle.time": "大量移动需要时间：DSM 每秒约可移动数千个文件，且要清空回收站后才会释放空间",
+  "review.applying.calls": {
+    "other": "DSM 已完成 {count} 次移动"
+  },
+  "review.duplicates.scanAge": "这些结果来自 {time} 的扫描。之后在要移动的副本中新增或更改的文件也会一起移到回收站，可从那里还原。如果这些文件夹可能已更改，请先重新扫描",
+  "review.duplicates.scanAgeDelete": "这些结果来自 {time} 的扫描。之后在要移除的副本中新增或更改的文件也会一起移除：有回收站的移到回收站，没有的永久删除。如果这些文件夹可能已更改，请先重新扫描",
+  "review.planning.count": "正在检查所选项目：{done} / {total}",
+  "review.more": "还有 {count} 个",
+  "review.protected.volume": "这是存储空间本身",
+  "review.protected.system": "DSM 系统文件",
+  "review.protected.recycle_bin": "已在回收站中，请在 DSM 清空",
+  "review.protected.package": "属于 DSM 套件的数据，请在该套件中释放空间",
+  "review.protected.packageNamed": "属于 {package} 的数据，请在 {package} 中释放空间",
+  "review.protected.dsm_folder": "DSM 系统文件夹",
+  "review.protected.share_root": "这是共享文件夹本身，请改选其中的项目",
+  "review.protected.home": "这是用户主目录，请改选其中的项目",
+  "review.protected.outside_share": "不在 DSM 共享文件夹内：清理只会把项目移到共享文件夹的回收站",
+  "review.protected.other": "受保护的项目",
+  "review.refusal.cancelled": "已停止检查",
+  "review.planning.stop": "停止检查",
+  "review.planning.kept": "正在检查保留的副本：{done} / {total}",
+  "review.confirmDelete": {
+    "other": "永久删除 {count} 个项目"
+  },
+  "review.confirmMoveDelete": {
+    "other": "移动 {moves} 个、永久删除 {deletes} 个"
+  },
+  "review.confirmCheckDelete": {
+    "other": "我了解 {deletes} 个项目会永久删除、无法恢复；其他项目会移到回收站"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "other": "我了解 {deletes} 个项目会永久删除、无法恢复"
+  },
+  "review.delete.title": {
+    "other": "{deletes} 个项目会永久删除"
+  },
+  "review.delete.body": "没有回收站可收：它们不在 DSM 共享文件夹内，或所在的共享文件夹没有启用回收站。Reclaim 会直接删除，无法恢复",
+  "review.delete.folder": "文件夹 {share}（不是共享文件夹）",
+  "review.delete.share": "不在 DSM 共享文件夹内：{share} 中的项目会永久删除",
+  "review.delete.binOff": "{share} 没有启用回收站：这里的项目会永久删除",
+  "review.delete.binOffEnable": "如需能够恢复，请先启用回收站，再选择“重新检查”，这些项目就会改为移到回收站",
+  "review.numbers.removes": "会移除",
+  "review.count.deleted": {
+    "other": "永久删除 {count} 个"
+  },
+  "review.result.deleted": {
+    "other": "已永久删除 {deleted} 个项目，{bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "此计划会永久删除没有回收站的项目，请先确认再继续",
+  "review.applying.titleDelete": "正在永久删除",
+  "review.applying.titleMixed": "正在移到回收站并永久删除",
+  "review.result.deletedTitle": "已永久删除",
+  "review.result.cleanedTitle": "清理完成",
+  "review.result.cancelledCounts": {
+    "other": "已取消：已处理 {done} 个，{left} 个未处理，保持原状"
+  },
+  "review.result.cancelTooLate": "按下取消时正在处理最后一个项目，因此它仍已完成",
+  "review.numbers.frees": "约可释放",
+  "review.numbers.allocatedDelete": "大小为项目当前占用的空间。永久删除后存储空间即可收回，但快照或共享数据仍可能保留部分空间",
+  "review.recycle.syncDelete": "如果文件夹由 Synology Drive、ShareSync 或 Cloud Sync 同步，删除后同步端的项目也会被移除",
+  "review.refusal.notFound": "这个项目已经不在了，请将它从清理列表移除",
+  "review.recycle.symlinks": {
+    "other": "其中 {symlinks} 个快捷方式（symlink）DSM 回收站不会保留，还原后也不会回来"
+  },
+  "review.applying.checkingKept": {
+    "other": "正在确认 {kept} 份保留的副本"
+  },
+  "review.applying.finishingCurrent": "正在完成当前项目，完成后停止；其余项目保持原状"
+}

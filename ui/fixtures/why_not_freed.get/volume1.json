@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "command": "why-not-freed",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:37:11Z",
+  "completion": "partial",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 425,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "filesystem": {
+        "uuid": "f0000000-0000-4000-8000-00000000009a",
+        "mount": {
+          "path": "/volume1"
+        },
+        "kind": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "free_bytes": 895725961216,
+      "reasons": [
+        {
+          "code": "pending_subvolume_cleanup",
+          "count": 0,
+          "bytes": 0,
+          "appeared_after_report": 0,
+          "cleaned_since_report": 0,
+          "lower_bound": true,
+          "since_not_measured": false,
+          "unknown": false,
+          "action": {
+            "kind": "wait",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": null
+          }
+        },
+        {
+          "code": "held_by_snapshots",
+          "bytes": 24576,
+          "multi_share_bytes": 0,
+          "items": [
+            {
+              "subvolume_id": 502,
+              "share": "entry0001",
+              "bytes": 20480,
+              "snapshots": 2,
+              "newest_snapshot_otime": 1770966084,
+              "manage_in": "Snapshot Replication > Snapshots",
+              "manage_in_id": "snapshot_replication",
+              "files": {
+                "complete": true,
+                "count": 1,
+                "files": [
+                  {
+                    "snapshot_id": 507,
+                    "snapshot": {
+                      "path": "name0010"
+                    },
+                    "ino": 271,
+                    "path": {
+                      "path": "name0009"
+                    },
+                    "live_path": {
+                      "path": "/volume1/share40/entry0001/entry0002/entry0003/entry0004"
+                    },
+                    "in_live": true,
+                    "bytes": 20480,
+                    "unknown_bytes": 0
+                  }
+                ]
+              }
+            },
+            {
+              "subvolume_id": 263,
+              "share": "entry0005",
+              "bytes": 4096,
+              "snapshots": 1,
+              "newest_snapshot_otime": 1775703382,
+              "manage_in": "Snapshot Replication > Snapshots",
+              "manage_in_id": "snapshot_replication",
+              "files": {
+                "complete": true,
+                "count": 1,
+                "files": [
+                  {
+                    "snapshot_id": 542,
+                    "snapshot": {
+                      "path": "name0014"
+                    },
+                    "ino": 259,
+                    "path": {
+                      "path": "entry0006"
+                    },
+                    "live_path": {
+                      "path": "/volume1/share40/entry0005/entry0006"
+                    },
+                    "in_live": false,
+                    "bytes": 0,
+                    "unknown_bytes": 4096
+                  }
+                ]
+              }
+            }
+          ],
+          "lower_bound": true,
+          "unknown": false,
+          "action": {
+            "kind": "snapshot",
+            "manage_in": "Snapshot Replication > Snapshots",
+            "manage_in_id": "snapshot_replication",
+            "command": [
+              "synoreclaim",
+              "snapshots",
+              "/fixture"
+            ]
+          }
+        },
+        {
+          "code": "recycle_bin",
+          "bytes": 1989451776,
+          "reclaimable_bytes": 1968693248,
+          "since_seconds": null,
+          "since_bytes": null,
+          "items": [
+            {
+              "subvolume_id": 261,
+              "share": "share50",
+              "bytes": 1917779968,
+              "reclaimable_bytes": 1917779968
+            },
+            {
+              "subvolume_id": 265,
+              "share": "share59",
+              "bytes": 50065408,
+              "reclaimable_bytes": 50065408
+            },
+            {
+              "subvolume_id": 263,
+              "share": "entry0005",
+              "bytes": 20758528,
+              "reclaimable_bytes": 0
+            },
+            {
+              "subvolume_id": 840,
+              "share": "share56",
+              "bytes": 589824,
+              "reclaimable_bytes": 589824
+            },
+            {
+              "subvolume_id": 260,
+              "share": "share62",
+              "bytes": 258048,
+              "reclaimable_bytes": 258048
+            }
+          ],
+          "lower_bound": true,
+          "unknown": false,
+          "action": {
+            "kind": "recycle",
+            "manage_in": "Control Panel > Shared Folder > Edit > Recycle Bin",
+            "manage_in_id": "shared_folder_recycle_bin",
+            "command": [
+              "synoreclaim",
+              "recycle",
+              "/fixture"
+            ]
+          }
+        },
+        {
+          "code": "open_unlinked",
+          "report_orphan_bytes": 226308096,
+          "processes": null,
+          "unknown": false,
+          "action": {
+            "kind": "processes",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "why-not-freed",
+              "/fixture",
+              "--processes"
+            ]
+          }
+        },
+        {
+          "code": "hard_link",
+          "bytes": null,
+          "unknown": false,
+          "action": {
+            "kind": "inspect",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": null
+          }
+        },
+        {
+          "code": "commit_pending",
+          "interval_s": 30,
+          "unknown": false,
+          "action": {
+            "kind": "wait",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": null
+          }
+        },
+        {
+          "code": "unresolved_references",
+          "bytes": 8201981952,
+          "reasons": [
+            {
+              "code": "direct_owner_unresolved",
+              "bytes": 8201981952
+            }
+          ],
+          "unknown": true,
+          "action": {
+            "kind": "doctor",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "doctor",
+              "/fixture"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

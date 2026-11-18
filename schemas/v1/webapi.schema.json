@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/webapi.schema.json",
+  "title": "synoreclaim webapi refusal v1",
+  "description": "What `synoreclaim webapi` prints, with exit 2, when the method is unknown or its params break the allowlist. Every accepted call prints its command's own document instead.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "webapi"
+        },
+        "completion": {
+          "const": "failed"
+        },
+        "method": {
+          "type": "string",
+          "description": "The method as the shim passed it."
+        },
+        "outcome": {
+          "const": "invalid_param"
+        },
+        "message": {
+          "type": "string",
+          "description": "Why, for logs; not for display."
+        }
+      },
+      "required": [
+        "command",
+        "method",
+        "outcome",
+        "message"
+      ]
+    }
+  ]
+}

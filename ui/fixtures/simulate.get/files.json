@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "command": "simulate-delete",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": "fixture-job0004",
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-000000000007",
+        "path": "/fixture/entry9999/entry0014/entry9999/entry9999",
+        "job_id": "fixture-job0004",
+        "scan_started": "2026-09-29T02:29:26Z",
+        "scan_finished": "2026-09-29T02:29:26Z",
+        "age_seconds": 0,
+        "stale": false,
+        "consistency": "observed-stable",
+        "change_reasons": [],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "selection": [
+        {
+          "path": "/volume1/share04/folder0005/file0005.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 262144,
+            "physical": 262144,
+            "shared": 262144,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 880
+        },
+        {
+          "path": "/volume1/share04/folder0005/file0006.bin",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 262144,
+            "physical": 262144,
+            "shared": 262144,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [
+            "snapshot"
+          ],
+          "nlink": 1,
+          "tree": 256,
+          "objectid": 879
+        }
+      ],
+      "combined": {
+        "logical": 524288,
+        "physical": 262144,
+        "shared": 262144,
+        "reclaimable": 0,
+        "reclaimable_resolved": 0,
+        "unknown": 0,
+        "pinned_unreferenced": 0,
+        "extents": 1,
+        "inline": 0,
+        "entries": 2,
+        "files": 2
+      },
+      "retained": 262144,
+      "together_bonus": 0,
+      "blockers": [
+        {
+          "blocker": "snapshot",
+          "bytes": 262144
+        }
+      ],
+      "explain": [
+        {
+          "code": "snapshot",
+          "message": "a snapshot references some folder0005"
+        }
+      ],
+      "after_delete": [
+        {
+          "code": "snapshot",
+          "message": "snapshots keep this share04 until they are deleted or expire: see Snapshot Replication > Snapshots, or the share09's snapshot list"
+        },
+        {
+          "code": "recycle_bin",
+          "message": "these values assume a permanent delete: File Station, SMB and AFP deletes move files into the share09's folder0002 when its Recycle Bin is enabled, which frees nothing until the Recycle Bin is emptied (Control Panel > Shared Folder > Action > Empty Recycle Bin)"
+        },
+        {
+          "code": "delayed_release",
+          "message": "Storage Manager and df show freed space only after the next Btrfs transaction commit and, for deleted snapshots and shared folders, after the Btrfs cleaner finishes: minutes, or longer on a busy volume"
+        }
+      ]
+    }
+  ],
+  "scans": [
+    {
+      "fsid": "f0000000-0000-4000-8000-000000000007",
+      "mount": {
+        "path": "/volume1"
+      },
+      "completion": "complete",
+      "targets": [
+        {
+          "path": "/volume1/share04/folder0005/file0005.bin",
+          "scope": "path",
+          "tree": 256,
+          "ino": 880
+        },
+        {
+          "path": "/volume1/share04/folder0005/file0006.bin",
+          "scope": "path",
+          "tree": 256,
+          "ino": 879
+        }
+      ],
+      "covered": [],
+      "consistency": "observed-stable",
+      "change_reasons": [],
+      "scan_started": "2026-09-29T02:29:26Z",
+      "scan_finished": "2026-09-29T02:29:26Z",
+      "totals": {
+        "logical": 524288,
+        "physical": 262144,
+        "shared": 262144,
+        "reclaimable": 0,
+        "reclaimable_resolved": 0,
+        "unknown": 0,
+        "pinned_unreferenced": 0,
+        "extents": 1,
+        "inline": 0,
+        "entries": 2,
+        "files": 2
+      },
+      "stats": {
+        "subvolumes_discovered": 4,
+        "subvolumes_scanned": 1,
+        "subvolumes_reused": 0,
+        "entries": 2,
+        "inodes": 2,
+        "extents": 1,
+        "items": 3203,
+        "batches": 3,
+        "item_bytes": 179389,
+        "reference_searches": 1,
+        "reference_items": 1,
+        "owner_lookups": 0,
+        "owner_budget_capped_extents": 0,
+        "elapsed_ms": 44,
+        "peak_rss_bytes": 11788288
+      },
+      "resource_limit": null,
+      "coverage": {
+        "encrypted_directories": 0,
+        "snapshots_not_materialized": 0,
+        "unlinked_subvolume_entries": 0,
+        "dangling_entries": 0,
+        "cycles": 0,
+        "unsupported_locations": 0,
+        "missing_subvolume_roots": 0,
+        "reference_accounting": "complete",
+        "unresolved_extents": 0
+      },
+      "subvolumes": [
+        {
+          "id": 256,
+          "role": "scanned",
+          "generation_before": 12,
+          "generation_after": 12,
+          "uuid": "00000000000000000000000000000001",
+          "last_snapshot": 12,
+          "snapshots": [
+            258
+          ]
+        }
+      ],
+      "report": {
+        "path": "/fixture/entry9999/entry0014/entry9999/entry9999",
+        "bytes": 2066
+      },
+      "errors": [],
+      "warnings": [],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ]
+}

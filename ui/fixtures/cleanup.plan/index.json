@@ -1,0 +1,93 @@
+[
+  {
+    "file": "review.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share01/cleanup-golden/apply",
+          "expect": {
+            "filesystem_uuid": "847df910-1a02-4346-bb1c-9ecb06a5e9fd",
+            "tree": 256,
+            "objectid": 900
+          }
+        }
+      ]
+    },
+    "scenario": "review_cleanup"
+  },
+  {
+    "file": "review.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share01/cleanup-golden/apply",
+          "expect": {
+            "filesystem_uuid": "847df910-1a02-4346-bb1c-9ecb06a5e9fd",
+            "tree": 256,
+            "objectid": 900
+          }
+        }
+      ]
+    },
+    "scenario": "review_cleanup_refused"
+  },
+  {
+    "file": "target-changed.json",
+    "scenario": "review_target_changed"
+  },
+  {
+    "file": "review.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share01/cleanup-golden/apply"
+        }
+      ]
+    },
+    "scenario": "review_cleanup"
+  },
+  {
+    "file": "review.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share01/cleanup-golden/apply"
+        }
+      ]
+    },
+    "scenario": "review_cleanup_refused"
+  },
+  {
+    "file": "short-selection.json",
+    "params": {
+      "paths": [
+        {
+          "path": "/volume1/share73/folder0373/file0589.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0590.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0592.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0591.bin"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0375"
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0374"
+        }
+      ]
+    }
+  },
+  {
+    "file": "long-refusal.json",
+    "scenario": "review_long_refusal"
+  },
+  {
+    "file": "recycle-off.json",
+    "scenario": "review_recycle_off"
+  }
+]

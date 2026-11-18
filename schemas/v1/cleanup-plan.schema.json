@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/cleanup-plan.schema.json",
+  "title": "synoreclaim cleanup plan result v1",
+  "description": "`cleanup plan` (SPEC 5.7): the checked selection grouped by shared folder and the saved plan that moves it into the shared folders' Recycle Bins; nothing moves yet. A refusal is the envelope alone.",
+  "type": "object",
+  "$defs": {
+    "size": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "files": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "allocated_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "entries",
+        "files",
+        "allocated_bytes"
+      ],
+      "description": "Entries (the item and everything below it on its filesystem), files, and their allocated size (st_blocks x 512). Moving them frees nothing until the Recycle Bin is emptied."
+    },
+    "recycle_bin": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "admin_only": {
+          "type": "boolean",
+          "description": "Only administrators can see and restore the Recycle Bin's items."
+        }
+      },
+      "required": [
+        "enabled",
+        "admin_only"
+      ]
+    },
+    "item": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "kind": {
+          "enum": [
+            "file",
+            "directory"
+          ]
+        },
+        "drive": {
+          "type": "boolean",
+          "description": "In a user's Synology Drive folder: its clients sync the move."
+        },
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "files": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "allocated_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "symlinks": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Symlinks it holds, itself included; absent when none. DSM's Recycle Bin drops symlinks, and folders holding only symlinks, on a move, as File Station's delete does; restoring does not bring them back."
+        }
+      },
+      "required": [
+        "path",
+        "kind",
+        "drive",
+        "entries",
+        "files",
+        "allocated_bytes"
+      ],
+      "additionalProperties": false
+    },
+    "share": {
+      "type": "object",
+      "properties": {
+        "share": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "path": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "recycle_bin": {
+          "$ref": "#/$defs/recycle_bin"
+        },
+        "item_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Selected items in this shared folder."
+        },
+        "drive_items": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "How many of them are in a user's Synology Drive folder."
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          },
+          "description": "The first 100 of them: a preview, not every item."
+        },
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "files": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "allocated_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "symlinks": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Symlinks its items hold, counted from the scan report; absent when none. When the items move to the Recycle Bin, DSM drops these symlinks and folders holding only symlinks."
+        },
+        "delete": {
+          "type": "boolean",
+          "description": "No Recycle Bin takes its items, so apply removes them for good, only with confirm_delete (cleanup apply --confirm-delete); delete_reason says why. Absent when they move to the Recycle Bin."
+        },
+        "delete_reason": {
+          "enum": [
+            "no_shared_folder",
+            "recycle_bin_off"
+          ],
+          "description": "Why its items are removed for good: no_shared_folder, a folder right below the volume that is no DSM shared folder; recycle_bin_off, a shared folder whose Recycle Bin is off (turning it on and making a new plan moves them to the Recycle Bin instead). Present with delete."
+        }
+      },
+      "required": [
+        "share",
+        "path",
+        "recycle_bin",
+        "item_count",
+        "drive_items",
+        "items",
+        "entries",
+        "files",
+        "allocated_bytes"
+      ],
+      "additionalProperties": false,
+      "description": "One shared folder's selected items: they move to its Recycle Bin, or, without one, are removed for good (delete)."
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "cleanup-plan"
+        },
+        "plan_id": {
+          "type": "string"
+        },
+        "plan_file": {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        "expires_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "How many items the plan moves or removes for good."
+        },
+        "deletes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "How many of the items have no Recycle Bin (no shared folder, or its Recycle Bin is off) and are removed for good."
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/path"
+          },
+          "description": "The first 100 items the plan moves: a preview, not every item."
+        },
+        "size": {
+          "$ref": "#/$defs/size"
+        },
+        "shares": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/share"
+          }
+        },
+        "duplicates": {
+          "type": "object",
+          "description": "What a duplicates selection expanded to.",
+          "properties": {
+            "copies": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "groups": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "kept": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "scan_finished": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "plan_id",
+            "plan_file",
+            "expires_at",
+            "items",
+            "deletes",
+            "paths",
+            "size",
+            "shares"
+          ]
+        },
+        {
+          "properties": {
+            "completion": {
+              "enum": [
+                "failed",
+                "busy"
+              ]
+            }
+          },
+          "description": "A refusal: errors[] names each refused path and why (protected_target, in_recycle_bin, selection_boundary, target_changed, recycle_bin_unavailable, cleanup_disabled, keeper_changed, ...)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "review.title": "Confirm cleanup",
+  "review.planning": "Checking the selected items",
+  "review.empty": "Select items in Explore first",
+  "review.empty.title": "Nothing selected",
+  "review.disabled.cleanup": "Cleanup is turned off on this NAS",
+  "review.disabled.allow": "Allow cleanup",
+  "review.disabled.allowFailed": "Couldn't allow cleanup. Try again",
+  "review.recycle.title": "Items move to their shared folder's Recycle Bin",
+  "review.recycle.body": "Nothing is deleted for good. Restore the items or empty the Recycle Bin in DSM; the space is freed only after it is emptied",
+  "review.recycle.restore": "To undo, open #recycle in the shared folder in File Station, select the items and choose Restore",
+  "review.recycle.olderDsm": "DSM before 7.2.1 has no Restore button: move the items out of #recycle in File Station",
+  "review.recycle.sync": "In a folder that Synology Drive, ShareSync or Cloud Sync syncs, the move also removes the items from the synced copies",
+  "review.numbers.title": "Cleanup summary",
+  "review.numbers.moves": "Moves to Recycle Bin",
+  "review.numbers.items": "Selected items",
+  "review.numbers.freeLater": "Frees about, once emptied",
+  "review.numbers.about": "About these numbers",
+  "review.numbers.allocated": "Sizes are the space the items use now. The volume gets it back only after the Recycle Bin is emptied, and snapshots or shared data can keep some of it",
+  "review.willMove": {
+    "one": "Will move to Recycle Bin: {count} item, {bytes}; empty the share's Recycle Bin to free about {free}",
+    "other": "Will move to Recycle Bin: {count} items, {bytes}; empty the share's Recycle Bin to free about {free}"
+  },
+  "review.willMoveOnly": {
+    "one": "Will move to Recycle Bin: {count} item, {bytes}",
+    "other": "Will move to Recycle Bin: {count} items, {bytes}"
+  },
+  "review.confirmCheck": "I understand the items move to the Recycle Bin and the space is freed only after emptying it",
+  "review.confirmMove": {
+    "one": "Move {count} item to Recycle Bin",
+    "other": "Move {count} items to Recycle Bin"
+  },
+  "review.share.title": "Shared folder {share}",
+  "review.share.size": {
+    "one": "{count} item, {bytes}",
+    "other": "{count} items, {bytes}"
+  },
+  "review.share.adminOnly": "Only administrators can see and restore these items in the Recycle Bin",
+  "review.share.everyone": "Everyone who can open {share} can see and restore these items in its Recycle Bin",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "Some items are in Synology Drive folders: computers that sync those folders lose them too",
+  "review.recheck": "Recheck",
+  "review.rescan.open": "Scan again",
+  "review.dropChanged": "Remove from list",
+  "review.refusal.cleanupDisabled": "Cleanup is turned off on this NAS",
+  "review.refusal.busy": "Another scan or cleanup is using this volume. Recheck when it finishes",
+  "review.refusal.noReport": "Scan this volume first",
+  "review.refusal.targetChanged": "Changed since the last scan. Scan again or remove it from the list",
+  "review.refusal.changed": "The plan expired or no longer matches. Recheck before continuing",
+  "review.refusal.inRecycleBin": "Already in a Recycle Bin. Syno Reclaim never removes anything from a Recycle Bin; empty it in DSM",
+  "review.refusal.boundary": "A Btrfs subvolume, or on another volume. Remove it and select the items inside instead",
+  "review.refusal.outsideRoots": "Outside the folders cleanup may change. Remove it from the list",
+  "review.refusal.recycleBinUnavailable": "DSM's Recycle Bin service isn't available right now, so nothing moved. Try again later",
+  "review.refusal.untrustedState": "Cleanup records failed a safety check, so nothing moved. Download a support bundle in Settings > Diagnostics and contact support",
+  "review.refusal.ioError": "A read or write error stopped cleanup. Check the drives in Storage Manager",
+  "review.refusal.duplicatesStale": "The duplicate results are older than the latest scan. Open Duplicates, analyze again, then reselect",
+  "review.refusal.duplicatesUnknownGroup": "A selected duplicate group no longer exists. Open Duplicates and reselect",
+  "review.refusal.keeperChanged": "A copy that was to be kept changed or went missing, so nothing moved. Scan again and find duplicates again, then reselect",
+  "review.refusal.keeperRemoved": "Together, the selected duplicates would leave no copy of some file, so nothing moved. Remove a group from the list, or keep one more copy",
+  "review.refusal.keeperConflict": "A selected group would remove a copy you chose to keep in another group, so nothing moved. Remove one of the groups from the list, or keep another copy",
+  "review.refusal.keeperConflictNamed": "{copy} is kept in “{kept}”, but removing “{removing}” would remove it, so nothing moved. Remove one of the two groups from the list, or keep another copy",
+  "review.refusal.duplicatesNothing": "The selected duplicates no longer move anything. Remove them from the list",
+  "review.refusal.other": "Cleanup was refused. Recheck the selected items",
+  "review.refusal.selectedItem": "A selected item",
+  "review.applying.title": "Moving to Recycle Bin",
+  "review.applying.count": "{done} / {total} items",
+  "review.applying.indeterminate": "Waiting for progress",
+  "review.applying.pollError": "Can't read progress right now. Still checking; cleanup won't be sent again",
+  "review.applying.cancel": "Cancel cleanup",
+  "review.applying.cancelling": "Cancelling",
+  "review.applying.cancelError": "Couldn't cancel; cleanup may still be running",
+  "review.result.title": "Cleanup result",
+  "review.result.completeTitle": "Moved to Recycle Bin",
+  "review.result.cancelledTitle": "Cleanup cancelled",
+  "review.result.unableToStartTitle": "Could not start",
+  "review.result.partialTitle": "Some items stayed in place",
+  "review.result.moved": "Moved to Recycle Bin: {bytes}; space is freed after emptying it",
+  "review.result.empty": "Empty it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or with a Recycle Bin task in Task Scheduler",
+  "review.result.bin": {
+    "one": "Recycle Bin of {share}: {count} item",
+    "other": "Recycle Bin of {share}: {count} items"
+  },
+  "review.result.leftTitle": "Still in place",
+  "review.result.detailsUnavailable": "Cleanup ended; details are unavailable",
+  "review.result.lastKnown": "Last recorded: {counts}",
+  "review.outcome.partial": "Partly moved",
+  "review.outcome.changed": "Changed, left alone",
+  "review.outcome.failed": "Not moved",
+  "review.applyError.noRetry": "Check the job status before starting another cleanup; this screen won't send it again",
+  "review.count.moved": {
+    "one": "{count} moved",
+    "other": "{count} moved"
+  },
+  "review.count.absent": {
+    "one": "{count} already gone",
+    "other": "{count} already gone"
+  },
+  "review.count.partial": {
+    "one": "{count} partly moved",
+    "other": "{count} partly moved"
+  },
+  "review.count.failed": {
+    "one": "{count} not moved",
+    "other": "{count} not moved"
+  },
+  "review.count.changed": {
+    "one": "{count} changed",
+    "other": "{count} changed"
+  },
+  "review.duplicates.title": "Duplicates",
+  "review.duplicates.line": {
+    "one": "Moves {count} to Recycle Bin · keeps {keeps}",
+    "other": "Moves {count} to Recycle Bin · keeps {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "one": "Moves {count} to Recycle Bin · keeps {keeps} (preferred share)",
+    "other": "Moves {count} to Recycle Bin · keeps {keeps} (preferred share)"
+  },
+  "review.duplicates.partialLine": {
+    "one": "Moves {items} identical items of {count} folder to Recycle Bin · keeps {keeps}",
+    "other": "Moves {items} identical items of each of {count} folders to Recycle Bin · keeps {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "one": "Deletes {count} for good · keeps {keeps}",
+    "other": "Deletes {count} for good · keeps {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "one": "Deletes {count} for good · keeps {keeps} (preferred share)",
+    "other": "Deletes {count} for good · keeps {keeps} (preferred share)"
+  },
+  "review.duplicates.partialLineDelete": {
+    "one": "Deletes {items} identical items of {count} folder for good · keeps {keeps}",
+    "other": "Deletes {items} identical items of each of {count} folders for good · keeps {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "one": "Removes {count}: to the Recycle Bin, or for good where there is none · keeps {keeps}",
+    "other": "Removes {count}: to the Recycle Bin, or for good where there is none · keeps {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "one": "Removes {count}: to the Recycle Bin, or for good where there is none · keeps {keeps} (preferred share)",
+    "other": "Removes {count}: to the Recycle Bin, or for good where there is none · keeps {keeps} (preferred share)"
+  },
+  "review.duplicates.partialLineMixed": {
+    "one": "Removes {items} identical items of {count} folder: to the Recycle Bin, or for good where there is none · keeps {keeps}",
+    "other": "Removes {items} identical items of each of {count} folders: to the Recycle Bin, or for good where there is none · keeps {keeps}"
+  },
+  "review.duplicates.partialNote": "Partly identical folders lose only their identical items. The folders themselves and the items that differ, such as .git, stay",
+  "review.duplicates.keptChecked": {
+    "one": "{count} kept copy is checked again just before anything is removed",
+    "other": "{count} kept copies are checked again just before anything is removed"
+  },
+  "review.duplicates.freesLater": "Frees later: snapshots still hold {size} of these copies",
+  "review.duplicates.clear": "Remove duplicates from the list",
+  "review.jobState.queued": "Queued",
+  "review.jobState.running": "Running",
+  "review.jobState.pausing": "Pausing",
+  "review.jobState.cancelling": "Cancelling",
+  "review.jobState.paused": "Paused",
+  "review.jobState.completed": "Completed",
+  "review.jobState.partial": "Partly completed",
+  "review.jobState.failed": "Failed",
+  "review.jobState.cancelled": "Cancelled",
+  "review.jobState.interrupted": "Interrupted",
+  "review.apiError.no_permission": "Your DSM account does not have permission to plan cleanup",
+  "review.apiError.session_timeout": "Your DSM session expired. Sign in again and reopen this review",
+  "review.apiError.reload": "The Syno Reclaim service changed. Reload the DSM window and reopen this review",
+  "review.apiError.backend_unavailable": "Syno Reclaim is unavailable. Check Package Center and try again later",
+  "review.apiError.auth_unavailable": "DSM could not verify your sign-in. Try again shortly",
+  "review.apiError.invalid_param": "The cleanup request was not accepted. Reopen the review and check the selection",
+  "review.apiError.busy": "Another operation is using this volume. Try again when it finishes",
+  "review.apiError.backend_busy": "Syno Reclaim is handling other requests. Try again shortly",
+  "review.apiError.cli_error": "Syno Reclaim could not complete the cleanup request",
+  "review.apiError.timeout": "The request timed out. Check job status before starting another cleanup",
+  "review.apiError.exec_failed": "Syno Reclaim could not start the cleanup request",
+  "review.apiError.fixture_missing": "This preview does not include the requested cleanup response",
+  "review.apiError.unknown": "An unexpected error occurred while checking cleanup",
+  "review.recycle.time": "Big moves take time: DSM moves about a few thousand files per second, and the space is freed only after the Recycle Bin is emptied",
+  "review.applying.calls": {
+    "one": "{count} move by DSM done",
+    "other": "{count} moves by DSM done"
+  },
+  "review.duplicates.scanAge": "These results come from the scan of {time}. Files added to or changed in the copies being moved since then go to the Recycle Bin too, where they can be restored. If those folders may have changed, scan again first",
+  "review.duplicates.scanAgeDelete": "These results come from the scan of {time}. Files added to or changed in the copies being removed since then are removed with them: to the Recycle Bin, or for good where there is none. If those folders may have changed, scan again first",
+  "review.planning.count": "Checking the selected items: {done} / {total}",
+  "review.more": "And {count} more",
+  "review.protected.volume": "The volume itself",
+  "review.protected.system": "A DSM system file",
+  "review.protected.recycle_bin": "Already in a Recycle Bin: empty it in DSM",
+  "review.protected.package": "Data of a DSM package: free its space in that package",
+  "review.protected.packageNamed": "Data of {package}: free its space in {package}",
+  "review.protected.dsm_folder": "A DSM system folder",
+  "review.protected.share_root": "A shared folder itself: select items inside it",
+  "review.protected.home": "A user home: select items inside it",
+  "review.protected.outside_share": "Not in a DSM shared folder: cleanup moves items only into a shared folder's Recycle Bin",
+  "review.protected.other": "Protected item",
+  "review.refusal.cancelled": "Check stopped",
+  "review.planning.stop": "Stop check",
+  "review.planning.kept": "Checking the copies kept: {done} / {total}",
+  "review.confirmDelete": {
+    "one": "Delete {count} item for good",
+    "other": "Delete {count} items for good"
+  },
+  "review.confirmMoveDelete": {
+    "one": "Move {moves}, delete {deletes} for good",
+    "other": "Move {moves}, delete {deletes} for good"
+  },
+  "review.confirmCheckDelete": {
+    "one": "I understand {deletes} item is deleted for good and cannot be restored; the others move to the Recycle Bin",
+    "other": "I understand {deletes} items are deleted for good and cannot be restored; the others move to the Recycle Bin"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "one": "I understand {deletes} item is deleted for good and cannot be restored",
+    "other": "I understand {deletes} items are deleted for good and cannot be restored"
+  },
+  "review.delete.title": {
+    "one": "{deletes} item is deleted for good",
+    "other": "{deletes} items are deleted for good"
+  },
+  "review.delete.body": "No Recycle Bin can take them: they are in no DSM shared folder, or in a shared folder whose Recycle Bin is off. Reclaim deletes them, and they cannot be restored",
+  "review.delete.folder": "Folder {share} (not a shared folder)",
+  "review.delete.share": "Not in a DSM shared folder: the items in {share} are deleted for good",
+  "review.delete.binOff": "{share} has no Recycle Bin turned on: its items are deleted for good",
+  "review.delete.binOffEnable": "To be able to restore them, turn its Recycle Bin on first, then select Recheck: they then move to the Recycle Bin instead",
+  "review.numbers.removes": "Removes",
+  "review.count.deleted": {
+    "one": "{count} deleted for good",
+    "other": "{count} deleted for good"
+  },
+  "review.result.deleted": {
+    "one": "Deleted for good: {deleted} item, {bytes}",
+    "other": "Deleted for good: {deleted} items, {bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "This plan deletes items with no Recycle Bin for good: confirm that to go on",
+  "review.applying.titleDelete": "Deleting for good",
+  "review.applying.titleMixed": "Moving to Recycle Bin and deleting for good",
+  "review.result.deletedTitle": "Deleted for good",
+  "review.result.cleanedTitle": "Cleanup finished",
+  "review.result.cancelledCounts": {
+    "one": "Cancelled: {done} done, {left} item not handled and left as it was",
+    "other": "Cancelled: {done} done, {left} items not handled and left as they were"
+  },
+  "review.result.cancelTooLate": "Cancel came while the last item was being handled, so it finished",
+  "review.numbers.frees": "Frees about",
+  "review.numbers.allocatedDelete": "Sizes are the space the items use now. Deleting them gives it back to the volume, but snapshots or shared data can keep some of it",
+  "review.recycle.syncDelete": "In a folder that Synology Drive, ShareSync or Cloud Sync syncs, deleting also removes the items from the synced copies",
+  "review.refusal.notFound": "This item is no longer there. Remove it from the cleanup list",
+  "review.recycle.symlinks": {
+    "one": "{symlinks} shortcut (symlink) among them is not kept by DSM's Recycle Bin and does not come back on restore",
+    "other": "{symlinks} shortcuts (symlinks) among them are not kept by DSM's Recycle Bin and do not come back on restore"
+  },
+  "review.applying.checkingKept": {
+    "one": "Checking the kept copy",
+    "other": "Checking {kept} kept copies"
+  },
+  "review.applying.finishingCurrent": "Finishing the current item, then stopping; the rest stays where it is"
+}

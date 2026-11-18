@@ -1,0 +1,315 @@
+{
+  "apply": {
+    "command": [
+      "synoreclaim",
+      "rootfs",
+      "apply",
+      "/var/lib/synoreclaim/rootfs-plans/rootfs-18e0a2f1c4b00000-5a.json",
+      "--yes"
+    ],
+    "notice": {
+      "code": "no_restore_command",
+      "message": "apply copies each item into /volume1/share01/SynoReclaim-system-20261020-1100, checks its size and SHA-256, then removes it from /; synoreclaim has no restore command: copy files back yourself if you need them"
+    },
+    "tools_notice": {
+      "code": "tools_no_undo",
+      "message": "DSM's tools permanently delete the logs, journals or update caches they clean up, old logs included; there is no undo"
+    }
+  },
+  "command": "rootfs-plan",
+  "completion": "complete",
+  "destination": {
+    "available_bytes": 5497558138880,
+    "move_dir": {
+      "path": "/volume1/share01/SynoReclaim-system-20261020-1100"
+    },
+    "path": "/volume1/share01",
+    "required_bytes": 528101376,
+    "share": {
+      "path": "/volume1/share01"
+    }
+  },
+  "errors": [],
+  "expires_at": "2026-10-21T11:00:00Z",
+  "generated_at": "2026-10-20T11:00:00Z",
+  "held_open": [],
+  "kept": [],
+  "items": [
+    {
+      "bytes": 942080,
+      "category": "update_leftover",
+      "kind": "file",
+      "path": "/.log.junior/logs.tar.3"
+    },
+    {
+      "bytes": 839680,
+      "category": "update_leftover",
+      "kind": "file",
+      "path": "/.log.junior/logs.tar.4"
+    },
+    {
+      "bytes": 1888256,
+      "category": "tool_cache",
+      "kind": "file",
+      "path": "/root/.bun/install/cache/esbuild@0.25.0@@@1/bin/esbuild"
+    },
+    {
+      "bytes": 9543680,
+      "category": "tool_cache",
+      "kind": "file",
+      "path": "/root/.bun/install/cache/typescript@5.9.3@@@1/lib/typescript.js"
+    },
+    {
+      "bytes": 73728,
+      "category": "tool_cache",
+      "kind": "file",
+      "path": "/root/.cache/pip/http-v2/a/b/c/0f2e"
+    },
+    {
+      "bytes": 50540544,
+      "category": "tool_cache",
+      "kind": "file",
+      "path": "/root/.npm/_cacache/content-v2/sha512/3f/9a/0c1e"
+    },
+    {
+      "bytes": 32505856,
+      "category": "tool_cache",
+      "kind": "file",
+      "path": "/root/.npm/_cacache/content-v2/sha512/7b/21/a9d4"
+    },
+    {
+      "bytes": 4718592,
+      "category": "tool_cache",
+      "kind": "file",
+      "path": "/root/.npm/_cacache/index-v5/1c/aa/77e0"
+    },
+    {
+      "bytes": 64172032,
+      "category": "geoip_database",
+      "kind": "file",
+      "path": "/var/db/geoip-database/GeoLite2-City.mmdb"
+    },
+    {
+      "bytes": 21811200,
+      "category": "geoip_database",
+      "kind": "file",
+      "path": "/var/db/geoip-database/xt_geoip/LE.iv4"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.1.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.10.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.11.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.12.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.13.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.14.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.15.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.16.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.17.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.18.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.19.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.2.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.20.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.3.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.4.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.5.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.6.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.7.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.8.xz"
+    },
+    {
+      "bytes": 1691648,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/disk-latency/.SYNODISKLATENCYDB.9.xz"
+    },
+    {
+      "bytes": 8806400,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/kern.log.4.xz"
+    },
+    {
+      "bytes": 10067968,
+      "category": "log_archive",
+      "kind": "file",
+      "path": "/var/log/messages.3.xz"
+    },
+    {
+      "bytes": 19922944,
+      "category": "backup_installer",
+      "kind": "file",
+      "path": "/var/synobackup/HyperBackup-ED/HyperBackup-ED.latest.spk"
+    }
+  ],
+  "job_id": null,
+  "moves": {
+    "bytes": 259665920,
+    "required_destination_bytes": 528101376,
+    "items": 33,
+    "by_category": [
+      {
+        "bytes": 99270656,
+        "category": "tool_cache",
+        "items": 6
+      },
+      {
+        "bytes": 85983232,
+        "category": "geoip_database",
+        "items": 2
+      },
+      {
+        "bytes": 52707328,
+        "category": "log_archive",
+        "items": 22
+      },
+      {
+        "bytes": 19922944,
+        "category": "backup_installer",
+        "items": 1
+      },
+      {
+        "bytes": 1781760,
+        "category": "update_leftover",
+        "items": 2
+      }
+    ]
+  },
+  "plan_file": {
+    "path": "/var/lib/synoreclaim/rootfs-plans/rootfs-18e0a2f1c4b00000-5a.json"
+  },
+  "plan_id": "rootfs-18e0a2f1c4b00000-5a",
+  "root": {
+    "available_bytes": 216223744,
+    "available_after_bytes": 475889664
+  },
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "tools": [
+    {
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--delete-log"
+      ],
+      "effect": "deletes the logs DSM finds older than it keeps, as DSM does before an update; there is no copy",
+      "tool": "delete_log",
+      "estimated_bytes": 9543680
+    },
+    {
+      "argv": [
+        "/usr/bin/logrotate",
+        "-f",
+        "/etc/logrotate.conf"
+      ],
+      "effect": "rotates the logs in /etc/logrotate.conf once; old rotations are deleted",
+      "tool": "logrotate"
+    },
+    {
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--delete-journal"
+      ],
+      "effect": "deletes obsolete systemd journal files",
+      "tool": "delete_journal"
+    }
+  ],
+  "warnings": [],
+  "mode": "deep",
+  "additional_bytes": 208076800,
+  "follow_up": [
+    "refresh_geoip",
+    "backup_installer"
+  ]
+}

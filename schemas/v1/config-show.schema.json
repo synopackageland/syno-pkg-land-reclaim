@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/config-show.schema.json",
+  "title": "synoreclaim config show result v1",
+  "description": "`config show`: the cleanup configuration and whether it allows cleanup now (SPEC 5.7); or a refusal.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "config-show"
+        },
+        "enables_cleanup": {
+          "type": "boolean",
+          "description": "cleanup_enabled and not mutations_disabled: cleanup plan, apply and delete may run."
+        },
+        "config": {
+          "$ref": "config-init.schema.json#/$defs/config"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "enables_cleanup",
+            "config"
+          ]
+        },
+        {
+          "properties": {
+            "completion": {
+              "enum": [
+                "failed"
+              ]
+            }
+          },
+          "description": "A refusal or failure: errors[0].code says why (SPEC 5.7)."
+        }
+      ]
+    }
+  ]
+}

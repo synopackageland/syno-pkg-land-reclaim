@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "command": "volumes",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:35:33Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "no_volumes",
+      "message": "no mounted supported volumes found"
+    }
+  ],
+  "volumes": [],
+  "excluded": [
+    {
+      "path": "/volume1",
+      "code": "unsupported_filesystem",
+      "message": "xfs volume, unsupported"
+    },
+    {
+      "path": "/volume2",
+      "code": "unsupported_filesystem",
+      "message": "xfs volume, unsupported"
+    }
+  ],
+  "system_partition": {
+    "mount": "/fixture",
+    "source": "/fixture/entry9999",
+    "fstype": "ext4",
+    "total_bytes": 8387944448,
+    "available_bytes": 4826877952,
+    "used_bytes": 3561066496,
+    "free_bytes": 4826877952,
+    "used_percent": 42,
+    "level": "ok",
+    "level_reasons": [],
+    "nearly_full": false
+  }
+}

@@ -1,0 +1,5854 @@
+{
+  "schema_version": 1,
+  "command": "top",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:41:59Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "requested_by": "reclaimable",
+  "ranked_by": "reclaimable",
+  "kind": "all",
+  "limit": 200,
+  "include_system": false,
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 713,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "target": {
+        "path": "/volume1/share62/folder0176/folder0177",
+        "kind": "dir",
+        "flags": [],
+        "metrics": {
+          "logical": 6512640,
+          "physical": 6512640,
+          "shared": 0,
+          "reclaimable": 6512640,
+          "reclaimable_resolved": 6512640,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 16643,
+          "inline": 12388,
+          "entries": 158,
+          "files": 1290
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 260,
+        "objectid": 4080
+      },
+      "entries": [
+        {
+          "path": "/volume1/share62/folder0176/folder0177/daemon.log_0",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 5242880,
+            "physical": 5242880,
+            "shared": 0,
+            "reclaimable": 5242880,
+            "reclaimable_resolved": 5242880,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 40,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 49445,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/logs-archive",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 225280,
+            "physical": 225280,
+            "shared": 0,
+            "reclaimable": 225280,
+            "reclaimable_resolved": 225280,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 9,
+            "files": 8
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 26772,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/cores",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 98304,
+            "physical": 98304,
+            "shared": 0,
+            "reclaimable": 98304,
+            "reclaimable_resolved": 98304,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 3,
+            "files": 2
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 58750,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/nginx",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 65536,
+            "physical": 65536,
+            "shared": 0,
+            "reclaimable": 65536,
+            "reclaimable_resolved": 65536,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 12,
+            "files": 11
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 13328,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/samba",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 40960,
+            "physical": 40960,
+            "shared": 0,
+            "reclaimable": 40960,
+            "reclaimable_resolved": 40960,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 6,
+            "files": 5
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 16494,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/upstart",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 16384,
+            "physical": 16384,
+            "shared": 0,
+            "reclaimable": 16384,
+            "reclaimable_resolved": 16384,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 4,
+            "files": 3
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 77239,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.4",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 16156,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.11",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 13499,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.39",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 12138,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.49",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 44302,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.50",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 52482,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.57",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 58242,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.58",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 17561,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.60",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 79016,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.62",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 79118,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.69",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 84217,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.79",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 59294,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.80",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 20570,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.84",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 28273,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.93",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 26470,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.96",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 23101,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.98",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 69966,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.116",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 36719,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.118",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 53604,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.123",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 52812,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.136",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 67707,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.137",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 18130,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.141",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 26159,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.143",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 12288,
+            "reclaimable_resolved": 12288,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 52928,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.14",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 61937,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.17",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 80434,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.26",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 68027,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.28",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 46291,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.33",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 65829,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.34",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 86817,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.42",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 52898,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.46",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 69141,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.48",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 82752,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.52",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 29026,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.61",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 24947,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.64",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 56865,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.71",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 7536,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.75",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 23448,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.94",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 52533,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.102",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 69733,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.109",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 74947,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.110",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 28894,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.111",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 36201,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.120",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 68897,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.121",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 32381,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.124",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 17556,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.131",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 8192,
+            "reclaimable_resolved": 8192,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 18112,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.1",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 73510,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.2",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 11914,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.3",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 63838,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.5",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 18889,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.7",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 81115,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.8",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 36260,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.12",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 13105,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.15",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 77868,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.16",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 81830,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.20",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 55810,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.21",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 78793,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.22",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 80972,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.23",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 88134,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.24",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 72066,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.29",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 30562,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.30",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 17728,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.35",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 22475,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.37",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 51833,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.38",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 71089,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.40",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 80148,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.47",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 14952,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.51",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 67515,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.55",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 44674,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.56",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 39455,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.59",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 65875,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.65",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 26781,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.66",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 30097,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.67",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 37403,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.68",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 8581,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.70",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 41438,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.77",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 66853,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.82",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 31983,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.83",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 34363,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.85",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 51571,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.87",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 7030,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.91",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 16216,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.92",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 87487,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.97",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 70972,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.100",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 25889,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.101",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 51909,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.103",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 74676,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.104",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 33897,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.106",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 78194,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.107",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 76220,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.114",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 87377,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.115",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 38377,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.119",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 10661,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.125",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 20389,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.127",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 51267,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.128",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 70262,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.130",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 69845,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.132",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 57926,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.133",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 69656,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.134",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 63875,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.138",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 29282,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.139",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 10610,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.140",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 84438,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.146",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 8866,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.147",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 76020,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.148",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 63860,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.149",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 4096,
+            "reclaimable_resolved": 4096,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 34661,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/empty-dir",
+          "kind": "dir",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 0
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 19337,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.0",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 83387,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 8192
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.6",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 62642,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.9",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 15108,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.10",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 83748,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.13",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 24455,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.18",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 20507,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.19",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 81868,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.25",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 63045,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.27",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 66399,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.31",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 46354,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.32",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 71895,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.36",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 61804,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.41",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 48123,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.43",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 72100,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.44",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 66795,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.45",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 19267,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.53",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 22347,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.54",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 14727,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 12288
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.63",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 61433,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 8192
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.72",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 61912,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.73",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 55398,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.74",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 81231,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.76",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 87949,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.78",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 58429,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.81",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 59486,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 12288
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.86",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 13891,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.88",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 26826,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.89",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 20299,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.90",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 87443,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 8192
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.95",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 54731,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.99",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 12288,
+            "physical": 12288,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 47875,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 12288
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.105",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 54415,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.108",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 18928,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 8192
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.112",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 77984,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.113",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 50209,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.117",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 74847,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.122",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 52125,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.126",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 68614,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.129",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 86988,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.135",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 8192,
+            "physical": 8192,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 18370,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 8192
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.142",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 85101,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.144",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 4096,
+            "physical": 4096,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 78913,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [
+            {
+              "class": "snapshot",
+              "bytes": 4096
+            }
+          ],
+          "where_to_fix": {
+            "token": "snapshot_replication",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        },
+        {
+          "path": "/volume1/share62/folder0176/folder0177/messages.145",
+          "kind": "file",
+          "flags": [],
+          "metrics": {
+            "logical": 0,
+            "physical": 0,
+            "shared": 0,
+            "reclaimable": 0,
+            "reclaimable_resolved": 0,
+            "unknown": 0,
+            "pinned_unreferenced": 0,
+            "extents": 1,
+            "inline": 0,
+            "entries": 1,
+            "files": 1
+          },
+          "blockers": [],
+          "nlink": 1,
+          "tree": 260,
+          "objectid": 24168,
+          "service": null,
+          "cleanup_eligible": true,
+          "held_by": [],
+          "where_to_fix": {
+            "token": "cleanup",
+            "manage_in": null,
+            "manage_in_id": null,
+            "command": [
+              "synoreclaim",
+              "cleanup",
+              "plan",
+              "/fixture/entry9999/entry9999/entry9999"
+            ]
+          }
+        }
+      ],
+      "hidden_system": 0,
+      "services": {
+        "lines": [
+          {
+            "service": "folder_metadata",
+            "names": "@eaDir",
+            "package": "DSM indexing (thumbnails and file metadata)",
+            "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+            "manage_in_id": "owning_folder",
+            "confirmed": false,
+            "paths": 1,
+            "metrics": {
+              "logical": 12388,
+              "physical": 0,
+              "shared": 0,
+              "reclaimable": 0,
+              "reclaimable_resolved": 0,
+              "unknown": 0,
+              "pinned_unreferenced": 0,
+              "extents": 0,
+              "inline": 12388,
+              "entries": 77,
+              "files": 76
+            },
+            "snapshots_not_read": 0
+          }
+        ],
+        "other_snapshots_not_read": 0
+      }
+    }
+  ],
+  "scans": []
+}

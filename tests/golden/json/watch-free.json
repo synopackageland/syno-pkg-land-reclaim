@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "command": "watch-free",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T12:04:52Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "volume": {
+    "path": "/fixture/mnt"
+  },
+  "duration_seconds": 2,
+  "observed_duration_ms": 2000,
+  "interrupted": false,
+  "interval_seconds": 2,
+  "samples": [
+    {
+      "elapsed_ms": 1,
+      "data_used_bytes": 3305472,
+      "free_bytes": 526848000,
+      "pending_deletion_roots": 0
+    },
+    {
+      "elapsed_ms": 2000,
+      "data_used_bytes": 3305472,
+      "free_bytes": 526848000,
+      "pending_deletion_roots": 0
+    }
+  ],
+  "data_used_delta_bytes": 0,
+  "free_delta_bytes": 0,
+  "pending_deletion_roots_delta": 0,
+  "concurrent_writers_may_affect_delta": true
+}

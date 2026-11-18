@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-plan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T13:11:42Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1/share01/cleanup-golden/apply",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    }
+  ],
+  "warnings": []
+}

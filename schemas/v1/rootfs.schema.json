@@ -1,0 +1,727 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/rootfs.schema.json",
+  "title": "synoreclaim rootfs report v1",
+  "description": "What fills DSM's system partition `/` (md0), read-only: df-style space and inodes, the /var/log quota, a bounded, paced walk of `/` alone (never other mounts), what `rootfs plan` could move off it, what it never selects and why, and deleted files still held open. Or a refusal: completion failed, errors[0].code not_root.",
+  "type": "object",
+  "$defs": {
+    "category": {
+      "enum": [
+        "update_leftover",
+        "log_archive",
+        "crash_dump",
+        "temp_debris",
+        "logs",
+        "log_center_db",
+        "geoip_database",
+        "package_data",
+        "user_tooling",
+        "own_state",
+        "dsm_keep",
+        "dsm_system",
+        "other",
+        "preference_image",
+        "samba_cache",
+        "tool_cache",
+        "backup_installer"
+      ],
+      "description": "Who or what owns a path on `/`."
+    },
+    "report_only_advice": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "user_tooling",
+            "package_data",
+            "live_logs",
+            "log_center_db",
+            "geoip_database",
+            "own_state",
+            "dsm_keep"
+          ],
+          "description": "A stable advice key for an owner that rootfs plan leaves in place."
+        },
+        "manage_in_id": {
+          "enum": [
+            "package_center"
+          ],
+          "description": "The UI destination for managing this owner, when one applies."
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "holder_advice": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "enum": [
+            "restart_syslog_ng",
+            "restart_holder"
+          ],
+          "description": "A stable advice key for freeing deleted files held by a process."
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "usage_entry": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/path"
+        },
+        {
+          "properties": {
+            "bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "percent_of_used": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Share of the partition's used bytes, one decimal."
+            },
+            "category": {
+              "$ref": "#/$defs/category"
+            },
+            "package": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The package the path belongs to, when it is package data."
+            }
+          },
+          "required": [
+            "bytes",
+            "percent_of_used",
+            "category",
+            "package"
+          ]
+        }
+      ]
+    },
+    "usage_row": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/usage_entry"
+        },
+        {
+          "properties": {
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/usage_entry"
+              },
+              "description": "The largest second-level paths below it, at most 10."
+            },
+            "other_children_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Bytes of the second-level paths children leaves out."
+            }
+          },
+          "required": [
+            "children",
+            "other_children_bytes"
+          ]
+        }
+      ]
+    },
+    "rootfs_report_fields": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "const": "rootfs"
+        },
+        "filesystem": {
+          "type": "object",
+          "properties": {
+            "mount": {
+              "const": "/"
+            },
+            "source": {
+              "type": "string"
+            },
+            "fstype": {
+              "type": "string"
+            },
+            "total_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "used_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "total_bytes - free_bytes, as df counts it."
+            },
+            "free_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "available_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Free bytes an unprivileged writer may use."
+            },
+            "used_percent": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "df's Use%: used / (used + available), rounded up."
+            },
+            "level": {
+              "enum": [
+                "ok",
+                "getting_full",
+                "full"
+              ],
+              "description": "The shared T1–T4 system-partition level from the space available, used percentage, and total size."
+            },
+            "level_reasons": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "used_over_recommended",
+                  "update_headroom_low",
+                  "update_may_fail",
+                  "nearly_full"
+                ]
+              },
+              "description": "Every shared T1–T4 reason that applies to the system partition."
+            },
+            "inodes_total": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "inodes_used": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "nearly_full": {
+              "type": "boolean",
+              "description": "Available space is below 5% of the total."
+            }
+          },
+          "required": [
+            "mount",
+            "source",
+            "fstype",
+            "total_bytes",
+            "used_bytes",
+            "free_bytes",
+            "available_bytes",
+            "used_percent",
+            "inodes_total",
+            "inodes_used",
+            "nearly_full"
+          ]
+        },
+        "log_quota": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "const": "/var/log"
+                },
+                "project_id": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "The ext4 project of /var/log."
+                },
+                "used_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "soft_limit_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "hard_limit_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "path",
+                "project_id",
+                "used_bytes",
+                "soft_limit_bytes",
+                "hard_limit_bytes"
+              ]
+            }
+          ],
+          "description": "DSM's project quota on /var/log; null when it has none."
+        },
+        "walk": {
+          "type": "object",
+          "properties": {
+            "entries": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "allocated_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "st_blocks bytes of distinct inodes walked."
+            },
+            "complete": {
+              "type": "boolean"
+            },
+            "stop_reason": {
+              "enum": [
+                null,
+                "entry_limit",
+                "paused",
+                "cancelled",
+                "runtime_limit",
+                "resource_limit",
+                "disk_limit"
+              ]
+            },
+            "unreadable_dirs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "elapsed_ms": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "entries",
+            "allocated_bytes",
+            "complete",
+            "stop_reason",
+            "unreadable_dirs",
+            "elapsed_ms"
+          ]
+        },
+        "usage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/usage_row"
+          },
+          "description": "First-level paths of `/`, largest first."
+        },
+        "owners": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "$ref": "#/$defs/category"
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The package, or /root or /usr/local for user_tooling."
+              },
+              "display_name": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The package's name in Package Center, from its INFO displayname; null when unknown or not package data. Reports before 0.1.1-1600 omit it."
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "percent_of_used": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Share of the partition's used bytes, one decimal."
+              }
+            },
+            "required": [
+              "category",
+              "name",
+              "bytes",
+              "percent_of_used"
+            ]
+          },
+          "description": "Bytes by owner, largest first."
+        },
+        "owners_small": {
+          "description": "The owners under below_bytes (1 MiB), folded out of owners into one row; null when there are none.",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "below_bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "below_bytes",
+                "items",
+                "bytes"
+              ]
+            }
+          ]
+        },
+        "cleanable": {
+          "type": "object",
+          "properties": {
+            "bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "required_destination_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "cleanable.bytes plus the 256 MiB margin rootfs plan keeps free."
+            },
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "by_category": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "$ref": "#/$defs/category"
+                  },
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "category",
+                  "bytes",
+                  "items"
+                ]
+              }
+            },
+            "tools": {
+              "type": "array",
+              "items": {
+                "$ref": "rootfs-plan.schema.json#/$defs/tool"
+              },
+              "description": "DSM's fixed tools that rootfs plan would run on this host."
+            },
+            "deep": {
+              "type": "object",
+              "description": "What rootfs plan --mode deep could move, Standard's items included, after the same limits; Hyper Backup's restore installer only while / would lack a DSM update's room without it. Absent from reports cached by an older synoreclaim.",
+              "properties": {
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "required_destination_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "by_category": {
+                  "$ref": "#/$defs/rootfs_report_fields/properties/cleanable/properties/by_category"
+                },
+                "additional_bytes": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "deep.bytes beyond cleanable.bytes."
+                },
+                "tools": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "rootfs-plan.schema.json#/$defs/tool"
+                  },
+                  "description": "DSM's fixed tools that a deep plan would run on this host."
+                }
+              },
+              "required": [
+                "bytes",
+                "required_destination_bytes",
+                "items",
+                "by_category",
+                "additional_bytes",
+                "tools"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "bytes",
+            "required_destination_bytes",
+            "items",
+            "by_category",
+            "tools"
+          ],
+          "description": "An estimate of what `rootfs plan --to <shared folder>` could move off `/`: every allowlisted entry the walk found. A plan may move less: it leaves files a process holds open (its held_open), and by size or age (its kept) /var/log *.xz archives modified in the last 7 days, /.log.junior logs smaller than 1 MiB, update leftovers other than junior logs modified or changed since the last boot, and files larger than 8 GiB. apply may move less again: it leaves what changed since the plan or a process opened since."
+        },
+        "report_only": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "$ref": "#/$defs/category"
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "advice": {
+                "$ref": "#/$defs/report_only_advice"
+              }
+            },
+            "required": [
+              "category",
+              "name",
+              "bytes",
+              "advice"
+            ]
+          },
+          "description": "Owners rootfs plan never selects, with what to do instead."
+        },
+        "report_only_small": {
+          "description": "The report_only under below_bytes (1 MiB), folded out of report_only into one row; null when there are none.",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "below_bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "below_bytes",
+                "items",
+                "bytes"
+              ]
+            }
+          ]
+        },
+        "open_deleted": {
+          "type": "object",
+          "properties": {
+            "bytes_estimate": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "holders": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "pid": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "comm": {
+                    "type": "string"
+                  },
+                  "inodes": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "bytes_estimate": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "advice": {
+                    "$ref": "#/$defs/holder_advice"
+                  }
+                },
+                "required": [
+                  "pid",
+                  "comm",
+                  "inodes",
+                  "bytes_estimate",
+                  "advice"
+                ]
+              }
+            },
+            "unreadable_processes": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "bytes_estimate",
+            "holders",
+            "unreadable_processes"
+          ],
+          "description": "Deleted files on `/` that processes still hold open."
+        },
+        "not_walked": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              {
+                "properties": {
+                  "reason": {
+                    "enum": [
+                      "mount_point",
+                      "unreadable",
+                      "too_deep"
+                    ]
+                  }
+                },
+                "required": [
+                  "reason"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "rootfs_report_success": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/envelope"
+        },
+        {
+          "$ref": "#/$defs/rootfs_report_fields"
+        }
+      ],
+      "properties": {
+        "command": {
+          "const": "rootfs"
+        },
+        "completion": {
+          "enum": [
+            "complete",
+            "partial"
+          ]
+        },
+        "filesystem": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/filesystem"
+        },
+        "log_quota": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/log_quota"
+        },
+        "walk": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/walk"
+        },
+        "usage": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/usage"
+        },
+        "owners": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/owners"
+        },
+        "owners_small": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/owners_small"
+        },
+        "cleanable": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/cleanable"
+        },
+        "report_only": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/report_only"
+        },
+        "report_only_small": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/report_only_small"
+        },
+        "open_deleted": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/open_deleted"
+        },
+        "not_walked": {
+          "$ref": "#/$defs/rootfs_report_fields/properties/not_walked"
+        }
+      },
+      "required": [
+        "command",
+        "completion",
+        "filesystem",
+        "log_quota",
+        "walk",
+        "usage",
+        "owners",
+        "owners_small",
+        "cleanable",
+        "report_only",
+        "report_only_small",
+        "open_deleted",
+        "not_walked"
+      ]
+    },
+    "rootfs_report_refusal": {
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/envelope"
+        },
+        {
+          "$ref": "#/$defs/rootfs_report_fields"
+        }
+      ],
+      "properties": {
+        "completion": {
+          "const": "failed"
+        }
+      },
+      "description": "A refusal: no report; errors[0].code says why."
+    }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/rootfs_report_success"
+    },
+    {
+      "$ref": "#/$defs/rootfs_report_refusal"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "review.title": "Conferma pulizia",
+  "review.planning": "Controllo degli elementi selezionati",
+  "review.empty": "Seleziona prima gli elementi in Esplora",
+  "review.empty.title": "Niente selezionato",
+  "review.disabled.cleanup": "La pulizia è disattivata su questo NAS",
+  "review.disabled.allow": "Consenti la pulizia",
+  "review.disabled.allowFailed": "Impossibile consentire la pulizia. Riprova",
+  "review.recycle.title": "Gli elementi vanno nel Cestino della loro cartella condivisa",
+  "review.recycle.body": "Nulla viene eliminato in modo definitivo. Ripristina gli elementi o svuota il Cestino in DSM; lo spazio si libera solo dopo averlo svuotato",
+  "review.recycle.restore": "Per annullare, apri #recycle della cartella condivisa in File Station, seleziona gli elementi e scegli Ripristina",
+  "review.recycle.olderDsm": "DSM prima della 7.2.1 non ha il pulsante Ripristina: sposta gli elementi fuori da #recycle in File Station",
+  "review.recycle.sync": "In una cartella sincronizzata da Synology Drive, ShareSync o Cloud Sync, lo spostamento rimuove gli elementi anche dalle copie sincronizzate",
+  "review.numbers.title": "Riepilogo della pulizia",
+  "review.numbers.moves": "Va nel Cestino",
+  "review.numbers.items": "Elementi selezionati",
+  "review.numbers.freeLater": "Libera circa, una volta svuotato",
+  "review.numbers.about": "Informazioni su questi valori",
+  "review.numbers.allocated": "Le dimensioni sono lo spazio che gli elementi occupano ora. Il volume lo recupera solo dopo aver svuotato il Cestino, e snapshot o dati condivisi possono trattenerne una parte",
+  "review.willMove": {
+    "one": "Andrà nel Cestino: {count} elemento, {bytes}; svuota il Cestino della cartella condivisa per liberare circa {free}",
+    "other": "Andranno nel Cestino: {count} elementi, {bytes}; svuota il Cestino della cartella condivisa per liberare circa {free}"
+  },
+  "review.willMoveOnly": {
+    "one": "Andrà nel Cestino: {count} elemento, {bytes}",
+    "other": "Andranno nel Cestino: {count} elementi, {bytes}"
+  },
+  "review.confirmCheck": "Ho capito che gli elementi vanno nel Cestino e che lo spazio si libera solo dopo averlo svuotato",
+  "review.confirmMove": {
+    "one": "Sposta {count} elemento nel Cestino",
+    "other": "Sposta {count} elementi nel Cestino"
+  },
+  "review.share.title": "Cartella condivisa {share}",
+  "review.share.size": {
+    "one": "{count} elemento, {bytes}",
+    "other": "{count} elementi, {bytes}"
+  },
+  "review.share.adminOnly": "Solo gli amministratori possono vedere e ripristinare questi elementi nel Cestino",
+  "review.share.everyone": "Chiunque possa aprire {share} può vedere e ripristinare questi elementi nel suo Cestino",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "Alcuni elementi sono in cartelle di Synology Drive: anche i computer che sincronizzano quelle cartelle li perdono",
+  "review.recheck": "Ricontrolla",
+  "review.rescan.open": "Scansiona di nuovo",
+  "review.dropChanged": "Rimuovi dalla lista",
+  "review.refusal.cleanupDisabled": "La pulizia è disattivata su questo NAS",
+  "review.refusal.busy": "Un'altra scansione o pulizia sta usando questo volume. Ricontrolla al termine",
+  "review.refusal.noReport": "Scansiona prima questo volume",
+  "review.refusal.targetChanged": "Modificato dall'ultima scansione. Scansiona di nuovo o rimuovilo dalla lista",
+  "review.refusal.changed": "Il piano è scaduto o non corrisponde più. Ricontrolla prima di continuare",
+  "review.refusal.inRecycleBin": "Già in un Cestino. Syno Reclaim non rimuove mai nulla da un Cestino; svuotalo in DSM",
+  "review.refusal.boundary": "Un sottovolume Btrfs o su un altro volume. Rimuovilo e seleziona invece gli elementi al suo interno",
+  "review.refusal.outsideRoots": "Fuori dalle cartelle che la pulizia può modificare. Rimuovilo dalla lista",
+  "review.refusal.recycleBinUnavailable": "Il servizio Cestino di DSM non è disponibile ora, quindi nulla è stato spostato. Riprova più tardi",
+  "review.refusal.untrustedState": "I registri della pulizia non hanno superato un controllo di sicurezza, quindi nulla è stato spostato. Scarica un pacchetto di supporto in Impostazioni > Diagnostica e contatta l'assistenza",
+  "review.refusal.ioError": "Un errore di lettura o scrittura ha interrotto la pulizia. Controlla le unità in Gestione archiviazione",
+  "review.refusal.duplicatesStale": "I risultati dei duplicati precedono l'ultima scansione. Apri Duplicati, analizza di nuovo, poi seleziona di nuovo",
+  "review.refusal.duplicatesUnknownGroup": "Un gruppo di duplicati selezionato non esiste più. Apri Duplicati e seleziona di nuovo",
+  "review.refusal.keeperChanged": "Una copia da conservare è cambiata o manca, quindi nulla è stato spostato. Esegui di nuovo la scansione e la ricerca dei duplicati, poi riseleziona",
+  "review.refusal.keeperRemoved": "Insieme, i duplicati selezionati non lascerebbero alcuna copia di alcuni file, quindi nulla è stato spostato. Rimuovi un gruppo dall'elenco o conserva una copia in più",
+  "review.refusal.keeperConflict": "Un gruppo selezionato rimuoverebbe una copia che hai scelto di conservare in un altro gruppo, quindi nulla è stato spostato. Rimuovi uno dei gruppi dall'elenco o conserva un'altra copia",
+  "review.refusal.keeperConflictNamed": "{copy} è conservata in «{kept}», ma rimuovere «{removing}» la eliminerebbe, quindi nulla è stato spostato. Rimuovi uno dei due gruppi dall'elenco o conserva un'altra copia",
+  "review.refusal.duplicatesNothing": "I duplicati selezionati non spostano più nulla. Rimuovili dall'elenco",
+  "review.refusal.other": "La pulizia è stata rifiutata. Ricontrolla la selezione",
+  "review.refusal.selectedItem": "Un elemento selezionato",
+  "review.applying.title": "Spostamento nel Cestino",
+  "review.applying.count": "{done} / {total} voci",
+  "review.applying.indeterminate": "In attesa dell'avanzamento",
+  "review.applying.pollError": "Impossibile leggere l'avanzamento ora. Il controllo continua; la pulizia non verrà reinviata",
+  "review.applying.cancel": "Annulla pulizia",
+  "review.applying.cancelling": "Annullamento",
+  "review.applying.cancelError": "Impossibile annullare; la pulizia potrebbe essere ancora in corso",
+  "review.result.title": "Risultato della pulizia",
+  "review.result.completeTitle": "Spostato nel Cestino",
+  "review.result.cancelledTitle": "Pulizia annullata",
+  "review.result.unableToStartTitle": "Non è stato possibile avviare",
+  "review.result.partialTitle": "Alcuni elementi sono rimasti al loro posto",
+  "review.result.moved": "Spostato nel Cestino: {bytes}; lo spazio si libera dopo averlo svuotato",
+  "review.result.empty": "Svuotalo in Pannello di controllo > Cartella condivisa > Azione > Svuota Cestino, oppure con un'attività Cestino in Utilità di pianificazione",
+  "review.result.bin": {
+    "one": "Cestino di {share}: {count} elemento",
+    "other": "Cestino di {share}: {count} elementi"
+  },
+  "review.result.leftTitle": "Ancora al loro posto",
+  "review.result.detailsUnavailable": "Pulizia terminata; dettagli non disponibili",
+  "review.result.lastKnown": "Ultimo rilevamento: {counts}",
+  "review.outcome.partial": "Spostato in parte",
+  "review.outcome.changed": "Cambiato, lasciato com'è",
+  "review.outcome.failed": "Non spostato",
+  "review.applyError.noRetry": "Controlla lo stato dell'attività prima di un'altra pulizia; questa schermata non la reinvierà",
+  "review.count.moved": {
+    "one": "{count} spostato",
+    "other": "{count} spostati"
+  },
+  "review.count.absent": "{count} già assenti",
+  "review.count.partial": {
+    "one": "{count} spostato in parte",
+    "other": "{count} spostati in parte"
+  },
+  "review.count.failed": {
+    "one": "{count} non spostato",
+    "other": "{count} non spostati"
+  },
+  "review.count.changed": "{count} modificati",
+  "review.duplicates.title": "Duplicati",
+  "review.duplicates.line": {
+    "one": "Sposta {count} nel Cestino · conserva {keeps}",
+    "other": "Sposta {count} nel Cestino · conserva {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "one": "Sposta {count} nel Cestino · conserva {keeps} (cartella preferita)",
+    "other": "Sposta {count} nel Cestino · conserva {keeps} (cartella preferita)"
+  },
+  "review.duplicates.partialLine": {
+    "one": "Sposta {items} elementi identici di {count} cartella nel Cestino · conserva {keeps}",
+    "other": "Sposta {items} elementi identici di ciascuna delle {count} cartelle nel Cestino · conserva {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "one": "Elimina definitivamente {count} · conserva {keeps}",
+    "other": "Elimina definitivamente {count} · conserva {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "one": "Elimina definitivamente {count} · conserva {keeps} (cartella preferita)",
+    "other": "Elimina definitivamente {count} · conserva {keeps} (cartella preferita)"
+  },
+  "review.duplicates.partialLineDelete": {
+    "one": "Elimina definitivamente {items} elementi identici di {count} cartella · conserva {keeps}",
+    "other": "Elimina definitivamente {items} elementi identici di ciascuna delle {count} cartelle · conserva {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "one": "Rimuove {count}: nel Cestino, o definitivamente dove non c’è · conserva {keeps}",
+    "other": "Rimuove {count}: nel Cestino, o definitivamente dove non c’è · conserva {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "one": "Rimuove {count}: nel Cestino, o definitivamente dove non c’è · conserva {keeps} (cartella preferita)",
+    "other": "Rimuove {count}: nel Cestino, o definitivamente dove non c’è · conserva {keeps} (cartella preferita)"
+  },
+  "review.duplicates.partialLineMixed": {
+    "one": "Rimuove {items} elementi identici di {count} cartella: nel Cestino, o definitivamente dove non c’è · conserva {keeps}",
+    "other": "Rimuove {items} elementi identici di ciascuna delle {count} cartelle: nel Cestino, o definitivamente dove non c’è · conserva {keeps}"
+  },
+  "review.duplicates.partialNote": "Dalle cartelle in parte identiche vengono rimossi solo gli elementi identici. Le cartelle e gli elementi diversi, come .git, restano",
+  "review.duplicates.keptChecked": {
+    "one": "{count} copia conservata viene ricontrollata subito prima di rimuovere qualcosa",
+    "other": "{count} copie conservate vengono ricontrollate subito prima di rimuovere qualcosa"
+  },
+  "review.duplicates.freesLater": "Liberato più tardi: gli snapshot trattengono ancora {size} di queste copie",
+  "review.duplicates.clear": "Rimuovi i duplicati dalla lista",
+  "review.jobState.queued": "In coda",
+  "review.jobState.running": "In esecuzione",
+  "review.jobState.pausing": "Sospensione",
+  "review.jobState.cancelling": "Annullamento",
+  "review.jobState.paused": "In pausa",
+  "review.jobState.completed": "Completato",
+  "review.jobState.partial": "Completato parzialmente",
+  "review.jobState.failed": "Non riuscito",
+  "review.jobState.cancelled": "Annullato",
+  "review.jobState.interrupted": "Interrotto",
+  "review.apiError.no_permission": "Il tuo account DSM non ha l'autorizzazione per pianificare la pulizia",
+  "review.apiError.session_timeout": "La sessione DSM è scaduta. Accedi di nuovo e riapri questa revisione",
+  "review.apiError.reload": "Il servizio Syno Reclaim è cambiato. Ricarica la finestra DSM e riapri questa revisione",
+  "review.apiError.backend_unavailable": "Syno Reclaim non è disponibile. Controlla Centro pacchetti e riprova più tardi",
+  "review.apiError.auth_unavailable": "DSM non è riuscito a verificare l’accesso. Riprova tra poco",
+  "review.apiError.invalid_param": "La richiesta di pulizia non è stata accettata. Riapri la revisione e controlla la selezione",
+  "review.apiError.busy": "Un'altra operazione sta usando questo volume. Riprova quando termina",
+  "review.apiError.backend_busy": "Syno Reclaim sta elaborando altre richieste. Riprova tra poco",
+  "review.apiError.cli_error": "Syno Reclaim non è riuscito a completare la richiesta di pulizia",
+  "review.apiError.timeout": "La richiesta è scaduta. Controlla lo stato del processo prima di avviare un'altra pulizia",
+  "review.apiError.exec_failed": "Syno Reclaim non è riuscito ad avviare la richiesta di pulizia",
+  "review.apiError.fixture_missing": "Questa anteprima non include la risposta di pulizia richiesta",
+  "review.apiError.unknown": "Si è verificato un errore imprevisto durante il controllo della pulizia",
+  "review.recycle.time": "Gli spostamenti grandi richiedono tempo: DSM sposta circa qualche migliaio di file al secondo, e lo spazio si libera solo dopo aver svuotato il Cestino",
+  "review.applying.calls": {
+    "one": "{count} spostamento di DSM completato",
+    "other": "{count} spostamenti di DSM completati"
+  },
+  "review.duplicates.scanAge": "Questi risultati vengono dalla scansione del {time}. Anche i file aggiunti o modificati da allora nelle copie spostate vanno nel Cestino, da dove si possono ripristinare. Se quelle cartelle possono essere cambiate, esegui prima una nuova scansione",
+  "review.duplicates.scanAgeDelete": "Questi risultati vengono dalla scansione del {time}. I file aggiunti o modificati da allora nelle copie rimosse vengono rimossi con esse: nel Cestino, o definitivamente dove non c’è. Se quelle cartelle possono essere cambiate, esegui prima una nuova scansione",
+  "review.planning.count": "Controllo degli elementi selezionati: {done} / {total}",
+  "review.more": "E altri {count}",
+  "review.protected.volume": "È il volume stesso",
+  "review.protected.system": "Un file di sistema di DSM",
+  "review.protected.recycle_bin": "Già in un Cestino: svuotalo in DSM",
+  "review.protected.package": "Dati di un pacchetto DSM: libera lo spazio in quel pacchetto",
+  "review.protected.packageNamed": "Dati di {package}: libera lo spazio in {package}",
+  "review.protected.dsm_folder": "Una cartella di sistema di DSM",
+  "review.protected.share_root": "Una cartella condivisa stessa: seleziona gli elementi al suo interno",
+  "review.protected.home": "Una home utente: seleziona gli elementi al suo interno",
+  "review.protected.outside_share": "Non in una cartella condivisa DSM: la pulizia sposta solo nel Cestino di una cartella condivisa",
+  "review.protected.other": "Elemento protetto",
+  "review.refusal.cancelled": "Controllo interrotto",
+  "review.planning.stop": "Interrompi controllo",
+  "review.planning.kept": "Controllo delle copie mantenute: {done} / {total}",
+  "review.confirmDelete": {
+    "one": "Elimina definitivamente {count} elemento",
+    "other": "Elimina definitivamente {count} elementi"
+  },
+  "review.confirmMoveDelete": {
+    "one": "Sposta {moves}, elimina {deletes}",
+    "other": "Sposta {moves}, elimina {deletes}"
+  },
+  "review.confirmCheckDelete": {
+    "one": "Ho capito che {deletes} elemento viene eliminato definitivamente e non si può ripristinare; gli altri vanno nel Cestino",
+    "other": "Ho capito che {deletes} elementi vengono eliminati definitivamente e non si possono ripristinare; gli altri vanno nel Cestino"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "one": "Ho capito che {deletes} elemento viene eliminato definitivamente e non si può ripristinare",
+    "other": "Ho capito che {deletes} elementi vengono eliminati definitivamente e non si possono ripristinare"
+  },
+  "review.delete.title": {
+    "one": "{deletes} elemento viene eliminato definitivamente",
+    "other": "{deletes} elementi vengono eliminati definitivamente"
+  },
+  "review.delete.body": "Nessun Cestino può accoglierli: non sono in una cartella condivisa DSM, o sono in una il cui Cestino è disattivato. Reclaim li elimina e non si possono ripristinare",
+  "review.delete.folder": "Cartella {share} (non condivisa)",
+  "review.delete.share": "Fuori dalle cartelle condivise DSM: gli elementi in {share} vengono eliminati definitivamente",
+  "review.delete.binOff": "{share} non ha il Cestino attivato: i suoi elementi vengono eliminati definitivamente",
+  "review.delete.binOffEnable": "Per poterli ripristinare, attiva prima il Cestino, poi scegli Ricontrolla: verranno spostati nel Cestino",
+  "review.numbers.removes": "Rimosso",
+  "review.count.deleted": {
+    "one": "{count} eliminato definitivamente",
+    "other": "{count} eliminati definitivamente"
+  },
+  "review.result.deleted": {
+    "one": "Eliminato definitivamente: {deleted} elemento, {bytes}",
+    "other": "Eliminati definitivamente: {deleted} elementi, {bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "Questo piano elimina definitivamente elementi senza Cestino: confermalo per continuare",
+  "review.applying.titleDelete": "Eliminazione definitiva",
+  "review.applying.titleMixed": "Spostamento nel Cestino ed eliminazione definitiva",
+  "review.result.deletedTitle": "Eliminato definitivamente",
+  "review.result.cleanedTitle": "Pulizia completata",
+  "review.result.cancelledCounts": {
+    "one": "Annullato: {done} completati, {left} elemento non toccato e lasciato com'era",
+    "other": "Annullato: {done} completati, {left} elementi non toccati e lasciati com'erano"
+  },
+  "review.result.cancelTooLate": "L'annullamento è arrivato durante l'ultimo elemento, che è stato quindi completato",
+  "review.numbers.frees": "Libera circa",
+  "review.numbers.allocatedDelete": "Le dimensioni sono lo spazio che gli elementi occupano ora. Eliminarli lo restituisce al volume, ma snapshot o dati condivisi possono trattenerne una parte",
+  "review.recycle.syncDelete": "In una cartella sincronizzata da Synology Drive, ShareSync o Cloud Sync, l'eliminazione rimuove gli elementi anche dalle copie sincronizzate",
+  "review.refusal.notFound": "Questo elemento non esiste più. Rimuovilo dall'elenco di pulizia",
+  "review.recycle.symlinks": {
+    "one": "{symlinks} collegamento (symlink) tra questi non viene conservato dal Cestino di DSM e non torna con il ripristino",
+    "other": "{symlinks} collegamenti (symlink) tra questi non vengono conservati dal Cestino di DSM e non tornano con il ripristino"
+  },
+  "review.applying.checkingKept": {
+    "one": "Verifica della copia conservata",
+    "other": "Verifica di {kept} copie conservate"
+  },
+  "review.applying.finishingCurrent": "Completamento dell'elemento corrente, poi si ferma; il resto resta dov'è"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "file": "requested.json"
+  },
+  {
+    "file": "cancelled.json",
+    "scenario": "paused"
+  }
+]

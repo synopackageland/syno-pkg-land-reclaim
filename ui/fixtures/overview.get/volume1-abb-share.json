@@ -1,0 +1,576 @@
+{
+  "schema_version": 1,
+  "command": "overview",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:35:33Z",
+  "completion": "partial",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unresolved_references",
+      "message": "1110 extents (597 MiB) have unresolved references; reclaimable values count only resolved extents"
+    }
+  ],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "job_id": "fixture-job0001",
+        "scan_started": "2026-09-29T23:55:21Z",
+        "scan_finished": "2026-09-30T00:30:06Z",
+        "age_seconds": 327,
+        "stale": false,
+        "consistency": "partial",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": true,
+            "generation_before": 4701580,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 261,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": true,
+            "generation_before": 4701579,
+            "generation_after": 4702015
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 6,
+          "snapshots_materialized": 6,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 3,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "partial",
+          "unresolved_extents": 15128
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "filesystem": {
+        "uuid": "f0000000-0000-4000-8000-00000000009a",
+        "mount": {
+          "path": "/volume1"
+        },
+        "kind": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "space": {
+        "df": {
+          "total_bytes": 4139051651072,
+          "used_bytes": 1643097223168,
+          "free_bytes": 2495954427904,
+          "available_bytes": 2495954427904
+        },
+        "space_info": [
+          {
+            "type": "data",
+            "profile": "single",
+            "copies": 1,
+            "total_bytes": 1655842963456,
+            "used_bytes": 1643029061632,
+            "captured": "scan_end",
+            "used_bytes_at_scan_start": 1642299219968
+          },
+          {
+            "type": "system",
+            "profile": "dup",
+            "copies": 2,
+            "total_bytes": 33554432,
+            "used_bytes": 16384,
+            "captured": "scan_end"
+          },
+          {
+            "type": "metadata",
+            "profile": "dup",
+            "copies": 2,
+            "total_bytes": 3221225472,
+            "used_bytes": 1920008192,
+            "captured": "scan_end"
+          },
+          {
+            "type": "unknown",
+            "profile": "single",
+            "copies": 1,
+            "total_bytes": 268435456,
+            "used_bytes": 0,
+            "captured": "scan_end"
+          }
+        ]
+      },
+      "parts": [
+        {
+          "kind": "pending_cleanup",
+          "bytes": 0,
+          "reclaimable_bytes": null,
+          "held_bytes": 0,
+          "items": []
+        },
+        {
+          "kind": "snapshot_only",
+          "bytes": 24576,
+          "reclaimable_bytes": null,
+          "held_bytes": 24576,
+          "items": [
+            {
+              "share": "entry0005",
+              "bytes": 4096,
+              "reclaimable_bytes": null
+            },
+            {
+              "share": "entry0001",
+              "bytes": 20480,
+              "reclaimable_bytes": null
+            }
+          ]
+        },
+        {
+          "kind": "recycle_bin",
+          "bytes": 1989451776,
+          "reclaimable_bytes": 1968693248,
+          "held_bytes": null,
+          "items": [
+            {
+              "share": "share62",
+              "bytes": 258048,
+              "reclaimable_bytes": 258048
+            },
+            {
+              "share": "share50",
+              "bytes": 1917779968,
+              "reclaimable_bytes": 1917779968
+            },
+            {
+              "share": "entry0005",
+              "bytes": 20758528,
+              "reclaimable_bytes": 0
+            },
+            {
+              "share": "share59",
+              "bytes": 50065408,
+              "reclaimable_bytes": 50065408
+            },
+            {
+              "share": "share56",
+              "bytes": 589824,
+              "reclaimable_bytes": 589824
+            }
+          ]
+        },
+        {
+          "kind": "dsm_service",
+          "bytes": 1615241744384,
+          "reclaimable_bytes": null,
+          "held_bytes": 1615241744384,
+          "items": [
+            {
+              "service": "synology_drive",
+              "managed_by": "Synology Drive Server",
+              "manage_in": "Synology Drive admin Console > Team Folder (version settings); Drive's own recycle folder0369",
+              "manage_in_id": "drive_admin_console",
+              "bytes": 402944000,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "synology_drive_sharesync",
+              "managed_by": "Synology Drive ShareSync",
+              "manage_in": "Synology Drive ShareSync",
+              "manage_in_id": "drive_sharesync",
+              "bytes": 532480,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "active_backup",
+              "managed_by": "Active Backup for Business (database and settings)",
+              "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+              "manage_in_id": "active_backup_business",
+              "bytes": 610304,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "active_backup_google_workspace",
+              "managed_by": "Active Backup for Google Workspace (database)",
+              "manage_in": "Active Backup for Google Workspace (delete versions or tasks there; never delete its files directly)",
+              "manage_in_id": "active_backup_google_workspace",
+              "bytes": 90112,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "container_manager",
+              "managed_by": "Container Manager",
+              "manage_in": "Container Manager (remove unused folder0284 and containers)",
+              "manage_in_id": "container_manager",
+              "bytes": 7375642624,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "packages",
+              "managed_by": "installed packages",
+              "manage_in": "Package Center (the package's own settings)",
+              "manage_in_id": "package_center",
+              "bytes": 5174534144,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "package_data",
+              "managed_by": "installed packages (data)",
+              "manage_in": "Package Center (the package's own settings)",
+              "manage_in_id": "package_center",
+              "bytes": 164118528,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "package_config",
+              "managed_by": "installed packages (settings)",
+              "manage_in": "Package Center (the package's own settings)",
+              "manage_in_id": "package_center",
+              "bytes": 323584,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "package_share",
+              "managed_by": "installed packages (shared data)",
+              "manage_in": "Package Center (the package's own settings)",
+              "manage_in_id": "package_center",
+              "bytes": 61440,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "databases",
+              "managed_by": "DSM and package databases",
+              "manage_in": "the package that owns each folder0252",
+              "manage_in_id": "owning_package",
+              "bytes": 177856512,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "share_snapshots",
+              "managed_by": "Snapshot Replication (shared folder snapshots)",
+              "manage_in": "Snapshot Replication > Snapshots (delete snapshots or change the retention policy)",
+              "manage_in_id": "snapshot_replication",
+              "bytes": 4096,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "surveillance_data",
+              "managed_by": "Surveillance Station (package data)",
+              "manage_in": "Surveillance Station",
+              "manage_in_id": "surveillance_station",
+              "bytes": 167329792,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "iscsi_luns",
+              "managed_by": "SAN Manager (iSCSI LUNs)",
+              "manage_in": "SAN Manager",
+              "manage_in_id": "san_manager",
+              "explanation": "Thin-provisioned LUNs return deleted space to the volume only when space reclamation is enabled and the initiator sends UNMAP; thick-provisioned LUNs have their configured capacity allocated up front. VMM virtual disks are stored under @iSCSI/fixtureLUN/fixtureVDISK_*; use Virtual Machine Manager > Virtual Machine to identify their storage. VMM images are managed in Virtual Machine Manager > Image, where their selected storage is shown.",
+              "bytes": 1073745920,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "cloud_sync",
+              "managed_by": "Cloud Sync",
+              "manage_in": "Cloud Sync",
+              "manage_in_id": "cloud_sync",
+              "bytes": 21270528,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "usb_copy",
+              "managed_by": "USB Copy",
+              "manage_in": "USB Copy",
+              "manage_in_id": "usb_copy",
+              "bytes": 147456,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "dsm_temp",
+              "managed_by": "DSM temporary files",
+              "manage_in": "DSM (the system clears it)",
+              "manage_in_id": "dsm",
+              "bytes": 2633728,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "folder_metadata",
+              "managed_by": "DSM indexing (thumbnails and file metadata)",
+              "manage_in": "the folder it belongs to (it is deleted with its folder, and DSM indexing recreates it)",
+              "manage_in_id": "owning_folder",
+              "bytes": 6066176,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "hyper_backup",
+              "managed_by": "Hyper Backup (backup data)",
+              "manage_in": "Hyper Backup or Hyper Backup Vault (delete versions or the task there; never delete its files directly)",
+              "manage_in_id": "hyper_backup",
+              "bytes": 396263424,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "hyper_backup_cache",
+              "managed_by": "Hyper Backup (image and cloud cache)",
+              "manage_in": "Hyper Backup (the share50 task that uses it)",
+              "manage_in_id": "hyper_backup",
+              "bytes": 12771328,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "other_dsm_service_data",
+              "managed_by": "DSM or a package",
+              "manage_in": "the package that created it",
+              "manage_in_id": "owning_package",
+              "bytes": 264798208,
+              "reclaimable_bytes": null
+            },
+            {
+              "service": "active_backup_data",
+              "managed_by": "Active Backup for Business (backup data)",
+              "manage_in": "Active Backup for Business (delete versions or tasks there; never delete its files directly)",
+              "manage_in_id": "active_backup_business",
+              "bytes": 1600000000000,
+              "reclaimable_bytes": null
+            }
+          ]
+        },
+        {
+          "kind": "share_live",
+          "bytes": 16418217984,
+          "reclaimable_bytes": 15420239872,
+          "held_bytes": null,
+          "items": [
+            {
+              "share": "share62",
+              "bytes": 13748457472,
+              "reclaimable_bytes": 13748457472
+            },
+            {
+              "share": "share50",
+              "bytes": 2574819328,
+              "reclaimable_bytes": 1660477440
+            },
+            {
+              "share": "entry0005",
+              "bytes": 84037632,
+              "reclaimable_bytes": 0
+            },
+            {
+              "share": "share59",
+              "bytes": 9502720,
+              "reclaimable_bytes": 9904128
+            },
+            {
+              "share": "share47",
+              "bytes": 4096,
+              "reclaimable_bytes": 4096
+            },
+            {
+              "share": "share48",
+              "bytes": 1314816,
+              "reclaimable_bytes": 1314816
+            },
+            {
+              "share": "share60",
+              "bytes": 40960,
+              "reclaimable_bytes": 40960
+            },
+            {
+              "share": "share51",
+              "bytes": 40960,
+              "reclaimable_bytes": 40960
+            }
+          ]
+        },
+        {
+          "kind": "shared_between_folders",
+          "bytes": 599625728,
+          "reclaimable_bytes": null,
+          "held_bytes": 599625728,
+          "items": []
+        },
+        {
+          "kind": "pinned_unreferenced",
+          "bytes": 242921472,
+          "reclaimable_bytes": null,
+          "held_bytes": null,
+          "items": []
+        },
+        {
+          "kind": "unknown",
+          "bytes": 8201981952,
+          "reclaimable_bytes": null,
+          "held_bytes": null,
+          "items": [],
+          "reasons": [
+            {
+              "code": "direct_owner_unresolved",
+              "bytes": 8201981952,
+              "subcases": [
+                {
+                  "code": "writable_root_inode_unindexed",
+                  "bytes": 396779520,
+                  "roots": [
+                    {
+                      "root_id": 256,
+                      "kind": "writable",
+                      "class": "at_directory",
+                      "at_directory": true,
+                      "bytes": 395841536
+                    },
+                    {
+                      "root_id": 261,
+                      "kind": "writable",
+                      "class": "shared_folder",
+                      "at_directory": false,
+                      "bytes": 937984
+                    }
+                  ]
+                },
+                {
+                  "code": "indexed_path_unmapped",
+                  "bytes": 7805202432,
+                  "roots": [
+                    {
+                      "root_id": 256,
+                      "kind": "writable",
+                      "class": "at_directory",
+                      "at_directory": true,
+                      "bytes": 7804145664
+                    },
+                    {
+                      "root_id": 1174,
+                      "kind": "writable",
+                      "class": "other",
+                      "at_directory": false,
+                      "bytes": 1056768
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "reconciliation": {
+        "data": {
+          "parts_sum_bytes": 1642693967872,
+          "space_info_used_bytes": 1643029061632,
+          "residual_bytes": -335093760,
+          "tolerance_bytes": 1803583488,
+          "status": "not_reconciled",
+          "coverage_gaps": true
+        },
+        "df": {
+          "used_bytes": 1643097223168,
+          "metadata_system_bytes": 3840049152,
+          "data_metadata_system_bytes": 1646869110784,
+          "residual_bytes": -3771887616,
+          "status": "display_only"
+        }
+      },
+      "actions": [
+        {
+          "rank": 1,
+          "kind": "cleanup",
+          "share": "share62",
+          "reclaimable_bytes": 13717508096,
+          "held_bytes": null,
+          "manage_in": "File Station (permanent delete)",
+          "manage_in_id": "file_station",
+          "path": {
+            "path": "/volume1/share62/folder0176"
+          },
+          "command": [
+            "synoreclaim",
+            "cleanup",
+            "delete",
+            "/fixture/entry9999/entry9999"
+          ]
+        },
+        {
+          "rank": 2,
+          "kind": "recycle",
+          "share": "share50",
+          "reclaimable_bytes": 1917779968,
+          "held_bytes": null,
+          "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings",
+          "manage_in_id": "shared_folder_recycle_bin"
+        },
+        {
+          "rank": 3,
+          "kind": "cleanup",
+          "share": "share50",
+          "reclaimable_bytes": 1514835968,
+          "held_bytes": null,
+          "manage_in": "File Station (permanent delete)",
+          "manage_in_id": "file_station",
+          "path": {
+            "path": "/volume1/share50/folder0141"
+          },
+          "command": [
+            "synoreclaim",
+            "cleanup",
+            "delete",
+            "/fixture/entry9999/entry9999"
+          ]
+        },
+        {
+          "rank": 4,
+          "kind": "recycle",
+          "share": "share59",
+          "reclaimable_bytes": 50065408,
+          "held_bytes": null,
+          "manage_in": "Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings",
+          "manage_in_id": "shared_folder_recycle_bin"
+        },
+        {
+          "rank": 5,
+          "kind": "cleanup",
+          "share": "share62",
+          "reclaimable_bytes": 26501120,
+          "held_bytes": null,
+          "manage_in": "File Station (permanent delete)",
+          "manage_in_id": "file_station",
+          "path": {
+            "path": "/volume1/share62/folder0213"
+          },
+          "command": [
+            "synoreclaim",
+            "cleanup",
+            "delete",
+            "/fixture/entry9999/entry9999"
+          ]
+        }
+      ]
+    }
+  ],
+  "scans": []
+}

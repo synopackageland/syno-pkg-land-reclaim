@@ -1,0 +1,1992 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/common.schema.json",
+  "title": "synoreclaim JSON v1 shared definitions",
+  "description": "Byte values are integer bytes. Unknown is null, never zero. Consumers must tolerate new optional fields and new reason codes within schema version 1.",
+  "$defs": {
+    "system_partition": {
+      "description": "The root filesystem, DSM's own partition (md0, ext4), listed apart from the data volumes; synoreclaim neither scans nor cleans it. Null when it cannot be read.",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "mount": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "fstype": {
+              "type": "string"
+            },
+            "total_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "available_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "used_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "free_bytes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Available bytes reported by the filesystem, also present as available_bytes for compatibility."
+            },
+            "used_percent": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Whole percent used, rounded down."
+            },
+            "level": {
+              "enum": [
+                "ok",
+                "getting_full",
+                "full"
+              ]
+            },
+            "level_reasons": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "used_over_recommended",
+                  "update_headroom_low",
+                  "update_may_fail",
+                  "nearly_full"
+                ]
+              }
+            },
+            "nearly_full": {
+              "type": "boolean",
+              "description": "Less than 5 % of it is available; a system_partition_nearly_full warning says so."
+            }
+          },
+          "required": [
+            "mount",
+            "source",
+            "fstype",
+            "total_bytes",
+            "available_bytes",
+            "used_bytes",
+            "free_bytes",
+            "used_percent",
+            "level",
+            "level_reasons",
+            "nearly_full"
+          ]
+        }
+      ]
+    },
+    "path": {
+      "type": "object",
+      "description": "A filesystem path.",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The path as UTF-8; lossy when path_hex is present."
+        },
+        "path_hex": {
+          "type": "string",
+          "pattern": "^[0-9a-f]+$",
+          "description": "Exact path bytes in lowercase hex; present only when the path is not valid UTF-8."
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "RFC 3339 UTC timestamp, second precision."
+    },
+    "fsid": {
+      "type": "string",
+      "pattern": "^[0-9a-f-]+$",
+      "description": "Btrfs filesystem UUID."
+    },
+    "completion": {
+      "enum": [
+        "complete",
+        "partial",
+        "busy",
+        "paused",
+        "runtime_limit",
+        "resource_limit",
+        "cancelled",
+        "failed"
+      ],
+      "description": "How the command or unit ended. Exit codes: complete 0, failed 1, partial 3, busy 4, paused 10/129/130/143, runtime_limit, resource_limit and cancelled 10. cancelled: a cancel request stopped the scan; its job ended."
+    },
+    "consistency": {
+      "enum": [
+        "observed-stable",
+        "changed-during-scan",
+        "partial"
+      ],
+      "description": "observed-stable means no change was detected, not proof of an atomic view."
+    },
+    "maintenance_operation": {
+      "enum": [
+        "balance",
+        "dev-replace"
+      ],
+      "description": "A Btrfs operation that rewrites extent mappings."
+    },
+    "change_reason": {
+      "description": "One change that made a scan changed-during-scan. Consumers must tolerate new kinds within schema version 1.",
+      "anyOf": [
+        {
+          "type": "object",
+          "description": "A subvolume's generation moved between the first and final discovery; selected when its namespace is in the report.",
+          "properties": {
+            "kind": {
+              "const": "subvolume-generation-changed"
+            },
+            "subvolume_id": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "selected": {
+              "type": "boolean"
+            },
+            "generation_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation_after": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "subvolume_id",
+            "selected",
+            "generation_before",
+            "generation_after"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A subvolume the first discovery did not see; snapshot_of names the subvolume its parent_uuid points at, when known.",
+          "properties": {
+            "kind": {
+              "const": "subvolume-appeared"
+            },
+            "subvolume_id": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "has_uuid": {
+              "type": "boolean",
+              "description": "Absent in reasons written before this field; read as false."
+            },
+            "snapshot_of": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "subvolume_id",
+            "generation"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A selected subvolume the final discovery did not see.",
+          "properties": {
+            "kind": {
+              "const": "subvolume-vanished"
+            },
+            "subvolume_id": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation_before": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "subvolume_id",
+            "generation_before"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A selected subvolume's ROOT_ITEM.last_snapshot moved: it was snapshotted during the scan.",
+          "properties": {
+            "kind": {
+              "const": "subvolume-snapshotted"
+            },
+            "subvolume_id": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_snapshot_before": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_snapshot_after": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "subvolume_id",
+            "last_snapshot_before",
+            "last_snapshot_after"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A selected subvolume's uuid changed: another subvolume has its id.",
+          "properties": {
+            "kind": {
+              "const": "subvolume-uuid-changed"
+            },
+            "subvolume_id": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "subvolume_id"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A balance or device replace was running at the start or end of the scan.",
+          "properties": {
+            "kind": {
+              "const": "maintenance-running"
+            },
+            "operation": {
+              "$ref": "#/$defs/maintenance_operation"
+            }
+          },
+          "required": [
+            "kind",
+            "operation"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A maintenance probe failed, so the operation cannot be ruled out; errno is null when the kernel gave none.",
+          "properties": {
+            "kind": {
+              "const": "maintenance-probe-failed"
+            },
+            "operation": {
+              "$ref": "#/$defs/maintenance_operation"
+            },
+            "errno": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "operation",
+            "errno"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "A relocation tree for this subvolume was seen: a balance was relocating its blocks, so their sharing and ownership are not settled.",
+          "properties": {
+            "kind": {
+              "const": "relocation-tree"
+            },
+            "subvolume_id": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "subvolume_id"
+          ]
+        }
+      ]
+    },
+    "change_reasons": {
+      "type": "array",
+      "description": "Why consistency is changed-during-scan; empty when no change was detected.",
+      "items": {
+        "$ref": "#/$defs/change_reason"
+      }
+    },
+    "scope": {
+      "enum": [
+        "volume",
+        "path"
+      ]
+    },
+    "notice": {
+      "type": "object",
+      "description": "A warning or explanation; code is a stable reason code.",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "package_data": {
+      "type": "object",
+      "description": "Package-managed data (SPEC 5.7) the entry is, lies in or holds: free it in the package, never by deleting its files. Present only on such entries.",
+      "properties": {
+        "service": {
+          "type": "string",
+          "description": "The DSM service code."
+        },
+        "package": {
+          "type": "string"
+        },
+        "manage_in": {
+          "type": "string"
+        },
+        "manage_in_id": {
+          "type": "string",
+          "description": "Stable snake_case id of the DSM place (SPEC 4.6), so the UI localizes it instead of parsing manage_in."
+        },
+        "confirmed": {
+          "type": "boolean",
+          "description": "False when the layout is an assumption not confirmed on this DSM version."
+        },
+        "marker": {
+          "type": "string",
+          "description": "The marker entry, when a marker made a folder package data."
+        },
+        "holds": {
+          "type": "boolean",
+          "description": "The entry holds the data below itself rather than lying in it."
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "service",
+        "package",
+        "manage_in",
+        "manage_in_id",
+        "confirmed",
+        "holds",
+        "message"
+      ]
+    },
+    "target_error": {
+      "type": "object",
+      "description": "A per-target failure.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "holder": {
+              "type": "object",
+              "description": "busy only: who holds the filesystem or NAS-wide rootfs writer lock, when its lock file names it. command is scan, cache-clear, cleanup-apply, rootfs-apply or doctor; job_id is the writer job, null for foreground commands.",
+              "properties": {
+                "job_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "command": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "job_id",
+                "command"
+              ]
+            },
+            "limit": {
+              "enum": [
+                "share_quota"
+              ],
+              "description": "destination_full only: the shared folder quota, rather than volume free space, is the limiting resource."
+            },
+            "reason": {
+              "enum": [
+                "volume",
+                "system",
+                "recycle_bin",
+                "package",
+                "dsm_folder",
+                "share_root",
+                "home",
+                "outside_share"
+              ],
+              "description": "protected_target only: why the path is protected. share_root is a DSM shared folder itself; outside_share a path in no DSM shared folder (no Recycle Bin to move it into); package a package's data, named by package."
+            },
+            "package": {
+              "type": "string",
+              "description": "protected_target with reason package: the package whose data it is."
+            },
+            "group": {
+              "type": "string",
+              "description": "cleanup plan --duplicates: the selected duplicate group whose copy this path is; taking that group out of the selection drops the path."
+            },
+            "conflict": {
+              "type": "object",
+              "description": "keeper_conflict only: the copy at path is kept by the user in kept_in, and removing the selected group removed_by would remove it.",
+              "properties": {
+                "kept_in": {
+                  "$ref": "#/$defs/group_name"
+                },
+                "removed_by": {
+                  "$ref": "#/$defs/group_name"
+                }
+              },
+              "required": [
+                "kept_in",
+                "removed_by"
+              ]
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ]
+        }
+      ]
+    },
+    "group_name": {
+      "type": "object",
+      "description": "A duplicate group by id and name.",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "$ref": "#/$defs/path"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "job_request": {
+      "type": "object",
+      "description": "The answer to pause / cancel / mode --json, and the refusal of resume --json and jobs --result --json (SPEC 22.1). envelope.job_id is the job asked about. Exit 0 when requested or cancelled; a refusal exits 4 for busy (the job is running) and job_incompatible or checkpoint_unusable, 1 otherwise.",
+      "properties": {
+        "outcome": {
+          "enum": [
+            "requested",
+            "cancelled",
+            "too_late",
+            "not_running",
+            "finished",
+            "no_job",
+            "busy",
+            "job_incompatible",
+            "not_started",
+            "no_result",
+            "not_pausable",
+            "not_resumable",
+            "not_adjustable",
+            "checkpoint_unusable"
+          ],
+          "description": "requested: the running job will stop at its next safe point (a request is not proof it stopped; poll jobs). cancelled: a stopped job ended at once. too_late: the job is publishing and can no longer stop. not_running: pause of a job that is not running. finished: the job has ended. no_job: no such job. busy: resume of a job running in another process. job_incompatible: resume of a job another binary (tool version, report or cache format) started; start a new scan. not_started: resume of a queued job, which `scan --job-id` runs. no_result: jobs --result of a job with no finished run yet (command job-result). not_pausable: pause of a cleanup apply job (cancel stops it after the current entry). not_resumable: resume of a cleanup apply job (run cleanup apply with its plan again). not_adjustable: mode of a cleanup or rootfs apply job, which keeps the profile it started with. For mode, requested means the running scan goes on in the new profile from its next check, keeping its progress. checkpoint_unusable: the saved scan checkpoint is missing, damaged, incompatible or its volume/subvolume identity changed; the paused job is retained and the message explains why a fresh scan is needed."
+        },
+        "message": {
+          "type": "string",
+          "description": "Human text; never parse it."
+        },
+        "state": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "jobs.schema.json#/allOf/1/properties/jobs/items/properties/state"
+            }
+          ],
+          "description": "The job's state after the request, as jobs shows it; null when there is no such job."
+        }
+      },
+      "required": [
+        "outcome",
+        "message",
+        "state"
+      ]
+    },
+    "envelope": {
+      "type": "object",
+      "description": "Fields every document starts with.",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "command": {
+          "type": "string"
+        },
+        "tool_version": {
+          "type": "string"
+        },
+        "generated_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "completion": {
+          "$ref": "#/$defs/completion"
+        },
+        "job_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/target_error"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/notice"
+          }
+        },
+        "scan_hints": {
+          "type": "array",
+          "description": "Present when volume targets had no covering report: what to run for each and what its last completed volume scan took. Absent when empty.",
+          "items": {
+            "$ref": "#/$defs/scan_hint"
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "command",
+        "tool_version",
+        "generated_at",
+        "completion",
+        "job_id",
+        "errors",
+        "warnings"
+      ]
+    },
+    "scan_hint": {
+      "type": "object",
+      "description": "The scan command for a volume target no report covers (SPEC 5.1).",
+      "allOf": [
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "properties": {
+            "command": {
+              "type": "string",
+              "description": "The exact command to run, shell-quoted."
+            },
+            "last_scan": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "description": "The last completed whole-volume scan of this filesystem.",
+                  "properties": {
+                    "finished": {
+                      "$ref": "#/$defs/timestamp"
+                    },
+                    "elapsed_ms": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "entries": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "finished",
+                    "elapsed_ms",
+                    "entries"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "command",
+            "last_scan"
+          ]
+        }
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "logical": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Apparent size of distinct regular-file inodes."
+        },
+        "physical": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Btrfs: distinct physical extents. ext4: distinct (dev, ino) st_blocks × 512 allocations, including directories and symlinks."
+        },
+        "shared": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Footprint bytes proven to have references outside the path: physical - reclaimable_resolved - unknown."
+        },
+        "reclaimable": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Whole-extent bytes that deleting the path frees (SPEC 3). Null when any footprint reference is unresolved (unknown > 0): unknown, never a confident zero."
+        },
+        "reclaimable_resolved": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The resolved, conservative part of reclaimable; equals reclaimable when unknown is 0."
+        },
+        "unknown": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Footprint bytes of extents whose references could not be resolved; never counted as reclaimable."
+        },
+        "pinned_unreferenced": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Bytes of reclaimable extents that no file range references (bookends); included in reclaimable."
+        },
+        "extents": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "inline": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "files": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "logical",
+        "physical",
+        "shared",
+        "reclaimable",
+        "reclaimable_resolved",
+        "unknown",
+        "pinned_unreferenced",
+        "extents",
+        "inline",
+        "entries",
+        "files"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "description": "What a report does not cover; unknown is not zero.",
+      "properties": {
+        "namespace_uncertain_subvolumes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Subvolumes whose namespace has gaps, encrypted entries or failed roots. Empty proves no namespace gaps; absent on legacy reports means unknown. Does not certify reference accounting."
+        },
+        "encrypted_directories": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "snapshots_not_materialized": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "snapshots_materialized": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unlinked_subvolume_entries": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "dangling_entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cycles": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsupported_locations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_subvolume_roots": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unreadable_roots": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Requested roots the scan could not read. Absent on legacy reports: unknown, not zero."
+        },
+        "reference_accounting": {
+          "enum": [
+            "complete",
+            "partial",
+            "unavailable"
+          ],
+          "description": "complete: every extent's references were resolved; partial: some extents are unknown; unavailable: reports older than reference accounting."
+        },
+        "unresolved_extents": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Extents with no extent-tree item or unreadable references."
+        },
+        "approximation": {
+          "$ref": "#/$defs/approximation"
+        }
+      },
+      "required": [
+        "encrypted_directories",
+        "snapshots_not_materialized",
+        "unlinked_subvolume_entries",
+        "dangling_entries",
+        "cycles",
+        "unsupported_locations",
+        "missing_subvolume_roots",
+        "reference_accounting",
+        "unresolved_extents"
+      ]
+    },
+    "scan_stats": {
+      "type": "object",
+      "properties": {
+        "subvolumes_discovered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "subvolumes_scanned": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "subvolumes_reused": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "entries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "inodes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "batches": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "item_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Payload bytes of the metadata items read."
+        },
+        "reference_searches": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Extent-tree range searches for reference accounting."
+        },
+        "reference_items": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Extent-tree items read for reference accounting."
+        },
+        "owner_lookups": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Tree-block lookups made by the volume overview owner walk."
+        },
+        "owner_budget_capped_extents": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Extents whose overview owner walk reached --owner-budget."
+        },
+        "pinned_leaf_reads": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Leaves read by address to measure overview pinned bytes."
+        },
+        "pinned_leaf_read_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Bytes of those leaf reads."
+        },
+        "pinned_leaf_cache_hits": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Leaf reads a remembered leaf saved."
+        },
+        "pinned_root_searches": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Root searches for the direct references of unscanned roots."
+        },
+        "pinned_leaf_reader_unavailable": {
+          "type": "string",
+          "description": "Why leaves could not be read by address; absent when they could."
+        },
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "peak_rss_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "pinned_read_plan": {
+          "$ref": "#/$defs/read_budget"
+        }
+      },
+      "required": [
+        "subvolumes_discovered",
+        "subvolumes_scanned",
+        "subvolumes_reused",
+        "entries",
+        "inodes",
+        "extents",
+        "items",
+        "batches",
+        "item_bytes",
+        "reference_searches",
+        "reference_items",
+        "owner_lookups",
+        "owner_budget_capped_extents",
+        "elapsed_ms",
+        "peak_rss_bytes"
+      ]
+    },
+    "subvolume": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "role": {
+          "enum": [
+            "scanned",
+            "snapshot-skipped",
+            "reused"
+          ]
+        },
+        "generation_before": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generation_after": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Null when the subvolume vanished during the scan."
+        },
+        "captured": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unix seconds when a reused unit's namespace was read."
+        },
+        "uuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]+$",
+          "description": "ROOT_ITEM.uuid (32 lowercase hex digits) at the final discovery, when it has one."
+        },
+        "last_snapshot": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "ROOT_ITEM.last_snapshot at the final discovery."
+        },
+        "snapshots": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Subvolumes whose parent_uuid names this one at the final discovery."
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "generation_before",
+        "generation_after"
+      ]
+    },
+    "scheduling": {
+      "type": "object",
+      "description": "Requested versus applied scheduling.",
+      "properties": {
+        "profile": {
+          "enum": [
+            "low",
+            "normal",
+            "fast"
+          ]
+        },
+        "requested_nice": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "applied_nice": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "requested_io_class": {
+          "enum": [
+            "idle",
+            "inherited"
+          ]
+        },
+        "applied_io_class": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "enum": [
+                "none",
+                "realtime",
+                "best-effort",
+                "idle",
+                "unknown"
+              ]
+            }
+          ]
+        },
+        "duty_percent": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "effectiveness_unknown": {
+          "type": "boolean",
+          "description": "Accepted settings do not prove reduced foreground impact."
+        }
+      },
+      "required": [
+        "profile",
+        "requested_nice",
+        "applied_nice",
+        "requested_io_class",
+        "applied_io_class",
+        "duty_percent",
+        "warnings",
+        "effectiveness_unknown"
+      ]
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "scheduling": {
+          "$ref": "#/$defs/scheduling"
+        },
+        "memory_budget_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_runtime_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "peak_rss_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "scheduling",
+        "memory_budget_bytes",
+        "max_runtime_seconds",
+        "peak_rss_bytes"
+      ]
+    },
+    "filesystem_scan": {
+      "type": "object",
+      "description": "One filesystem of a scan.",
+      "properties": {
+        "fsid": {
+          "$ref": "#/$defs/fsid"
+        },
+        "mount": {
+          "$ref": "#/$defs/path"
+        },
+        "completion": {
+          "$ref": "#/$defs/completion"
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/$defs/path"
+              },
+              {
+                "properties": {
+                  "scope": {
+                    "$ref": "#/$defs/scope"
+                  },
+                  "tree": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "ino": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "inode_device": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "ext4 st_dev; tree is null on ext4."
+                  }
+                },
+                "required": [
+                  "scope",
+                  "tree",
+                  "ino"
+                ]
+              }
+            ]
+          }
+        },
+        "covered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "A requested target contained in another one.",
+            "allOf": [
+              {
+                "$ref": "#/$defs/path"
+              },
+              {
+                "properties": {
+                  "covered_by": {
+                    "$ref": "#/$defs/path"
+                  }
+                },
+                "required": [
+                  "covered_by"
+                ]
+              }
+            ]
+          }
+        },
+        "consistency": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/consistency"
+            }
+          ]
+        },
+        "change_reasons": {
+          "$ref": "#/$defs/change_reasons"
+        },
+        "state_dir_writes": {
+          "type": "array",
+          "description": "Generation changes left out of change_reasons: every inode the subvolume changed during the scan lies inside the tool's own state directory (SPEC 22.4).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "subvolume_id": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "generation_before": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "generation_after": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "inodes": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Inodes changed, all inside the state directory."
+              }
+            },
+            "required": [
+              "subvolume_id",
+              "generation_before",
+              "generation_after",
+              "inodes"
+            ]
+          }
+        },
+        "scan_started": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/timestamp"
+            }
+          ]
+        },
+        "scan_finished": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/timestamp"
+            }
+          ]
+        },
+        "totals": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/metrics"
+            }
+          ]
+        },
+        "stats": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/scan_stats"
+            }
+          ]
+        },
+        "resource_limit": {
+          "description": "Set when the memory budget stopped the scan (SPEC 22.4).",
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "tree": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "description": "The tree being read: an fs tree, or the extent tree (2) while resolving references."
+                },
+                "budget_bytes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "resident_bytes": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "description": "Resident set at the check that tripped; null when an allocation failed instead."
+                },
+                "reserved_bytes": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "description": "Growth the scan asked for; 0 when the resident set alone passed the budget."
+                },
+                "projected_bytes": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "description": "resident_bytes + reserved_bytes."
+                }
+              },
+              "required": [
+                "tree",
+                "budget_bytes",
+                "resident_bytes",
+                "reserved_bytes",
+                "projected_bytes"
+              ]
+            }
+          ]
+        },
+        "coverage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/coverage"
+            }
+          ]
+        },
+        "subvolumes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/$defs/subvolume"
+          }
+        },
+        "report": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "description": "The published report file.",
+              "allOf": [
+                {
+                  "$ref": "#/$defs/path"
+                },
+                {
+                  "properties": {
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "bytes"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/target_error"
+          }
+        },
+        "warnings": {
+          "description": "Includes state_dir_in_selection and state_dir_on_scanned_filesystem when the state directory lies on this filesystem, state_dir_writes_ignored for each subvolume whose change came only from the state directory's own writes (listed in state_dir_writes), and state_dir_changed when a change reason is still the subvolume holding it; disk_limit when the scan stopped below the free-space reserve of the state filesystem (section 22.4); history_not_saved when the scan's cost could not be recorded for later estimates.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/notice"
+          }
+        },
+        "filesystem": {
+          "$ref": "#/$defs/filesystem_kind"
+        },
+        "capabilities": {
+          "$ref": "#/$defs/capabilities"
+        },
+        "inode_walk": {
+          "type": "object",
+          "properties": {
+            "entries": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "inodes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "elapsed_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "peak_rss_bytes": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            }
+          },
+          "required": [
+            "entries",
+            "inodes",
+            "elapsed_ms",
+            "peak_rss_bytes"
+          ]
+        }
+      },
+      "required": [
+        "fsid",
+        "mount",
+        "completion",
+        "targets",
+        "covered",
+        "consistency",
+        "scan_started",
+        "scan_finished",
+        "totals",
+        "stats",
+        "resource_limit",
+        "coverage",
+        "subvolumes",
+        "report",
+        "errors",
+        "warnings",
+        "filesystem",
+        "capabilities"
+      ]
+    },
+    "report_info": {
+      "type": "object",
+      "description": "The report an answer came from; path is the report file.",
+      "allOf": [
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "properties": {
+            "fsid": {
+              "$ref": "#/$defs/fsid"
+            },
+            "job_id": {
+              "type": "string"
+            },
+            "scan_started": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "scan_finished": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "age_seconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stale": {
+              "type": "boolean",
+              "description": "Older than --max-age, or a cleanup ran since the scan (cleanup_since_report, or an unreadable cleanup record)."
+            },
+            "consistency": {
+              "$ref": "#/$defs/consistency"
+            },
+            "change_reasons": {
+              "$ref": "#/$defs/change_reasons"
+            },
+            "coverage": {
+              "$ref": "#/$defs/coverage"
+            },
+            "cleanup_since_report": {
+              "description": "The newest cleanup applied since this report's scan, which made it stale (SPEC 5.7 \"Reports after cleanup\"); null when none.",
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "plan_id": {
+                      "type": "string"
+                    },
+                    "execution_log": {
+                      "type": "string",
+                      "description": "The execution log's file name under the state directory's cleanup/logs."
+                    },
+                    "applied_at": {
+                      "$ref": "#/$defs/timestamp"
+                    }
+                  },
+                  "required": [
+                    "plan_id",
+                    "execution_log",
+                    "applied_at"
+                  ]
+                }
+              ]
+            },
+            "attribution": {
+              "$ref": "#/$defs/attribution"
+            },
+            "filesystem": {
+              "$ref": "#/$defs/filesystem_kind"
+            },
+            "capabilities": {
+              "$ref": "#/$defs/capabilities"
+            }
+          },
+          "required": [
+            "fsid",
+            "job_id",
+            "scan_started",
+            "scan_finished",
+            "age_seconds",
+            "stale",
+            "consistency",
+            "coverage",
+            "filesystem",
+            "capabilities"
+          ]
+        }
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "properties": {
+            "kind": {
+              "enum": [
+                "file",
+                "dir",
+                "symlink",
+                "fifo",
+                "socket",
+                "char-device",
+                "block-device",
+                "unknown",
+                "service"
+              ],
+              "description": "service: a top row adding up the paths of one DSM service (SPEC 5.4)."
+            },
+            "flags": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "system",
+                  "recycle",
+                  "encrypted",
+                  "subvolume_root",
+                  "own_state",
+                  "unlinked_subvolume",
+                  "snapshot_not_read"
+                ]
+              }
+            },
+            "metrics": {
+              "$ref": "#/$defs/metrics"
+            },
+            "blockers": {
+              "type": "array",
+              "description": "Why some of the footprint is not reclaimable (SPEC 3 external blockers).",
+              "items": {
+                "$ref": "#/$defs/blocker"
+              }
+            },
+            "nlink": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tree": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "objectid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "package_data": {
+              "$ref": "#/$defs/package_data"
+            },
+            "without_package_data": {
+              "$ref": "#/$defs/metrics",
+              "description": "A directory's values without the package-managed data and Recycle Bins below it, which their own rows count (SPEC 5.4); top shows and ranks these. Present only for directories holding such data."
+            },
+            "inode_device": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "flags",
+            "metrics",
+            "blockers",
+            "nlink",
+            "tree",
+            "objectid"
+          ]
+        }
+      ]
+    },
+    "blocker": {
+      "enum": [
+        "snapshot",
+        "live_reflink",
+        "hard_link",
+        "other_subvolume",
+        "shared_tree",
+        "pending_subvolume_deletion",
+        "orphan_inode",
+        "unknown"
+      ],
+      "description": "snapshot: a read-only snapshot, or a leaf shared through snapshotting; live_reflink: another live file in the same scan; hard_link: a link outside the selection; other_subvolume: another subvolume; shared_tree: a tree block shared by snapshotting whose owner is not resolved; pending_subvolume_deletion: a deleted subvolume awaiting the cleaner; orphan_inode: an inode without names; unknown: unresolved references."
+    },
+    "snapshot_simulation": {
+      "type": "object",
+      "description": "What deleting the selected snapshots together frees.",
+      "properties": {
+        "selector": {
+          "type": "string"
+        },
+        "selected_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "freed_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Bytes all of whose references are selected snapshots or deleted ones awaiting the cleaner: one set operation, not a sum."
+        },
+        "unknown_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Bytes the set may free whose other owners could not be ruled out."
+        },
+        "not_materialized_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Selected snapshots whose file extents were not read; what they alone hold is not in freed_bytes."
+        },
+        "upper_bound_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "The most deleting the set may free: freed_bytes plus unknown_bytes plus external bytes a selected snapshot of another share may hold. Null when a selected snapshot was not read. freed_bytes is the least."
+        },
+        "exact": {
+          "type": "boolean",
+          "description": "freed_bytes is what deleting the set frees: every selected snapshot was read and no extent it may free is unresolved or shared with another share's snapshot."
+        },
+        "inexact_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "not_materialized",
+              "unknown_owners",
+              "cross_share_sharing"
+            ]
+          },
+          "description": "Why exact is false; empty when it is true."
+        },
+        "exact_command": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The scan (--snapshots all, raised owner budgets) that reads what made the answer inexact; null when it is exact or no scan option helps (cross_share_sharing, missing roots)."
+        }
+      },
+      "required": [
+        "selector",
+        "selected_ids",
+        "freed_bytes",
+        "unknown_bytes",
+        "not_materialized_ids",
+        "upper_bound_bytes",
+        "exact",
+        "inexact_reasons",
+        "exact_command"
+      ]
+    },
+    "held_files": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "complete": {
+          "type": "boolean",
+          "description": "Every file with snapshot-only data was tallied (--held-files-budget)."
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Files tallied; files lists the largest of them (--limit)."
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "snapshot_id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "The newest read snapshot that references the file."
+              },
+              "snapshot": {
+                "$ref": "#/$defs/path"
+              },
+              "ino": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "path": {
+                "description": "Below the snapshot root; null when the name is unresolved.",
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/path"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "live_path": {
+                "description": "The same path in the live share; null when the name is unresolved.",
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/path"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "in_live": {
+                "type": "boolean",
+                "description": "The live share still has the inode: the file was rewritten, not deleted."
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Bytes of the file's extents that only snapshots reference, each extent once."
+              },
+              "unknown_bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Bytes of the file's extents only snapshots reference among the roots read, whose other owners could not be ruled out."
+              }
+            },
+            "required": [
+              "snapshot_id",
+              "snapshot",
+              "ino",
+              "path",
+              "live_path",
+              "in_live",
+              "bytes",
+              "unknown_bytes"
+            ]
+          }
+        }
+      },
+      "required": [
+        "complete",
+        "count",
+        "files"
+      ]
+    },
+    "attribution": {
+      "type": "object",
+      "description": "Display-only volume attribution. Does not alter completion or cleanup certification. Absent for non-volume and legacy results.",
+      "properties": {
+        "unknown_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "used_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "coverage_gaps": {
+          "type": "boolean",
+          "description": "Scan/namespace gaps, including uncertain namespace roots; unresolved references alone do not set it."
+        },
+        "namespace_churn": {
+          "type": "object",
+          "description": "Present only when dangling entries in trees whose generation changed during the scan are the whole coverage gap. Display-only; absent on legacy answers means unknown.",
+          "properties": {
+            "dangling_entries": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "dangling_entries"
+          ]
+        },
+        "approximation": {
+          "$ref": "#/$defs/approximation"
+        }
+      },
+      "required": [
+        "unknown_bytes",
+        "used_bytes",
+        "coverage_gaps"
+      ]
+    },
+    "filesystem_kind": {
+      "enum": [
+        "btrfs",
+        "ext4"
+      ],
+      "description": "Mounted data filesystem; the system partition is handled separately."
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "scan": {
+          "type": "boolean"
+        },
+        "snapshots": {
+          "type": "boolean"
+        },
+        "reflinks": {
+          "type": "boolean"
+        },
+        "cleanup": {
+          "type": "boolean"
+        },
+        "cleanup_unavailable_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Per-volume refusal code; null when cleanup is supported."
+        }
+      },
+      "required": [
+        "scan",
+        "snapshots",
+        "reflinks",
+        "cleanup",
+        "cleanup_unavailable_reason"
+      ]
+    },
+    "approximation": {
+      "type": "object",
+      "description": "Completed best-effort scan accuracy; never cleanup authority. Unaccounted bytes exclude unknown sizes of skipped namespaces.",
+      "properties": {
+        "changed_subvolumes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped_roots": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unaccounted_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "changed_subvolumes",
+        "skipped_roots",
+        "unaccounted_bytes"
+      ]
+    },
+    "read_budget": {
+      "type": "object",
+      "properties": {
+        "adaptive": {
+          "type": "boolean"
+        },
+        "used_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extent_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "snapshot_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "required_reads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "selected_reads": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "adaptive",
+        "used_bytes",
+        "extent_count",
+        "snapshot_count",
+        "required_reads",
+        "selected_reads"
+      ],
+      "additionalProperties": false
+    },
+    "attribution_measurement": {
+      "type": "object",
+      "properties": {
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown_before": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown_after": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "processed_extents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "changed_extents": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "peak_rss_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "plan": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/read_budget"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "elapsed_ms",
+        "peak_rss_bytes",
+        "unknown_before",
+        "unknown_after",
+        "processed_extents",
+        "changed_extents",
+        "reads",
+        "plan"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

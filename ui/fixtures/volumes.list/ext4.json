@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "command": "volumes",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-10-06T03:21:35Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "volumes": [
+    {
+      "filesystem": "ext4",
+      "capabilities": {
+        "scan": true,
+        "snapshots": false,
+        "reflinks": false,
+        "cleanup": false,
+        "cleanup_unavailable_reason": "ext4_read_only"
+      },
+      "mount": {
+        "path": "/volume1"
+      },
+      "fsid": "9f6184b6-06bd-46be-996a-621edbb25a6f",
+      "total_bytes": 234594304,
+      "used_bytes": 45056,
+      "free_bytes": 215764992,
+      "metadata_access": true,
+      "reports": 1,
+      "incompatible_reports": 0,
+      "last_scan": "2026-10-06T03:21:34Z",
+      "last_consistency": "observed-stable",
+      "last_attribution": {
+        "unknown_bytes": 0,
+        "used_bytes": 45056,
+        "coverage_gaps": false
+      },
+      "pending_deletion": null,
+      "shares": [],
+      "notes": [
+        {
+          "code": "shares_unavailable",
+          "message": "No such file or directory (os error 2)"
+        }
+      ]
+    }
+  ],
+  "excluded": [],
+  "system_partition": {
+    "mount": "/",
+    "source": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+    "fstype": "ext4",
+    "total_bytes": 367187533824,
+    "available_bytes": 22788980736,
+    "used_bytes": 344398553088,
+    "free_bytes": 22788980736,
+    "used_percent": 93,
+    "level": "getting_full",
+    "level_reasons": [
+      "used_over_recommended"
+    ],
+    "nearly_full": false
+  }
+}

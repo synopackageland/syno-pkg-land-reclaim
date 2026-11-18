@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "Check and clean up",
+  "rootfs.card.cleanNow": "Clean up now",
+  "rootfs.card.free": "Free",
+  "rootfs.level.full": "Full",
+  "rootfs.level.full.body": "DSM updates may fail, and DSM may not save settings or logs. Clean up now",
+  "rootfs.level.getting_full": "Getting full",
+  "rootfs.level.getting_full.body": "Clean up before the next DSM update",
+  "rootfs.name": "System partition"
+}

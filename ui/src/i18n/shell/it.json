@@ -1,0 +1,7 @@
+{
+  "shell.navigation": "Navigazione",
+  "shell.newScan": "Nuova scansione",
+  "shell.scenario": "Scenario di test",
+  "shell.purpose": "Richiede privilegi di sistema per misurare lo spazio usato da ogni cartella condivisa, snapshot e pacchetto, e per spostare solo ciò che confermi nel Cestino della sua cartella condivisa, o eliminarlo definitivamente se quel Cestino è disattivato o non è in alcuna cartella condivisa",
+  "shell.status": "Stato"
+}

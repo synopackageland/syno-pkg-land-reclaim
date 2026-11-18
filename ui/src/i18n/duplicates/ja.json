@@ -1,0 +1,207 @@
+{
+  "duplicates.title": "重複",
+  "duplicates.breadcrumb.label": "場所",
+  "duplicates.info.what": "内容が同じ 10 MB 以上のファイルと、中身がすべて同じフォルダー",
+  "duplicates.info.keep": "各グループはボリューム全体で 1 つ残します：優先共有フォルダー、なければ移動できないコピー、なければ最も古いもの。共有フォルダーのページは一覧の絞り込みだけです",
+  "duplicates.info.excluded": "Reclaim が認識したアプリ、システム、バックアップのデータは数えません：@ で始まるフォルダー、Hyper Backup と Active Backup のデータ、Surveillance",
+  "duplicates.shares.title": "重複がある共有フォルダー",
+  "duplicates.shares.name": "共有フォルダー",
+  "duplicates.shares.folders": "同じフォルダー",
+  "duplicates.shares.files": "重複した大きなファイル",
+  "duplicates.shares.copies": {
+    "one": "{count} 個のコピー",
+    "other": "{count} 個のコピー"
+  },
+  "duplicates.table.name": "名前",
+  "duplicates.table.kept": "残すコピー",
+  "duplicates.table.canFree": "解放可能",
+  "duplicates.table.selectRow": "{name} の削除するコピーをクリーンアップ一覧に追加",
+  "duplicates.folders.title": "同じフォルダー",
+  "duplicates.files.title": "重複した大きなファイル",
+  "duplicates.files.threshold": "10 MB 以上",
+  "duplicates.files.empty": "ここに重複した大きなファイルはありません",
+  "duplicates.filter.label": "種類",
+  "duplicates.filter.all": "すべて",
+  "duplicates.filter.photo": "写真",
+  "duplicates.filter.video": "ビデオ",
+  "duplicates.filter.music": "音楽",
+  "duplicates.selectAll.volume": "{scope} の重複をすべて選択",
+  "duplicates.selectAll.all": "{scope} の重複をすべて選択",
+  "duplicates.selectAll.photo": "{scope} の重複した写真をすべて選択",
+  "duplicates.selectAll.video": "{scope} の重複したビデオをすべて選択",
+  "duplicates.selectAll.music": "{scope} の重複した音楽をすべて選択",
+  "duplicates.scope.title": "{scope} · {size} 解放可能",
+  "duplicates.scope.copies": {
+    "one": "削除するコピー {count} 個",
+    "other": "削除するコピー {count} 個"
+  },
+  "duplicates.scope.groups": {
+    "one": "{count} グループ",
+    "other": "{count} グループ"
+  },
+  "duplicates.scope.overlap": "複数の共有フォルダーにコピーがあるグループはそれぞれで数えるため、各行の合計は大きくなります",
+  "duplicates.state.recalculating": "優先する共有フォルダーが変更されたため再計算しています",
+  "duplicates.state.failed": "重複を読み込めませんでした",
+  "duplicates.state.keepFailed": "残すコピーを変更できませんでした",
+  "duplicates.state.empty": "{scope} に重複はありません",
+  "duplicates.row.copiesIn": {
+    "one": "{scope} に {count} 個",
+    "other": "{scope} に {count} 個"
+  },
+  "duplicates.row.files": {
+    "one": "{files} 個のファイル",
+    "other": "{files} 個のファイル"
+  },
+  "duplicates.row.copies": {
+    "one": "{count} 個のコピー",
+    "other": "{count} 個のコピー"
+  },
+  "duplicates.row.allIn": "すべて {scope} 内",
+  "duplicates.row.hereElsewhere": "ここに {here} · 他に {elsewhere}",
+  "duplicates.row.each": "各 {size}",
+  "duplicates.reason.user": "あなたの選択",
+  "duplicates.reason.preferred_share": "優先する共有フォルダー",
+  "duplicates.reason.oldest": "最も古いコピー",
+  "duplicates.reason.shortest": "最短のパス",
+  "duplicates.action.keep": "残す",
+  "duplicates.action.remove": "削除",
+  "duplicates.sheet.folderDescription": {
+    "other": "{files} 個のファイル · 各場所 {size}"
+  },
+  "duplicates.basket.count": {
+    "one": "クリーンアップ一覧に {count} 個",
+    "other": "クリーンアップ一覧に {count} 個"
+  },
+  "duplicates.basket.lead": {
+    "one": "クリーンアップ一覧：{groups}の {count} 個で最低",
+    "other": "クリーンアップ一覧：{groups}の {count} 個で最低"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count} グループ",
+    "other": "{count} グループ"
+  },
+  "duplicates.basket.keepsOne": "各グループで 1 つ残ります",
+  "duplicates.info.junk": "フォルダーの比較では、システムが再作成するファイル（.DS_Store、Thumbs.db、desktop.ini、._ ファイル、@eaDir）は無視します。フォルダーを削除するとこれらも削除されます",
+  "duplicates.scope.later": "スナップショットの入れ替え後にさらに {size}",
+  "duplicates.scope.unchecked": {
+    "one": "{count} 個のコピーはチェックサムで比較できず、表示されていません",
+    "other": "{count} 個のコピーはチェックサムで比較できず、表示されていません"
+  },
+  "duplicates.analysis.running": "重複を検索しています。大きなボリュームでは数分かかることがあります",
+  "duplicates.analysis.stale": "この結果は最新のスキャンより前のものです。再分析して更新してください",
+  "duplicates.analysis.again": "再分析",
+  "duplicates.analysis.failed": "重複の検索を開始できませんでした",
+  "duplicates.analysis.noneTitle": "このボリュームではまだ重複を検索していません",
+  "duplicates.analysis.noneBody": "最新のスキャンを使い、ファイルの内容は読み取りません。大きなボリュームでは数分かかることがあります",
+  "duplicates.analysis.find": "重複を検索",
+  "duplicates.unavailable.title": "このボリュームの重複データがありません",
+  "duplicates.unavailable.body": "重複を見つけるには、このバージョンの Syno Reclaim で Btrfs ボリューム全体をスキャンする必要があります。以前のスキャンには必要な情報がありません。このボリュームをスキャンしてから戻ってください",
+  "duplicates.unavailable.scan": "スキャン",
+  "duplicates.more": {
+    "one": "さらに {count} 件表示",
+    "other": "さらに {count} 件表示"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count} 個は同一フォルダー内",
+    "other": "{count} 個は同一フォルダー内"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "ほかに {count} 個が同一フォルダー内にあり、そのフォルダーと一緒に削除されます",
+    "other": "ほかに {count} 個が同一フォルダー内にあり、そのフォルダーと一緒に削除されます"
+  },
+  "duplicates.info.partial": "内部の同じ場所にある項目がサイズで 80% 以上同じフォルダーは 1 行にまとめます。削除されるのは同じ項目だけです",
+  "duplicates.row.partial": {
+    "one": "{total} 項目中 {same} 項目が {counterpart} と同じ",
+    "other": "{total} 項目中 {same} 項目が {counterpart} と同じ"
+  },
+  "duplicates.row.folders": {
+    "one": "{count} フォルダー",
+    "other": "{count} フォルダー"
+  },
+  "duplicates.row.sameEach": "同じ部分 各 {size}",
+  "duplicates.partial.title": {
+    "one": "{name} から同じ項目を {items} 個削除",
+    "other": "{name} から同じ項目を {items} 個削除"
+  },
+  "duplicates.partial.stays": "{name} 自体と、異なる項目（.git など）は残ります",
+  "duplicates.partial.folderItem": {
+    "one": "{files} ファイル · {size}",
+    "other": "{files} ファイル · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "ほかに同じ項目が {count} 個",
+    "other": "ほかに同じ項目が {count} 個"
+  },
+  "duplicates.partial.label": "{name} の同じ項目",
+  "duplicates.partial.failed": "同じ項目を読み込めませんでした",
+  "duplicates.partial.retry": "再試行",
+  "duplicates.folders.empty": "ここには同一のフォルダーはありません",
+  "duplicates.shares.recycleBin": "ごみ箱",
+  "duplicates.shares.binOn": "有効",
+  "duplicates.shares.binOffDeletes": "無効 · 完全に削除",
+  "duplicates.table.moves": "削除方法",
+  "duplicates.row.moves": {
+    "one": "{count} 個",
+    "other": "{count} 個"
+  },
+  "duplicates.row.noMove": "なし",
+  "duplicates.row.deletes": "完全に削除されます",
+  "duplicates.row.keptMany": {
+    "one": "{count} 個を保持",
+    "other": "{count} 個を保持"
+  },
+  "duplicates.keep.kept": "保持",
+  "duplicates.keep.add": "クリーンアップリストに追加",
+  "duplicates.keep.drop": "クリーンアップリストから削除",
+  "duplicates.list.label": "一覧",
+  "duplicates.reason.unmovable": "移動できない",
+  "duplicates.reason.in_kept_folder": "フォルダーごと残る",
+  "duplicates.stays.shareRoot": "共有フォルダーそのもの、残ります",
+  "duplicates.stays.notShared": "DSM の共有フォルダー外、残ります",
+  "duplicates.stays.belowVolume": "ボリューム直下、残ります",
+  "duplicates.merged.match": {
+    "one": "{count} 個のフォルダーが一致：{names}",
+    "other": "{count} 個のフォルダーが一致：{names}"
+  },
+  "duplicates.merged.ratio": "{percent} 一致 · {total} 項目中 {same}",
+  "duplicates.merged.groups": {
+    "one": "{count} グループを含む",
+    "other": "{count} グループを含む"
+  },
+  "duplicates.merged.identical": "完全に一致",
+  "duplicates.merged.lead": "チェックしたフォルダーはごみ箱へ移動します。残すフォルダーはそのままです",
+  "duplicates.merged.kept": "残すフォルダー",
+  "duplicates.sheet.lead": "チェックしたコピーはごみ箱へ移動します。チェックを外すとそのコピーも残ります",
+  "duplicates.sheet.sort": "日付",
+  "duplicates.sheet.oldest": "古い順",
+  "duplicates.sheet.newest": "新しい順",
+  "duplicates.sheet.summary": "{total} 個中 {moves} 個を移動 · {kept} 個を残す",
+  "duplicates.sheet.atLeastOne": "少なくとも 1 つはチェックを外してください",
+  "duplicates.sheet.apply": "クリーンアップ一覧に追加",
+  "duplicates.sheet.update": "クリーンアップ一覧を更新",
+  "duplicates.sheet.size": "各 {size}",
+  "duplicates.block.inFolder": "同一フォルダーと一緒に移動します",
+  "duplicates.selectAll.title": "すべて選択",
+  "duplicates.selectAll.checking": "グループを確認中",
+  "duplicates.selectAll.progress": "{total} グループ中 {done} を確認済み",
+  "duplicates.selectAll.selected": {
+    "one": "{count} グループを選択",
+    "other": "{count} グループを選択"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "{count} グループは選択できません",
+    "other": "{count} グループは選択できません"
+  },
+  "duplicates.selectAll.stays": "次のコピーは残ります",
+  "duplicates.selectAll.stopped": "停止しました：確認済みのグループは選択済みです",
+  "duplicates.why.nothing": "移動するものがありません：他のコピーはすべて残すか移動できません",
+  "duplicates.sheet.deletes": "ごみ箱なし：削除すると完全に削除されます",
+  "duplicates.row.toBin": "ごみ箱へ移動",
+  "duplicates.block.inFolderDelete": "同一フォルダーと一緒に完全に削除されます",
+  "duplicates.sheet.leadDelete": "チェックしたコピーは完全に削除されます（この共有フォルダーにはごみ箱がありません）。チェックを外すとそのコピーも残ります",
+  "duplicates.sheet.leadMixed": "チェックしたコピーはごみ箱へ移動します。ごみ箱のない共有フォルダーのものは完全に削除されます。チェックを外すとそのコピーも残ります",
+  "duplicates.sheet.summaryDelete": "{total} 個中 {moves} 個を完全に削除 · {kept} 個を残す",
+  "duplicates.sheet.summaryMixed": "{total} 個中 {moves} 個を削除・移動 · {kept} 個を残す",
+  "duplicates.merged.leadDelete": "チェックしたフォルダーは完全に削除されます（共有フォルダーにごみ箱がありません）。残すフォルダーはそのままです",
+  "duplicates.merged.leadMixed": "チェックしたフォルダーはごみ箱へ移動します。ごみ箱のない共有フォルダーのものは完全に削除されます。残すフォルダーはそのままです"
+}

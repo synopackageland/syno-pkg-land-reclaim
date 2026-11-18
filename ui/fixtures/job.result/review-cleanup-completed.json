@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-apply",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:05:41Z",
+  "completion": "complete",
+  "job_id": "cleanup-18d9cccbc2d8b089-12701",
+  "errors": [],
+  "warnings": [],
+  "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5",
+  "moved": 1,
+  "deleted": 0,
+  "already_absent": 0,
+  "partial": 0,
+  "changed": 0,
+  "failed": 0,
+  "moved_bytes": 1048576,
+  "deleted_bytes": 0,
+  "items": 1,
+  "targets": [],
+  "recycle_bins": [
+    {
+      "share": {
+        "path": "share01"
+      },
+      "path": {
+        "path": "/volume1/share01"
+      },
+      "admin_only": true,
+      "items": 1,
+      "moved_bytes": 1048576
+    }
+  ],
+  "report_state_stale": true,
+  "rescan": [
+    {
+      "path": "/volume1/share01"
+    }
+  ],
+  "space_release": "moved items stay on the volume in their shared folder's Recycle Bin: their space is freed after the Recycle Bin is emptied (Control Panel > Shared Folder > Action > Empty Recycle Bin, or a Recycle Bin task in Task Scheduler), then the Btrfs commit and cleaner"
+}

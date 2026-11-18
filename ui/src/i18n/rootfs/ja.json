@@ -1,0 +1,10 @@
+{
+  "rootfs.card.check": "確認してクリーンアップ",
+  "rootfs.card.cleanNow": "今すぐクリーンアップ",
+  "rootfs.card.free": "空き",
+  "rootfs.level.full": "満杯",
+  "rootfs.level.full.body": "DSM の更新に失敗したり、設定やログを保存できなくなる可能性があります。今すぐクリーンアップしてください",
+  "rootfs.level.getting_full": "満杯に近い",
+  "rootfs.level.getting_full.body": "次の DSM 更新前にクリーンアップしてください",
+  "rootfs.name": "システム パーティション"
+}

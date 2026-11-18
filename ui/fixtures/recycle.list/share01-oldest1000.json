@@ -1,0 +1,2150 @@
+{
+  "schema_version": 1,
+  "command": "recycle",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T10:58:31Z",
+  "completion": "complete",
+  "job_id": "20260929T105831Z-a1b2c",
+  "errors": [],
+  "warnings": [],
+  "target": {
+    "path": "/volume1/share01"
+  },
+  "report_info": {
+    "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+    "path": "/var/lib/synoreclaim/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/f770fce9f8088316.srrep",
+    "job_id": "20260929T105831Z-a1b2c",
+    "scan_started": "2026-09-29T10:45:00Z",
+    "scan_finished": "2026-09-29T10:58:31Z",
+    "age_seconds": 0,
+    "stale": false,
+    "consistency": "observed-stable",
+    "change_reasons": [],
+    "coverage": {
+      "encrypted_directories": 0,
+      "snapshots_not_materialized": 0,
+      "unlinked_subvolume_entries": 0,
+      "dangling_entries": 0,
+      "cycles": 0,
+      "unsupported_locations": 0,
+      "missing_subvolume_roots": 0,
+      "reference_accounting": "complete",
+      "unresolved_extents": 0
+    },
+    "filesystem": "btrfs",
+    "capabilities": {
+      "scan": true,
+      "snapshots": true,
+      "reflinks": true,
+      "cleanup": true,
+      "cleanup_unavailable_reason": null
+    }
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "share01"
+      },
+      "items": 250,
+      "bytes": 201863462912,
+      "reclaimable_bytes": 199715979264,
+      "held_by": [
+        {
+          "class": "hard_link",
+          "bytes": 2147483648
+        }
+      ],
+      "oldest": [
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0001.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0002.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0003.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0004.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0005.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0006.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0007.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0008.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0009.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0010.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0011.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0012.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0013.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0014.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0015.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0016.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0017.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0018.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0019.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0020.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0021.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0022.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0023.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0024.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0025.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0026.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0027.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0028.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0029.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0030.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0031.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0032.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0033.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0034.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0035.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0036.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0037.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0038.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0039.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0040.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0041.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0042.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0043.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0044.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0045.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0046.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0047.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0048.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0049.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0050.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0051.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0052.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0053.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0054.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0055.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0056.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0057.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0058.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0059.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0060.bin"
+          },
+          "ctime": "2024-03-14T08:12:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0061.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0062.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0063.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0064.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0065.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0066.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0067.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0068.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0069.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0070.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0071.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0072.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0073.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0074.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0075.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0076.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0077.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0078.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0079.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0080.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0081.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0082.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0083.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0084.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0085.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0086.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0087.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0088.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0089.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0090.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0091.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0092.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0093.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0094.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0095.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0096.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0097.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0098.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0099.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0100.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0101.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0102.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0103.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0104.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0105.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0106.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0107.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0108.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0109.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0110.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0111.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0112.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0113.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0114.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0115.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0116.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0117.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0118.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0119.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0120.bin"
+          },
+          "ctime": "2025-11-03T19:04:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0121.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0122.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0123.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0124.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0125.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0126.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0127.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0128.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0129.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0130.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0131.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0132.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0133.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0134.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0135.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0136.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0137.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0138.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0139.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0140.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0141.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0142.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0143.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0144.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0145.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0146.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0147.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0148.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0149.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0150.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0151.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0152.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0153.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0154.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0155.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0156.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0157.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0158.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0159.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0160.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0161.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0162.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0163.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0164.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0165.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0166.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0167.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0168.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0169.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0170.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0171.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0172.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0173.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": 14680064
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0174.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0175.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0176.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0177.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0178.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0179.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0180.bin"
+          },
+          "ctime": "2026-02-17T06:30:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": 5242880
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0181.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0182.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0183.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0184.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0185.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 10485760,
+          "reclaimable_bytes": 10485760
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0186.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 11534336,
+          "reclaimable_bytes": 11534336
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0187.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 12582912,
+          "reclaimable_bytes": 12582912
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0188.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 13631488,
+          "reclaimable_bytes": 13631488
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0189.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 14680064,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0190.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 15728640,
+          "reclaimable_bytes": 15728640
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0191.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 16777216,
+          "reclaimable_bytes": 16777216
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0192.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 1048576,
+          "reclaimable_bytes": 1048576
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0193.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 2097152,
+          "reclaimable_bytes": 2097152
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0194.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 3145728,
+          "reclaimable_bytes": 3145728
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0195.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 4194304,
+          "reclaimable_bytes": 4194304
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0196.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 5242880,
+          "reclaimable_bytes": null
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0197.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 6291456,
+          "reclaimable_bytes": 6291456
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0198.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 7340032,
+          "reclaimable_bytes": 7340032
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0199.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 8388608,
+          "reclaimable_bytes": 8388608
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0200.bin"
+          },
+          "ctime": "2026-09-20T14:00:00Z",
+          "bytes": 9437184,
+          "reclaimable_bytes": 9437184
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0201.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3512120991,
+          "reclaimable_bytes": 3474330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0202.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3532120991,
+          "reclaimable_bytes": 3494330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0203.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3552120991,
+          "reclaimable_bytes": 3514330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0204.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3572120991,
+          "reclaimable_bytes": 3534330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0205.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3592120991,
+          "reclaimable_bytes": 3554330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0206.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3612120991,
+          "reclaimable_bytes": 3574330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0207.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3632120991,
+          "reclaimable_bytes": 3594330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0208.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3652120991,
+          "reclaimable_bytes": 3614330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0209.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3672120991,
+          "reclaimable_bytes": 3634330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0210.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3692120991,
+          "reclaimable_bytes": 3654330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0211.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3712120991,
+          "reclaimable_bytes": 3674330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0212.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3732120991,
+          "reclaimable_bytes": 3694330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0213.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3752120991,
+          "reclaimable_bytes": 3714330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0214.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3772120991,
+          "reclaimable_bytes": 3734330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0215.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3792120991,
+          "reclaimable_bytes": 3754330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0216.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3812120991,
+          "reclaimable_bytes": 3774330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0217.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3832120991,
+          "reclaimable_bytes": 3794330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0218.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3852120991,
+          "reclaimable_bytes": 3814330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0219.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3872120991,
+          "reclaimable_bytes": 3834330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0220.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3892120991,
+          "reclaimable_bytes": 3854330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0221.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3912120991,
+          "reclaimable_bytes": 3874330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0222.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3932120991,
+          "reclaimable_bytes": 3894330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0223.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3952120991,
+          "reclaimable_bytes": 3914330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0224.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3972120991,
+          "reclaimable_bytes": 3934330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0225.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 3992120991,
+          "reclaimable_bytes": 3954330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0226.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4012120991,
+          "reclaimable_bytes": 3974330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0227.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4032120991,
+          "reclaimable_bytes": 3994330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0228.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4052120991,
+          "reclaimable_bytes": 4014330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0229.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4072120991,
+          "reclaimable_bytes": 4034330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0230.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4092120991,
+          "reclaimable_bytes": 4054330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0231.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4112120991,
+          "reclaimable_bytes": 4074330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0232.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4132120991,
+          "reclaimable_bytes": 4094330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0233.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4152120991,
+          "reclaimable_bytes": 4114330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0234.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4172120991,
+          "reclaimable_bytes": 4134330312
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0235.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4192120991,
+          "reclaimable_bytes": 4154330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0236.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4212120991,
+          "reclaimable_bytes": 4174330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0237.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4232120990,
+          "reclaimable_bytes": 4194330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0238.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4252120990,
+          "reclaimable_bytes": 4214330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0239.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4272120990,
+          "reclaimable_bytes": 4234330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0240.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4292120990,
+          "reclaimable_bytes": 4254330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0241.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4312120990,
+          "reclaimable_bytes": 4274330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0242.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4332120990,
+          "reclaimable_bytes": 4294330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0243.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4352120990,
+          "reclaimable_bytes": 4314330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0244.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4372120990,
+          "reclaimable_bytes": 4334330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0245.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4392120990,
+          "reclaimable_bytes": 4354330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0246.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4412120990,
+          "reclaimable_bytes": 4374330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0247.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4432120990,
+          "reclaimable_bytes": 4394330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0248.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4452120990,
+          "reclaimable_bytes": 4414330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0249.bin"
+          },
+          "ctime": "2026-09-29T14:00:00Z",
+          "bytes": 4472120990,
+          "reclaimable_bytes": 4434330311
+        },
+        {
+          "path": {
+            "path": "/volume1/share01/#recycle/file0250.bin"
+          },
+          "ctime": null,
+          "bytes": 4492120990,
+          "reclaimable_bytes": 4454330311
+        }
+      ]
+    }
+  ],
+  "moved_by_reclaim": [],
+  "scans": [
+    {
+      "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+      "mount": {
+        "path": "/volume1"
+      },
+      "completion": "complete",
+      "targets": [
+        {
+          "path": "/volume1/share01",
+          "scope": "path",
+          "tree": 259,
+          "ino": 256
+        }
+      ],
+      "covered": [],
+      "consistency": "observed-stable",
+      "change_reasons": [],
+      "scan_started": "2026-09-29T10:45:00Z",
+      "scan_finished": "2026-09-29T10:58:31Z",
+      "totals": {
+        "logical": 8388608,
+        "physical": 8388608,
+        "shared": 0,
+        "reclaimable": 8388608,
+        "reclaimable_resolved": 8388608,
+        "unknown": 0,
+        "pinned_unreferenced": 0,
+        "extents": 2,
+        "inline": 0,
+        "entries": 5,
+        "files": 3
+      },
+      "stats": {
+        "subvolumes_discovered": 5,
+        "subvolumes_scanned": 1,
+        "subvolumes_reused": 0,
+        "entries": 5,
+        "inodes": 4,
+        "extents": 2,
+        "items": 22,
+        "batches": 3,
+        "item_bytes": 1282,
+        "reference_searches": 2,
+        "reference_items": 3,
+        "owner_lookups": 0,
+        "owner_budget_capped_extents": 0,
+        "elapsed_ms": 27,
+        "peak_rss_bytes": 11354112
+      },
+      "resource_limit": null,
+      "coverage": {
+        "encrypted_directories": 0,
+        "snapshots_not_materialized": 0,
+        "unlinked_subvolume_entries": 0,
+        "dangling_entries": 0,
+        "cycles": 0,
+        "unsupported_locations": 0,
+        "missing_subvolume_roots": 0,
+        "reference_accounting": "complete",
+        "unresolved_extents": 0
+      },
+      "subvolumes": [
+        {
+          "id": 259,
+          "role": "scanned",
+          "generation_before": 14,
+          "generation_after": 14,
+          "uuid": "d8c71b8014c933408553b1e01acfb065",
+          "last_snapshot": 0
+        }
+      ],
+      "report": {
+        "path": "/var/lib/synoreclaim/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/f770fce9f8088316.srrep",
+        "bytes": 1827
+      },
+      "errors": [],
+      "warnings": [],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ]
+}

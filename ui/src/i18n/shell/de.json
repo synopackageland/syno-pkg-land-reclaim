@@ -1,0 +1,7 @@
+{
+  "shell.navigation": "Navigation",
+  "shell.newScan": "Neuer Scan",
+  "shell.scenario": "Testszenario",
+  "shell.purpose": "Es benötigt Systemrechte, um den von jedem freigegebenen Ordner, Snapshot und Paket belegten Speicher zu messen und nur das, was Sie bestätigen, in den Papierkorb des freigegebenen Ordners zu verschieben oder endgültig zu löschen, wenn dieser Papierkorb deaktiviert ist oder es in keinem freigegebenen Ordner liegt",
+  "shell.status": "Status"
+}

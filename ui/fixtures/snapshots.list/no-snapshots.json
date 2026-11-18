@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "command": "snapshots",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1",
+      "code": "no_report",
+      "message": "no report of a scan with --snapshots holds its snapshots"
+    }
+  ],
+  "warnings": [],
+  "scan_hints": [
+    {
+      "path": "/volume1",
+      "command": "synoreclaim scan /volume1 --snapshots",
+      "last_scan": {
+        "finished": "2026-09-29T11:54:34Z",
+        "elapsed_ms": 135,
+        "entries": 661
+      }
+    }
+  ],
+  "results": []
+}

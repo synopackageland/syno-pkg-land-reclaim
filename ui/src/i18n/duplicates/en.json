@@ -1,0 +1,208 @@
+{
+  "duplicates.title": "Duplicates",
+  "duplicates.breadcrumb.label": "Location",
+  "duplicates.info.what": "Files of 10 MB or more that are the same, and folders whose whole content is the same",
+  "duplicates.info.keep": "Each group keeps one copy on the whole volume: in a preferred share, else one that can't be moved, else the oldest. A shared folder's page only filters the list",
+  "duplicates.info.excluded": "App, system and backup data Reclaim recognizes is never counted: folders starting with @, Hyper Backup and Active Backup data, Surveillance",
+  "duplicates.shares.title": "Shared folders with duplicates",
+  "duplicates.shares.name": "Shared folder",
+  "duplicates.shares.folders": "Identical folders",
+  "duplicates.shares.files": "Big duplicate files",
+  "duplicates.shares.copies": {
+    "one": "{count} copy",
+    "other": "{count} copies"
+  },
+  "duplicates.table.name": "Name",
+  "duplicates.table.kept": "Kept copy",
+  "duplicates.table.canFree": "Can free",
+  "duplicates.table.selectRow": "Add the copies of {name} to remove to the cleanup list",
+  "duplicates.folders.title": "Identical folders",
+  "duplicates.files.title": "Big duplicate files",
+  "duplicates.files.threshold": "10 MB or more",
+  "duplicates.files.empty": "No big duplicate files here",
+  "duplicates.filter.label": "Kind",
+  "duplicates.filter.all": "All",
+  "duplicates.filter.photo": "Photos",
+  "duplicates.filter.video": "Videos",
+  "duplicates.filter.music": "Music",
+  "duplicates.selectAll.volume": "Select all duplicates on {scope}",
+  "duplicates.selectAll.all": "Select all duplicates in {scope}",
+  "duplicates.selectAll.photo": "Select all duplicate photos in {scope}",
+  "duplicates.selectAll.video": "Select all duplicate videos in {scope}",
+  "duplicates.selectAll.music": "Select all duplicate music in {scope}",
+  "duplicates.scope.title": "{scope} · can free {size}",
+  "duplicates.scope.copies": {
+    "one": "{count} copy to remove",
+    "other": "{count} copies to remove"
+  },
+  "duplicates.scope.groups": {
+    "one": "{count} group",
+    "other": "{count} groups"
+  },
+  "duplicates.scope.overlap": "A group with copies in several shared folders counts in each, so the share rows add up to more",
+  "duplicates.state.recalculating": "Recalculating after a change to preferred shares",
+  "duplicates.state.failed": "Could not load duplicates",
+  "duplicates.state.keepFailed": "Could not change which copy is kept",
+  "duplicates.state.empty": "No duplicates found in {scope}",
+  "duplicates.row.copiesIn": {
+    "one": "{count} copy in {scope}",
+    "other": "{count} copies in {scope}"
+  },
+  "duplicates.row.files": {
+    "one": "{files} file",
+    "other": "{files} files"
+  },
+  "duplicates.row.copies": {
+    "one": "{count} copy",
+    "other": "{count} copies"
+  },
+  "duplicates.row.allIn": "all in {scope}",
+  "duplicates.row.hereElsewhere": "{here} here · {elsewhere} elsewhere",
+  "duplicates.row.each": "{size} each",
+  "duplicates.reason.user": "Your choice",
+  "duplicates.reason.preferred_share": "Preferred share",
+  "duplicates.reason.oldest": "Oldest copy",
+  "duplicates.reason.shortest": "Shortest path",
+  "duplicates.action.keep": "Keep",
+  "duplicates.action.remove": "Remove",
+  "duplicates.sheet.folderDescription": {
+    "one": "{files} file · {size} in each place",
+    "other": "{files} files · {size} in each place"
+  },
+  "duplicates.basket.count": {
+    "one": "{count} copy in the cleanup list",
+    "other": "{count} copies in the cleanup list"
+  },
+  "duplicates.basket.lead": {
+    "one": "Cleanup list: {count} copy from {groups} frees at least",
+    "other": "Cleanup list: {count} copies from {groups} free at least"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count} group",
+    "other": "{count} groups"
+  },
+  "duplicates.basket.keepsOne": "One copy of each group stays",
+  "duplicates.info.junk": "Folders are compared without the files systems regenerate: .DS_Store, Thumbs.db, desktop.ini, ._ files, @eaDir. Removing a folder removes those too",
+  "duplicates.scope.later": "{size} more after snapshots rotate",
+  "duplicates.scope.unchecked": {
+    "one": "{count} copy couldn't be compared by checksums and isn't listed",
+    "other": "{count} copies couldn't be compared by checksums and aren't listed"
+  },
+  "duplicates.analysis.running": "Finding duplicates. This can take a few minutes on a large volume",
+  "duplicates.analysis.stale": "These results are from before the latest scan. Analyze again to update them",
+  "duplicates.analysis.again": "Analyze again",
+  "duplicates.analysis.failed": "Could not start finding duplicates",
+  "duplicates.analysis.noneTitle": "Duplicates haven't been looked for on this volume yet",
+  "duplicates.analysis.noneBody": "Finding them uses the latest scan and reads no file contents. It can take a few minutes on a large volume",
+  "duplicates.analysis.find": "Find duplicates",
+  "duplicates.unavailable.title": "No duplicate data for this volume",
+  "duplicates.unavailable.body": "Duplicates need a scan of the whole Btrfs volume made by this version of Syno Reclaim. Earlier scans don't hold what they need. Scan this volume, then come back",
+  "duplicates.unavailable.scan": "Scan",
+  "duplicates.more": {
+    "one": "Show {count} more",
+    "other": "Show {count} more"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count} in identical folders",
+    "other": "{count} in identical folders"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "{count} more in identical folders, removed with those folders",
+    "other": "{count} more in identical folders, removed with those folders"
+  },
+  "duplicates.info.partial": "Folders whose items are at least 80% the same, by size and at the same places inside, are one row: only the identical items are removed",
+  "duplicates.row.partial": {
+    "one": "{same} of {total} item same as {counterpart}",
+    "other": "{same} of {total} items same as {counterpart}"
+  },
+  "duplicates.row.folders": {
+    "one": "{count} folder",
+    "other": "{count} folders"
+  },
+  "duplicates.row.sameEach": "{size} identical in each",
+  "duplicates.partial.title": {
+    "one": "Removes {items} identical item from {name}",
+    "other": "Removes {items} identical items from {name}"
+  },
+  "duplicates.partial.stays": "{name} itself and the items that differ, such as .git, stay",
+  "duplicates.partial.folderItem": {
+    "one": "{files} file · {size}",
+    "other": "{files} files · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "{count} more identical item",
+    "other": "{count} more identical items"
+  },
+  "duplicates.partial.label": "Identical items of {name}",
+  "duplicates.partial.failed": "Couldn't load the identical items",
+  "duplicates.partial.retry": "Try again",
+  "duplicates.folders.empty": "No identical folders here",
+  "duplicates.shares.recycleBin": "Recycle Bin",
+  "duplicates.shares.binOn": "On",
+  "duplicates.shares.binOffDeletes": "Off · deleted for good",
+  "duplicates.table.moves": "Removal",
+  "duplicates.row.moves": {
+    "one": "{count} copy",
+    "other": "{count} copies"
+  },
+  "duplicates.row.noMove": "None",
+  "duplicates.row.deletes": "Deletes for good",
+  "duplicates.row.keptMany": {
+    "one": "Keeps {count} copy",
+    "other": "Keeps {count} copies"
+  },
+  "duplicates.keep.kept": "Kept",
+  "duplicates.keep.add": "Add to cleanup list",
+  "duplicates.keep.drop": "Remove from cleanup list",
+  "duplicates.list.label": "List",
+  "duplicates.reason.unmovable": "Can't be moved",
+  "duplicates.reason.in_kept_folder": "Stays with its folder",
+  "duplicates.stays.shareRoot": "A shared folder itself, stays",
+  "duplicates.stays.notShared": "Not in a DSM shared folder, stays",
+  "duplicates.stays.belowVolume": "Right below the volume, stays",
+  "duplicates.merged.match": {
+    "one": "{count} folder matches it: {names}",
+    "other": "{count} folders match it: {names}"
+  },
+  "duplicates.merged.ratio": "{percent} same · {same} of {total} items",
+  "duplicates.merged.groups": {
+    "one": "Includes {count} group",
+    "other": "Includes {count} groups"
+  },
+  "duplicates.merged.identical": "Identical",
+  "duplicates.merged.lead": "Ticked folders move to the Recycle Bin. The kept folder stays",
+  "duplicates.merged.kept": "Kept folder",
+  "duplicates.sheet.lead": "Ticked copies move to the Recycle Bin. Untick a copy to keep it too",
+  "duplicates.sheet.sort": "Date",
+  "duplicates.sheet.oldest": "Oldest first",
+  "duplicates.sheet.newest": "Newest first",
+  "duplicates.sheet.summary": "Moves {moves} of {total} · keeps {kept}",
+  "duplicates.sheet.atLeastOne": "Leave at least one copy unticked",
+  "duplicates.sheet.apply": "Add to cleanup list",
+  "duplicates.sheet.update": "Update cleanup list",
+  "duplicates.sheet.size": "{size} each",
+  "duplicates.block.inFolder": "Moves with its identical folder",
+  "duplicates.selectAll.title": "Select all",
+  "duplicates.selectAll.checking": "Checking groups",
+  "duplicates.selectAll.progress": "{done} of {total} groups checked",
+  "duplicates.selectAll.selected": {
+    "one": "{count} group selected",
+    "other": "{count} groups selected"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "{count} group could not be selected",
+    "other": "{count} groups could not be selected"
+  },
+  "duplicates.selectAll.stays": "These copies stay",
+  "duplicates.selectAll.stopped": "Stopped: groups already checked are selected",
+  "duplicates.why.nothing": "Nothing to move: every other copy is kept or can't be moved",
+  "duplicates.sheet.deletes": "No Recycle Bin here: removing it deletes it for good",
+  "duplicates.row.toBin": "To Recycle Bin",
+  "duplicates.block.inFolderDelete": "Deleted for good with its identical folder",
+  "duplicates.sheet.leadDelete": "Ticked copies are deleted for good: this shared folder has no Recycle Bin. Untick a copy to keep it too",
+  "duplicates.sheet.leadMixed": "Ticked copies move to the Recycle Bin, or are deleted for good where a shared folder has none. Untick a copy to keep it too",
+  "duplicates.sheet.summaryDelete": "Deletes {moves} of {total} for good · keeps {kept}",
+  "duplicates.sheet.summaryMixed": "Removes {moves} of {total} · keeps {kept}",
+  "duplicates.merged.leadDelete": "Ticked folders are deleted for good: their shared folder has no Recycle Bin. The kept folder stays",
+  "duplicates.merged.leadMixed": "Ticked folders move to the Recycle Bin, or are deleted for good where a shared folder has none. The kept folder stays"
+}

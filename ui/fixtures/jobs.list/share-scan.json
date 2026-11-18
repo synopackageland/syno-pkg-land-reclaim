@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:54:34Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "fixture-job0011",
+      "kind": "scan",
+      "state": "completed",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/volume1/share04"
+        }
+      ],
+      "scope": "path",
+      "filesystems": [
+        {
+          "fsid": "f0000000-0000-4000-8000-000000000004",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T11:54:34Z",
+      "updated": "2026-09-29T11:54:34Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "complete",
+        "exit_code": 0,
+        "reports": [
+          {
+            "path": "/volume1/@appdata/SynoReclaim/state/reports/f0000000-0000-4000-8000-000000000004/share04.srrep"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/volume1/@appdata/SynoReclaim/state/jobs/fixture-job0011/result.json"
+        }
+      },
+      "requested_by": null
+    }
+  ]
+}

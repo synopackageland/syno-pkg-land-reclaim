@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/config-init.schema.json",
+  "title": "synoreclaim config init result v1",
+  "description": "`config init`: writes the default cleanup configuration unless a trusted one exists (SPEC 5.7); or a refusal.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "config-init"
+        },
+        "enables_cleanup": {
+          "type": "boolean",
+          "description": "cleanup_enabled and not mutations_disabled: cleanup plan, apply and delete may run."
+        },
+        "config": {
+          "$ref": "config-init.schema.json#/$defs/config"
+        },
+        "created": {
+          "type": "boolean",
+          "description": "True when this call wrote the file; false when a trusted one was kept as is."
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "created",
+            "enables_cleanup",
+            "config"
+          ]
+        },
+        {
+          "properties": {
+            "completion": {
+              "enum": [
+                "failed"
+              ]
+            }
+          },
+          "description": "A refusal or failure: errors[0].code says why (SPEC 5.7)."
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "config": {
+      "type": "object",
+      "description": "The package's config.json (package user's, in /var/packages/SynoReclaim/etc) as written.",
+      "properties": {
+        "cleanup_enabled": {
+          "type": "boolean"
+        },
+        "mutations_disabled": {
+          "type": "boolean",
+          "description": "True turns every cleanup mutation off."
+        },
+        "allowed_roots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Absent: any root. Cleanup targets must lie below one of these absolute paths."
+        }
+      },
+      "required": [
+        "cleanup_enabled",
+        "mutations_disabled"
+      ]
+    }
+  }
+}

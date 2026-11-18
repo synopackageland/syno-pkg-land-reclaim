@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "command": "job-result",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T11:30:51Z",
+  "completion": "failed",
+  "job_id": "20260929T113051Z-2c1c46",
+  "errors": [],
+  "warnings": [],
+  "outcome": "no_result",
+  "message": "job 20260929T113051Z-2c1c46 has no finished run yet",
+  "state": "queued"
+}

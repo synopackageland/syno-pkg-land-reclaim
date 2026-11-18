@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "command": "detach",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:00Z",
+  "completion": "complete",
+  "job_id": "rootfs-job-0001",
+  "errors": [],
+  "warnings": [],
+  "launcher": "none",
+  "run": [
+    "synoreclaim",
+    "rootfs",
+    "apply",
+    "--job-id=rootfs-job-0001",
+    "--json"
+  ],
+  "result": {
+    "path": "/var/packages/SynoReclaim/var/state/jobs/rootfs-job-0001/result.json"
+  },
+  "log": null
+}

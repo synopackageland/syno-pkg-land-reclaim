@@ -1,0 +1,10 @@
+{
+  "systemScan.title": "システムパーティションのスキャン",
+  "systemScan.status": "状態",
+  "systemScan.phase": "段階",
+  "systemScan.waiting": "開始を待機中",
+  "systemScan.reading": "システムファイルを読み取り、使用量を確認",
+  "systemScan.countsUnavailable": "このスキャンでは読み取った項目数は表示されません",
+  "systemScan.viewResult": "結果を表示",
+  "systemScan.cancelBody": "システムパーティションの確認を停止しますか？前回の結果は保持されます"
+}

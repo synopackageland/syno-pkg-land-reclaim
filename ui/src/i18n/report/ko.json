@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "보고서",
+  "report.choice.newest": "최신 스캔",
+  "report.choice.newestEach": "각 폴더의 최신 스캔",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "전체 볼륨",
+  "report.scope.share": "공유 폴더 {name}",
+  "report.scope.paths": {
+    "one": "폴더 {count}개",
+    "other": "폴더 {count}개"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "전체 볼륨 + 최신 공유 폴더 {count}개",
+    "other": "전체 볼륨 + 최신 공유 폴더 {count}개"
+  },
+  "report.row.shareScan": "공유 폴더 스캔 {time}"
+}

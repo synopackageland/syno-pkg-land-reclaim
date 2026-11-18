@@ -1,0 +1,10 @@
+{
+  "systemScan.title": "系統磁區掃描",
+  "systemScan.status": "狀態",
+  "systemScan.phase": "階段",
+  "systemScan.waiting": "等待開始",
+  "systemScan.reading": "讀取系統檔案並檢查使用量",
+  "systemScan.countsUnavailable": "此掃描不提供已讀取筆數",
+  "systemScan.viewResult": "查看結果",
+  "systemScan.cancelBody": "停止檢查系統磁區？先前的結果會保留"
+}

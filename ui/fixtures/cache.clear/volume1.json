@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "command": "cache",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "action": "clear",
+  "filesystems": [
+    {
+      "mount": {
+        "path": "/volume1"
+      },
+      "completion": "complete",
+      "format": 2,
+      "fsid": "f0000000-0000-4000-8000-000000000007",
+      "bytes": 0,
+      "units": [],
+      "global_index": "rebuilt_each_scan",
+      "errors": [],
+      "cleared": 5
+    }
+  ]
+}

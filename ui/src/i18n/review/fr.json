@@ -1,0 +1,250 @@
+{
+  "review.title": "Confirmer le nettoyage",
+  "review.planning": "Vérification des éléments sélectionnés",
+  "review.empty": "Sélectionnez d'abord des éléments dans Explorer",
+  "review.empty.title": "Rien de sélectionné",
+  "review.disabled.cleanup": "Le nettoyage est désactivé sur ce NAS",
+  "review.disabled.allow": "Autoriser le nettoyage",
+  "review.disabled.allowFailed": "Impossible d'autoriser le nettoyage. Réessayez",
+  "review.recycle.title": "Les éléments vont dans la corbeille de leur dossier partagé",
+  "review.recycle.body": "Rien n'est supprimé définitivement. Restaurez les éléments ou videz la corbeille dans DSM ; l'espace n'est libéré qu'une fois la corbeille vidée",
+  "review.recycle.restore": "Pour annuler, ouvrez #recycle du dossier partagé dans File Station, sélectionnez les éléments puis choisissez Restaurer",
+  "review.recycle.olderDsm": "DSM avant 7.2.1 n'a pas de bouton Restaurer : déplacez les éléments hors de #recycle dans File Station",
+  "review.recycle.sync": "Dans un dossier synchronisé par Synology Drive, ShareSync ou Cloud Sync, le déplacement retire aussi les éléments des copies synchronisées",
+  "review.numbers.title": "Résumé du nettoyage",
+  "review.numbers.moves": "Va dans la corbeille",
+  "review.numbers.items": "Éléments sélectionnés",
+  "review.numbers.freeLater": "Libère environ, une fois vidée",
+  "review.numbers.about": "À propos de ces chiffres",
+  "review.numbers.allocated": "Les tailles sont l'espace que les éléments occupent maintenant. Le volume ne le récupère qu'après avoir vidé la corbeille, et des instantanés ou des données partagées peuvent en garder une partie",
+  "review.willMove": {
+    "one": "Va dans la corbeille : {count} élément, {bytes} ; videz la corbeille du dossier partagé pour libérer environ {free}",
+    "other": "Va dans la corbeille : {count} éléments, {bytes} ; videz la corbeille du dossier partagé pour libérer environ {free}"
+  },
+  "review.willMoveOnly": {
+    "one": "Va dans la corbeille : {count} élément, {bytes}",
+    "other": "Va dans la corbeille : {count} éléments, {bytes}"
+  },
+  "review.confirmCheck": "Je comprends que les éléments vont dans la corbeille et que l'espace n'est libéré qu'après l'avoir vidée",
+  "review.confirmMove": {
+    "one": "Placer {count} élément dans la corbeille",
+    "other": "Placer {count} éléments dans la corbeille"
+  },
+  "review.share.title": "Dossier partagé {share}",
+  "review.share.size": {
+    "one": "{count} élément, {bytes}",
+    "other": "{count} éléments, {bytes}"
+  },
+  "review.share.adminOnly": "Seuls les administrateurs peuvent voir et restaurer ces éléments dans la corbeille",
+  "review.share.everyone": "Toute personne pouvant ouvrir {share} peut voir et restaurer ces éléments dans sa corbeille",
+  "review.share.driveBadge": "Synology Drive",
+  "review.share.drive": "Certains éléments se trouvent dans des dossiers Synology Drive : les ordinateurs qui synchronisent ces dossiers les perdent aussi",
+  "review.recheck": "Revérifier",
+  "review.rescan.open": "Analyser à nouveau",
+  "review.dropChanged": "Retirer de la liste",
+  "review.refusal.cleanupDisabled": "Le nettoyage est désactivé sur ce NAS",
+  "review.refusal.busy": "Une autre analyse ou un autre nettoyage utilise ce volume. Revérifiez une fois terminé",
+  "review.refusal.noReport": "Analysez d'abord ce volume",
+  "review.refusal.targetChanged": "Modifié depuis la dernière analyse. Analysez à nouveau ou retirez-le de la liste",
+  "review.refusal.changed": "Le plan a expiré ou ne correspond plus. Revérifiez avant de continuer",
+  "review.refusal.inRecycleBin": "Déjà dans une corbeille. Syno Reclaim ne retire jamais rien d'une corbeille ; videz-la dans DSM",
+  "review.refusal.boundary": "Un sous-volume Btrfs, ou sur un autre volume. Retirez-le et sélectionnez plutôt les éléments qu'il contient",
+  "review.refusal.outsideRoots": "Hors des dossiers que le nettoyage peut modifier. Retirez-le de la liste",
+  "review.refusal.recycleBinUnavailable": "Le service de corbeille de DSM n'est pas disponible pour le moment, rien n'a été déplacé. Réessayez plus tard",
+  "review.refusal.untrustedState": "Les enregistrements du nettoyage ont échoué à un contrôle de sécurité, rien n'a été déplacé. Téléchargez un pack d'assistance dans Paramètres > Diagnostics et contactez l'assistance",
+  "review.refusal.ioError": "Une erreur de lecture ou d'écriture a arrêté le nettoyage. Vérifiez les disques dans le Gestionnaire de stockage",
+  "review.refusal.duplicatesStale": "Les résultats des doublons sont antérieurs à la dernière analyse. Ouvrez Doublons, analysez de nouveau, puis sélectionnez de nouveau",
+  "review.refusal.duplicatesUnknownGroup": "Un groupe de doublons sélectionné n'existe plus. Ouvrez Doublons et sélectionnez de nouveau",
+  "review.refusal.keeperChanged": "Une copie à conserver a changé ou a disparu, rien n'a été déplacé. Relancez l'analyse et la recherche de doublons, puis resélectionnez",
+  "review.refusal.keeperRemoved": "Ensemble, les doublons sélectionnés ne laisseraient aucune copie de certains fichiers, rien n'a été déplacé. Retirez un groupe de la liste ou conservez une copie de plus",
+  "review.refusal.keeperConflict": "Un groupe sélectionné supprimerait une copie que vous avez choisi de conserver dans un autre groupe, rien n'a été déplacé. Retirez l'un des groupes de la liste ou conservez une autre copie",
+  "review.refusal.keeperConflictNamed": "{copy} est conservée dans « {kept} », mais supprimer « {removing} » la supprimerait, rien n'a été déplacé. Retirez l'un des deux groupes de la liste ou conservez une autre copie",
+  "review.refusal.duplicatesNothing": "Les doublons sélectionnés ne déplacent plus rien. Retirez-les de la liste",
+  "review.refusal.other": "Le nettoyage a été refusé. Revérifiez la sélection",
+  "review.refusal.selectedItem": "Un élément sélectionné",
+  "review.applying.title": "Déplacement vers la corbeille",
+  "review.applying.count": "{done} / {total} éléments",
+  "review.applying.indeterminate": "En attente de progression",
+  "review.applying.pollError": "Progression illisible pour le moment. Vérification en cours ; le nettoyage ne sera pas renvoyé",
+  "review.applying.cancel": "Annuler le nettoyage",
+  "review.applying.cancelling": "Annulation",
+  "review.applying.cancelError": "Annulation impossible ; le nettoyage continue peut-être",
+  "review.result.title": "Résultat du nettoyage",
+  "review.result.completeTitle": "Placé dans la corbeille",
+  "review.result.cancelledTitle": "Nettoyage annulé",
+  "review.result.unableToStartTitle": "Impossible de démarrer",
+  "review.result.partialTitle": "Certains éléments sont restés à leur place",
+  "review.result.moved": "Placé dans la corbeille : {bytes} ; l'espace est libéré après l'avoir vidée",
+  "review.result.empty": "Videz-la dans Panneau de configuration > Dossier partagé > Action > Vider la corbeille, ou avec une tâche de corbeille dans le Planificateur de tâches",
+  "review.result.bin": {
+    "one": "Corbeille de {share} : {count} élément",
+    "other": "Corbeille de {share} : {count} éléments"
+  },
+  "review.result.leftTitle": "Toujours en place",
+  "review.result.detailsUnavailable": "Nettoyage terminé ; détails indisponibles",
+  "review.result.lastKnown": "Dernier relevé : {counts}",
+  "review.outcome.partial": "Déplacé en partie",
+  "review.outcome.changed": "Modifié, laissé tel quel",
+  "review.outcome.failed": "Non déplacé",
+  "review.applyError.noRetry": "Vérifiez l'état de la tâche avant un autre nettoyage ; cet écran ne le renverra pas",
+  "review.count.moved": {
+    "one": "{count} déplacé",
+    "other": "{count} déplacés"
+  },
+  "review.count.absent": "{count} déjà absents",
+  "review.count.partial": {
+    "one": "{count} déplacé en partie",
+    "other": "{count} déplacés en partie"
+  },
+  "review.count.failed": {
+    "one": "{count} non déplacé",
+    "other": "{count} non déplacés"
+  },
+  "review.count.changed": "{count} modifiés",
+  "review.duplicates.title": "Doublons",
+  "review.duplicates.line": {
+    "one": "Place {count} dans la corbeille · conserve {keeps}",
+    "other": "Place {count} dans la corbeille · conserve {keeps}"
+  },
+  "review.duplicates.linePreferred": {
+    "one": "Place {count} dans la corbeille · conserve {keeps} (partage préféré)",
+    "other": "Place {count} dans la corbeille · conserve {keeps} (partage préféré)"
+  },
+  "review.duplicates.partialLine": {
+    "one": "Place {items} éléments identiques de {count} dossier dans la corbeille · conserve {keeps}",
+    "other": "Place {items} éléments identiques de chacun des {count} dossiers dans la corbeille · conserve {keeps}"
+  },
+  "review.duplicates.lineDelete": {
+    "one": "Supprime définitivement {count} · conserve {keeps}",
+    "other": "Supprime définitivement {count} · conserve {keeps}"
+  },
+  "review.duplicates.lineDeletePreferred": {
+    "one": "Supprime définitivement {count} · conserve {keeps} (partage préféré)",
+    "other": "Supprime définitivement {count} · conserve {keeps} (partage préféré)"
+  },
+  "review.duplicates.partialLineDelete": {
+    "one": "Supprime définitivement {items} éléments identiques de {count} dossier · conserve {keeps}",
+    "other": "Supprime définitivement {items} éléments identiques de chacun des {count} dossiers · conserve {keeps}"
+  },
+  "review.duplicates.lineMixed": {
+    "one": "Retire {count} : dans la corbeille, ou définitivement là où il n’y en a pas · conserve {keeps}",
+    "other": "Retire {count} : dans la corbeille, ou définitivement là où il n’y en a pas · conserve {keeps}"
+  },
+  "review.duplicates.lineMixedPreferred": {
+    "one": "Retire {count} : dans la corbeille, ou définitivement là où il n’y en a pas · conserve {keeps} (partage préféré)",
+    "other": "Retire {count} : dans la corbeille, ou définitivement là où il n’y en a pas · conserve {keeps} (partage préféré)"
+  },
+  "review.duplicates.partialLineMixed": {
+    "one": "Retire {items} éléments identiques de {count} dossier : dans la corbeille, ou définitivement là où il n’y en a pas · conserve {keeps}",
+    "other": "Retire {items} éléments identiques de chacun des {count} dossiers : dans la corbeille, ou définitivement là où il n’y en a pas · conserve {keeps}"
+  },
+  "review.duplicates.partialNote": "Les dossiers en partie identiques ne perdent que leurs éléments identiques. Les dossiers eux-mêmes et les éléments qui diffèrent, comme .git, sont conservés",
+  "review.duplicates.keptChecked": {
+    "one": "{count} copie conservée est revérifiée juste avant tout retrait",
+    "other": "{count} copies conservées sont revérifiées juste avant tout retrait"
+  },
+  "review.duplicates.freesLater": "Libéré plus tard : des instantanés retiennent encore {size} de ces copies",
+  "review.duplicates.clear": "Retirer les doublons de la liste",
+  "review.jobState.queued": "En file d'attente",
+  "review.jobState.running": "En cours",
+  "review.jobState.pausing": "Mise en pause",
+  "review.jobState.cancelling": "Annulation",
+  "review.jobState.paused": "En pause",
+  "review.jobState.completed": "Terminé",
+  "review.jobState.partial": "Partiellement terminé",
+  "review.jobState.failed": "Échec",
+  "review.jobState.cancelled": "Annulé",
+  "review.jobState.interrupted": "Interrompu",
+  "review.apiError.no_permission": "Votre compte DSM n'est pas autorisé à planifier un nettoyage",
+  "review.apiError.session_timeout": "Votre session DSM a expiré. Reconnectez-vous et rouvrez cette vérification",
+  "review.apiError.reload": "Le service Syno Reclaim a changé. Rechargez la fenêtre DSM et rouvrez cette vérification",
+  "review.apiError.backend_unavailable": "Syno Reclaim n'est pas disponible. Vérifiez le Centre de paquets et réessayez plus tard",
+  "review.apiError.auth_unavailable": "DSM n’a pas pu vérifier votre connexion. Réessayez dans quelques instants",
+  "review.apiError.invalid_param": "La demande de nettoyage n'a pas été acceptée. Rouvrez la vérification et contrôlez la sélection",
+  "review.apiError.busy": "Une autre opération utilise ce volume. Réessayez lorsqu'elle est terminée",
+  "review.apiError.backend_busy": "Syno Reclaim traite d’autres requêtes. Réessayez dans un instant",
+  "review.apiError.cli_error": "Syno Reclaim n'a pas pu terminer la demande de nettoyage",
+  "review.apiError.timeout": "La demande a expiré. Vérifiez l'état de la tâche avant de lancer un autre nettoyage",
+  "review.apiError.exec_failed": "Syno Reclaim n'a pas pu démarrer la demande de nettoyage",
+  "review.apiError.fixture_missing": "Cet aperçu n'inclut pas la réponse de nettoyage demandée",
+  "review.apiError.unknown": "Une erreur inattendue s'est produite lors de la vérification du nettoyage",
+  "review.recycle.time": "Les gros déplacements prennent du temps : DSM déplace environ quelques milliers de fichiers par seconde, et l'espace n'est libéré qu'après avoir vidé la corbeille",
+  "review.applying.calls": {
+    "one": "{count} déplacement par DSM effectué",
+    "other": "{count} déplacements par DSM effectués"
+  },
+  "review.duplicates.scanAge": "Ces résultats viennent de l'analyse du {time}. Les fichiers ajoutés ou modifiés depuis dans les copies déplacées vont aussi dans la corbeille, d'où ils peuvent être restaurés. Si ces dossiers ont pu changer, relancez d'abord l'analyse",
+  "review.duplicates.scanAgeDelete": "Ces résultats viennent de l'analyse du {time}. Les fichiers ajoutés ou modifiés depuis dans les copies retirées sont retirés avec elles : dans la corbeille, ou définitivement là où il n’y en a pas. Si ces dossiers ont pu changer, relancez d'abord l'analyse",
+  "review.planning.count": "Vérification des éléments sélectionnés : {done} / {total}",
+  "review.more": "Et {count} de plus",
+  "review.protected.volume": "C'est le volume lui-même",
+  "review.protected.system": "Un fichier système de DSM",
+  "review.protected.recycle_bin": "Déjà dans une corbeille : videz-la dans DSM",
+  "review.protected.package": "Données d'un paquet DSM : libérez l'espace dans ce paquet",
+  "review.protected.packageNamed": "Données de {package} : libérez l'espace dans {package}",
+  "review.protected.dsm_folder": "Un dossier système de DSM",
+  "review.protected.share_root": "Un dossier partagé lui-même : sélectionnez les éléments qu'il contient",
+  "review.protected.home": "Un dossier personnel : sélectionnez les éléments qu'il contient",
+  "review.protected.outside_share": "Hors d'un dossier partagé DSM : le nettoyage déplace uniquement vers la corbeille d'un dossier partagé",
+  "review.protected.other": "Élément protégé",
+  "review.refusal.cancelled": "Vérification arrêtée",
+  "review.planning.stop": "Arrêter la vérification",
+  "review.planning.kept": "Vérification des copies conservées : {done} / {total}",
+  "review.confirmDelete": {
+    "one": "Supprimer définitivement {count} élément",
+    "other": "Supprimer définitivement {count} éléments"
+  },
+  "review.confirmMoveDelete": {
+    "one": "Déplacer {moves}, supprimer {deletes}",
+    "other": "Déplacer {moves}, supprimer {deletes}"
+  },
+  "review.confirmCheckDelete": {
+    "one": "Je comprends que {deletes} élément est supprimé définitivement, sans restauration possible ; les autres vont dans la corbeille",
+    "other": "Je comprends que {deletes} éléments sont supprimés définitivement, sans restauration possible ; les autres vont dans la corbeille"
+  },
+  "review.confirmCheckDeleteOnly": {
+    "one": "Je comprends que {deletes} élément est supprimé définitivement, sans restauration possible",
+    "other": "Je comprends que {deletes} éléments sont supprimés définitivement, sans restauration possible"
+  },
+  "review.delete.title": {
+    "one": "{deletes} élément est supprimé définitivement",
+    "other": "{deletes} éléments sont supprimés définitivement"
+  },
+  "review.delete.body": "Aucune corbeille ne peut les recevoir : ils ne sont dans aucun dossier partagé DSM, ou dans un dossier partagé dont la corbeille est désactivée. Reclaim les supprime et ils ne peuvent pas être restaurés",
+  "review.delete.folder": "Dossier {share} (pas un dossier partagé)",
+  "review.delete.share": "Hors des dossiers partagés DSM : les éléments de {share} sont supprimés définitivement",
+  "review.delete.binOff": "{share} n'a pas de corbeille activée : ses éléments sont supprimés définitivement",
+  "review.delete.binOffEnable": "Pour pouvoir les restaurer, activez d'abord sa corbeille, puis choisissez Revérifier : ils iront alors dans la corbeille",
+  "review.numbers.removes": "Retiré",
+  "review.count.deleted": {
+    "one": "{count} supprimé définitivement",
+    "other": "{count} supprimés définitivement"
+  },
+  "review.result.deleted": {
+    "one": "Supprimé définitivement : {deleted} élément, {bytes}",
+    "other": "Supprimés définitivement : {deleted} éléments, {bytes}"
+  },
+  "review.refusal.deleteNotConfirmed": "Ce plan supprime définitivement des éléments sans corbeille : confirmez-le pour continuer",
+  "review.applying.titleDelete": "Suppression définitive",
+  "review.applying.titleMixed": "Déplacement vers la corbeille et suppression définitive",
+  "review.result.deletedTitle": "Supprimé définitivement",
+  "review.result.cleanedTitle": "Nettoyage terminé",
+  "review.result.cancelledCounts": {
+    "one": "Annulé : {done} traité(s), {left} élément non traité et laissé tel quel",
+    "other": "Annulé : {done} traité(s), {left} éléments non traités et laissés tels quels"
+  },
+  "review.result.cancelTooLate": "L'annulation est arrivée pendant le dernier élément, qui a donc été terminé",
+  "review.numbers.frees": "Libère environ",
+  "review.numbers.allocatedDelete": "Les tailles sont l'espace que les éléments occupent maintenant. Les supprimer le rend au volume, mais des instantanés ou des données partagées peuvent en garder une partie",
+  "review.recycle.syncDelete": "Dans un dossier synchronisé par Synology Drive, ShareSync ou Cloud Sync, la suppression retire aussi les éléments des copies synchronisées",
+  "review.refusal.notFound": "Cet élément n'existe plus. Retirez-le de la liste de nettoyage",
+  "review.recycle.symlinks": {
+    "one": "{symlinks} raccourci (lien symbolique) parmi eux n’est pas conservé par la corbeille DSM et ne revient pas à la restauration",
+    "other": "{symlinks} raccourcis (liens symboliques) parmi eux ne sont pas conservés par la corbeille DSM et ne reviennent pas à la restauration"
+  },
+  "review.applying.checkingKept": {
+    "one": "Vérification de la copie conservée",
+    "other": "Vérification des {kept} copies conservées"
+  },
+  "review.applying.finishingCurrent": "Fin de l'élément en cours, puis arrêt ; le reste ne bouge pas"
+}

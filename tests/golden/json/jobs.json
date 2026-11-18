@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "20260929T022926Z-ec33e",
+      "kind": "scan",
+      "state": "partial",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/proc"
+        },
+        {
+          "path": "/fixture/mnt/data"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/fixture/mnt"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:26Z",
+      "updated": "2026-09-29T02:29:26Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "partial",
+        "exit_code": 3,
+        "reports": [
+          {
+            "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/5b3a6bbbff74710a.srrep"
+          }
+        ],
+        "error_codes": [
+          "not_btrfs"
+        ],
+        "document": {
+          "path": "/fixture/state/jobs/20260929T022926Z-ec33e/result.json"
+        }
+      },
+      "requested_by": null
+    },
+    {
+      "job_id": "20260929T022925Z-ec33b",
+      "kind": "scan",
+      "state": "completed",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/fixture/mnt"
+        }
+      ],
+      "scope": "volume",
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/fixture/mnt"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:25Z",
+      "updated": "2026-09-29T02:29:26Z",
+      "resumes": 0,
+      "units": 3,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "complete",
+        "exit_code": 0,
+        "reports": [
+          {
+            "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/5b3a6bbbff74710a.srrep"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/fixture/state/jobs/20260929T022925Z-ec33b/result.json"
+        }
+      },
+      "requested_by": null
+    },
+    {
+      "job_id": "20260929T022925Z-ec33a",
+      "kind": "scan",
+      "state": "completed",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/fixture/mnt/data"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/fixture/mnt"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:25Z",
+      "updated": "2026-09-29T02:29:25Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "complete",
+        "exit_code": 0,
+        "reports": [
+          {
+            "path": "/fixture/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/5b3a6bbbff74710a.srrep"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/fixture/state/jobs/20260929T022925Z-ec33a/result.json"
+        }
+      },
+      "requested_by": null
+    },
+    {
+      "job_id": "rootfs-20260929T022924Z-ec33c",
+      "kind": "rootfs-apply",
+      "state": "running",
+      "phase": "execute",
+      "targets": [
+        {
+          "path": "/var/lib/synoreclaim/rootfs-plans/rootfs-1-2.json"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/fixture/mnt"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:24Z",
+      "updated": "2026-09-29T02:29:24Z",
+      "resumes": 0,
+      "units": 0,
+      "rootfs": {
+        "phase": "moves",
+        "items_done": 2,
+        "items_total": 3,
+        "bytes_done": 104857600,
+        "bytes_total": 115343360,
+        "tool": null
+      },
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": null,
+      "requested_by": "admin"
+    }
+  ]
+}

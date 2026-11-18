@@ -1,0 +1,11 @@
+{
+  "applies": [],
+  "schema_version": 1,
+  "command": "rootfs-history",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:00Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,118 @@
+[
+  {
+    "file": "ext4.json",
+    "scenario": "ext4"
+  },
+  {
+    "file": "volume1.json",
+    "params": {}
+  },
+  {
+    "file": "sysvol-getting-full.json",
+    "scenario": "sysvol_getting_full"
+  },
+  {
+    "file": "sysvol-full.json",
+    "scenario": "sysvol_full"
+  },
+  {
+    "file": "sysvol-deep-short.json",
+    "scenario": "sysvol_deep_short"
+  },
+  {
+    "file": "changed-system.json",
+    "scenario": "changed_system"
+  },
+  {
+    "file": "changed-system.json",
+    "scenario": "changed_share"
+  },
+  {
+    "file": "no-report.json",
+    "scenario": "no_report"
+  },
+  {
+    "file": "share-scan.json",
+    "scenario": "share_scan"
+  },
+  {
+    "file": "interaction.json",
+    "scenario": "interaction"
+  },
+  {
+    "file": "sysvol-getting-full.json",
+    "scenario": "sysvol_partial"
+  },
+  {
+    "file": "sysvol-small.json",
+    "scenario": "sysvol_small"
+  },
+  {
+    "file": "sysvol-getting-full.json",
+    "scenario": "sysvol_nothing_movable"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_cleanup"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_destination_full"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_busy"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_walk_stopped"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_dsm_update_active"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_stale"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_nothing"
+  },
+  {
+    "file": "rootfs-cleanup.json",
+    "scenario": "rootfs_tools_only"
+  },
+  {
+    "file": "rootfs-no-room.json",
+    "scenario": "rootfs_no_room"
+  },
+  {
+    "file": "rootfs-no-shares.json",
+    "scenario": "rootfs_no_shares"
+  },
+  {
+    "file": "many-volumes.json",
+    "scenario": "many_volumes"
+  },
+  {
+    "file": "usage-change.json",
+    "scenario": "usage_change"
+  },
+  {
+    "file": "ext4-skipped.json",
+    "scenario": "unsupported_skipped"
+  },
+  {
+    "file": "no-btrfs.json",
+    "scenario": "no_supported_volume"
+  },
+  {
+    "file": "no-report.json",
+    "scenario": "first_scan"
+  },
+  {
+    "file": "abb-share.json",
+    "scenario": "abb_share"
+  }
+]

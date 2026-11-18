@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/cache.schema.json",
+  "title": "synoreclaim cache result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "cache"
+        },
+        "action": {
+          "enum": [
+            "status",
+            "clear"
+          ]
+        },
+        "filesystems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mount": {
+                "$ref": "common.schema.json#/$defs/path"
+              },
+              "completion": {
+                "$ref": "common.schema.json#/$defs/completion"
+              },
+              "format": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "fsid": {
+                "$ref": "common.schema.json#/$defs/fsid"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Bytes of the units kept after the action."
+              },
+              "units": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "subvolume": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "uuid": {
+                      "type": "string",
+                      "description": "Subvolume UUID in hex; empty when its root item has none."
+                    },
+                    "slot": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]+$",
+                      "description": "Which scope of the subvolume the unit holds."
+                    },
+                    "generation": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "readonly": {
+                      "type": "boolean"
+                    },
+                    "captured": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Unix seconds when the unit's namespace was read."
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "reusable": {
+                      "type": "boolean",
+                      "description": "Whether a scan now may reuse the unit instead of reading the subvolume."
+                    }
+                  },
+                  "required": [
+                    "subvolume",
+                    "uuid",
+                    "slot",
+                    "generation",
+                    "readonly",
+                    "captured",
+                    "bytes",
+                    "reusable"
+                  ]
+                }
+              },
+              "global_index": {
+                "const": "rebuilt_each_scan",
+                "description": "The global index is derived from the units on every scan and never kept."
+              },
+              "cleared": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Units cache clear removed; only for clear."
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/target_error"
+                }
+              }
+            },
+            "required": [
+              "mount",
+              "completion",
+              "format",
+              "fsid",
+              "bytes",
+              "units",
+              "global_index",
+              "errors"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "action",
+        "filesystems"
+      ]
+    }
+  ]
+}

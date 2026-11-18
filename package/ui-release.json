@@ -1,0 +1,247 @@
+{
+  "package": "SynoReclaim",
+  "version": "0.1.1-1639",
+  "baseline": "v0.1.1-1638",
+  "source_base": "c4b17069bdb6b8c315a65170aeb171b895028aa3",
+  "toolchain": {
+    "cli": "0.53.15",
+    "templates": "0.42.1",
+    "sdk": "0.53.37",
+    "app": "0.53.37",
+    "ui": "0.25.12",
+    "executorTag": "executor/v0.53.6",
+    "goToolchain": "go1.26.10"
+  },
+  "validation_scope": "UI-only repackage of the 0.1.1-1638 SPKs (package/repackage-ui.mjs): Review, Explore and History unit tests, typecheck, lint, UI and DSM builds, catalog check, inspect of every architecture with the catalog and against 1638, archive privacy scan; no full gate, qemu or NAS tests",
+  "catalog_text": {
+    "source": "syno-pkg-catalog schema 4 (origin/main) with releases.0.1.1-1639 added",
+    "sha256": "b46b1f9a8b926b61f341f79a1bbe90a781d47eb664ad8f2dfd01bf33be121978",
+    "drift": false
+  },
+  "check": {
+    "ok": true,
+    "command": "check",
+    "data": {
+      "package": "SynoReclaim",
+      "warnings": [
+        {
+          "code": "CTL_DESCRIPTION_QUALITY",
+          "span": {
+            "file": "operations.json",
+            "line": 1,
+            "column": 1
+          },
+          "message": "ctl.history.list: summary has 4 words; say what the tool does and when to use it (at least 5 words).",
+          "suggestion": "Write one English sentence: what the tool does and when to use it. Set ctl.descriptions: error to block builds on this.",
+          "severity": "warning"
+        }
+      ],
+      "hyperBackup": {
+        "online": false,
+        "dataVersion": "1.0"
+      },
+      "capabilities": {
+        "rootOps": true
+      },
+      "icon": {
+        "source": "custom",
+        "path": "package/ui/images",
+        "solid": false
+      },
+      "loginStyle": {
+        "color": "#2F6BD8",
+        "wallpaper": "default",
+        "title": "app-icon"
+      }
+    }
+  },
+  "build": {
+    "ok": true,
+    "all_three_architectures": true,
+    "rust_app_rebuilt": false,
+    "runtime_rebuilt": false,
+    "executor_from_pinned_release": true,
+    "root_programs_rebuilt": false,
+    "reproducibility_verified": false,
+    "reused_from": "v0.1.1-1638",
+    "prebuilt_artifacts_unchanged": true
+  },
+  "inspect": {
+    "x86_64": {
+      "ok": true,
+      "findings": [],
+      "sdk": "0.53.37",
+      "executor_digest": "e77dbf846ea4555355fa15ee3a6ca3b20e1b1aaa9768321243589d9ec15ffabe",
+      "approval": {
+        "retention": "eligible",
+        "permissions": "unchanged",
+        "executor_only": false,
+        "task_template_changed": false,
+        "old_policy_digest": "6cd5696686067edb4d9c0ad9573f9c5748c016c967070c519f0e3c530dc14149",
+        "new_policy_digest": "6cd5696686067edb4d9c0ad9573f9c5748c016c967070c519f0e3c530dc14149",
+        "root_programs": [],
+        "policy_changes": [],
+        "reason": "Approval can be retained if the installed protected runtime and exact DSM task readback still match this baseline."
+      },
+      "publicUi": {
+        "minified": true,
+        "sourceMapFree": true,
+        "bundles": 46,
+        "unminified": [],
+        "sourceMaps": []
+      },
+      "catalogText": {
+        "sha256": "b46b1f9a8b926b61f341f79a1bbe90a781d47eb664ad8f2dfd01bf33be121978",
+        "package": "SynoReclaim",
+        "version": "0.1.1-1639"
+      }
+    },
+    "aarch64": {
+      "ok": true,
+      "findings": [],
+      "sdk": "0.53.37",
+      "executor_digest": "741a7c37757b56b3acc304cef56de5e59c1ca9278a83be0f1e1ff1ad17b24dd6",
+      "approval": {
+        "retention": "eligible",
+        "permissions": "unchanged",
+        "executor_only": false,
+        "task_template_changed": false,
+        "old_policy_digest": "1f4642720f65790f3ced096454f861dada1e46d6adadffd692adf07f7d51bccb",
+        "new_policy_digest": "1f4642720f65790f3ced096454f861dada1e46d6adadffd692adf07f7d51bccb",
+        "root_programs": [],
+        "policy_changes": [],
+        "reason": "Approval can be retained if the installed protected runtime and exact DSM task readback still match this baseline."
+      },
+      "publicUi": {
+        "minified": true,
+        "sourceMapFree": true,
+        "bundles": 46,
+        "unminified": [],
+        "sourceMaps": []
+      },
+      "catalogText": {
+        "sha256": "b46b1f9a8b926b61f341f79a1bbe90a781d47eb664ad8f2dfd01bf33be121978",
+        "package": "SynoReclaim",
+        "version": "0.1.1-1639"
+      }
+    },
+    "armv7": {
+      "ok": true,
+      "findings": [],
+      "sdk": "0.53.37",
+      "executor_digest": "f0a3059b982d0210621254adf7d1a3343d2a89d114e053e5b3bd646898293b1a",
+      "approval": {
+        "retention": "eligible",
+        "permissions": "unchanged",
+        "executor_only": false,
+        "task_template_changed": false,
+        "old_policy_digest": "b995fa6690dd136019c618bc0342fafec62c2c11b19c92374b3cdf0f4bc25105",
+        "new_policy_digest": "b995fa6690dd136019c618bc0342fafec62c2c11b19c92374b3cdf0f4bc25105",
+        "root_programs": [],
+        "policy_changes": [],
+        "reason": "Approval can be retained if the installed protected runtime and exact DSM task readback still match this baseline."
+      },
+      "publicUi": {
+        "minified": true,
+        "sourceMapFree": true,
+        "bundles": 46,
+        "unminified": [],
+        "sourceMaps": []
+      },
+      "catalogText": {
+        "sha256": "b46b1f9a8b926b61f341f79a1bbe90a781d47eb664ad8f2dfd01bf33be121978",
+        "package": "SynoReclaim",
+        "version": "0.1.1-1639"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "file": "SynoReclaim-0.1.1-1639-x86_64.spk",
+      "sha256": "51e35a172a670ed2342aa6f0cef5971bbebce5372f05851155610c8e53d00e38",
+      "size": 16473088
+    },
+    {
+      "file": "SynoReclaim-0.1.1-1639-aarch64.spk",
+      "sha256": "ebb59190c41fd41d4ec7b1faa6d1e9eddf148ce6d765003da9438bacc824f1c2",
+      "size": 15307776
+    },
+    {
+      "file": "SynoReclaim-0.1.1-1639-armv7.spk",
+      "sha256": "8670f39a9b30b4125cfa63a4ad87021fe73aaa96fd09dd0b1e15122645f03f93",
+      "size": 16093696
+    }
+  ],
+  "nas_tested": false,
+  "release_ready": true,
+  "screenshots": {
+    "kind": "English catalog captures from existing local fixture, no browser test assertions",
+    "ui": "0.25.1",
+    "sdk": "0.53.15",
+    "screenshots": [
+      {
+        "file": "catalog-overview-en.png",
+        "presentation": "DSM window fixture",
+        "view": "overview",
+        "locale": "en",
+        "sha256": "cad60edaa5244d53a4692f8ca9cf653291e262dbbd4341e96e9770caf31195f0"
+      },
+      {
+        "file": "catalog-new-scan-en.png",
+        "presentation": "DSM window fixture",
+        "view": "new scan dialog",
+        "locale": "en",
+        "sha256": "0351bb6e356451f3b78d27666b3ee1d20784f1d9717c9972b18b451abb591f66"
+      },
+      {
+        "file": "catalog-explore-en.png",
+        "presentation": "DSM window fixture",
+        "view": "explore",
+        "locale": "en",
+        "sha256": "f7675c1c59f30d2c90dd2e1813b849e1c08ce0fc10c9cdd781c9e41cb84ade5c"
+      },
+      {
+        "file": "catalog-phone-overview-en.png",
+        "presentation": "phone full-page fixture",
+        "view": "overview",
+        "locale": "en",
+        "sha256": "48865da5bf019978209a1cf30c500c1ba07c2739ec5ba4c556adca2ad3b80d38"
+      }
+    ],
+    "reused": true,
+    "source_version": "0.1.1-1631",
+    "note": "Reused previous catalog screenshots; no new capture or browser test"
+  },
+  "known_limitations": [
+    "Only the affected unit suites ran; the full gate, browser tests, qemu and NAS acceptance were intentionally not run",
+    "Binaries are reused from 0.1.1-1638, not rebuilt; build reproducibility was not tested",
+    "Catalog screenshots were reused and are not fresh captures"
+  ],
+  "approval_summary": "Against 1638: permissions, policy digests, root programs, task templates and executor digests unchanged; every prebuilt binary is byte-identical and only the App UI differs. Approval carryover is eligible, conditional on matching protected runtime and exact DSM task readback.",
+  "source_inputs": {
+    "dsm-package.yaml": "663c54af3b6f2258e5c3b1717bd81cd1d15f896edbe8fa663e9a7a42d779fa4e",
+    "package.json": "c05b5a3a337d53640ed8f6652fd21fa5dc12d1b5e087133a19a81f62d0f0b5a3",
+    "package-lock.json": "f41ca6716afaaf8723a73b96209ab50ce297eb4d7665a41e4c6751bcd5be2ce2",
+    "package/cli-source.json": "2f6ab5a75397922daee368b698dab358a3e2e99109a41cc12e8214964c14656c",
+    "toolchain.json": "0e4fade64ca2a9727ba67676ac3abd0f865fd0cbcee20ad86004e0ff1db0cebb",
+    "ui/package.json": "9906a0aa9ca5fe0d21ac6b95abd016848596e95446c79b6df90111a616cdcc8f",
+    "ui/pnpm-lock.yaml": "1bb014d50a4c04e8ac2480cd7dfe0d8a2b8c138b92d92efd070be24e4b5e6acc",
+    "app/Cargo.toml": "198dfecd1a2591dfa89c92c40b90ef68f75762772b4aeb2c0506521b750c9256",
+    "app/Cargo.lock": "72890ca7c8943ad4351016a8d8bbf2a6500d6d6774ed8083c704d3427c6dcf26",
+    "e2e/go.mod": "4515f780500735f98bd6eebebd74af5d41eb82a9db8c954e2b6a3055059d0b59",
+    "e2e/go.sum": "0d28573a74948ab0a6c7e2a2d34083170e4ebbf286f82f24eb5779ed70cbd80a",
+    "generated/synopkgland-api.json": "7dd82472c428c85fd615866fcd601f9d4e0931b0351914edffd67ba67351beef",
+    "CHANGELOG.md": "914681e380e99094b7d9907c3c30b0444529d49936c4f7c540272b18e77ca243"
+  },
+  "installed_info": {
+    "limit": 65536,
+    "warn_above": 57344,
+    "estimated_bytes": {
+      "x86_64": 28012,
+      "aarch64": 27785,
+      "armv7": 27782
+    },
+    "icons_recompressed": false,
+    "method": "estimateInstalledInfo over each built SPK's INFO and Package Center icons"
+  }
+}

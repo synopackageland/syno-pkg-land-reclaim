@@ -1,0 +1,12 @@
+[
+  {
+    "file": "review-start.json",
+    "params": { "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5", "confirm_move": true },
+    "scenario": "review_cleanup"
+  },
+  {
+    "file": "review-refused-start.json",
+    "params": { "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5", "confirm_move": true },
+    "scenario": "review_cleanup_refused"
+  }
+]

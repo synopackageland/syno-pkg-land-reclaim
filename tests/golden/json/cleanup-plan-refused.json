@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-plan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-11-13T00:00:00Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1/photos/#recycle/old.jpg",
+      "code": "in_recycle_bin",
+      "message": "in_recycle_bin: /volume1/photos/#recycle/old.jpg is in a Recycle Bin; Reclaim never removes items from it: Control Panel > Shared Folder > Action > Empty Recycle Bin, or a Recycle Bin task in Task Scheduler"
+    }
+  ],
+  "warnings": []
+}

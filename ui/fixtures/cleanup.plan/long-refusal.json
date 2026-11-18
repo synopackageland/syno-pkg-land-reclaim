@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-plan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T13:11:42Z",
+  "completion": "failed",
+  "job_id": null,
+  "errors": [
+    {
+      "path": "/volume1/share01/cleanup-golden/folder01/file0001.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder02/file0002.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder03/file0003.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder04/file0004.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder05/file0005.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder06/file0006.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder07/file0007.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder08/file0008.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder09/file0009.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder10/file0010.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder11/file0011.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder12/file0012.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder13/file0013.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder14/file0014.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder15/file0015.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder16/file0016.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder17/file0017.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder18/file0018.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder19/file0019.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder20/file0020.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder21/file0021.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder22/file0022.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder23/file0023.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder24/file0024.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder25/file0025.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder26/file0026.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder27/file0027.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder28/file0028.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder29/file0029.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder30/file0030.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder31/file0031.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder32/file0032.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder33/file0033.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder34/file0034.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder35/file0035.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder36/file0036.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder37/file0037.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder38/file0038.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder39/file0039.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    },
+    {
+      "path": "/volume1/share01/cleanup-golden/folder40/file0040.bin",
+      "code": "target_changed",
+      "message": "target_changed: this item has changed since the report; rescan or select it again"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "command": "cache",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "action": "status",
+  "filesystems": [
+    {
+      "mount": {
+        "path": "/fixture/mnt"
+      },
+      "completion": "complete",
+      "format": 2,
+      "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+      "bytes": 35376,
+      "units": [
+        {
+          "subvolume": 5,
+          "uuid": "e23b63de0b2947b7ae53eeb04c2149fc",
+          "slot": "8725f2149f7c7c9a",
+          "generation": 13,
+          "readonly": false,
+          "captured": 1790648965,
+          "bytes": 748,
+          "reusable": true
+        },
+        {
+          "subvolume": 256,
+          "uuid": "5ebab16e36dc7b44a9c188db41b13fe1",
+          "slot": "c93b85aaf1009983",
+          "generation": 12,
+          "readonly": false,
+          "captured": 1790648965,
+          "bytes": 16952,
+          "reusable": true
+        },
+        {
+          "subvolume": 256,
+          "uuid": "5ebab16e36dc7b44a9c188db41b13fe1",
+          "slot": "49f0e97b98449235",
+          "generation": 12,
+          "readonly": false,
+          "captured": 1790648965,
+          "bytes": 16890,
+          "reusable": true
+        },
+        {
+          "subvolume": 256,
+          "uuid": "5ebab16e36dc7b44a9c188db41b13fe1",
+          "slot": "110fe40b78227161",
+          "generation": 12,
+          "readonly": false,
+          "captured": 1790648966,
+          "bytes": 497,
+          "reusable": true
+        },
+        {
+          "subvolume": 257,
+          "uuid": "f7b2da91ff225c4da583f9f845f4bf5f",
+          "slot": "49f0e97b98449235",
+          "generation": 13,
+          "readonly": false,
+          "captured": 1790648965,
+          "bytes": 289,
+          "reusable": true
+        }
+      ],
+      "global_index": "rebuilt_each_scan",
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "报告",
+  "report.choice.newest": "最新扫描",
+  "report.choice.newestEach": "各文件夹的最新扫描",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "整个存储空间",
+  "report.scope.share": "共享文件夹 {name}",
+  "report.scope.paths": {
+    "one": "{count} 个文件夹",
+    "other": "{count} 个文件夹"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "整个存储空间 + {count} 个较新的共享文件夹",
+    "other": "整个存储空间 + {count} 个较新的共享文件夹"
+  },
+  "report.row.shareScan": "共享文件夹扫描 {time}"
+}

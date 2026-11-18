@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-apply",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:00:05Z",
+  "completion": "failed",
+  "job_id": "cleanup-18d9cccbc2d8b089-12702",
+  "errors": [
+    {
+      "path": "/fixture/state/cleanup/plans/cleanup-18d9cccbc2d8b089-31e7a5.json",
+      "code": "plan_stale",
+      "message": "The cleanup plan is no longer valid."
+    }
+  ],
+  "warnings": []
+}

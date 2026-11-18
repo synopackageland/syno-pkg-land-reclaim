@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>DSM container regression</title>
+<style>
+  body { margin: 0; background: var(--ui-gray-3); }
+  #window { position: absolute; left: 30px; top: 60px; display: flex; flex-direction: column; }
+  #chrome { height: 40px; flex-shrink: 0; background: var(--ui-surface); }
+  #body { flex: 1; min-height: 0; overflow: hidden; }
+  #synoreclaim { height: 100%; }
+</style></head>
+<body data-ui-app><div id="window"><div id="chrome">DSM window chrome (fixture)</div><div id="body"><div id="synoreclaim"></div></div></div>
+<script type="module">
+  // Development-only harness: a clipped window body inside a larger desktop.
+  const params = new URLSearchParams(location.search)
+  const host = document.querySelector('#window')
+  host.style.width = `${Number(params.get('width') || 1100)}px`
+  host.style.height = `${Number(params.get('height') || 720)}px`
+  window._S = key => key === 'lang' ? params.get('lang') || 'enu' : undefined
+  window.SYNO = { API: {} } // Hide the dev scenario selector, as in DSM.
+  const { nav } = await import('/src/stores/nav.ts')
+  const view = params.get('view')
+  nav.page = ['explore', 'packages', 'recycle'].includes(view) ? view : 'overview'
+  await import('/src/main.ts')
+</script></body></html>

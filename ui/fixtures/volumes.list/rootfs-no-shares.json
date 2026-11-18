@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "command": "volumes",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:35:33Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "volumes": [],
+  "excluded": [],
+  "system_partition": {
+    "mount": "/",
+    "source": "/dev/md0",
+    "fstype": "ext4",
+    "total_bytes": 8589934592,
+    "available_bytes": 930000000,
+    "used_bytes": 7659934592,
+    "free_bytes": 930000000,
+    "used_percent": 89,
+    "level": "getting_full",
+    "level_reasons": [
+      "used_over_recommended",
+      "update_headroom_low"
+    ],
+    "nearly_full": false
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "cleanable": {
+    "by_category": [
+      {
+        "bytes": 51589120,
+        "category": "log_archive",
+        "items": 78
+      }
+    ],
+    "bytes": 51589120,
+    "items": 78,
+    "required_destination_bytes": 320024576,
+    "tools": [
+      "rotate_logs",
+      "delete_journal"
+    ],
+    "deep": {
+      "additional_bytes": 208076800,
+      "by_category": [
+        {
+          "bytes": 99270656,
+          "category": "tool_cache",
+          "items": 4210
+        },
+        {
+          "bytes": 85983232,
+          "category": "geoip_database",
+          "items": 264
+        },
+        {
+          "bytes": 52707328,
+          "category": "log_archive",
+          "items": 121
+        },
+        {
+          "bytes": 19922944,
+          "category": "backup_installer",
+          "items": 1
+        },
+        {
+          "bytes": 1781760,
+          "category": "update_leftover",
+          "items": 24
+        }
+      ],
+      "bytes": 259665920,
+      "items": 4620,
+      "required_destination_bytes": 528101376,
+      "tools": [
+        "delete_log",
+        "logrotate",
+        "delete_journal"
+      ]
+    }
+  },
+  "command": "rootfs",
+  "completion": "complete",
+  "errors": [],
+  "filesystem": {
+    "available_bytes": 216223744,
+    "free_bytes": 216223744,
+    "fstype": "ext4",
+    "inodes_total": 524288,
+    "inodes_used": 133742,
+    "mount": "/",
+    "nearly_full": false,
+    "source": "/dev/md0",
+    "total_bytes": 2442780672,
+    "used_bytes": 2226556928,
+    "used_percent": 91,
+    "level": "full",
+    "level_reasons": [
+      "used_over_recommended",
+      "update_headroom_low",
+      "update_may_fail"
+    ]
+  },
+  "generated_at": "2026-10-20T11:00:00Z",
+  "job_id": null,
+  "log_quota": {
+    "hard_limit_bytes": 230686720,
+    "path": "/var/log",
+    "project_id": 1001,
+    "soft_limit_bytes": 209715200,
+    "used_bytes": 66678784
+  },
+  "not_walked": [
+    {
+      "path": "/volume1",
+      "reason": "mount_point"
+    }
+  ],
+  "open_deleted": {
+    "bytes_estimate": 0,
+    "holders": [],
+    "unreadable_processes": 0
+  },
+  "owners": [
+    {
+      "bytes": 1101004800,
+      "category": "dsm_system",
+      "name": null,
+      "percent_of_used": 49.4
+    },
+    {
+      "bytes": 291504128,
+      "category": "user_tooling",
+      "name": "/usr/local",
+      "percent_of_used": 13.1
+    },
+    {
+      "bytes": 167772160,
+      "category": "other",
+      "name": null,
+      "percent_of_used": 7.5
+    },
+    {
+      "bytes": 111149056,
+      "category": "user_tooling",
+      "name": "/root",
+      "percent_of_used": 5.0
+    },
+    {
+      "bytes": 101502976,
+      "category": "package_data",
+      "name": "HyperBackup-ED",
+      "percent_of_used": 4.6
+    },
+    {
+      "bytes": 85983232,
+      "category": "geoip_database",
+      "name": null,
+      "percent_of_used": 3.9
+    },
+    {
+      "bytes": 65744896,
+      "category": "logs",
+      "name": null,
+      "percent_of_used": 3.0
+    },
+    {
+      "bytes": 52744192,
+      "category": "log_archive",
+      "name": null,
+      "percent_of_used": 2.4
+    },
+    {
+      "bytes": 49176576,
+      "category": "package_data",
+      "name": "SMBService",
+      "percent_of_used": 2.2
+    },
+    {
+      "bytes": 37117952,
+      "category": "package_data",
+      "name": "SynoFinder",
+      "percent_of_used": 1.7
+    },
+    {
+      "bytes": 36069376,
+      "category": "package_data",
+      "name": "Python2",
+      "percent_of_used": 1.6
+    },
+    {
+      "bytes": 10485760,
+      "category": "log_center_db",
+      "name": null,
+      "percent_of_used": 0.5
+    },
+    {
+      "bytes": 1781760,
+      "category": "update_leftover",
+      "name": null,
+      "percent_of_used": 0.1
+    }
+  ],
+  "owners_small": {
+    "below_bytes": 1048576,
+    "bytes": 1150975,
+    "items": 2
+  },
+  "report_only": [
+    {
+      "advice": {
+        "code": "user_tooling",
+        "message": "installed by you or your scripts in /usr/local, not by DSM: move what you no longer need to a shared folder yourself; rootfs plan never selects it"
+      },
+      "bytes": 291504128,
+      "category": "user_tooling",
+      "name": "/usr/local"
+    },
+    {
+      "advice": {
+        "code": "user_tooling",
+        "message": "installed by you or your scripts in /root, not by DSM: move what you no longer need to a shared folder yourself; rootfs plan never selects it"
+      },
+      "bytes": 111149056,
+      "category": "user_tooling",
+      "name": "/root"
+    },
+    {
+      "advice": {
+        "code": "package_data",
+        "message": "managed by the package HyperBackup-ED: free it through the package (its settings or Package Center); never delete its files by hand",
+        "manage_in_id": "package_center"
+      },
+      "bytes": 101502976,
+      "category": "package_data",
+      "name": "HyperBackup-ED"
+    },
+    {
+      "advice": {
+        "code": "geoip_database",
+        "message": "the firewall's GeoIP database: Synology support removes it and has DSM download it again (synodbudupdate -p geoip-database); rootfs plan leaves it"
+      },
+      "bytes": 85983232,
+      "category": "geoip_database",
+      "name": null
+    },
+    {
+      "advice": {
+        "code": "live_logs",
+        "message": "live logs, capped by DSM's /var/log quota: DSM rotates them; rootfs plan moves only the rotated archives"
+      },
+      "bytes": 65744896,
+      "category": "logs",
+      "name": null
+    },
+    {
+      "advice": {
+        "code": "package_data",
+        "message": "managed by the package SMBService: free it through the package (its settings or Package Center); never delete its files by hand",
+        "manage_in_id": "package_center"
+      },
+      "bytes": 49176576,
+      "category": "package_data",
+      "name": "SMBService"
+    },
+    {
+      "advice": {
+        "code": "package_data",
+        "message": "managed by the package SynoFinder: free it through the package (its settings or Package Center); never delete its files by hand",
+        "manage_in_id": "package_center"
+      },
+      "bytes": 37117952,
+      "category": "package_data",
+      "name": "SynoFinder"
+    },
+    {
+      "advice": {
+        "code": "package_data",
+        "message": "managed by the package Python2: free it through the package (its settings or Package Center); never delete its files by hand",
+        "manage_in_id": "package_center"
+      },
+      "bytes": 36069376,
+      "category": "package_data",
+      "name": "Python2"
+    },
+    {
+      "advice": {
+        "code": "log_center_db",
+        "message": "Log Center's databases: archive or reduce them in Log Center, not by hand"
+      },
+      "bytes": 10485760,
+      "category": "log_center_db",
+      "name": null
+    }
+  ],
+  "report_only_small": {
+    "below_bytes": 1048576,
+    "bytes": 1150975,
+    "items": 2
+  },
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "usage": [
+    {
+      "bytes": 1591738368,
+      "category": "dsm_system",
+      "children": [
+        {
+          "bytes": 673185792,
+          "category": "user_tooling",
+          "package": null,
+          "path": "/usr/local",
+          "percent_of_used": 30.2
+        }
+      ],
+      "other_children_bytes": 918552576,
+      "package": null,
+      "path": "/usr",
+      "percent_of_used": 71.5
+    },
+    {
+      "bytes": 320864256,
+      "category": "other",
+      "children": [
+        {
+          "bytes": 125829120,
+          "category": "logs",
+          "package": null,
+          "path": "/var/log",
+          "percent_of_used": 5.7
+        },
+        {
+          "bytes": 88080384,
+          "category": "other",
+          "package": null,
+          "path": "/var/db",
+          "percent_of_used": 4.0
+        }
+      ],
+      "other_children_bytes": 106954752,
+      "package": null,
+      "path": "/var",
+      "percent_of_used": 14.4
+    },
+    {
+      "bytes": 111149056,
+      "category": "user_tooling",
+      "children": [],
+      "other_children_bytes": 0,
+      "package": null,
+      "path": "/root",
+      "percent_of_used": 5.0
+    }
+  ],
+  "walk": {
+    "allocated_bytes": 3556769792,
+    "complete": true,
+    "elapsed_ms": 12345,
+    "entries": 133740,
+    "stop_reason": null,
+    "unreadable_dirs": 0
+  },
+  "warnings": []
+}

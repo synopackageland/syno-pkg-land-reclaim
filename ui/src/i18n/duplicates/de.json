@@ -1,0 +1,208 @@
+{
+  "duplicates.title": "Duplikate",
+  "duplicates.breadcrumb.label": "Ort",
+  "duplicates.info.what": "Gleiche Dateien ab 10 MB und Ordner mit vollständig gleichem Inhalt",
+  "duplicates.info.keep": "Jede Gruppe behält eine Kopie auf dem ganzen Volume: in einem bevorzugten Ordner, sonst eine nicht verschiebbare, sonst die älteste. Die Seite eines Ordners filtert nur die Liste",
+  "duplicates.info.excluded": "App-, System- und Sicherungsdaten, die Reclaim erkennt, zählen nie: Ordner mit @ am Anfang, Hyper Backup- und Active Backup-Daten, Surveillance",
+  "duplicates.shares.title": "Freigegebene Ordner mit Duplikaten",
+  "duplicates.shares.name": "Freigegebener Ordner",
+  "duplicates.shares.folders": "Gleiche Ordner",
+  "duplicates.shares.files": "Große doppelte Dateien",
+  "duplicates.shares.copies": {
+    "one": "{count} Kopie",
+    "other": "{count} Kopien"
+  },
+  "duplicates.table.name": "Name",
+  "duplicates.table.kept": "Behaltene Kopie",
+  "duplicates.table.canFree": "Freigebbar",
+  "duplicates.table.selectRow": "Zu entfernende Kopien von {name} zur Bereinigungsliste hinzufügen",
+  "duplicates.folders.title": "Gleiche Ordner",
+  "duplicates.files.title": "Große doppelte Dateien",
+  "duplicates.files.threshold": "Ab 10 MB",
+  "duplicates.files.empty": "Hier gibt es keine großen doppelten Dateien",
+  "duplicates.filter.label": "Art",
+  "duplicates.filter.all": "Alle",
+  "duplicates.filter.photo": "Fotos",
+  "duplicates.filter.video": "Videos",
+  "duplicates.filter.music": "Musik",
+  "duplicates.selectAll.volume": "Alle Duplikate auf {scope} auswählen",
+  "duplicates.selectAll.all": "Alle Duplikate in {scope} auswählen",
+  "duplicates.selectAll.photo": "Alle doppelten Fotos in {scope} auswählen",
+  "duplicates.selectAll.video": "Alle doppelten Videos in {scope} auswählen",
+  "duplicates.selectAll.music": "Alle doppelte Musik in {scope} auswählen",
+  "duplicates.scope.title": "{scope} · {size} freigebbar",
+  "duplicates.scope.copies": {
+    "one": "{count} Kopie zu entfernen",
+    "other": "{count} Kopien zu entfernen"
+  },
+  "duplicates.scope.groups": {
+    "one": "{count} Gruppe",
+    "other": "{count} Gruppen"
+  },
+  "duplicates.scope.overlap": "Eine Gruppe mit Kopien in mehreren Ordnern zählt in jedem, daher ergeben die Zeilen zusammen mehr",
+  "duplicates.state.recalculating": "Wird nach einer Änderung der bevorzugten Ordner neu berechnet",
+  "duplicates.state.failed": "Duplikate konnten nicht geladen werden",
+  "duplicates.state.keepFailed": "Die behaltene Kopie konnte nicht geändert werden",
+  "duplicates.state.empty": "Keine Duplikate in {scope}",
+  "duplicates.row.copiesIn": {
+    "one": "{count} Kopie in {scope}",
+    "other": "{count} Kopien in {scope}"
+  },
+  "duplicates.row.files": {
+    "one": "{files} Datei",
+    "other": "{files} Dateien"
+  },
+  "duplicates.row.copies": {
+    "one": "{count} Kopie",
+    "other": "{count} Kopien"
+  },
+  "duplicates.row.allIn": "alle in {scope}",
+  "duplicates.row.hereElsewhere": "{here} hier · {elsewhere} anderswo",
+  "duplicates.row.each": "je {size}",
+  "duplicates.reason.user": "Ihre Wahl",
+  "duplicates.reason.preferred_share": "Bevorzugter Ordner",
+  "duplicates.reason.oldest": "Älteste Kopie",
+  "duplicates.reason.shortest": "Kürzester Pfad",
+  "duplicates.action.keep": "Behalten",
+  "duplicates.action.remove": "Entfernen",
+  "duplicates.sheet.folderDescription": {
+    "one": "{files} Datei · {size} an jedem Ort",
+    "other": "{files} Dateien · {size} an jedem Ort"
+  },
+  "duplicates.basket.count": {
+    "one": "{count} Kopie in der Bereinigungsliste",
+    "other": "{count} Kopien in der Bereinigungsliste"
+  },
+  "duplicates.basket.lead": {
+    "one": "Bereinigungsliste: {count} Kopie aus {groups} gibt mindestens frei",
+    "other": "Bereinigungsliste: {count} Kopien aus {groups} geben mindestens frei"
+  },
+  "duplicates.basket.groups": {
+    "one": "{count} Gruppe",
+    "other": "{count} Gruppen"
+  },
+  "duplicates.basket.keepsOne": "Von jeder Gruppe bleibt eine Kopie",
+  "duplicates.info.junk": "Ordner werden ohne die Dateien verglichen, die Systeme neu erzeugen: .DS_Store, Thumbs.db, desktop.ini, ._-Dateien, @eaDir. Beim Entfernen eines Ordners werden auch diese entfernt",
+  "duplicates.scope.later": "{size} mehr, sobald Snapshots rotieren",
+  "duplicates.scope.unchecked": {
+    "one": "{count} Kopie ließ sich nicht per Prüfsumme vergleichen und wird nicht aufgeführt",
+    "other": "{count} Kopien ließen sich nicht per Prüfsumme vergleichen und werden nicht aufgeführt"
+  },
+  "duplicates.analysis.running": "Duplikate werden gesucht. Auf einem großen Volume kann das einige Minuten dauern",
+  "duplicates.analysis.stale": "Diese Ergebnisse stammen von vor dem letzten Scan. Erneut analysieren, um sie zu aktualisieren",
+  "duplicates.analysis.again": "Erneut analysieren",
+  "duplicates.analysis.failed": "Die Suche nach Duplikaten konnte nicht gestartet werden",
+  "duplicates.analysis.noneTitle": "Auf diesem Volume wurde noch nicht nach Duplikaten gesucht",
+  "duplicates.analysis.noneBody": "Die Suche nutzt den letzten Scan und liest keine Dateiinhalte. Auf einem großen Volume kann sie einige Minuten dauern",
+  "duplicates.analysis.find": "Duplikate suchen",
+  "duplicates.unavailable.title": "Keine Duplikatdaten für dieses Volume",
+  "duplicates.unavailable.body": "Für Duplikate ist ein Scan des ganzen Btrfs-Volumes mit dieser Version von Syno Reclaim nötig. Frühere Scans enthalten die benötigten Daten nicht. Diesen Volume scannen und dann zurückkehren",
+  "duplicates.unavailable.scan": "Scannen",
+  "duplicates.more": {
+    "one": "{count} weitere anzeigen",
+    "other": "{count} weitere anzeigen"
+  },
+  "duplicates.row.inFolders": {
+    "one": "{count} in identischen Ordnern",
+    "other": "{count} in identischen Ordnern"
+  },
+  "duplicates.expand.inFolders": {
+    "one": "{count} weitere in identischen Ordnern, die mit diesen Ordnern entfernt werden",
+    "other": "{count} weitere in identischen Ordnern, die mit diesen Ordnern entfernt werden"
+  },
+  "duplicates.info.partial": "Ordner, deren Elemente an denselben Stellen nach Größe zu mindestens 80 % gleich sind, bilden eine Zeile: Entfernt werden nur die gleichen Elemente",
+  "duplicates.row.partial": {
+    "one": "{same} von {total} Element gleich wie {counterpart}",
+    "other": "{same} von {total} Elementen gleich wie {counterpart}"
+  },
+  "duplicates.row.folders": {
+    "one": "{count} Ordner",
+    "other": "{count} Ordner"
+  },
+  "duplicates.row.sameEach": "je {size} gleich",
+  "duplicates.partial.title": {
+    "one": "Entfernt {items} gleiches Element aus {name}",
+    "other": "Entfernt {items} gleiche Elemente aus {name}"
+  },
+  "duplicates.partial.stays": "{name} selbst und die abweichenden Elemente, etwa .git, bleiben erhalten",
+  "duplicates.partial.folderItem": {
+    "one": "{files} Datei · {size}",
+    "other": "{files} Dateien · {size}"
+  },
+  "duplicates.partial.more": {
+    "one": "{count} weiteres gleiches Element",
+    "other": "{count} weitere gleiche Elemente"
+  },
+  "duplicates.partial.label": "Gleiche Elemente von {name}",
+  "duplicates.partial.failed": "Die gleichen Elemente konnten nicht geladen werden",
+  "duplicates.partial.retry": "Erneut versuchen",
+  "duplicates.folders.empty": "Hier gibt es keine identischen Ordner",
+  "duplicates.shares.recycleBin": "Papierkorb",
+  "duplicates.shares.binOn": "Ein",
+  "duplicates.shares.binOffDeletes": "Aus · endgültig löschen",
+  "duplicates.table.moves": "Entfernen",
+  "duplicates.row.moves": {
+    "one": "{count} Kopie",
+    "other": "{count} Kopien"
+  },
+  "duplicates.row.noMove": "Keine",
+  "duplicates.row.deletes": "Wird endgültig gelöscht",
+  "duplicates.row.keptMany": {
+    "one": "Behält {count} Kopie",
+    "other": "Behält {count} Kopien"
+  },
+  "duplicates.keep.kept": "Bleibt",
+  "duplicates.keep.add": "Zur Bereinigungsliste hinzufügen",
+  "duplicates.keep.drop": "Aus der Bereinigungsliste entfernen",
+  "duplicates.list.label": "Liste",
+  "duplicates.reason.unmovable": "Nicht verschiebbar",
+  "duplicates.reason.in_kept_folder": "Bleibt mit seinem Ordner",
+  "duplicates.stays.shareRoot": "Selbst ein freigegebener Ordner, bleibt",
+  "duplicates.stays.notShared": "Nicht in einem DSM-Freigabeordner, bleibt",
+  "duplicates.stays.belowVolume": "Direkt unter dem Volume, bleibt",
+  "duplicates.merged.match": {
+    "one": "{count} Ordner stimmt überein: {names}",
+    "other": "{count} Ordner stimmen überein: {names}"
+  },
+  "duplicates.merged.ratio": "{percent} gleich · {same} von {total} Elementen",
+  "duplicates.merged.groups": {
+    "one": "Enthält {count} Gruppe",
+    "other": "Enthält {count} Gruppen"
+  },
+  "duplicates.merged.identical": "Identisch",
+  "duplicates.merged.lead": "Markierte Ordner kommen in den Papierkorb. Der behaltene Ordner bleibt",
+  "duplicates.merged.kept": "Behaltener Ordner",
+  "duplicates.sheet.lead": "Markierte Kopien kommen in den Papierkorb. Heben Sie die Markierung auf, um eine Kopie auch zu behalten",
+  "duplicates.sheet.sort": "Datum",
+  "duplicates.sheet.oldest": "Älteste zuerst",
+  "duplicates.sheet.newest": "Neueste zuerst",
+  "duplicates.sheet.summary": "Verschiebt {moves} von {total} · behält {kept}",
+  "duplicates.sheet.atLeastOne": "Lassen Sie mindestens eine Kopie unmarkiert",
+  "duplicates.sheet.apply": "Zur Bereinigungsliste",
+  "duplicates.sheet.update": "Bereinigungsliste aktualisieren",
+  "duplicates.sheet.size": "je {size}",
+  "duplicates.block.inFolder": "Wird mit seinem identischen Ordner verschoben",
+  "duplicates.selectAll.title": "Alle auswählen",
+  "duplicates.selectAll.checking": "Gruppen werden geprüft",
+  "duplicates.selectAll.progress": "{done} von {total} Gruppen geprüft",
+  "duplicates.selectAll.selected": {
+    "one": "{count} Gruppe ausgewählt",
+    "other": "{count} Gruppen ausgewählt"
+  },
+  "duplicates.selectAll.skipped": {
+    "one": "{count} Gruppe konnte nicht ausgewählt werden",
+    "other": "{count} Gruppen konnten nicht ausgewählt werden"
+  },
+  "duplicates.selectAll.stays": "Diese Kopien bleiben",
+  "duplicates.selectAll.stopped": "Gestoppt: Bereits geprüfte Gruppen sind ausgewählt",
+  "duplicates.why.nothing": "Nichts zu verschieben: Alle anderen Kopien bleiben oder sind nicht verschiebbar",
+  "duplicates.sheet.deletes": "Kein Papierkorb: Entfernen löscht endgültig",
+  "duplicates.row.toBin": "In den Papierkorb",
+  "duplicates.block.inFolderDelete": "Wird mit seinem identischen Ordner endgültig gelöscht",
+  "duplicates.sheet.leadDelete": "Markierte Kopien werden endgültig gelöscht: Dieser freigegebene Ordner hat keinen Papierkorb. Heben Sie die Markierung auf, um eine Kopie auch zu behalten",
+  "duplicates.sheet.leadMixed": "Markierte Kopien kommen in den Papierkorb oder werden endgültig gelöscht, wo ein freigegebener Ordner keinen hat. Heben Sie die Markierung auf, um eine Kopie auch zu behalten",
+  "duplicates.sheet.summaryDelete": "Löscht {moves} von {total} endgültig · behält {kept}",
+  "duplicates.sheet.summaryMixed": "Entfernt {moves} von {total} · behält {kept}",
+  "duplicates.merged.leadDelete": "Markierte Ordner werden endgültig gelöscht: Ihr freigegebener Ordner hat keinen Papierkorb. Der behaltene Ordner bleibt",
+  "duplicates.merged.leadMixed": "Markierte Ordner kommen in den Papierkorb oder werden endgültig gelöscht, wo ein freigegebener Ordner keinen hat. Der behaltene Ordner bleibt"
+}

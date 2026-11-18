@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "command": "scan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-10-06T02:41:40Z",
+  "completion": "complete",
+  "job_id": "20261006T024140Z-5f966",
+  "errors": [],
+  "warnings": [],
+  "resources": {
+    "scheduling": {
+      "profile": "low",
+      "requested_nice": 10,
+      "applied_nice": 10,
+      "requested_io_class": "idle",
+      "applied_io_class": "idle",
+      "duty_percent": 100,
+      "warnings": [],
+      "effectiveness_unknown": true
+    },
+    "memory_budget_bytes": 536870912,
+    "max_runtime_seconds": null,
+    "peak_rss_bytes": 19005440
+  },
+  "requested_targets": [
+    {
+      "path": "/fixture/ext4"
+    }
+  ],
+  "filesystems": [
+    {
+      "filesystem": "ext4",
+      "capabilities": {
+        "scan": true,
+        "snapshots": false,
+        "reflinks": false,
+        "cleanup": false,
+        "cleanup_unavailable_reason": "ext4_read_only"
+      },
+      "fsid": "1ed96513-7233-4633-8019-af583c2740bb",
+      "mount": {
+        "path": "/fixture/ext4"
+      },
+      "completion": "complete",
+      "targets": [
+        {
+          "path": "/fixture/ext4",
+          "scope": "volume",
+          "tree": null,
+          "inode_device": 1792,
+          "ino": 2
+        }
+      ],
+      "covered": [],
+      "consistency": "observed-stable",
+      "change_reasons": [],
+      "state_dir_writes": [],
+      "scan_started": "2026-10-06T02:41:40Z",
+      "scan_finished": "2026-10-06T02:41:40Z",
+      "totals": {
+        "logical": 8589942784,
+        "physical": 40960,
+        "shared": 0,
+        "reclaimable": 40960,
+        "reclaimable_resolved": 40960,
+        "unknown": 0,
+        "pinned_unreferenced": null,
+        "extents": null,
+        "inline": null,
+        "entries": 11,
+        "files": 4
+      },
+      "stats": null,
+      "resource_limit": null,
+      "coverage": {
+        "cycles": 0,
+        "dangling_entries": 0,
+        "encrypted_directories": 0,
+        "missing_subvolume_roots": null,
+        "namespace_uncertain_subvolumes": null,
+        "reference_accounting": "complete",
+        "snapshots_materialized": null,
+        "snapshots_not_materialized": null,
+        "unlinked_subvolume_entries": null,
+        "unreadable_roots": 0,
+        "unresolved_extents": null,
+        "unsupported_locations": 0
+      },
+      "subvolumes": null,
+      "inode_walk": {
+        "entries": 11,
+        "inodes": 10,
+        "elapsed_ms": 11,
+        "peak_rss_bytes": 16846848
+      },
+      "report": {
+        "path": "/fixture/state/reports/1ed96513-7233-4633-8019-af583c2740bb/9c4861020cfc4280.srrep",
+        "bytes": 3241
+      },
+      "errors": [],
+      "warnings": [
+        {
+          "code": "ext4_full_rescan",
+          "message": "ext4 scans always walk the full selection; resume restarts the walk"
+        }
+      ]
+    }
+  ]
+}

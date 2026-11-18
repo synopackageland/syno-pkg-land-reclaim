@@ -1,0 +1,54 @@
+[
+  {
+    "file": "completed.json",
+    "params": {
+      "job_id": "fixture-job0001"
+    }
+  },
+  {
+    "file": "volume-scan.json",
+    "params": {
+      "job_id": "fixture-job0001"
+    }
+  },
+  {
+    "file": "partial.json",
+    "params": {
+      "job_id": "fixture-job0003"
+    },
+    "scenario": "partial"
+  },
+  {
+    "file": "no-result.json",
+    "params": {
+      "job_id": "fixture-job0008"
+    },
+    "scenario": "error"
+  },
+  {
+    "file": "partial.json",
+    "params": {
+      "job_id": "fixture-job0003"
+    }
+  },
+  {
+    "file": "review-cleanup-completed.json",
+    "params": {
+      "job_id": "cleanup-18d9cccbc2d8b089-12701"
+    },
+    "scenario": "review_cleanup"
+  },
+  {
+    "file": "review-cleanup-refused.json",
+    "params": {
+      "job_id": "cleanup-18d9cccbc2d8b089-12702"
+    },
+    "scenario": "review_cleanup_refused"
+  },
+  {
+    "file": "short-selection.json",
+    "params": {
+      "job_id": "fixture-job0002"
+    }
+  }
+]

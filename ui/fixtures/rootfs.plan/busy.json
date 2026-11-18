@@ -1,0 +1,20 @@
+{
+  "command": "rootfs-plan",
+  "completion": "failed",
+  "errors": [
+    {
+      "code": "busy",
+      "holder": {
+        "command": "rootfs-apply",
+        "job_id": "fixture-rootfs-job0001"
+      },
+      "path": "/volume1/backup",
+      "message": "Another rootfs apply holds the system partition lock."
+    }
+  ],
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:00Z",
+  "job_id": null,
+  "warnings": []
+}

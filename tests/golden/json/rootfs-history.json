@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "command": "rootfs-history",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:01Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "applies": [
+    {
+      "plan_id": "rootfs-18d75b8423f30000-4d",
+      "requested_by": "admin",
+      "started": "2026-09-30T14:00:00Z",
+      "finished": "2026-09-30T14:15:00Z",
+      "move_dir": {
+        "path": "/volume1/backup/SynoReclaim-system-20260930-1400"
+      },
+      "manifest": {
+        "path": "/volume1/backup/SynoReclaim-system-20260930-1400/manifest.jsonl"
+      },
+      "moved": {
+        "files": 2,
+        "size_bytes": 201326592
+      },
+      "freed_bytes": 201326592,
+      "completion": "complete",
+      "skipped_count": 0,
+      "tools": [
+        {
+          "tool": "delete_journal",
+          "outcome": "succeeded"
+        }
+      ]
+    }
+  ]
+}

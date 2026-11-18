@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "command": "scan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:01:59Z",
+  "completion": "complete",
+  "job_id": "fixture-job0002",
+  "errors": [],
+  "warnings": [],
+  "resources": {
+    "scheduling": {
+      "profile": "low",
+      "requested_nice": 19,
+      "applied_nice": 19,
+      "requested_io_class": "idle",
+      "applied_io_class": "idle",
+      "duty_percent": 25,
+      "warnings": [],
+      "effectiveness_unknown": true
+    },
+    "memory_budget_bytes": 229805056,
+    "max_runtime_seconds": null,
+    "peak_rss_bytes": 3997696
+  },
+  "requested_targets": [
+    {
+      "path": "/volume1/share73/folder0373/file0589.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0590.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0592.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/file0591.bin"
+    },
+    {
+      "path": "/volume1/share73/folder0373/folder0375"
+    },
+    {
+      "path": "/volume1/share73/folder0373/folder0374"
+    }
+  ],
+  "filesystems": [
+    {
+      "fsid": "f0000000-0000-4000-8000-00000000009a",
+      "mount": {
+        "path": "/volume1"
+      },
+      "completion": "complete",
+      "targets": [
+        {
+          "path": "/volume1/share73/folder0373/folder0374",
+          "scope": "path",
+          "tree": 263,
+          "ino": 412
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0589.bin",
+          "scope": "path",
+          "tree": 263,
+          "ino": 350
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0590.bin",
+          "scope": "path",
+          "tree": 263,
+          "ino": 343
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0591.bin",
+          "scope": "path",
+          "tree": 263,
+          "ino": 356
+        },
+        {
+          "path": "/volume1/share73/folder0373/file0592.bin",
+          "scope": "path",
+          "tree": 263,
+          "ino": 352
+        },
+        {
+          "path": "/volume1/share73/folder0373/folder0375",
+          "scope": "path",
+          "tree": 263,
+          "ino": 351
+        }
+      ],
+      "covered": [],
+      "consistency": "changed-during-scan",
+      "change_reasons": [
+        {
+          "kind": "subvolume-generation-changed",
+          "subvolume_id": 256,
+          "selected": false,
+          "generation_before": 4702114,
+          "generation_after": 4702119
+        },
+        {
+          "kind": "subvolume-generation-changed",
+          "subvolume_id": 262,
+          "selected": false,
+          "generation_before": 4702112,
+          "generation_after": 4702119
+        }
+      ],
+      "scan_started": "2026-09-30T01:01:50Z",
+      "scan_finished": "2026-09-30T01:01:58Z",
+      "totals": {
+        "logical": 3237,
+        "physical": 8192,
+        "shared": 8192,
+        "reclaimable": 0,
+        "reclaimable_resolved": 0,
+        "unknown": 0,
+        "pinned_unreferenced": 0,
+        "extents": 2,
+        "inline": 314,
+        "entries": 12,
+        "files": 9
+      },
+      "stats": {
+        "subvolumes_discovered": 204,
+        "subvolumes_scanned": 1,
+        "subvolumes_reused": 0,
+        "entries": 12,
+        "inodes": 12,
+        "extents": 2,
+        "items": 2292,
+        "batches": 2,
+        "item_bytes": 144000,
+        "reference_searches": 1,
+        "reference_items": 5,
+        "owner_lookups": 0,
+        "owner_budget_capped_extents": 0,
+        "pinned_leaf_reads": 0,
+        "pinned_leaf_read_bytes": 0,
+        "pinned_leaf_cache_hits": 0,
+        "pinned_root_searches": 0,
+        "elapsed_ms": 8229,
+        "peak_rss_bytes": 3997696
+      },
+      "resource_limit": null,
+      "coverage": {
+        "encrypted_directories": 0,
+        "snapshots_not_materialized": 0,
+        "unlinked_subvolume_entries": 0,
+        "dangling_entries": 0,
+        "cycles": 0,
+        "unsupported_locations": 0,
+        "missing_subvolume_roots": 0,
+        "reference_accounting": "complete",
+        "unresolved_extents": 0
+      },
+      "subvolumes": [
+        {
+          "id": 263,
+          "role": "scanned",
+          "generation_before": 4700958,
+          "generation_after": 4700958,
+          "uuid": "0000000000000000000000000000006b",
+          "last_snapshot": 4700958,
+          "snapshots": [
+            542
+          ]
+        }
+      ],
+      "report": {
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "bytes": 3822
+      },
+      "errors": [],
+      "warnings": [
+        {
+          "code": "state_dir_on_scanned_filesystem",
+          "message": "the state directory is on the scanned name0017 (subvolume 256): its own writes can make the scan changed-during-scan; use the default /fixture/entry9999/entry9999 or a --state-dir on another name0017"
+        },
+        {
+          "code": "state_dir_changed",
+          "message": "subvolume 256 holds the state directory: its own writes may be why it changed during the scan"
+        }
+      ],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ]
+}

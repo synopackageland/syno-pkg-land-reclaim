@@ -1,0 +1,18 @@
+{
+  "report.choice.label": "報表",
+  "report.choice.newest": "最新掃描",
+  "report.choice.newestEach": "各資料夾的最新掃描",
+  "report.choice.saved": "{scope} · {time}",
+  "report.scope.volume": "整個儲存空間",
+  "report.scope.share": "共用資料夾 {name}",
+  "report.scope.paths": {
+    "one": "{count} 個資料夾",
+    "other": "{count} 個資料夾"
+  },
+  "report.chip.scoped": "{scope} · {time} · {consistency}",
+  "report.scope.volumeAndShares": {
+    "one": "整個儲存空間 + {count} 個較新的共用資料夾",
+    "other": "整個儲存空間 + {count} 個較新的共用資料夾"
+  },
+  "report.row.shareScan": "共用資料夾掃描 {time}"
+}

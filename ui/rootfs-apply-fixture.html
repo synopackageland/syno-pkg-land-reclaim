@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syno Reclaim · Rootfs apply fixture</title>
+    <style>html, body, #rootfs-fixture { min-height: 100%; margin: 0; }</style>
+    <script>
+      const localeToDsmLanguage = { en: 'enu', 'zh-TW': 'cht', 'zh-CN': 'chs', ja: 'jpn', ko: 'krn', de: 'ger', fr: 'fre', es: 'spn', it: 'ita' }
+      const requestedLanguage = new URLSearchParams(location.search).get('lang') || 'en'
+      const dsmLanguage = localeToDsmLanguage[requestedLanguage] || requestedLanguage
+      window._S = key => key === 'lang' ? dsmLanguage : undefined
+    </script>
+  </head>
+  <body>
+    <div id="rootfs-fixture"></div>
+    <script type="module" src="/src/rootfsApplyFixture.ts"></script>
+  </body>
+</html>

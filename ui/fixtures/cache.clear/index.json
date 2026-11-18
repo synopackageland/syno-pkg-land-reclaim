@@ -1,0 +1,15 @@
+[
+  {
+    "file": "volume1.json",
+    "params": {
+      "volume": "/volume1"
+    }
+  },
+  {
+    "scenario": "busy",
+    "document": {
+      "completion": "busy",
+      "exit": 4
+    }
+  }
+]

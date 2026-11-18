@@ -1,0 +1,6 @@
+{
+  "approvalWait.title": "DSM을 계속 기다리는 중",
+  "approvalWait.queued": "승인 작업이 DSM에서 시작되기를 기다리고 있습니다. NAS가 바쁘면 몇 분 걸릴 수 있으니 이 창을 열어 두세요",
+  "approvalWait.running": "승인 작업이 실행 중입니다. NAS가 바쁘면 몇 분 걸릴 수 있으니 이 창을 열어 두세요",
+  "approvalWait.elapsed": "대기 시간 {duration}"
+}

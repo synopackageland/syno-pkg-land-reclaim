@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "command": "jobs",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T02:29:26Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "jobs": [
+    {
+      "job_id": "20260930T010000Z-a1b2c",
+      "kind": "scan",
+      "state": "running",
+      "phase": "scan",
+      "targets": [
+        {
+          "path": "/volume1"
+        }
+      ],
+      "scope": "volume",
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-30T01:00:00Z",
+      "updated": "2026-09-30T01:04:10Z",
+      "resumes": 0,
+      "units": 3,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": null,
+      "requested_by": "admin",
+      "progress": {
+        "phase": "scan",
+        "units_done": 1,
+        "units_total": 3,
+        "entries": 1250000,
+        "items": 4200000,
+        "bytes_read": 310000000,
+        "elapsed_s": 250,
+        "rss_bytes": 61000000,
+        "subvolume_id": 257,
+        "current_subvolume": {
+          "path": "share01"
+        },
+        "basis": {
+          "entries": 5510000,
+          "elapsed_s": 790,
+          "items": 12000000
+        },
+        "updated": "2026-09-30T01:04:10Z"
+      }
+    },
+    {
+      "job_id": "20260929T022926Z-ec33e",
+      "kind": "scan",
+      "state": "partial",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/volume1/data"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:26Z",
+      "updated": "2026-09-29T02:29:26Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "partial",
+        "exit_code": 3,
+        "reports": [
+          {
+            "path": "/volume1/@appdata/SynoReclaim/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/5b3a6bbbff74710a.srrep"
+          }
+        ],
+        "error_codes": [
+          "not_btrfs"
+        ],
+        "document": {
+          "path": "/volume1/@appdata/SynoReclaim/state/jobs/20260929T022926Z-ec33e/result.json"
+        }
+      },
+      "requested_by": null
+    },
+    {
+      "job_id": "20260929T022925Z-ec33a",
+      "kind": "scan",
+      "state": "completed",
+      "phase": "publish",
+      "targets": [
+        {
+          "path": "/volume1/data"
+        }
+      ],
+      "scope": null,
+      "filesystems": [
+        {
+          "fsid": "e054886c-d4e5-4669-bcf1-20416b8f63b1",
+          "mount": {
+            "path": "/volume1"
+          }
+        }
+      ],
+      "profile": "low",
+      "created": "2026-09-29T02:29:25Z",
+      "updated": "2026-09-29T02:29:25Z",
+      "resumes": 0,
+      "units": 2,
+      "reason": null,
+      "tool_version": "0.1.0",
+      "compatible": true,
+      "request": null,
+      "request_ignored": null,
+      "result": {
+        "completion": "complete",
+        "exit_code": 0,
+        "reports": [
+          {
+            "path": "/volume1/@appdata/SynoReclaim/state/reports/e054886c-d4e5-4669-bcf1-20416b8f63b1/5b3a6bbbff74710a.srrep"
+          }
+        ],
+        "error_codes": [],
+        "document": {
+          "path": "/volume1/@appdata/SynoReclaim/state/jobs/20260929T022925Z-ec33a/result.json"
+        }
+      },
+      "requested_by": null
+    }
+  ]
+}

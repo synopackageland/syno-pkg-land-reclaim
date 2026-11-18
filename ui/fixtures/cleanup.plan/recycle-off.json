@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "command": "cleanup-plan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:59:58Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "deletes_for_good",
+      "message": "1 item(s) have no Recycle Bin (in no shared folder, or in a shared folder whose Recycle Bin is off): apply removes them for good, only with --confirm-delete; to move them to a Recycle Bin instead, turn it on (Control Panel > Shared Folder > Edit > Enable Recycle Bin) and make a new plan"
+    }
+  ],
+  "plan_id": "cleanup-18d9cccbc2d8b089-31e7a5",
+  "plan_file": {
+    "path": "/fixture/state/cleanup/plans/cleanup-18d9cccbc2d8b089-31e7a5.json"
+  },
+  "expires_at": "2026-10-01T01:00:00Z",
+  "items": 2,
+  "deletes": 1,
+  "paths": [
+    {
+      "path": "/volume1/share01/cleanup-golden/apply"
+    },
+    {
+      "path": "/volume1/share02/old/archive.iso"
+    }
+  ],
+  "size": {
+    "entries": 3,
+    "files": 2,
+    "allocated_bytes": 5242880
+  },
+  "shares": [
+    {
+      "share": {
+        "path": "share01"
+      },
+      "path": {
+        "path": "/volume1/share01"
+      },
+      "recycle_bin": {
+        "enabled": true,
+        "admin_only": false
+      },
+      "item_count": 1,
+      "drive_items": 0,
+      "items": [
+        {
+          "path": {
+            "path": "/volume1/share01/cleanup-golden/apply"
+          },
+          "kind": "directory",
+          "entries": 2,
+          "files": 1,
+          "allocated_bytes": 1048576,
+          "drive": false
+        }
+      ],
+      "entries": 2,
+      "files": 1,
+      "allocated_bytes": 1048576
+    },
+    {
+      "share": {
+        "path": "share02"
+      },
+      "path": {
+        "path": "/volume1/share02"
+      },
+      "recycle_bin": {
+        "enabled": false,
+        "admin_only": false
+      },
+      "item_count": 1,
+      "drive_items": 0,
+      "items": [
+        {
+          "path": {
+            "path": "/volume1/share02/old/archive.iso"
+          },
+          "kind": "file",
+          "entries": 1,
+          "files": 1,
+          "allocated_bytes": 4194304,
+          "drive": false
+        }
+      ],
+      "entries": 1,
+      "files": 1,
+      "allocated_bytes": 4194304,
+      "delete": true,
+      "delete_reason": "recycle_bin_off"
+    }
+  ]
+}

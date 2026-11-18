@@ -1,0 +1,6 @@
+{
+  "approvalWait.title": "仍在等待 DSM",
+  "approvalWait.queued": "核准任務尚未開始，正在等待 DSM 啟動。NAS 忙碌時可能需要數分鐘，請保持此視窗開啟",
+  "approvalWait.running": "核准任務正在執行。NAS 忙碌時可能需要數分鐘，請保持此視窗開啟",
+  "approvalWait.elapsed": "已等待 {duration}"
+}

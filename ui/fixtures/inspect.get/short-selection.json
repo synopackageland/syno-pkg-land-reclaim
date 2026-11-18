@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "command": "inspect",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T01:03:01Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "results": [
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-30T01:01:50Z",
+        "scan_finished": "2026-09-30T01:01:58Z",
+        "age_seconds": 63,
+        "stale": false,
+        "consistency": "changed-during-scan",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": false,
+            "generation_before": 4702114,
+            "generation_after": 4702119
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": false,
+            "generation_before": 4702112,
+            "generation_after": 4702119
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share73/folder0373/file0589.bin",
+        "kind": "file",
+        "flags": [
+          "recycle"
+        ],
+        "metrics": {
+          "logical": 74,
+          "physical": 0,
+          "shared": 0,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 0,
+          "inline": 74,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 263,
+        "objectid": 350
+      },
+      "explain": [
+        {
+          "code": "dsm_service",
+          "message": "folder0002: managed by shared folder Recycle Bin; manage it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings"
+        },
+        {
+          "code": "consistency",
+          "message": "report is changed-during-scan (subvolume 256 outside the selection generation 4702114 -> 4702119; subvolume 262 outside the selection generation 4702112 -> 4702119)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-30T01:01:50Z",
+        "scan_finished": "2026-09-30T01:01:58Z",
+        "age_seconds": 63,
+        "stale": false,
+        "consistency": "changed-during-scan",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": false,
+            "generation_before": 4702114,
+            "generation_after": 4702119
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": false,
+            "generation_before": 4702112,
+            "generation_after": 4702119
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share73/folder0373/file0590.bin",
+        "kind": "file",
+        "flags": [
+          "recycle"
+        ],
+        "metrics": {
+          "logical": 39,
+          "physical": 0,
+          "shared": 0,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 0,
+          "inline": 39,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 263,
+        "objectid": 343
+      },
+      "explain": [
+        {
+          "code": "dsm_service",
+          "message": "folder0002: managed by shared folder Recycle Bin; manage it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings"
+        },
+        {
+          "code": "consistency",
+          "message": "report is changed-during-scan (subvolume 256 outside the selection generation 4702114 -> 4702119; subvolume 262 outside the selection generation 4702112 -> 4702119)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-30T01:01:50Z",
+        "scan_finished": "2026-09-30T01:01:58Z",
+        "age_seconds": 63,
+        "stale": false,
+        "consistency": "changed-during-scan",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": false,
+            "generation_before": 4702114,
+            "generation_after": 4702119
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": false,
+            "generation_before": 4702112,
+            "generation_after": 4702119
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share73/folder0373/file0592.bin",
+        "kind": "file",
+        "flags": [
+          "recycle"
+        ],
+        "metrics": {
+          "logical": 39,
+          "physical": 0,
+          "shared": 0,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 0,
+          "inline": 39,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 263,
+        "objectid": 352
+      },
+      "explain": [
+        {
+          "code": "dsm_service",
+          "message": "folder0002: managed by shared folder Recycle Bin; manage it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings"
+        },
+        {
+          "code": "consistency",
+          "message": "report is changed-during-scan (subvolume 256 outside the selection generation 4702114 -> 4702119; subvolume 262 outside the selection generation 4702112 -> 4702119)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-30T01:01:50Z",
+        "scan_finished": "2026-09-30T01:01:58Z",
+        "age_seconds": 63,
+        "stale": false,
+        "consistency": "changed-during-scan",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": false,
+            "generation_before": 4702114,
+            "generation_after": 4702119
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": false,
+            "generation_before": 4702112,
+            "generation_after": 4702119
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share73/folder0373/file0591.bin",
+        "kind": "file",
+        "flags": [
+          "recycle"
+        ],
+        "metrics": {
+          "logical": 39,
+          "physical": 0,
+          "shared": 0,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 0,
+          "inline": 39,
+          "entries": 1,
+          "files": 1
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 263,
+        "objectid": 356
+      },
+      "explain": [
+        {
+          "code": "dsm_service",
+          "message": "folder0002: managed by shared folder Recycle Bin; manage it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings"
+        },
+        {
+          "code": "consistency",
+          "message": "report is changed-during-scan (subvolume 256 outside the selection generation 4702114 -> 4702119; subvolume 262 outside the selection generation 4702112 -> 4702119)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-30T01:01:50Z",
+        "scan_finished": "2026-09-30T01:01:58Z",
+        "age_seconds": 63,
+        "stale": false,
+        "consistency": "changed-during-scan",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": false,
+            "generation_before": 4702114,
+            "generation_after": 4702119
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": false,
+            "generation_before": 4702112,
+            "generation_after": 4702119
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share73/folder0373/folder0375",
+        "kind": "dir",
+        "flags": [
+          "recycle"
+        ],
+        "metrics": {
+          "logical": 123,
+          "physical": 0,
+          "shared": 0,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 0,
+          "inline": 123,
+          "entries": 4,
+          "files": 3
+        },
+        "blockers": [],
+        "nlink": 1,
+        "tree": 263,
+        "objectid": 351
+      },
+      "explain": [
+        {
+          "code": "dsm_service",
+          "message": "folder0002: managed by shared folder Recycle Bin; manage it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings"
+        },
+        {
+          "code": "consistency",
+          "message": "report is changed-during-scan (subvolume 256 outside the selection generation 4702114 -> 4702119; subvolume 262 outside the selection generation 4702112 -> 4702119)"
+        }
+      ]
+    },
+    {
+      "report": {
+        "fsid": "f0000000-0000-4000-8000-00000000009a",
+        "path": "/volume1/share64/entry0081/entry0088/entry0089/entry0090",
+        "job_id": "fixture-job0002",
+        "scan_started": "2026-09-30T01:01:50Z",
+        "scan_finished": "2026-09-30T01:01:58Z",
+        "age_seconds": 63,
+        "stale": false,
+        "consistency": "changed-during-scan",
+        "change_reasons": [
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 256,
+            "selected": false,
+            "generation_before": 4702114,
+            "generation_after": 4702119
+          },
+          {
+            "kind": "subvolume-generation-changed",
+            "subvolume_id": 262,
+            "selected": false,
+            "generation_before": 4702112,
+            "generation_after": 4702119
+          }
+        ],
+        "coverage": {
+          "encrypted_directories": 0,
+          "snapshots_not_materialized": 0,
+          "unlinked_subvolume_entries": 0,
+          "dangling_entries": 0,
+          "cycles": 0,
+          "unsupported_locations": 0,
+          "missing_subvolume_roots": 0,
+          "reference_accounting": "complete",
+          "unresolved_extents": 0
+        },
+        "cleanup_since_report": null,
+        "filesystem": "btrfs",
+        "capabilities": {
+          "scan": true,
+          "snapshots": true,
+          "reflinks": true,
+          "cleanup": true,
+          "cleanup_unavailable_reason": null
+        }
+      },
+      "entry": {
+        "path": "/volume1/share73/folder0373/folder0374",
+        "kind": "dir",
+        "flags": [
+          "recycle"
+        ],
+        "metrics": {
+          "logical": 2923,
+          "physical": 8192,
+          "shared": 8192,
+          "reclaimable": 0,
+          "reclaimable_resolved": 0,
+          "unknown": 0,
+          "pinned_unreferenced": 0,
+          "extents": 2,
+          "inline": 0,
+          "entries": 4,
+          "files": 2
+        },
+        "blockers": [
+          "snapshot"
+        ],
+        "nlink": 1,
+        "tree": 263,
+        "objectid": 412
+      },
+      "explain": [
+        {
+          "code": "snapshot",
+          "message": "a snapshot references some extents"
+        },
+        {
+          "code": "dsm_service",
+          "message": "folder0002: managed by shared folder Recycle Bin; manage it in Control Panel > Shared Folder > Action > Empty Recycle Bin, or the share62's Recycle Bin settings"
+        },
+        {
+          "code": "consistency",
+          "message": "report is changed-during-scan (subvolume 256 outside the selection generation 4702114 -> 4702119; subvolume 262 outside the selection generation 4702112 -> 4702119)"
+        }
+      ]
+    }
+  ],
+  "scans": []
+}

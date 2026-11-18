@@ -1,0 +1,2229 @@
+{
+  "schema_version": 1,
+  "command": "scan",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T00:30:18Z",
+  "completion": "partial",
+  "job_id": "fixture-job0001",
+  "errors": [],
+  "warnings": [],
+  "resources": {
+    "scheduling": {
+      "profile": "low",
+      "requested_nice": 19,
+      "applied_nice": 19,
+      "requested_io_class": "idle",
+      "applied_io_class": "idle",
+      "duty_percent": 25,
+      "warnings": [],
+      "effectiveness_unknown": true
+    },
+    "memory_budget_bytes": 229805056,
+    "max_runtime_seconds": null,
+    "peak_rss_bytes": 93372416
+  },
+  "requested_targets": [
+    {
+      "path": "/volume1"
+    }
+  ],
+  "filesystems": [
+    {
+      "fsid": "f0000000-0000-4000-8000-00000000009a",
+      "mount": {
+        "path": "/volume1"
+      },
+      "completion": "partial",
+      "targets": [
+        {
+          "path": "/volume1",
+          "scope": "volume",
+          "tree": 256,
+          "ino": 256
+        }
+      ],
+      "covered": [],
+      "consistency": "partial",
+      "change_reasons": [
+        {
+          "kind": "subvolume-generation-changed",
+          "subvolume_id": 256,
+          "selected": true,
+          "generation_before": 4701580,
+          "generation_after": 4702015
+        },
+        {
+          "kind": "subvolume-generation-changed",
+          "subvolume_id": 261,
+          "selected": true,
+          "generation_before": 4701579,
+          "generation_after": 4702015
+        },
+        {
+          "kind": "subvolume-generation-changed",
+          "subvolume_id": 262,
+          "selected": true,
+          "generation_before": 4701579,
+          "generation_after": 4702015
+        }
+      ],
+      "scan_started": "2026-09-29T23:55:21Z",
+      "scan_finished": "2026-09-30T00:30:06Z",
+      "totals": {
+        "logical": 1263961432703,
+        "physical": 42303442944,
+        "shared": 4887175168,
+        "reclaimable": null,
+        "reclaimable_resolved": 36790505472,
+        "unknown": 625762304,
+        "pinned_unreferenced": 243245056,
+        "extents": 370944,
+        "inline": 151105345,
+        "entries": 5514529,
+        "files": 4555534
+      },
+      "stats": {
+        "subvolumes_discovered": 204,
+        "subvolumes_scanned": 197,
+        "subvolumes_reused": 0,
+        "entries": 5514529,
+        "inodes": 4524799,
+        "extents": 370944,
+        "items": 48128310,
+        "batches": 18240,
+        "item_bytes": 3183321121,
+        "reference_searches": 74,
+        "reference_items": 570202,
+        "owner_lookups": 73,
+        "owner_budget_capped_extents": 0,
+        "pinned_leaf_reads": 1,
+        "pinned_leaf_read_bytes": 16384,
+        "pinned_leaf_cache_hits": 0,
+        "pinned_root_searches": 39,
+        "elapsed_ms": 2084933,
+        "peak_rss_bytes": 93372416
+      },
+      "resource_limit": null,
+      "coverage": {
+        "encrypted_directories": 0,
+        "snapshots_not_materialized": 6,
+        "snapshots_materialized": 6,
+        "unlinked_subvolume_entries": 0,
+        "dangling_entries": 3,
+        "cycles": 0,
+        "unsupported_locations": 0,
+        "missing_subvolume_roots": 0,
+        "reference_accounting": "partial",
+        "unresolved_extents": 15128
+      },
+      "subvolumes": [
+        {
+          "id": 256,
+          "role": "scanned",
+          "generation_before": 4701580,
+          "generation_after": 4702015,
+          "uuid": "0000000000000000000000000000000b",
+          "last_snapshot": 267183
+        },
+        {
+          "id": 258,
+          "role": "scanned",
+          "generation_before": 4658944,
+          "generation_after": 4658944,
+          "uuid": "00000000000000000000000000000048",
+          "last_snapshot": 267183
+        },
+        {
+          "id": 260,
+          "role": "scanned",
+          "generation_before": 4658933,
+          "generation_after": 4658933,
+          "uuid": "00000000000000000000000000000079",
+          "last_snapshot": 267183
+        },
+        {
+          "id": 261,
+          "role": "scanned",
+          "generation_before": 4701579,
+          "generation_after": 4702015,
+          "uuid": "00000000000000000000000000000075",
+          "last_snapshot": 267183
+        },
+        {
+          "id": 262,
+          "role": "scanned",
+          "generation_before": 4701579,
+          "generation_after": 4702015,
+          "uuid": "000000000000000000000000000000ba",
+          "last_snapshot": 267183
+        },
+        {
+          "id": 263,
+          "role": "scanned",
+          "generation_before": 4700958,
+          "generation_after": 4700958,
+          "uuid": "0000000000000000000000000000006b",
+          "last_snapshot": 4700958,
+          "snapshots": [
+            542
+          ]
+        },
+        {
+          "id": 264,
+          "role": "scanned",
+          "generation_before": 4658928,
+          "generation_after": 4658928,
+          "uuid": "000000000000000000000000000000a4",
+          "last_snapshot": 3133977,
+          "snapshots": [
+            509
+          ]
+        },
+        {
+          "id": 265,
+          "role": "scanned",
+          "generation_before": 4698056,
+          "generation_after": 4698056,
+          "uuid": "000000000000000000000000000000cb",
+          "last_snapshot": 267183
+        },
+        {
+          "id": 273,
+          "role": "scanned",
+          "generation_before": 4686587,
+          "generation_after": 4686587,
+          "uuid": "00000000000000000000000000000044",
+          "last_snapshot": 0
+        },
+        {
+          "id": 279,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000c4",
+          "last_snapshot": 282697,
+          "snapshots": [
+            280
+          ]
+        },
+        {
+          "id": 280,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000a0",
+          "last_snapshot": 282699,
+          "snapshots": [
+            281
+          ]
+        },
+        {
+          "id": 281,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000bc",
+          "last_snapshot": 282701,
+          "snapshots": [
+            282
+          ]
+        },
+        {
+          "id": 282,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "00000000000000000000000000000046",
+          "last_snapshot": 282703,
+          "snapshots": [
+            283
+          ]
+        },
+        {
+          "id": 283,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "00000000000000000000000000000031",
+          "last_snapshot": 282705,
+          "snapshots": [
+            284
+          ]
+        },
+        {
+          "id": 284,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "0000000000000000000000000000008c",
+          "last_snapshot": 282707,
+          "snapshots": [
+            285
+          ]
+        },
+        {
+          "id": 285,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000ad",
+          "last_snapshot": 282709,
+          "snapshots": [
+            286
+          ]
+        },
+        {
+          "id": 286,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "0000000000000000000000000000006e",
+          "last_snapshot": 282716,
+          "snapshots": [
+            290
+          ]
+        },
+        {
+          "id": 287,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "00000000000000000000000000000093",
+          "last_snapshot": 282824,
+          "snapshots": [
+            288,
+            310,
+            328
+          ]
+        },
+        {
+          "id": 288,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "00000000000000000000000000000025",
+          "last_snapshot": 282715,
+          "snapshots": [
+            289
+          ]
+        },
+        {
+          "id": 289,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000c0",
+          "last_snapshot": 282718,
+          "snapshots": [
+            291
+          ]
+        },
+        {
+          "id": 290,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000c7",
+          "last_snapshot": 282724,
+          "snapshots": [
+            293
+          ]
+        },
+        {
+          "id": 291,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000c3",
+          "last_snapshot": 282720,
+          "snapshots": [
+            292
+          ]
+        },
+        {
+          "id": 292,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "00000000000000000000000000000088",
+          "last_snapshot": 282750,
+          "snapshots": [
+            301
+          ]
+        },
+        {
+          "id": 293,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "000000000000000000000000000000ae",
+          "last_snapshot": 282727,
+          "snapshots": [
+            295
+          ]
+        },
+        {
+          "id": 294,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "0000000000000000000000000000009d",
+          "last_snapshot": 287243
+        },
+        {
+          "id": 295,
+          "role": "scanned",
+          "generation_before": 3186786,
+          "generation_after": 3186786,
+          "uuid": "0000000000000000000000000000001f",
+          "last_snapshot": 282730,
+          "snapshots": [
+            296
+          ]
+        },
+        {
+          "id": 296,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "000000000000000000000000000000a7",
+          "last_snapshot": 282736,
+          "snapshots": [
+            298
+          ]
+        },
+        {
+          "id": 297,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000062",
+          "last_snapshot": 282751,
+          "snapshots": [
+            302
+          ]
+        },
+        {
+          "id": 298,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "000000000000000000000000000000bd",
+          "last_snapshot": 282741,
+          "snapshots": [
+            299
+          ]
+        },
+        {
+          "id": 299,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000028",
+          "last_snapshot": 282743,
+          "snapshots": [
+            300
+          ]
+        },
+        {
+          "id": 300,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "000000000000000000000000000000a3",
+          "last_snapshot": 283027
+        },
+        {
+          "id": 301,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "0000000000000000000000000000008d",
+          "last_snapshot": 282753,
+          "snapshots": [
+            303
+          ]
+        },
+        {
+          "id": 302,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000058",
+          "last_snapshot": 282755,
+          "snapshots": [
+            304
+          ]
+        },
+        {
+          "id": 303,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000086",
+          "last_snapshot": 282758,
+          "snapshots": [
+            305
+          ]
+        },
+        {
+          "id": 304,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000035",
+          "last_snapshot": 282761,
+          "snapshots": [
+            306
+          ]
+        },
+        {
+          "id": 305,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "0000000000000000000000000000004d",
+          "last_snapshot": 282764,
+          "snapshots": [
+            307
+          ]
+        },
+        {
+          "id": 306,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000005",
+          "last_snapshot": 282772,
+          "snapshots": [
+            311
+          ]
+        },
+        {
+          "id": 307,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000061",
+          "last_snapshot": 282767,
+          "snapshots": [
+            308
+          ]
+        },
+        {
+          "id": 308,
+          "role": "scanned",
+          "generation_before": 3186787,
+          "generation_after": 3186787,
+          "uuid": "00000000000000000000000000000071",
+          "last_snapshot": 282769,
+          "snapshots": [
+            309
+          ]
+        },
+        {
+          "id": 309,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "0000000000000000000000000000005b",
+          "last_snapshot": 283238
+        },
+        {
+          "id": 310,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "0000000000000000000000000000009a",
+          "last_snapshot": 282779,
+          "snapshots": [
+            312
+          ]
+        },
+        {
+          "id": 311,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "00000000000000000000000000000014",
+          "last_snapshot": 282782,
+          "snapshots": [
+            313
+          ]
+        },
+        {
+          "id": 312,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "000000000000000000000000000000be",
+          "last_snapshot": 282790,
+          "snapshots": [
+            318
+          ]
+        },
+        {
+          "id": 313,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "00000000000000000000000000000036",
+          "last_snapshot": 282784,
+          "snapshots": [
+            314
+          ]
+        },
+        {
+          "id": 314,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "0000000000000000000000000000000e",
+          "last_snapshot": 282786,
+          "snapshots": [
+            315
+          ]
+        },
+        {
+          "id": 315,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "0000000000000000000000000000007b",
+          "last_snapshot": 282788,
+          "snapshots": [
+            316
+          ]
+        },
+        {
+          "id": 316,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "00000000000000000000000000000072",
+          "last_snapshot": 282796,
+          "snapshots": [
+            320
+          ]
+        },
+        {
+          "id": 318,
+          "role": "scanned",
+          "generation_before": 3186788,
+          "generation_after": 3186788,
+          "uuid": "0000000000000000000000000000007f",
+          "last_snapshot": 282815,
+          "snapshots": [
+            326
+          ]
+        },
+        {
+          "id": 320,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000050",
+          "last_snapshot": 283211
+        },
+        {
+          "id": 326,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "000000000000000000000000000000a8",
+          "last_snapshot": 282817,
+          "snapshots": [
+            327
+          ]
+        },
+        {
+          "id": 327,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000042",
+          "last_snapshot": 287320
+        },
+        {
+          "id": 328,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000069",
+          "last_snapshot": 282826,
+          "snapshots": [
+            329
+          ]
+        },
+        {
+          "id": 329,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000026",
+          "last_snapshot": 282830,
+          "snapshots": [
+            331
+          ]
+        },
+        {
+          "id": 330,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000091",
+          "last_snapshot": 282832,
+          "snapshots": [
+            332
+          ]
+        },
+        {
+          "id": 331,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000054",
+          "last_snapshot": 282834,
+          "snapshots": [
+            333
+          ]
+        },
+        {
+          "id": 332,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "0000000000000000000000000000005d",
+          "last_snapshot": 282847,
+          "snapshots": [
+            340
+          ]
+        },
+        {
+          "id": 333,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "0000000000000000000000000000004e",
+          "last_snapshot": 282836,
+          "snapshots": [
+            334
+          ]
+        },
+        {
+          "id": 334,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "0000000000000000000000000000001d",
+          "last_snapshot": 282838,
+          "snapshots": [
+            335
+          ]
+        },
+        {
+          "id": 335,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "0000000000000000000000000000002e",
+          "last_snapshot": 282841,
+          "snapshots": [
+            337
+          ]
+        },
+        {
+          "id": 336,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "000000000000000000000000000000a2",
+          "last_snapshot": 282843,
+          "snapshots": [
+            338
+          ]
+        },
+        {
+          "id": 337,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000013",
+          "last_snapshot": 282849,
+          "snapshots": [
+            341
+          ]
+        },
+        {
+          "id": 338,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "00000000000000000000000000000076",
+          "last_snapshot": 282845,
+          "snapshots": [
+            339
+          ]
+        },
+        {
+          "id": 339,
+          "role": "scanned",
+          "generation_before": 3186789,
+          "generation_after": 3186789,
+          "uuid": "000000000000000000000000000000c6",
+          "last_snapshot": 282851,
+          "snapshots": [
+            342
+          ]
+        },
+        {
+          "id": 340,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000083",
+          "last_snapshot": 282863,
+          "snapshots": [
+            345
+          ]
+        },
+        {
+          "id": 341,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "0000000000000000000000000000008e",
+          "last_snapshot": 282852,
+          "snapshots": [
+            343
+          ]
+        },
+        {
+          "id": 342,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000053",
+          "last_snapshot": 282858,
+          "snapshots": [
+            344
+          ]
+        },
+        {
+          "id": 343,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "000000000000000000000000000000b1",
+          "last_snapshot": 283212
+        },
+        {
+          "id": 344,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "0000000000000000000000000000000d",
+          "last_snapshot": 282864,
+          "snapshots": [
+            346
+          ]
+        },
+        {
+          "id": 345,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000049",
+          "last_snapshot": 287260
+        },
+        {
+          "id": 346,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "0000000000000000000000000000006a",
+          "last_snapshot": 287244
+        },
+        {
+          "id": 363,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "0000000000000000000000000000000c",
+          "last_snapshot": 282918,
+          "snapshots": [
+            364
+          ]
+        },
+        {
+          "id": 364,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000011",
+          "last_snapshot": 282920,
+          "snapshots": [
+            365
+          ]
+        },
+        {
+          "id": 365,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000023",
+          "last_snapshot": 282922,
+          "snapshots": [
+            366
+          ]
+        },
+        {
+          "id": 366,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000010",
+          "last_snapshot": 282924,
+          "snapshots": [
+            367
+          ]
+        },
+        {
+          "id": 367,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "0000000000000000000000000000000a",
+          "last_snapshot": 282926,
+          "snapshots": [
+            368
+          ]
+        },
+        {
+          "id": 368,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "00000000000000000000000000000008",
+          "last_snapshot": 282928,
+          "snapshots": [
+            369
+          ]
+        },
+        {
+          "id": 369,
+          "role": "scanned",
+          "generation_before": 3186790,
+          "generation_after": 3186790,
+          "uuid": "0000000000000000000000000000006d",
+          "last_snapshot": 282931,
+          "snapshots": [
+            370
+          ]
+        },
+        {
+          "id": 370,
+          "role": "scanned",
+          "generation_before": 3186791,
+          "generation_after": 3186791,
+          "uuid": "000000000000000000000000000000ca",
+          "last_snapshot": 282935,
+          "snapshots": [
+            371
+          ]
+        },
+        {
+          "id": 371,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "00000000000000000000000000000012",
+          "last_snapshot": 282937,
+          "snapshots": [
+            372
+          ]
+        },
+        {
+          "id": 372,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "0000000000000000000000000000002c",
+          "last_snapshot": 282939,
+          "snapshots": [
+            373
+          ]
+        },
+        {
+          "id": 373,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "0000000000000000000000000000006f",
+          "last_snapshot": 282941,
+          "snapshots": [
+            374
+          ]
+        },
+        {
+          "id": 374,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "00000000000000000000000000000078",
+          "last_snapshot": 282943,
+          "snapshots": [
+            375
+          ]
+        },
+        {
+          "id": 375,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "0000000000000000000000000000004c",
+          "last_snapshot": 282945,
+          "snapshots": [
+            376
+          ]
+        },
+        {
+          "id": 376,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "0000000000000000000000000000002f",
+          "last_snapshot": 282947,
+          "snapshots": [
+            377
+          ]
+        },
+        {
+          "id": 377,
+          "role": "scanned",
+          "generation_before": 3186792,
+          "generation_after": 3186792,
+          "uuid": "00000000000000000000000000000068",
+          "last_snapshot": 282949,
+          "snapshots": [
+            378
+          ]
+        },
+        {
+          "id": 378,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "0000000000000000000000000000009f",
+          "last_snapshot": 282951,
+          "snapshots": [
+            379
+          ]
+        },
+        {
+          "id": 379,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "000000000000000000000000000000af",
+          "last_snapshot": 282953,
+          "snapshots": [
+            380
+          ]
+        },
+        {
+          "id": 380,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "000000000000000000000000000000a5",
+          "last_snapshot": 282955,
+          "snapshots": [
+            381
+          ]
+        },
+        {
+          "id": 381,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "000000000000000000000000000000a1",
+          "last_snapshot": 282957,
+          "snapshots": [
+            382
+          ]
+        },
+        {
+          "id": 382,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "0000000000000000000000000000005f",
+          "last_snapshot": 282959,
+          "snapshots": [
+            383
+          ]
+        },
+        {
+          "id": 383,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "000000000000000000000000000000c5",
+          "last_snapshot": 282961,
+          "snapshots": [
+            384
+          ]
+        },
+        {
+          "id": 384,
+          "role": "scanned",
+          "generation_before": 3186793,
+          "generation_after": 3186793,
+          "uuid": "00000000000000000000000000000006",
+          "last_snapshot": 282963,
+          "snapshots": [
+            385
+          ]
+        },
+        {
+          "id": 385,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "00000000000000000000000000000085",
+          "last_snapshot": 282965,
+          "snapshots": [
+            386
+          ]
+        },
+        {
+          "id": 386,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "0000000000000000000000000000001b",
+          "last_snapshot": 282967,
+          "snapshots": [
+            387
+          ]
+        },
+        {
+          "id": 387,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "0000000000000000000000000000008f",
+          "last_snapshot": 282969,
+          "snapshots": [
+            388
+          ]
+        },
+        {
+          "id": 388,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "00000000000000000000000000000018",
+          "last_snapshot": 282971,
+          "snapshots": [
+            389
+          ]
+        },
+        {
+          "id": 389,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "00000000000000000000000000000015",
+          "last_snapshot": 282973,
+          "snapshots": [
+            390
+          ]
+        },
+        {
+          "id": 390,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "00000000000000000000000000000020",
+          "last_snapshot": 282975,
+          "snapshots": [
+            391
+          ]
+        },
+        {
+          "id": 391,
+          "role": "scanned",
+          "generation_before": 3186794,
+          "generation_after": 3186794,
+          "uuid": "00000000000000000000000000000097",
+          "last_snapshot": 282977,
+          "snapshots": [
+            392
+          ]
+        },
+        {
+          "id": 392,
+          "role": "scanned",
+          "generation_before": 3186795,
+          "generation_after": 3186795,
+          "uuid": "00000000000000000000000000000066",
+          "last_snapshot": 282979,
+          "snapshots": [
+            393
+          ]
+        },
+        {
+          "id": 393,
+          "role": "scanned",
+          "generation_before": 3186795,
+          "generation_after": 3186795,
+          "uuid": "00000000000000000000000000000059",
+          "last_snapshot": 282981,
+          "snapshots": [
+            394
+          ]
+        },
+        {
+          "id": 394,
+          "role": "scanned",
+          "generation_before": 3186795,
+          "generation_after": 3186795,
+          "uuid": "00000000000000000000000000000039",
+          "last_snapshot": 282983,
+          "snapshots": [
+            395
+          ]
+        },
+        {
+          "id": 395,
+          "role": "scanned",
+          "generation_before": 3186795,
+          "generation_after": 3186795,
+          "uuid": "0000000000000000000000000000003d",
+          "last_snapshot": 282985,
+          "snapshots": [
+            396
+          ]
+        },
+        {
+          "id": 396,
+          "role": "scanned",
+          "generation_before": 3186795,
+          "generation_after": 3186795,
+          "uuid": "000000000000000000000000000000b0",
+          "last_snapshot": 282987,
+          "snapshots": [
+            397
+          ]
+        },
+        {
+          "id": 397,
+          "role": "scanned",
+          "generation_before": 3186795,
+          "generation_after": 3186795,
+          "uuid": "000000000000000000000000000000b8",
+          "last_snapshot": 282989,
+          "snapshots": [
+            398
+          ]
+        },
+        {
+          "id": 398,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "000000000000000000000000000000bf",
+          "last_snapshot": 282991,
+          "snapshots": [
+            399
+          ]
+        },
+        {
+          "id": 399,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "000000000000000000000000000000b9",
+          "last_snapshot": 282993,
+          "snapshots": [
+            400
+          ]
+        },
+        {
+          "id": 400,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "000000000000000000000000000000ac",
+          "last_snapshot": 282995,
+          "snapshots": [
+            401
+          ]
+        },
+        {
+          "id": 401,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "0000000000000000000000000000001e",
+          "last_snapshot": 282997,
+          "snapshots": [
+            402
+          ]
+        },
+        {
+          "id": 402,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "00000000000000000000000000000099",
+          "last_snapshot": 282999,
+          "snapshots": [
+            403
+          ]
+        },
+        {
+          "id": 403,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "0000000000000000000000000000004f",
+          "last_snapshot": 283001,
+          "snapshots": [
+            404
+          ]
+        },
+        {
+          "id": 404,
+          "role": "scanned",
+          "generation_before": 3186796,
+          "generation_after": 3186796,
+          "uuid": "0000000000000000000000000000007a",
+          "last_snapshot": 283003,
+          "snapshots": [
+            405
+          ]
+        },
+        {
+          "id": 405,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000043",
+          "last_snapshot": 283005,
+          "snapshots": [
+            406
+          ]
+        },
+        {
+          "id": 406,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "0000000000000000000000000000004b",
+          "last_snapshot": 283007,
+          "snapshots": [
+            407
+          ]
+        },
+        {
+          "id": 407,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000057",
+          "last_snapshot": 283009,
+          "snapshots": [
+            408
+          ]
+        },
+        {
+          "id": 408,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000027",
+          "last_snapshot": 283011,
+          "snapshots": [
+            409
+          ]
+        },
+        {
+          "id": 409,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000041",
+          "last_snapshot": 283013,
+          "snapshots": [
+            410
+          ]
+        },
+        {
+          "id": 410,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000056",
+          "last_snapshot": 283178
+        },
+        {
+          "id": 447,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000016",
+          "last_snapshot": 533466,
+          "snapshots": [
+            453
+          ]
+        },
+        {
+          "id": 448,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "0000000000000000000000000000009e",
+          "last_snapshot": 533458,
+          "snapshots": [
+            450
+          ]
+        },
+        {
+          "id": 449,
+          "role": "scanned",
+          "generation_before": 3363661,
+          "generation_after": 3363661,
+          "uuid": "00000000000000000000000000000055",
+          "last_snapshot": 3363661
+        },
+        {
+          "id": 450,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000060",
+          "last_snapshot": 533462,
+          "snapshots": [
+            451
+          ]
+        },
+        {
+          "id": 451,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "0000000000000000000000000000004a",
+          "last_snapshot": 533464,
+          "snapshots": [
+            452
+          ]
+        },
+        {
+          "id": 452,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000065",
+          "last_snapshot": 533482,
+          "snapshots": [
+            458
+          ]
+        },
+        {
+          "id": 453,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "000000000000000000000000000000a9",
+          "last_snapshot": 533470,
+          "snapshots": [
+            455
+          ]
+        },
+        {
+          "id": 454,
+          "role": "scanned",
+          "generation_before": 3186797,
+          "generation_after": 3186797,
+          "uuid": "00000000000000000000000000000037",
+          "last_snapshot": 533473,
+          "snapshots": [
+            456
+          ]
+        },
+        {
+          "id": 455,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "000000000000000000000000000000c2",
+          "last_snapshot": 533475,
+          "snapshots": [
+            457
+          ]
+        },
+        {
+          "id": 456,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000052",
+          "last_snapshot": 533483,
+          "snapshots": [
+            459
+          ]
+        },
+        {
+          "id": 457,
+          "role": "scanned",
+          "generation_before": 4601960,
+          "generation_after": 4601960,
+          "uuid": "00000000000000000000000000000004",
+          "last_snapshot": 4601960
+        },
+        {
+          "id": 458,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000034",
+          "last_snapshot": 533486,
+          "snapshots": [
+            461
+          ]
+        },
+        {
+          "id": 459,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "000000000000000000000000000000b4",
+          "last_snapshot": 533492,
+          "snapshots": [
+            463
+          ]
+        },
+        {
+          "id": 460,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000001a",
+          "last_snapshot": 533500,
+          "snapshots": [
+            465
+          ]
+        },
+        {
+          "id": 461,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000030",
+          "last_snapshot": 533489,
+          "snapshots": [
+            462
+          ]
+        },
+        {
+          "id": 462,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000007e",
+          "last_snapshot": 533497,
+          "snapshots": [
+            464
+          ]
+        },
+        {
+          "id": 463,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000090",
+          "last_snapshot": 533501,
+          "snapshots": [
+            466
+          ]
+        },
+        {
+          "id": 464,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000067",
+          "last_snapshot": 533956
+        },
+        {
+          "id": 465,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000094",
+          "last_snapshot": 533507,
+          "snapshots": [
+            467
+          ]
+        },
+        {
+          "id": 466,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000005e",
+          "last_snapshot": 533508,
+          "snapshots": [
+            468
+          ]
+        },
+        {
+          "id": 467,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000038",
+          "last_snapshot": 533519,
+          "snapshots": [
+            469
+          ]
+        },
+        {
+          "id": 468,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "000000000000000000000000000000b5",
+          "last_snapshot": 533961
+        },
+        {
+          "id": 469,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000022",
+          "last_snapshot": 533528,
+          "snapshots": [
+            470
+          ]
+        },
+        {
+          "id": 470,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000001",
+          "last_snapshot": 533530,
+          "snapshots": [
+            471
+          ]
+        },
+        {
+          "id": 471,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000019",
+          "last_snapshot": 533532,
+          "snapshots": [
+            472
+          ]
+        },
+        {
+          "id": 472,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000040",
+          "last_snapshot": 533534,
+          "snapshots": [
+            473
+          ]
+        },
+        {
+          "id": 473,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000098",
+          "last_snapshot": 533536,
+          "snapshots": [
+            474
+          ]
+        },
+        {
+          "id": 474,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000024",
+          "last_snapshot": 533539,
+          "snapshots": [
+            475
+          ]
+        },
+        {
+          "id": 475,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000007c",
+          "last_snapshot": 533541,
+          "snapshots": [
+            476
+          ]
+        },
+        {
+          "id": 476,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "00000000000000000000000000000070",
+          "last_snapshot": 533543,
+          "snapshots": [
+            477
+          ]
+        },
+        {
+          "id": 477,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000001c",
+          "last_snapshot": 533545,
+          "snapshots": [
+            478
+          ]
+        },
+        {
+          "id": 478,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000008a",
+          "last_snapshot": 533547,
+          "snapshots": [
+            479
+          ]
+        },
+        {
+          "id": 479,
+          "role": "scanned",
+          "generation_before": 3186798,
+          "generation_after": 3186798,
+          "uuid": "0000000000000000000000000000002a",
+          "last_snapshot": 533945
+        },
+        {
+          "id": 500,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "00000000000000000000000000000084",
+          "last_snapshot": 0
+        },
+        {
+          "id": 501,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "00000000000000000000000000000045",
+          "last_snapshot": 3268824
+        },
+        {
+          "id": 502,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "000000000000000000000000000000c9",
+          "last_snapshot": 3133981,
+          "snapshots": [
+            507,
+            510
+          ]
+        },
+        {
+          "id": 503,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "000000000000000000000000000000aa",
+          "last_snapshot": 3268926,
+          "snapshots": [
+            533
+          ]
+        },
+        {
+          "id": 504,
+          "role": "scanned",
+          "generation_before": 4700486,
+          "generation_after": 4700486,
+          "uuid": "00000000000000000000000000000080",
+          "last_snapshot": 0
+        },
+        {
+          "id": 505,
+          "role": "scanned",
+          "generation_before": 4700994,
+          "generation_after": 4700994,
+          "uuid": "0000000000000000000000000000002d",
+          "last_snapshot": 0
+        },
+        {
+          "id": 506,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "0000000000000000000000000000008b",
+          "last_snapshot": 0
+        },
+        {
+          "id": 507,
+          "role": "snapshot-skipped",
+          "generation_before": 3133974,
+          "generation_after": 3133974,
+          "uuid": "0000000000000000000000000000003a",
+          "last_snapshot": 3133974
+        },
+        {
+          "id": 508,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "0000000000000000000000000000005a",
+          "last_snapshot": 0
+        },
+        {
+          "id": 509,
+          "role": "snapshot-skipped",
+          "generation_before": 3133977,
+          "generation_after": 3133977,
+          "uuid": "0000000000000000000000000000007d",
+          "last_snapshot": 3133977
+        },
+        {
+          "id": 510,
+          "role": "snapshot-skipped",
+          "generation_before": 3133981,
+          "generation_after": 3133981,
+          "uuid": "000000000000000000000000000000a6",
+          "last_snapshot": 3133981
+        },
+        {
+          "id": 513,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "00000000000000000000000000000029",
+          "last_snapshot": 0
+        },
+        {
+          "id": 518,
+          "role": "scanned",
+          "generation_before": 3523345,
+          "generation_after": 3523345,
+          "uuid": "0000000000000000000000000000000f",
+          "last_snapshot": 0
+        },
+        {
+          "id": 525,
+          "role": "scanned",
+          "generation_before": 4701010,
+          "generation_after": 4701010,
+          "uuid": "00000000000000000000000000000087",
+          "last_snapshot": 0
+        },
+        {
+          "id": 526,
+          "role": "scanned",
+          "generation_before": 4700992,
+          "generation_after": 4700992,
+          "uuid": "0000000000000000000000000000006c",
+          "last_snapshot": 0
+        },
+        {
+          "id": 529,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "0000000000000000000000000000005c",
+          "last_snapshot": 0
+        },
+        {
+          "id": 531,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "000000000000000000000000000000b2",
+          "last_snapshot": 0
+        },
+        {
+          "id": 533,
+          "role": "snapshot-skipped",
+          "generation_before": 3268926,
+          "generation_after": 3268926,
+          "uuid": "00000000000000000000000000000063",
+          "last_snapshot": 3268926
+        },
+        {
+          "id": 541,
+          "role": "scanned",
+          "generation_before": 3523345,
+          "generation_after": 3523345,
+          "uuid": "00000000000000000000000000000077",
+          "last_snapshot": 0
+        },
+        {
+          "id": 542,
+          "role": "snapshot-skipped",
+          "generation_before": 3272093,
+          "generation_after": 3272093,
+          "uuid": "0000000000000000000000000000003e",
+          "last_snapshot": 3272093
+        },
+        {
+          "id": 734,
+          "role": "scanned",
+          "generation_before": 4642856,
+          "generation_after": 4642856,
+          "uuid": "0000000000000000000000000000002b",
+          "last_snapshot": 4642856,
+          "snapshots": [
+            735,
+            899,
+            1115
+          ]
+        },
+        {
+          "id": 735,
+          "role": "scanned",
+          "generation_before": 4605124,
+          "generation_after": 4605124,
+          "uuid": "00000000000000000000000000000092",
+          "last_snapshot": 4605124,
+          "snapshots": [
+            736
+          ]
+        },
+        {
+          "id": 736,
+          "role": "scanned",
+          "generation_before": 4605126,
+          "generation_after": 4605126,
+          "uuid": "00000000000000000000000000000003",
+          "last_snapshot": 4605126,
+          "snapshots": [
+            737
+          ]
+        },
+        {
+          "id": 737,
+          "role": "scanned",
+          "generation_before": 4605128,
+          "generation_after": 4605128,
+          "uuid": "000000000000000000000000000000ab",
+          "last_snapshot": 4605128,
+          "snapshots": [
+            738
+          ]
+        },
+        {
+          "id": 738,
+          "role": "scanned",
+          "generation_before": 4605130,
+          "generation_after": 4605130,
+          "uuid": "0000000000000000000000000000003f",
+          "last_snapshot": 4605130,
+          "snapshots": [
+            739
+          ]
+        },
+        {
+          "id": 739,
+          "role": "scanned",
+          "generation_before": 4605132,
+          "generation_after": 4605132,
+          "uuid": "00000000000000000000000000000074",
+          "last_snapshot": 4605132,
+          "snapshots": [
+            740
+          ]
+        },
+        {
+          "id": 740,
+          "role": "scanned",
+          "generation_before": 4605134,
+          "generation_after": 4605134,
+          "uuid": "00000000000000000000000000000089",
+          "last_snapshot": 4605134,
+          "snapshots": [
+            741
+          ]
+        },
+        {
+          "id": 741,
+          "role": "scanned",
+          "generation_before": 4621627,
+          "generation_after": 4621627,
+          "uuid": "0000000000000000000000000000009c",
+          "last_snapshot": 4621627
+        },
+        {
+          "id": 764,
+          "role": "scanned",
+          "generation_before": 4658966,
+          "generation_after": 4658966,
+          "uuid": "00000000000000000000000000000082",
+          "last_snapshot": 0
+        },
+        {
+          "id": 782,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "000000000000000000000000000000c1",
+          "last_snapshot": 0
+        },
+        {
+          "id": 800,
+          "role": "scanned",
+          "generation_before": 4658966,
+          "generation_after": 4658966,
+          "uuid": "00000000000000000000000000000032",
+          "last_snapshot": 0
+        },
+        {
+          "id": 840,
+          "role": "scanned",
+          "generation_before": 4658966,
+          "generation_after": 4658966,
+          "uuid": "000000000000000000000000000000bb",
+          "last_snapshot": 0
+        },
+        {
+          "id": 845,
+          "role": "scanned",
+          "generation_before": 4658927,
+          "generation_after": 4658927,
+          "uuid": "0000000000000000000000000000003c",
+          "last_snapshot": 4629427
+        },
+        {
+          "id": 899,
+          "role": "scanned",
+          "generation_before": 4618321,
+          "generation_after": 4618321,
+          "uuid": "00000000000000000000000000000051",
+          "last_snapshot": 4618321,
+          "snapshots": [
+            900
+          ]
+        },
+        {
+          "id": 900,
+          "role": "scanned",
+          "generation_before": 4618323,
+          "generation_after": 4618323,
+          "uuid": "00000000000000000000000000000081",
+          "last_snapshot": 4618323,
+          "snapshots": [
+            901
+          ]
+        },
+        {
+          "id": 901,
+          "role": "scanned",
+          "generation_before": 4618349,
+          "generation_after": 4618349,
+          "uuid": "00000000000000000000000000000017",
+          "last_snapshot": 4618349,
+          "snapshots": [
+            902
+          ]
+        },
+        {
+          "id": 902,
+          "role": "scanned",
+          "generation_before": 4618327,
+          "generation_after": 4618327,
+          "uuid": "00000000000000000000000000000021",
+          "last_snapshot": 4618327,
+          "snapshots": [
+            903
+          ]
+        },
+        {
+          "id": 903,
+          "role": "scanned",
+          "generation_before": 4618327,
+          "generation_after": 4618327,
+          "uuid": "00000000000000000000000000000073",
+          "last_snapshot": 4618327
+        },
+        {
+          "id": 951,
+          "role": "scanned",
+          "generation_before": 4636941,
+          "generation_after": 4636941,
+          "uuid": "00000000000000000000000000000009",
+          "last_snapshot": 4636941,
+          "snapshots": [
+            960
+          ]
+        },
+        {
+          "id": 960,
+          "role": "scanned",
+          "generation_before": 4628882,
+          "generation_after": 4628882,
+          "uuid": "0000000000000000000000000000009b",
+          "last_snapshot": 4628882,
+          "snapshots": [
+            961
+          ]
+        },
+        {
+          "id": 961,
+          "role": "scanned",
+          "generation_before": 4628883,
+          "generation_after": 4628883,
+          "uuid": "00000000000000000000000000000007",
+          "last_snapshot": 4628882
+        },
+        {
+          "id": 1115,
+          "role": "scanned",
+          "generation_before": 4633772,
+          "generation_after": 4633772,
+          "uuid": "00000000000000000000000000000047",
+          "last_snapshot": 4633772,
+          "snapshots": [
+            1116
+          ]
+        },
+        {
+          "id": 1116,
+          "role": "scanned",
+          "generation_before": 4633774,
+          "generation_after": 4633774,
+          "uuid": "000000000000000000000000000000b6",
+          "last_snapshot": 4633774,
+          "snapshots": [
+            1117
+          ]
+        },
+        {
+          "id": 1117,
+          "role": "scanned",
+          "generation_before": 4633872,
+          "generation_after": 4633872,
+          "uuid": "00000000000000000000000000000033",
+          "last_snapshot": 4633872,
+          "snapshots": [
+            1124
+          ]
+        },
+        {
+          "id": 1124,
+          "role": "scanned",
+          "generation_before": 4633873,
+          "generation_after": 4633873,
+          "uuid": "00000000000000000000000000000064",
+          "last_snapshot": 4633873,
+          "snapshots": [
+            1125
+          ]
+        },
+        {
+          "id": 1125,
+          "role": "scanned",
+          "generation_before": 4633877,
+          "generation_after": 4633877,
+          "uuid": "00000000000000000000000000000096",
+          "last_snapshot": 4633873
+        },
+        {
+          "id": 1144,
+          "role": "scanned",
+          "generation_before": 4658960,
+          "generation_after": 4658960,
+          "uuid": "0000000000000000000000000000003b",
+          "last_snapshot": 0
+        },
+        {
+          "id": 1145,
+          "role": "scanned",
+          "generation_before": 4659130,
+          "generation_after": 4659130,
+          "uuid": "000000000000000000000000000000c8",
+          "last_snapshot": 0
+        },
+        {
+          "id": 1174,
+          "role": "scanned",
+          "generation_before": 4688966,
+          "generation_after": 4688966,
+          "uuid": "00000000000000000000000000000002",
+          "last_snapshot": 4688966,
+          "snapshots": [
+            1176
+          ]
+        },
+        {
+          "id": 1175,
+          "role": "scanned",
+          "generation_before": 4688967,
+          "generation_after": 4688967,
+          "uuid": "000000000000000000000000000000b3",
+          "last_snapshot": 0
+        },
+        {
+          "id": 1176,
+          "role": "snapshot-skipped",
+          "generation_before": 4688966,
+          "generation_after": 4688966,
+          "uuid": "000000000000000000000000000000b7",
+          "last_snapshot": 4688966
+        },
+        {
+          "id": 1177,
+          "role": "scanned",
+          "generation_before": 4688973,
+          "generation_after": 4688973,
+          "uuid": "00000000000000000000000000000095",
+          "last_snapshot": 0
+        }
+      ],
+      "report": {
+        "path": "/volume1/share64/entry0075/entry0079/entry0080/folder0370",
+        "bytes": 301544044
+      },
+      "errors": [],
+      "warnings": [
+        {
+          "code": "state_dir_in_selection",
+          "message": "the state directory is inside selected subvolume 256: its own writes make the scan changed-during-scan, which entry0082 refuses; use the default /fixture/entry9999/entry9999 or a --state-dir on another name0017"
+        },
+        {
+          "code": "snapshots_not_materialized",
+          "message": "6 read-only snapshot(s) not read; their bytes are not in the totals"
+        },
+        {
+          "code": "state_dir_changed",
+          "message": "subvolume 256 holds the state directory: its own writes may be why it changed during the scan"
+        }
+      ],
+      "filesystem": "btrfs",
+      "capabilities": {
+        "scan": true,
+        "snapshots": true,
+        "reflinks": true,
+        "cleanup": true,
+        "cleanup_unavailable_reason": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "command": "rootfs-apply",
+  "completion": "partial",
+  "errors": [],
+  "generated_at": "2026-09-21T14:15:00Z",
+  "job_id": null,
+  "manifest": {
+    "path": "/volume1/backup/rootfs/SynoReclaim-system-20260921-1413/manifest.jsonl"
+  },
+  "move_dir": {
+    "path": "/volume1/backup/rootfs/SynoReclaim-system-20260921-1413"
+  },
+  "moved": {
+    "files": 2,
+    "removed_dirs": 1,
+    "size_bytes": 3
+  },
+  "notice": {
+    "code": "no_restore_command",
+    "message": "synoreclaim has no restore command: to put a file back, copy it from the move folder yourself"
+  },
+  "plan_file": {
+    "path": "/var/lib/synoreclaim/rootfs-plans/rootfs-18d75b8423f30000-4d.json"
+  },
+  "plan_id": "rootfs-18d75b8423f30000-4d",
+  "root": {
+    "available_after_bytes": 1073754112,
+    "available_before_bytes": 1073741824,
+    "freed_bytes": 12288
+  },
+  "schema_version": 1,
+  "skipped": [
+    {
+      "path": "/upd@te/c",
+      "reason": "changed"
+    }
+  ],
+  "tool_version": "0.1.0",
+  "tools": [
+    {
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--rotate-log"
+      ],
+      "outcome": "succeeded",
+      "tool": "rotate_logs"
+    },
+    {
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--delete-journal"
+      ],
+      "exit_code": 1,
+      "outcome": "failed",
+      "tool": "delete_journal"
+    }
+  ],
+  "tools_notice": {
+    "code": "tools_no_undo",
+    "message": "DSM's tools deleted the logs and journals they cleaned up permanently; there is no undo"
+  },
+  "warnings": []
+}

@@ -1,0 +1,65 @@
+{
+  "command": "rootfs-plan",
+  "completion": "complete",
+  "plan_id": "rootfs-tools-only",
+  "destination": {
+    "path": "/volume1/backup",
+    "share": {
+      "path": "/volume1/backup"
+    },
+    "move_dir": {
+      "path": "/volume1/backup/SynoReclaim-system-20260930-1415"
+    },
+    "available_bytes": 5497558138880,
+    "required_bytes": 268435456
+  },
+  "root": {
+    "available_bytes": 930000000,
+    "available_after_bytes": 930000000
+  },
+  "moves": {
+    "bytes": 0,
+    "required_destination_bytes": 268435456,
+    "items": 0,
+    "by_category": []
+  },
+  "items": [],
+  "held_open": [],
+  "kept": [],
+  "tools": [
+    {
+      "tool": "rotate_logs",
+      "argv": [
+        "/usr/syno/bin/synocleaner",
+        "--rotate-log"
+      ],
+      "effect": "rotates DSM logs"
+    }
+  ],
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-30T14:15:00Z",
+  "job_id": null,
+  "warnings": [],
+  "errors": [],
+  "plan_file": {
+    "path": "/var/lib/synoreclaim/rootfs-plans/rootfs-tools-only.json"
+  },
+  "expires_at": "2026-10-01T14:15:00Z",
+  "apply": {
+    "command": [
+      "synoreclaim",
+      "rootfs",
+      "apply",
+      "--yes",
+      "--json",
+      "--",
+      "/var/lib/synoreclaim/rootfs-plans/rootfs-tools-only.json"
+    ],
+    "notice": {
+      "code": "no_restore_command",
+      "message": "Moved files cannot be restored by Syno Reclaim."
+    },
+    "tools_notice": null
+  }
+}

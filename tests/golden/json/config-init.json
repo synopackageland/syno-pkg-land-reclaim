@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "command": "config-init",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-09-29T13:40:00Z",
+  "completion": "complete",
+  "job_id": null,
+  "errors": [],
+  "warnings": [],
+  "created": true,
+  "enables_cleanup": true,
+  "config": {
+    "cleanup_enabled": true,
+    "mutations_disabled": false
+  }
+}

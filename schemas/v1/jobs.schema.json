@@ -1,0 +1,561 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synoreclaim.invalid/schemas/v1/jobs.schema.json",
+  "title": "synoreclaim jobs result v1",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "common.schema.json#/$defs/envelope"
+    },
+    {
+      "properties": {
+        "command": {
+          "const": "jobs"
+        },
+        "jobs": {
+          "type": "array",
+          "description": "Newest first.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "job_id": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "scan",
+                  "cleanup-apply",
+                  "rootfs-apply",
+                  "cleanup-plan",
+                  "rootfs-plan",
+                  "rootfs-report"
+                ],
+                "description": "What the job runs: scan, planning, system report or apply. Non-scan jobs have no scan scope, units or scan progress."
+              },
+              "state": {
+                "enum": [
+                  "queued",
+                  "running",
+                  "pausing",
+                  "cancelling",
+                  "paused",
+                  "completed",
+                  "partial",
+                  "failed",
+                  "cancelled",
+                  "interrupted"
+                ],
+                "description": "SPEC 22.1. queued: created by scan --detach, waiting for its launcher (scan --job-id); pausing / cancelling: a running job asked to pause / cancel; interrupted: its process died while running."
+              },
+              "phase": {
+                "enum": [
+                  "discover",
+                  "scan",
+                  "resolve-refs",
+                  "aggregate",
+                  "publish",
+                  "execute",
+                  "plan",
+                  "report"
+                ],
+                "description": "A scan's phase; a cleanup apply job's is execute."
+              },
+              "targets": {
+                "type": "array",
+                "items": {
+                  "$ref": "common.schema.json#/$defs/path"
+                }
+              },
+              "scope": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "common.schema.json#/$defs/scope"
+                  }
+                ]
+              },
+              "filesystems": {
+                "type": "array",
+                "description": "The filesystems the targets resolved to in the latest run, in lock order; empty before its first run resolved them.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fsid": {
+                      "$ref": "common.schema.json#/$defs/fsid"
+                    },
+                    "mount": {
+                      "$ref": "common.schema.json#/$defs/path"
+                    }
+                  },
+                  "required": [
+                    "fsid",
+                    "mount"
+                  ]
+                }
+              },
+              "profile": {
+                "enum": [
+                  "low",
+                  "normal",
+                  "fast"
+                ]
+              },
+              "created": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              },
+              "updated": {
+                "$ref": "common.schema.json#/$defs/timestamp"
+              },
+              "resumes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "units": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Units scanned or reused by the latest run."
+              },
+              "progress": {
+                "type": "object",
+                "description": "Live progress of the latest run (SPEC 22.1): rewritten at most every two seconds while a scan runs, so a consumer can follow it without reading progress text. Absent when the run wrote none.",
+                "properties": {
+                  "phase": {
+                    "type": "string",
+                    "description": "The phase the run is in, one of the scan phases."
+                  },
+                  "units_done": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Subvolume units read or reused so far."
+                  },
+                  "units_total": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "description": "Writable subvolumes discovered, the most units a volume scan can have; null for a path scan."
+                  },
+                  "entries": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Entries of the trees fully read so far plus the directory entries read so far in the tree being read, so the count moves within one large share; a reused unit does not count."
+                  },
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Metadata items read across attempts, including rereads of changed units; checkpoint replay is not counted as fresh I/O."
+                  },
+                  "bytes_read": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Metadata bytes read across attempts, including changed-unit rereads; saved checkpoint replay adds no new bytes."
+                  },
+                  "elapsed_s": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Seconds since this run started."
+                  },
+                  "rss_bytes": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "description": "Resident set size when the update was written."
+                  },
+                  "subvolume_id": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "description": "The subvolume being read; null between subvolumes and in phases that read none."
+                  },
+                  "current_subvolume": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "$ref": "common.schema.json#/$defs/path"
+                      }
+                    ],
+                    "description": "The subvolume being read: its name, one entry and never a directory path (the UI shows it as the current item). Null between subvolumes and in phases that read none."
+                  },
+                  "basis": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "object",
+                        "description": "The last completed scan of the same target, for a percentage and an ETA; null when none is recorded.",
+                        "properties": {
+                          "entries": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "description": "Entries that scan read."
+                          },
+                          "elapsed_s": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "description": "How long that scan took."
+                          },
+                          "items": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 0,
+                            "description": "Metadata items that scan read; null while history does not record them, so a consumer falls back to entries."
+                          }
+                        },
+                        "required": [
+                          "entries",
+                          "elapsed_s",
+                          "items"
+                        ]
+                      }
+                    ]
+                  },
+                  "updated": {
+                    "$ref": "common.schema.json#/$defs/timestamp"
+                  },
+                  "restart": {
+                    "type": "object",
+                    "description": "The changed unit being reread from its beginning; these attempt counters are separate from retained job totals.",
+                    "properties": {
+                      "subvolume_id": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "entries": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "bytes_read": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    },
+                    "required": [
+                      "subvolume_id",
+                      "entries",
+                      "items",
+                      "bytes_read"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "step": {
+                    "enum": [
+                      "kept",
+                      "items"
+                    ],
+                    "description": "A planning job with several steps: a cleanup plan checks the kept copies of duplicates, then the items it moves. units_done and units_total count the current step."
+                  }
+                },
+                "required": [
+                  "phase",
+                  "units_done",
+                  "units_total",
+                  "entries",
+                  "items",
+                  "bytes_read",
+                  "elapsed_s",
+                  "rss_bytes",
+                  "subvolume_id",
+                  "current_subvolume",
+                  "basis",
+                  "updated"
+                ]
+              },
+              "cleanup": {
+                "type": "object",
+                "description": "Live progress of a cleanup-apply job: the items moved into their Recycle Bins so far (SPEC 5.7).",
+                "properties": {
+                  "plan_id": {
+                    "type": "string"
+                  },
+                  "items_total": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Selected items in the plan."
+                  },
+                  "items_done": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items with a result."
+                  },
+                  "moved": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items now in their shared folder's Recycle Bin."
+                  },
+                  "deleted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items with no Recycle Bin, removed for good; absent when none."
+                  },
+                  "already_absent": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items already gone."
+                  },
+                  "partial": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items of which some stayed in place."
+                  },
+                  "changed": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items replaced since the plan, left alone."
+                  },
+                  "failed": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Items DSM's tool could not move."
+                  },
+                  "bytes_total": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Allocated size (st_blocks x 512) of the planned items. Moving them frees nothing until the Recycle Bin is emptied."
+                  },
+                  "bytes_moved": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "The same, over what moved."
+                  },
+                  "elapsed_s": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Seconds since the first move started."
+                  },
+                  "updated": {
+                    "$ref": "common.schema.json#/$defs/timestamp"
+                  },
+                  "calls_done": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Runs of DSM's synorecycle so far: a large folder moves child by child."
+                  }
+                },
+                "required": [
+                  "plan_id",
+                  "items_total",
+                  "items_done",
+                  "moved",
+                  "already_absent",
+                  "partial",
+                  "changed",
+                  "failed",
+                  "bytes_total",
+                  "bytes_moved",
+                  "elapsed_s",
+                  "updated",
+                  "calls_done"
+                ]
+              },
+              "rootfs": {
+                "type": "object",
+                "description": "Live progress of a rootfs apply job (SPEC 5.23), rewritten at most every two seconds while the executor runs, then once more when it ends; absent for scans and cleanup jobs.",
+                "properties": {
+                  "phase": {
+                    "enum": [
+                      "moves",
+                      "tools"
+                    ]
+                  },
+                  "items_done": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "items_total": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "bytes_done": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "bytes_total": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "tool": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "$ref": "rootfs-plan.schema.json#/$defs/tool"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "phase",
+                  "items_done",
+                  "items_total",
+                  "bytes_done",
+                  "bytes_total",
+                  "tool"
+                ]
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Why the latest run stopped: a completion code, or cancelled."
+              },
+              "tool_version": {
+                "type": "string",
+                "description": "The binary that started the job; empty when an older binary did."
+              },
+              "compatible": {
+                "type": "boolean",
+                "description": "Whether this binary can resume the job: same tool version and report/cache formats. false: resume refuses with job_incompatible; cancel still works."
+              },
+              "request": {
+                "enum": [
+                  "pause",
+                  "cancel",
+                  null
+                ],
+                "description": "The request a running job has pending; null otherwise."
+              },
+              "request_ignored": {
+                "enum": [
+                  "pause",
+                  "cancel",
+                  null
+                ],
+                "description": "A request that came after the latest run's last check: the run finished (completed, partial or failed) anyway."
+              },
+              "requested_by": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "The DSM user a `webapi` call (scan.start) started the job for; null for a job started from the CLI."
+              },
+              "result": {
+                "description": "How the latest run ended; null before one has (a queued job, or one whose process died first).",
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "completion": {
+                        "$ref": "common.schema.json#/$defs/completion"
+                      },
+                      "exit_code": {
+                        "type": "integer",
+                        "description": "The run's exit code (SPEC 22.7)."
+                      },
+                      "reports": {
+                        "type": "array",
+                        "description": "The reports the run published.",
+                        "items": {
+                          "$ref": "common.schema.json#/$defs/path"
+                        }
+                      },
+                      "error_codes": {
+                        "type": "array",
+                        "description": "The distinct codes of the run's errors (envelope and filesystems).",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "document": {
+                        "$ref": "common.schema.json#/$defs/path",
+                        "description": "jobs/<job_id>/result.json: the run's whole document, as scan --json (or, for a cleanup job, cleanup apply --json) prints it."
+                      }
+                    },
+                    "required": [
+                      "completion",
+                      "exit_code",
+                      "reports",
+                      "error_codes",
+                      "document"
+                    ]
+                  }
+                ]
+              },
+              "rootfs_plan": {
+                "type": "object",
+                "description": "The original confirmed rootfs plan and destination, retained before queueing so interrupted applies can be followed without a final result.",
+                "properties": {
+                  "plan_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "standard",
+                      "deep"
+                    ],
+                    "description": "Omitted in legacy records: standard."
+                  },
+                  "move_dir": {
+                    "$ref": "common.schema.json#/$defs/path"
+                  }
+                },
+                "required": [
+                  "plan_id",
+                  "move_dir"
+                ],
+                "additionalProperties": false
+              },
+              "plan_id": {
+                "type": "string",
+                "description": "The sealed cleanup/rootfs apply plan id, including queued jobs. Absent for scans and older manifests."
+              },
+              "elapsed_s": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Elapsed wall seconds of an asynchronous planning or system report job; no percentage or ETA is implied."
+              }
+            },
+            "required": [
+              "job_id",
+              "kind",
+              "state",
+              "phase",
+              "targets",
+              "scope",
+              "filesystems",
+              "profile",
+              "created",
+              "updated",
+              "resumes",
+              "units",
+              "reason",
+              "tool_version",
+              "compatible",
+              "request",
+              "request_ignored",
+              "result",
+              "requested_by"
+            ]
+          }
+        }
+      },
+      "required": [
+        "command",
+        "jobs"
+      ]
+    }
+  ]
+}
