@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1-1676 — UI kit and SDK update
+
+- Updated to the latest UI kit (~0.25.30) and SDK/App (0.53.52); executor 0.53.6, CLI ~0.54.6 and templates 0.42.1 unchanged
+
 ## 0.1.1-1675 — Compact phone toolbar
 
 - Pin UI ~0.25.29: on a phone, a page's toolbar takes two thin rows at the top edge (Home beside the view switch, counts beside the actions, secondary actions with an icon drawn as icons); wider layouts and a DSM window are unchanged. No Reclaim code changes. SDK/App 0.53.49, CLI ~0.54.6, executor 0.53.6 and templates 0.42.1 unchanged
