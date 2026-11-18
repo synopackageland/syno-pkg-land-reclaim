@@ -12,11 +12,11 @@ importers:
         specifier: 1.48.0
         version: 1.48.0(vue@3.5.43(typescript@5.9.3))
       '@synopackageland/sdk':
-        specifier: ~0.53.49
-        version: 0.53.49(@lucide/vue@1.48.0(vue@3.5.43(typescript@5.9.3)))(@synopackageland/ui@0.25.29(vue@3.5.43(typescript@5.9.3)))(vue@3.5.43(typescript@5.9.3))
+        specifier: ~0.53.52
+        version: 0.53.52(@lucide/vue@1.48.0(vue@3.5.43(typescript@5.9.3)))(@synopackageland/ui@0.25.30(vue@3.5.43(typescript@5.9.3)))(vue@3.5.43(typescript@5.9.3))
       '@synopackageland/ui':
-        specifier: ~0.25.29
-        version: 0.25.29(vue@3.5.43(typescript@5.9.3))
+        specifier: ~0.25.30
+        version: 0.25.30(vue@3.5.43(typescript@5.9.3))
       d3-hierarchy:
         specifier: 3.1.2
         version: 3.1.2
@@ -581,8 +581,8 @@ packages:
   '@swc/helpers@0.5.23':
     resolution: {integrity: sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==}
 
-  '@synopackageland/sdk@0.53.49':
-    resolution: {integrity: sha512-sfnOC+e0twyspamRqNgYCYhN2wtt8cd1CZ89tvLDkxmvMd7zdqMiP9GedcBCu2L27R0FC43f+hRNVPEEFN+BYQ==}
+  '@synopackageland/sdk@0.53.52':
+    resolution: {integrity: sha512-P7QAXnlHkRIyHQn0MF0EymXea2q79FbZdR3pAmF/ga+3gKEEqDV37yiygg5Fayij8syfT11TexIVR+1xvMdv6Q==}
     peerDependencies:
       '@lucide/vue': ^1.48.0
       '@synopackageland/ui': '>=0.23.5 <0.26.0'
@@ -593,8 +593,8 @@ packages:
       '@synopackageland/ui':
         optional: true
 
-  '@synopackageland/ui@0.25.29':
-    resolution: {integrity: sha512-8Ikln46M/uLZekPkKYUKZLTha+hAlclaWuORnjmthadqgdq02lEV6JZAAHjmI0TdTa8kezXjLv8jTaMMIf/w/g==}
+  '@synopackageland/ui@0.25.30':
+    resolution: {integrity: sha512-tSZNGlc7OptTkuWhIUvk5szCr5YHQJ82narhgmwL6JNQL0Fd2hCkqLlaR8/yJMgMMxo0SUkKlo+9jv6wOIYywQ==}
     engines: {node: '>=20'}
     hasBin: true
     peerDependencies:
@@ -2005,14 +2005,14 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@synopackageland/sdk@0.53.49(@lucide/vue@1.48.0(vue@3.5.43(typescript@5.9.3)))(@synopackageland/ui@0.25.29(vue@3.5.43(typescript@5.9.3)))(vue@3.5.43(typescript@5.9.3))':
+  '@synopackageland/sdk@0.53.52(@lucide/vue@1.48.0(vue@3.5.43(typescript@5.9.3)))(@synopackageland/ui@0.25.30(vue@3.5.43(typescript@5.9.3)))(vue@3.5.43(typescript@5.9.3))':
     dependencies:
       vue: 3.5.43(typescript@5.9.3)
     optionalDependencies:
       '@lucide/vue': 1.48.0(vue@3.5.43(typescript@5.9.3))
-      '@synopackageland/ui': 0.25.29(vue@3.5.43(typescript@5.9.3))
+      '@synopackageland/ui': 0.25.30(vue@3.5.43(typescript@5.9.3))
 
-  '@synopackageland/ui@0.25.29(vue@3.5.43(typescript@5.9.3))':
+  '@synopackageland/ui@0.25.30(vue@3.5.43(typescript@5.9.3))':
     dependencies:
       '@floating-ui/dom': 1.8.0
       '@internationalized/date': 3.12.4
