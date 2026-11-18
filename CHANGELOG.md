@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1-1677 — Duplicates review keeps the list
+
+- Review: when a duplicates cleanup is refused because a selected group would remove a copy you chose to keep, "Remove <group> from the list" takes out only that group (several at once when there are more), checks again and keeps the cleanup list open, saying which groups it removed; two groups that remove each other's kept copy are offered as a choice in the same dialog. Previously the button took every duplicate group out of the list
+- UI-only update: the App, CGI, executor and root programs are the 0.1.1-1676 binaries, reused with `package/repackage-ui.mjs` (no Rust build); permissions and task templates are unchanged, so no new approval is needed after upgrading from 1676
+- Validated with the UI build, inspection of each SPK with the catalog, and the release checksums after download
+
 ## 0.1.1-1676 — UI kit and SDK update
 
 - Updated to the latest UI kit (~0.25.30) and SDK/App (0.53.52); executor 0.53.6, CLI ~0.54.6 and templates 0.42.1 unchanged
