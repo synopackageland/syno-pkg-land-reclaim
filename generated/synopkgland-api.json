@@ -4,7 +4,7 @@
   "payload": {
     "package": {
       "id": "SynoReclaim",
-      "version": "0.1.1-1676",
+      "version": "0.1.1-1677",
       "displayName": "Syno Reclaim"
     },
     "aliases": [
@@ -25852,5 +25852,5 @@
       }
     }
   },
-  "sha256": "f39f3487d1fd40382455522b841ab26d944865035eab3aba45d8ba88ae8a9c58"
+  "sha256": "1740bec84b8c92b170c90db561f8477301f72f56a8f7401ea6266a4f60c7afcb"
 }

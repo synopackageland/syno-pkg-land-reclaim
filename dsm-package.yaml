@@ -2,7 +2,7 @@
   "schema": 2,
   "package": "SynoReclaim",
   "version": "0.1.1",
-  "build": 1676,
+  "build": 1677,
   "displayname": "Syno Reclaim",
   "maintainer": "Syno Package Land",
   "os_min_ver": "7.1-42661",
