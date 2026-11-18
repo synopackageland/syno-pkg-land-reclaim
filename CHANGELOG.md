@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1-1678 — Every keeper conflict at once
+
+- Duplicates cleanup plan: when several selected groups would remove a copy you chose to keep, the plan now refuses with one `keeper_conflict` error for every pair of groups in conflict instead of only the first, so Review's "Unable to start" dialog names them all and one click takes them all out of the list before checking again. A single conflict reads as before
+- Rust build of the App and root programs from this source (the root programs change, so administrator reapproval is needed after upgrading from 1677); no UI kit or SDK version change: UI ~0.25.30, SDK/App 0.53.52, executor 0.53.6, CLI ~0.54.6 and templates 0.42.1 unchanged
+- Validated with the cleanup plan Rust tests, rustfmt, clippy, the Review UI tests, the SPK build of each architecture, inspection with the catalog, an archive privacy scan and the release checksums after download
+
 ## 0.1.1-1677 — Duplicates review keeps the list
 
 - Review: when a duplicates cleanup is refused because a selected group would remove a copy you chose to keep, "Remove <group> from the list" takes out only that group (several at once when there are more), checks again and keeps the cleanup list open, saying which groups it removed; two groups that remove each other's kept copy are offered as a choice in the same dialog. Previously the button took every duplicate group out of the list
