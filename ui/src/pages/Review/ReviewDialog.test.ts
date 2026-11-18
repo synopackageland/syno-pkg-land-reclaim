@@ -296,7 +296,9 @@ describe('ReviewDialog', () => {
     const wrapper = mount(ReviewDialog, { props: { open: true, volume: '/volume1' }, global: { stubs } })
     await flushPromises()
     expect(wrapper.text()).toContain('A selected group would remove a copy you chose to keep in another group, so nothing moved')
+    // Without the groups the CLI names, only taking them all out is left.
     expect(wrapper.find('[data-test="review-clear-duplicates"]').exists()).toBe(true)
+    expect(wrapper.find('[data-test="review-resolve-conflicts"]').exists()).toBe(false)
     wrapper.unmount()
     basket.clear()
   })
@@ -311,9 +313,124 @@ describe('ReviewDialog', () => {
     await flushPromises()
     expect(wrapper.text()).toContain('/volume1/media/src/linux-6.6-copy is kept in “linux-6.6-copy-env”, but removing “linux-6.6-copy-junk” would remove it, so nothing moved')
     expect(wrapper.text()).not.toContain('keeper_conflict:')
-    expect(wrapper.find('[data-test="review-clear-duplicates"]').exists()).toBe(true)
+    expect(wrapper.find('[data-test="review-resolve-conflicts"]').text()).toBe('Remove linux-6.6-copy-junk from the list')
+    expect(wrapper.find('[data-test="review-clear-duplicates"]').exists()).toBe(false)
     wrapper.unmount()
     basket.clear()
+  })
+
+  describe('settling keeper conflicts', () => {
+    const MEDIA = '/volume1/media/src/linux-6.6-copy'
+    const group = (id: string, name: string): DuplicateSelection => ({ id, name, copies: 1, canFree: MIB, freesLater: 0, keeps: `/volume1/archive/src/${name}`, preferred: false, drive: false })
+    const ENV = group('e'.repeat(32), 'linux-6.6-copy-env')
+    const JUNK = group('c'.repeat(32), 'linux-6.6-copy-junk')
+    const SCSI = group('5'.repeat(32), 'scsi')
+    const CLK = group('6'.repeat(32), 'clk')
+    const ref = (g: DuplicateSelection) => ({ id: g.id, name: { path: g.name } })
+    const conflictError = (kept: DuplicateSelection, removing: DuplicateSelection) => ({ code: 'keeper_conflict', path: MEDIA, message: 'keeper_conflict: …', conflict: { kept_in: ref(kept), removed_by: ref(removing) } })
+    const ready = { ...planOf([share('archive', ['/volume1/archive/src/linux-6.6-copy-env'], { enabled: true, admin_only: true })]), duplicates: { copies: 1, groups: 1, kept: 1, outside_shares: 0, left: [], scan_finished: 1_762_934_400 } }
+
+    /** A backend whose plan answers by the groups it is sent. */
+    function planBy(answer: (groups: string[]) => unknown) {
+      const plans: string[][] = []
+      const backend = vi.fn(async (method: string, params?: { duplicates?: { groups: string[] } }) => {
+        if (method === 'cleanup.plan') {
+          const groups = params?.duplicates?.groups ?? []
+          plans.push(groups)
+          return answer(groups)
+        }
+        if (method === 'jobs.list') return { jobs: [] }
+        if (method === 'simulate.get') throw new ApiError('cli_error')
+        return {}
+      })
+      setBackend(backend as unknown as Backend)
+      return plans
+    }
+    function listOf(...groups: DuplicateSelection[]) {
+      const basket = useBasket('/volume1')
+      basket.clear()
+      basket.addDuplicates(groups)
+      return basket
+    }
+    const failed = (...errors: unknown[]) => ({ command: 'cleanup-plan', completion: 'failed', errors })
+
+    it('takes out only the group that removes the kept copy, checks again and stays on the list', async () => {
+      const basket = listOf(ENV, JUNK)
+      const plans = planBy(groups => groups.includes(JUNK.id) ? failed(conflictError(ENV, JUNK)) : ready)
+      const wrapper = mount(ReviewDialog, { props: { open: true, volume: '/volume1' }, global: { stubs } })
+      await flushPromises()
+      await wrapper.find('[data-test="review-resolve-conflicts"]').trigger('click')
+      await flushPromises()
+      await flushPromises()
+      expect(basket.duplicates.value.groups.map(g => g.id)).toEqual([ENV.id])
+      expect(plans).toEqual([[ENV.id, JUNK.id], [ENV.id]])
+      expect(wrapper.emitted('update:open')).toBeUndefined()
+      expect(wrapper.find('[data-test="review-confirm"]').exists()).toBe(true)
+      expect(wrapper.find('[data-test="review-dropped-conflicts"]').text()).toContain('linux-6.6-copy-junk')
+      wrapper.unmount()
+      basket.clear()
+    })
+
+    it('lists every conflict the plan names and takes all their groups out in one go', async () => {
+      const basket = listOf(ENV, JUNK, SCSI, CLK)
+      const plans = planBy(groups => groups.includes(JUNK.id) ? failed(conflictError(ENV, JUNK), conflictError(ENV, SCSI)) : ready)
+      const wrapper = mount(ReviewDialog, { props: { open: true, volume: '/volume1' }, global: { stubs } })
+      await flushPromises()
+      expect(wrapper.text()).toContain('2 selected groups would remove copies you chose to keep, so nothing moved')
+      expect(wrapper.findAll('[data-test="review-conflict"]').map(line => line.text())).toEqual([
+        `Removing “linux-6.6-copy-junk” would remove ${MEDIA}, kept in “linux-6.6-copy-env”`,
+        `Removing “scsi” would remove ${MEDIA}, kept in “linux-6.6-copy-env”`,
+      ])
+      const button = wrapper.find('[data-test="review-resolve-conflicts"]')
+      expect(button.text()).toBe('Remove linux-6.6-copy-junk and 1 more group from the list')
+      expect(button.text()).not.toMatch(/[.…]$/)
+      await button.trigger('click')
+      await flushPromises()
+      await flushPromises()
+      expect(basket.duplicates.value.groups.map(g => g.id)).toEqual([ENV.id, CLK.id])
+      expect(plans).toHaveLength(2)
+      expect(wrapper.find('[data-test="review-confirm"]').exists()).toBe(true)
+      wrapper.unmount()
+      basket.clear()
+    })
+
+    it('keeps settling when a CLI names one conflict at a time, without stopping in between', async () => {
+      const basket = listOf(ENV, JUNK, SCSI)
+      const plans = planBy(groups => groups.includes(JUNK.id)
+        ? failed(conflictError(ENV, JUNK))
+        : groups.includes(SCSI.id) ? failed(conflictError(ENV, SCSI)) : ready)
+      const wrapper = mount(ReviewDialog, { props: { open: true, volume: '/volume1' }, global: { stubs } })
+      await flushPromises()
+      await wrapper.find('[data-test="review-resolve-conflicts"]').trigger('click')
+      for (let i = 0; i < 4; i++) await flushPromises()
+      expect(plans).toEqual([[ENV.id, JUNK.id, SCSI.id], [ENV.id, SCSI.id], [ENV.id]])
+      expect(wrapper.find('[data-test="review-confirm"]').exists()).toBe(true)
+      expect(wrapper.find('[data-test="review-dropped-conflicts"]').text()).toContain('scsi')
+      wrapper.unmount()
+      basket.clear()
+    })
+
+    it('asks in the dialog which of two groups to take out when each removes the other\'s kept copy', async () => {
+      const basket = listOf(ENV, JUNK)
+      planBy(groups => groups.length === 2 ? failed(conflictError(ENV, JUNK), conflictError(JUNK, ENV)) : ready)
+      const wrapper = mount(ReviewDialog, { props: { open: true, volume: '/volume1' }, global: { stubs } })
+      await flushPromises()
+      const resolve = () => wrapper.find('[data-test="review-resolve-conflicts"]')
+      expect(resolve().attributes('disabled')).toBeDefined()
+      expect(wrapper.find('[data-test="review-conflict-choice"]').text()).toContain('“linux-6.6-copy-env” and “linux-6.6-copy-junk” each remove the copy kept in the other')
+      const picks = wrapper.findAll('[data-test="review-conflict-pick"]')
+      expect(picks.map(pick => pick.text())).toEqual(['Remove linux-6.6-copy-env from the list', 'Remove linux-6.6-copy-junk from the list'])
+      await picks[1].trigger('click')
+      expect(resolve().attributes('disabled')).toBeUndefined()
+      expect(resolve().text()).toBe('Remove linux-6.6-copy-junk from the list')
+      await resolve().trigger('click')
+      await flushPromises()
+      await flushPromises()
+      expect(basket.duplicates.value.groups.map(g => g.id)).toEqual([ENV.id])
+      expect(wrapper.find('[data-test="review-confirm"]').exists()).toBe(true)
+      wrapper.unmount()
+      basket.clear()
+    })
   })
 
   it('follows a running move and its counts without sending it again', async () => {

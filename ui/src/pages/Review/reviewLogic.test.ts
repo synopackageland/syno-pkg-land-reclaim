@@ -1,4 +1,4 @@
-import { CHUNK_BYTES, basketPaths, cleanupApplyParams, duplicateReview, duplicatesParams, planParams } from './reviewLogic'
+import { CHUNK_BYTES, basketPaths, cleanupApplyParams, conflictResolution, duplicateReview, duplicatesParams, planParams } from './reviewLogic'
 
 describe('cleanup review logic', () => {
   it('sends only selected basket path fields to cleanup.plan', () => {
@@ -98,5 +98,31 @@ describe('planParams', () => {
     const stage = vi.fn(async () => { controller.abort(); return { selection: 'selection-1-2' } })
     await expect(planParams(Array.from({ length: 2000 }, (_, i) => item(i)), '/volume1', null, stage, controller.signal)).rejects.toThrow()
     expect(stage).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('conflictResolution', () => {
+  const g = (id: string) => ({ id, name: { path: id } })
+  const conflict = (kept: string, removing: string) => ({ path: '/volume1/x', conflict: { kept_in: g(kept), removed_by: g(removing) } })
+
+  it('takes out the group that removes the kept copy, once', () => {
+    const result = conflictResolution([conflict('env', 'junk'), conflict('other', 'junk'), conflict('env', 'scsi')], new Set(['env', 'junk', 'scsi']))
+    expect(result.drop).toEqual([{ id: 'junk', name: 'junk' }, { id: 'scsi', name: 'scsi' }])
+    expect(result.choices).toEqual([])
+  })
+
+  it('leaves groups that are not in the list alone', () => {
+    expect(conflictResolution([conflict('env', 'junk'), { path: '/volume1/y' }], new Set(['env']))).toEqual({ drop: [], choices: [] })
+  })
+
+  it('asks which of two listed groups that remove each other\'s kept copy goes', () => {
+    const result = conflictResolution([conflict('a', 'b'), conflict('b', 'a')], new Set(['a', 'b']))
+    expect(result.drop).toEqual([])
+    expect(result.choices).toEqual([[{ id: 'a', name: 'a' }, { id: 'b', name: 'b' }]])
+  })
+
+  it('asks nothing when one of the pair goes anyway', () => {
+    const result = conflictResolution([conflict('a', 'b'), conflict('b', 'a'), conflict('c', 'b')], new Set(['a', 'b', 'c']))
+    expect(result.choices).toEqual([])
   })
 })
