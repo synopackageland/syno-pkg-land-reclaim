@@ -578,7 +578,7 @@ selection with one of these codes:
 | `duplicate_changed` | a copy's inode, size or modification time changed since the analysis |
 | `keeper_changed` | a kept copy, or a file of a kept folder, is gone or changed (size, modification or change time) since the analysis |
 | `keeper_removed` | the selected groups together would leave no copy of a group |
-| `keeper_conflict` | a selected group removes a copy the user kept in another group (or something inside it); the error's `path` is the copy and `conflict {kept_in, removed_by}` names both groups (`{id, name}` each) |
+| `keeper_conflict` | a selected group removes a copy the user kept in another group (or something inside it); the error's `path` is the copy and `conflict {kept_in, removed_by}` names both groups (`{id, name}` each). Every such pair of groups is one `errors[]` item, so Review can take every group that removes a kept copy out of the list at once, check again and go on |
 | `duplicates_nothing` | the selection removes nothing |
 
 `cleanup.apply` refuses with `keeper_changed` before any removal when a kept

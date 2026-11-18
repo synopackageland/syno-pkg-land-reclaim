@@ -810,15 +810,16 @@ pub struct Removal<'a> {
     pub paths: Vec<Vec<u8>>,
 }
 
-/// The first copy the user kept in any group of `analysis` that one of
-/// `removing` removes. A
-/// cleanup never removes a copy the user chose to keep, even for another
-/// group whose copy it also is.
-pub fn keep_conflict(
+/// Every copy the user kept in a group of `analysis` that one of
+/// `removing` removes: one per pair of groups, naming the first such copy,
+/// so the user sees every group to take out at once. A cleanup never
+/// removes a copy the user chose to keep, even for another group whose
+/// copy it also is.
+pub fn keep_conflicts(
     analysis: &Analysis,
     settings: &Settings,
     removing: &[Removal<'_>],
-) -> Option<KeepConflict> {
+) -> Vec<KeepConflict> {
     let name_of = |id: &str| {
         analysis
             .groups
@@ -833,21 +834,26 @@ pub fn keep_conflict(
                     .map(|f| f.name.clone())
             })
     };
+    let mut conflicts: Vec<KeepConflict> = Vec::new();
     for (kept_id, copies) in &settings.keep {
         let Some(kept_name) = name_of(kept_id) else {
             continue;
         };
         for copy in copies {
             for Removal { id, name, paths } in removing {
-                if id == kept_id {
+                if id == kept_id
+                    || conflicts
+                        .iter()
+                        .any(|c| c.kept_in.0 == *kept_id && c.removed_by.0 == *id)
+                {
                     continue;
                 }
                 if paths
                     .iter()
                     .any(|p| p == copy || within(copy, p) || within(p, copy))
                 {
-                    return Some(KeepConflict {
-                        kept_in: (kept_id.clone(), kept_name),
+                    conflicts.push(KeepConflict {
+                        kept_in: (kept_id.clone(), kept_name.clone()),
                         copy: copy.clone(),
                         removed_by: (id.to_string(), name.to_vec()),
                     });
@@ -855,7 +861,7 @@ pub fn keep_conflict(
             }
         }
     }
-    None
+    conflicts
 }
 
 impl Member<'_> {
@@ -1773,7 +1779,9 @@ mod tests {
             name: b"linux-6.6-copy-junk",
             paths: exports_go,
         }];
-        let c = keep_conflict(&a, &settings, &removing).unwrap();
+        let conflicts = keep_conflicts(&a, &settings, &removing);
+        assert_eq!(conflicts.len(), 1);
+        let c = &conflicts[0];
         assert_eq!(c.kept_in.0, "fenv");
         assert_eq!(c.copy, exports[1].as_bytes());
         assert_eq!(c.removed_by.0, "fexports");
@@ -1786,7 +1794,7 @@ mod tests {
             name: b"linux-6.6-copy-env",
             paths: row_goes,
         }];
-        assert_eq!(keep_conflict(&a, &settings, &removing), None);
+        assert_eq!(keep_conflicts(&a, &settings, &removing), []);
         let only_exports = Settings {
             keep: BTreeMap::from([("fexports".into(), vec![exports[0].as_bytes().to_vec()])]),
             ..Settings::default()
@@ -1796,7 +1804,30 @@ mod tests {
             name: b"linux-6.6-copy-junk",
             paths: vec![exports[1].as_bytes().to_vec()],
         }];
-        assert_eq!(keep_conflict(&a, &only_exports, &removing), None);
+        assert_eq!(keep_conflicts(&a, &only_exports, &removing), []);
+        // Two groups removing the kept copy: both are named at once, each
+        // pair once however many of its paths conflict.
+        let removing = [
+            Removal {
+                id: "fexports",
+                name: b"linux-6.6-copy-junk",
+                paths: vec![
+                    exports[1].as_bytes().to_vec(),
+                    format!("{}/drivers", exports[1]).into_bytes(),
+                ],
+            },
+            Removal {
+                id: "fscsi",
+                name: b"scsi",
+                paths: vec![format!("{}/drivers/scsi", exports[1]).into_bytes()],
+            },
+        ];
+        let conflicts = keep_conflicts(&a, &settings, &removing);
+        let pairs: Vec<(&str, &str)> = conflicts
+            .iter()
+            .map(|c| (c.kept_in.0.as_str(), c.removed_by.0.as_str()))
+            .collect();
+        assert_eq!(pairs, [("fenv", "fexports"), ("fenv", "fscsi")]);
     }
 
     #[test]

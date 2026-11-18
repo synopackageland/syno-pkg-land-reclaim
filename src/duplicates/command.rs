@@ -1563,6 +1563,30 @@ pub(crate) fn keeper_conflict_refusal(c: &model::KeepConflict) -> Failure {
     })
 }
 
+/// `keeper_conflict` for every pair of groups at once: one `errors[]` item
+/// each, so the user can take every group out in one go. A single
+/// conflict is [`keeper_conflict_refusal`].
+pub(crate) fn keeper_conflicts_refusal(conflicts: &[model::KeepConflict]) -> Failure {
+    if let [c] = conflicts {
+        return keeper_conflict_refusal(c);
+    }
+    let errors = conflicts
+        .iter()
+        .map(|c| {
+            let failure = keeper_conflict_refusal(c);
+            let mut error = TargetError::new(
+                JsonPath::new(&c.copy),
+                "keeper_conflict",
+                failure.to_string(),
+            );
+            error.duplicate.get_or_insert_default().conflict =
+                crate::guard::failure_conflict(failure.as_ref()).cloned();
+            error
+        })
+        .collect();
+    Box::new(crate::commands::TargetErrors(errors))
+}
+
 /// The copies the keep rule moves to the Recycle Bin from each selected
 /// group in the scope, and the copies it keeps. A folder group moves only
 /// the large files the analysis matched by checksum inside each removed
@@ -1724,8 +1748,9 @@ pub fn expand(spec: &str, state_dir: &Path) -> Result<Expansion, Failure> {
             paths: g.removed.iter().flat_map(|c| c.paths()).collect(),
         })
         .collect();
-    if let Some(c) = model::keep_conflict(analysis, &loaded.settings, &removing) {
-        return Err(keeper_conflict_refusal(&c));
+    let conflicts = model::keep_conflicts(analysis, &loaded.settings, &removing);
+    if !conflicts.is_empty() {
+        return Err(keeper_conflicts_refusal(&conflicts));
     }
     // Each group keeps at least one copy this plan leaves: its keeper, a
     // copy the user kept, one outside the scope or inside a kept folder.

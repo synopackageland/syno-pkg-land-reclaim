@@ -60,6 +60,7 @@ mod resume;
 mod rootfs;
 mod snapshot_analysis;
 mod why_not_freed;
+pub(crate) use cleanup::TargetErrors;
 pub use cleanup::{
     cleanup_apply, cleanup_delete, cleanup_plan, cleanup_select, moved_since, valid_plan_id,
     valid_selection_id,
@@ -5810,6 +5811,36 @@ mod tests {
             })
         );
         assert_eq!(crate::guard::failure_exit_code(error.as_ref()), 4);
+    }
+
+    #[test]
+    fn every_keeper_conflict_is_one_error() {
+        let conflict = |removed_by: &str| crate::duplicates::model::KeepConflict {
+            kept_in: ("fenv".into(), b"linux-6.6-copy-env".to_vec()),
+            copy: b"/volume1/media/src/linux-6.6-copy".to_vec(),
+            removed_by: (removed_by.into(), removed_by.as_bytes().to_vec()),
+        };
+        let error = crate::duplicates::command::keeper_conflicts_refusal(&[
+            conflict("fjunk"),
+            conflict("fscsi"),
+        ]);
+        let doc = cleanup_failure_document(
+            "cleanup-plan",
+            std::time::UNIX_EPOCH,
+            b"/volume1",
+            error.as_ref(),
+        );
+        let doc = serde_json::to_value(doc).unwrap();
+        let errors = doc["errors"].as_array().unwrap();
+        assert_eq!(errors.len(), 2);
+        for (error, group) in errors.iter().zip(["fjunk", "fscsi"]) {
+            assert_eq!(error["code"], "keeper_conflict");
+            assert_eq!(error["path"], "/volume1/media/src/linux-6.6-copy");
+            assert_eq!(error["conflict"]["kept_in"]["id"], "fenv");
+            assert_eq!(error["conflict"]["removed_by"]["id"], group);
+        }
+        assert_eq!(doc["completion"], "failed");
+        assert_eq!(super::cleanup_exit_code(error.as_ref()), 4);
     }
 
     #[test]
